@@ -1,0 +1,45 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvNopBaiTap
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chi tiết bài nộp";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<h3>📄 Chi tiết bài nộp</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Sinh viên</th>
+        <td>@Model.LqvSinhVien.LqvHoTen</td>
+    </tr>
+    <tr>
+        <th>Thời gian nộp</th>
+        <td>@Model.LqvThoiGianNop</td>
+    </tr>
+    <tr>
+        <th>Nội dung</th>
+        <td>@Model.LqvNoiDung</td>
+    </tr>
+    <tr>
+        <th>File</th>
+        <td>
+            @if (!string.IsNullOrEmpty(Model.LqvFile))
+            {
+                <a href="@Model.LqvFile" target="_blank">Tải file</a>
+            }
+        </td>
+    </tr>
+    <tr>
+        <th>Điểm</th>
+        <td>@Model.LqvDiem</td>
+    </tr>
+    <tr>
+        <th>Nhận xét</th>
+        <td>@Model.LqvNhanXet</td>
+    </tr>
+</table>
+
+<a asp-action="ChamDiem" asp-route-id="@Model.LqvId" class="btn btn-success">✍ Chấm điểm</a>
+<a asp-action="DanhSachNop" asp-route-baiTapId="@Model.LqvBaiTapId" class="btn btn-secondary">
+    ⬅ Quay lại
+</a>

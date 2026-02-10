@@ -1,0 +1,130 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvBaiTap
+@{
+    ViewData["Title"] = Model.LqvTieuDe;
+    bool daNop = ViewBag.DaNop as bool? ?? false;
+    dynamic nopBai = ViewBag.NopBai;
+    bool conHan = ViewBag.ConHan as bool? ?? false;
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<style>
+    .content-box {
+        background: white;
+        border-radius: 15px;
+        padding: 25px;
+        margin-bottom: 20px;
+        border: 1px solid #eee;
+    }
+
+    .submission-box {
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 20px;
+        border: 1px solid #dee2e6;
+        position: sticky;
+        top: 20px;
+    }
+
+    .instructor-info {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .file-preview {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+    }
+</style>
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="d-flex align-items-start mb-3">
+                <div class="rounded-circle bg-primary text-white p-3 me-3">
+                    <i class="fas fa-assignment fa-2x"></i>
+                </div>
+                <div>
+                    <h2 class="fw-bold">@Model.LqvTieuDe</h2>
+                    <div class="instructor-info">
+                        <strong>@Model.LqvGiangVien?.LqvHoTen</strong> • @Model.LqvHanNop.ToString("dd MMM yyyy")
+                        <hr class="my-2">
+                        <span class="text-danger fw-bold">Hạn cuối: @Model.LqvHanNop.ToString("HH:mm")</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <div class="description-text">
+                    @Html.Raw(Model.LqvMoTa)
+                </div>
+            </div>
+
+            @if (daNop && nopBai != null && nopBai.LqvDaCham)
+            {
+                <div class="content-box border-success">
+                    <h5 class="text-success fw-bold"><i class="fas fa-check-circle"></i> Kết quả chấm bài</h5>
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-0"><strong>Điểm số:</strong> <span class="fs-4 text-primary">@nopBai.LqvDiem</span></p>
+                    </div>
+                    <p class="mt-2 mb-0 italic text-muted">" @nopBai.LqvNhanXet "</p>
+                </div>
+            }
+        </div>
+
+        <div class="col-lg-4">
+            <div class="submission-box shadow-sm">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="mb-0 fw-bold">Bài tập của bạn</h5>
+                    @if (daNop)
+                    {
+                        <span class="text-success small">Đã nộp</span>
+                    }
+                </div>
+
+                @if (daNop)
+                {
+                    <div class="file-preview mb-3">
+                        <i class="fas fa-file-pdf text-danger me-2 fa-2x"></i>
+                        <div class="overflow-hidden">
+                            <div class="text-truncate small">@nopBai.LqvFile</div>
+                            <a href="@nopBai.LqvFile" target="_blank" class="small text-decoration-none">Xem tệp nộp</a>
+                        </div>
+                    </div>
+                }
+
+                @if (conHan)
+                {
+                    <form asp-action="NopBai" method="post" enctype="multipart/form-data">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="baiTapId" value="@Model.LqvBaiTapId" />
+
+                        <div class="mb-3">
+                            <label class="btn btn-outline-primary w-100 py-2">
+                                <i class="fas fa-plus me-2"></i> @(daNop ? "Thay đổi tệp" : "Thêm tệp")
+                                <input type="file" name="fileNop" hidden required @(daNop ? "" : "required") />
+                            </label>
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea name="noiDung" class="form-control form-control-sm" placeholder="Ghi chú cho giảng viên...">@nopBai?.LqvNoiDung</textarea>
+                        </div>
+
+                        <button type="submit" class="btn @(daNop ? "btn-warning" : "btn-primary") w-100 fw-bold py-2">
+                            @(daNop ? "Nộp lại" : "Nộp bài")
+                        </button>
+                    </form>
+                }
+                else
+                {
+                    <div class="alert alert-danger py-2 mb-0">
+                        <i class="fas fa-exclamation-triangle"></i> Đã đóng link nộp bài
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

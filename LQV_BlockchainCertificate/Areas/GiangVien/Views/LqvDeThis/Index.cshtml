@@ -1,0 +1,119 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvDeThi>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Danh sách đề thi";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<style>
+    .card-s4 {
+        background: white;
+        border-radius: 16px;
+        border: 1px solid #eef2f6;
+        overflow: hidden;
+    }
+
+    .table thead th {
+        background: #f8fafc;
+        color: #64748b;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 1.25rem 1rem;
+        border: none;
+    }
+
+    .table td {
+        padding: 1.25rem 1rem;
+        vertical-align: middle;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .status-badge {
+        padding: 6px 12px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.75rem;
+    }
+
+    .status-approved {
+        background: #ecfdf5;
+        color: #10b981;
+    }
+
+    .status-pending {
+        background: #fffbeb;
+        color: #f59e0b;
+    }
+
+    .exam-time {
+        font-family: 'JetBrains Mono', monospace;
+        color: #3b82f6;
+        font-weight: 600;
+    }
+</style>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h3 class="fw-800 mb-1">📘 Quản lý đề thi</h3>
+        <p class="text-muted small mb-0">Thiết lập cấu trúc đề thi từ bộ câu hỏi</p>
+    </div>
+    <a asp-action="Create" class="btn btn-primary rounded-3 fw-bold px-4 shadow-sm">
+        <i class="fas fa-plus me-2"></i>Tạo đề thi mới
+    </a>
+</div>
+
+<div class="card-s4 shadow-sm">
+    <div class="table-responsive">
+        <table class="table table-hover mb-0">
+            <thead>
+                <tr>
+                    <th class="ps-4">Tên đề thi</th>
+                    <th>Bộ câu hỏi</th>
+                    <th class="text-center">Thời gian</th>
+                    <th class="text-center">Tổng điểm</th>
+                    <th class="text-center">Trạng thái</th>
+                    <th class="text-end pe-4">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="ps-4">
+                            <div class="fw-bold text-dark">@item.LqvTenDeThi</div>
+                            <div class="small text-muted">ID: #@item.LqvDeThiId</div>
+                        </td>
+                        <td>
+                            <span class="text-muted small fw-500"><i class="fas fa-layer-group me-1"></i> @item.LqvBoCauHoi?.LqvTenBo</span>
+                        </td>
+                        <td class="text-center">
+                            <span class="exam-time">@item.LqvThoiGianThi'</span>
+                        </td>
+                        <td class="text-center fw-bold text-dark">@item.LqvTongDiem</td>
+                        <td class="text-center">
+                            @if (item.LqvDaDuyet)
+                            {
+                                <span class="status-badge status-approved"><i class="fas fa-check-circle me-1"></i> Đã duyệt</span>
+                            }
+                            else
+                            {
+                                <span class="status-badge status-pending"><i class="fas fa-clock me-1"></i> Chờ duyệt</span>
+                            }
+                        </td>
+                        <td class="text-end pe-4">
+                            <div class="btn-group rounded-3 border overflow-hidden">
+                                <a asp-action="Details" asp-route-id="@item.LqvDeThiId" class="btn btn-white btn-sm" title="Xem"><i class="fas fa-eye text-info"></i></a>
+                                @if (!item.LqvDaDuyet)
+                                {
+                                    <a asp-action="Edit" asp-route-id="@item.LqvDeThiId" class="btn btn-white btn-sm border-start" title="Sửa"><i class="fas fa-edit text-warning"></i></a>
+                                    <a asp-action="Delete" asp-route-id="@item.LqvDeThiId" class="btn btn-white btn-sm border-start" title="Xoá"><i class="fas fa-trash text-danger"></i></a>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

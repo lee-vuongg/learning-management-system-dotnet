@@ -1,0 +1,98 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvGiaoDichBlockchain
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Chi tiết Giao dịch Blockchain";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-lg-10 col-md-12 mx-auto">
+            <div class="card shadow-lg">
+                <div class="card-header pb-0 p-3">
+                    <h4 class="mb-0 text-primary">🔗 Chi tiết Giao dịch Blockchain</h4>
+                    <p class="text-sm text-secondary">Mã giao dịch: <strong>@Model.LqvMaGiaoDich</strong></p>
+                </div>
+
+                <hr class="mx-4">
+
+                <div class="card-body p-3">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <h6 class="text-uppercase text-secondary text-xs font-weight-bolder mb-3">
+                                Thông tin Blockchain
+                            </h6>
+
+                            <dl class="row">
+                                <dt class="col-sm-4">Số Block:</dt>
+                                <dd class="col-sm-8 fw-bold text-dark">
+                                    @(Model.LqvBlockNumber?.ToString() ?? "Chưa xác định")
+                                </dd>
+
+                                <dt class="col-sm-4">Thời gian tạo:</dt>
+                                <dd class="col-sm-8 text-sm">
+                                    @Model.LqvGioTao.ToString("dd/MM/yyyy HH:mm:ss")
+                                </dd>
+
+                                <dt class="col-sm-4">Trạng thái:</dt>
+                                <dd class="col-sm-8 text-sm">
+                                    @{
+                                        string status = Model.LqvStatus ?? "Chờ xử lý";
+                                        string badgeClass = status switch
+                                        {
+                                            "Thành công" => "bg-gradient-success",
+                                            "Đang xử lý" => "bg-gradient-warning",
+                                            _ => "bg-gradient-danger"
+                                        };
+                                    }
+                                    <span class="badge @badgeClass text-white">@status</span>
+                                </dd>
+
+                                <dt class="col-sm-12 mt-3">TxHash:</dt>
+                                <dd class="col-sm-12">
+                                    <a href="https://sepolia.etherscan.io/tx/@Model.LqvTxHash" target="_blank"
+                                       class="text-xs text-info font-weight-bold" style="word-break: break-all;">
+                                        @Model.LqvTxHash
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+
+                        <div class="col-md-6 border-start border-light">
+                            <h6 class="text-uppercase text-secondary text-xs font-weight-bolder mb-3">Chứng nhận liên quan</h6>
+                            <dl class="row">
+                                <dt class="col-sm-4">Khóa học:</dt>
+                                <dd class="col-sm-8 fw-bold text-dark">@Model.LqvChungNhan?.LqvKhoaHoc?.LqvTenKhoaHoc</dd>
+
+                                <dt class="col-sm-4">Mã CN Code:</dt>
+                                <dd class="col-sm-8 text-sm">@Model.LqvChungNhan?.LqvMaChungNhanCode</dd>
+
+                                <dt class="col-sm-4">Hash CN:</dt>
+                                <dd class="col-sm-8 text-sm" style="word-break: break-all;">
+                                    @Model.LqvChungNhan?.LqvHashValue
+                                </dd>
+                            </dl>
+
+                            <div class="mt-3">
+                                <a asp-area="Student" asp-controller="LqvChungNhans" asp-action="Details"
+                                   asp-route-id="@Model.LqvChungNhanId"
+                                   class="btn btn-outline-primary btn-sm w-100 shadow-sm">
+                                    <i class="fas fa-certificate me-2"></i> Xem Chi tiết Chứng nhận
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="card-footer p-3 text-end">
+                    <a asp-action="Index" class="btn btn-secondary btn-sm">
+                        <i class="fas fa-arrow-left me-1"></i> Quay lại danh sách
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

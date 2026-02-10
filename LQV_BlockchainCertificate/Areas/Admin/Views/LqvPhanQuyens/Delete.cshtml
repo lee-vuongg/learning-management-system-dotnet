@@ -1,0 +1,52 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvPhanQuyen
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Xóa phân quyền";
+    ViewData["Active"] = "LqvPhanQuyens"; // Đảm bảo Active Menu
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+
+        <div class="card card-danger card-outline shadow-sm">
+            <div class="card-header">
+                <h3 class="card-title fw-bold text-danger">
+                    <i class="fas fa-trash-alt me-2"></i> Xóa Phân Quyền (Xác nhận)
+                </h3>
+            </div>
+
+            <div class="card-body">
+                <div class="alert alert-danger" role="alert">
+                    <i class="fas fa-exclamation-triangle me-2"></i> **CẢNH BÁO:** Bạn có chắc chắn muốn xóa vĩnh viễn quy tắc phân quyền này không?
+                </div>
+
+                <h5 class="mb-3">Thông tin chi tiết:</h5>
+                <dl class="row detail-list">
+                    <dt class="col-sm-4">Vai trò</dt>
+                    <dd class="col-sm-8">**@Model.LqvRole?.LqvRoleName**</dd>
+
+                    <dt class="col-sm-4">Chức năng</dt>
+                    <dd class="col-sm-8">@Model.LqvChucNang?.LqvTenChucNang</dd>
+
+                    <dt class="col-sm-4">Cho phép</dt>
+                    <dd class="col-sm-8">@(Model.LqvChoPhep ? "✔ Có" : "❌ Không")</dd>
+                </dl>
+
+                <hr />
+
+                <form asp-action="DeleteConfirmed" method="post" class="mt-4">
+                    <input type="hidden" asp-for="LqvPhanQuyenId" />
+
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-trash me-1"></i> Xác nhận Xóa
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary ms-2">
+                        <i class="fas fa-times me-1"></i> Hủy
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

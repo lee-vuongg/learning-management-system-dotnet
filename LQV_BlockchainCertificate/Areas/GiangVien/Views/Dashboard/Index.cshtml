@@ -1,0 +1,412 @@
+﻿@model LQV_BlockchainCertificate.Models.ViewModels.GiangVienDashboardViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Bảng điều khiển Giảng viên";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<style>
+    :root {
+        --s4-primary: #1A73E8;
+        --s4-success: #1E8E3E;
+        --s4-danger: #D93025;
+        --s4-warning: #F9AB00;
+        --s4-bg: #FFFFFF;
+        --s4-surface: #F8F9FA;
+        --s4-border: #DADCE0;
+        --s4-text-main: #202124;
+        --s4-text-sub: #5F6368;
+        --s4-excel: #1d6f42;
+    }
+
+    body {
+        background-color: var(--s4-bg);
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        color: var(--s4-text-main);
+    }
+
+    .dashboard-header {
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--s4-border);
+        margin-bottom: 2rem;
+    }
+
+    .stat-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 1.5rem;
+        border: 1px solid var(--s4-border);
+        transition: all 0.3s ease;
+        height: 100%;
+    }
+
+        .stat-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--s4-primary);
+        }
+
+    .icon-circle {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .classroom-table-card {
+        border: 1px solid var(--s4-border);
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .table thead th {
+        background-color: var(--s4-surface);
+        color: var(--s4-text-sub);
+        font-weight: 600;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 1rem;
+        border-bottom: 1px solid var(--s4-border);
+    }
+
+    .action-link-item {
+        display: flex;
+        align-items: center;
+        padding: 0.85rem;
+        border-radius: 10px;
+        color: var(--s4-text-main);
+        text-decoration: none !important;
+        margin-bottom: 0.5rem;
+        transition: all 0.2s;
+    }
+
+        .action-link-item:hover {
+            background-color: #E8F0FE;
+            color: var(--s4-primary);
+        }
+
+    .chart-container {
+        border: 1px solid var(--s4-border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        background: #fff;
+        position: relative;
+    }
+
+    .btn-google {
+        background-color: var(--s4-primary);
+        color: white;
+        border-radius: 25px;
+        font-weight: 600;
+        padding: 0.6rem 1.5rem;
+        border: none;
+    }
+
+    .btn-excel-outline {
+        border: 1px solid var(--s4-excel);
+        color: var(--s4-excel);
+        border-radius: 25px;
+        font-weight: 600;
+        padding: 0.6rem 1.5rem;
+        background: transparent;
+        transition: all 0.3s;
+    }
+
+        .btn-excel-outline:hover {
+            background: var(--s4-excel);
+            color: white;
+        }
+
+    .bg-soft-red {
+        background-color: #FEEBEB;
+        color: #D93025;
+    }
+
+    .bg-soft-blue {
+        background-color: #E8F0FE;
+        color: #1A73E8;
+    }
+
+    .bg-soft-green {
+        background-color: #E6F4EA;
+        color: #1E8E3E;
+    }
+
+    .bg-soft-yellow {
+        background-color: #FEF7E0;
+        color: #F9AB00;
+    }
+
+    /* Custom Modal Style */
+    .export-option-card {
+        border: 2px solid var(--s4-border);
+        border-radius: 12px;
+        padding: 15px;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-align: center;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        width: 100%;
+    }
+
+        .export-option-card:hover {
+            border-color: var(--s4-primary);
+            background-color: #f1f3f4;
+        }
+
+        .export-option-card i {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+</style>
+
+<div class="dashboard-header">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h3 class="fw-bold mb-1">Tổng quan giảng dạy</h3>
+                <p class="text-secondary mb-0">Chào thầy/cô, hiện có <span class="badge bg-danger">@Model.SoBaiTapCanCham bài tập</span> mới cần phản hồi.</p>
+            </div>
+            <div class="col-md-6 text-md-end mt-3 mt-md-0 d-flex justify-content-md-end gap-2">
+                <button type="button" class="btn btn-excel-outline shadow-sm" data-bs-toggle="modal" data-bs-target="#exportDiemModal">
+                    <i class="fas fa-file-excel me-2"></i>Xuất bảng điểm
+                </button>
+                <a asp-controller="LqvBaiTaps" asp-action="Create" class="btn btn-google shadow-sm">
+                    <i class="fas fa-plus me-2"></i>Tạo bài tập mới
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row g-4 mb-4">
+        <div class="col-xl-3 col-sm-6">
+            <div class="stat-card">
+                <div class="icon-circle bg-soft-blue"><i class="fas fa-university"></i></div>
+                <div class="text-secondary small fw-bold mb-1">LỚP HỌC</div>
+                <h2 class="mb-0 fw-bold">@Model.TongLopHoc</h2>
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+            <div class="stat-card">
+                <div class="icon-circle bg-soft-red"><i class="fas fa-clipboard-check"></i></div>
+                <div class="text-secondary small fw-bold mb-1">CHỜ CHẤM</div>
+                <h2 class="mb-0 fw-bold text-danger">@Model.SoBaiTapCanCham</h2>
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+            <div class="stat-card">
+                <div class="icon-circle bg-soft-green"><i class="fas fa-user-friends"></i></div>
+                <div class="text-secondary small fw-bold mb-1">SINH VIÊN</div>
+                <h2 class="mb-0 fw-bold">@Model.TongSinhVien</h2>
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+            <div class="stat-card">
+                <div class="icon-circle bg-soft-yellow"><i class="fas fa-graduation-cap"></i></div>
+                <div class="text-secondary small fw-bold mb-1">KHÓA HỌC</div>
+                <h2 class="mb-0 fw-bold">@Model.TongKhoaHoc</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-5">
+        <div class="col-lg-8">
+            <div class="chart-container shadow-sm">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h6 class="fw-bold mb-0">Hiệu suất chấm bài</h6>
+                        <small class="text-muted">Dữ liệu thống kê 7 ngày gần nhất</small>
+                    </div>
+                </div>
+                <div style="height: 350px;">
+                    <canvas id="mainDashboardChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="classroom-table-card p-3 shadow-sm h-100">
+                <h6 class="fw-bold mb-3 px-2">Truy cập nhanh</h6>
+                <a asp-controller="LqvBoCauHois" asp-action="Index" class="action-link-item">
+                    <div class="icon-circle bg-soft-blue mb-0 me-3" style="width:35px; height:35px;"><i class="fas fa-database small"></i></div>
+                    <span class="fw-medium">Ngân hàng câu hỏi</span>
+                </a>
+                <a asp-controller="LqvTienDoHocTaps" asp-action="Index" class="action-link-item">
+                    <div class="icon-circle bg-soft-green mb-0 me-3" style="width:35px; height:35px;"><i class="fas fa-tasks small"></i></div>
+                    <span class="fw-medium">Theo dõi tiến độ</span>
+                </a>
+                <a asp-controller="LqvYeuCauCapChungChis" asp-action="Index" class="action-link-item">
+                    <div class="icon-circle bg-soft-yellow mb-0 me-3" style="width:35px; height:35px;"><i class="fas fa-stamp small"></i></div>
+                    <span class="fw-medium">Duyệt chứng chỉ (@ViewBag.Tong)</span>
+                </a>
+                <a asp-controller="LqvDiemDanhGps" asp-action="Index" class="action-link-item">
+                    <div class="icon-circle bg-soft-red mb-0 me-3" style="width:35px; height:35px;"><i class="fas fa-map-marker-alt small"></i></div>
+                    <span class="fw-medium">Nhật ký GPS Skill Map</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="classroom-table-card shadow-sm mb-5">
+        <div class="p-3 border-bottom d-flex justify-content-between align-items-center bg-light">
+            <h6 class="fw-bold mb-0">Danh sách lớp mới nhất</h6>
+            <a asp-controller="LqvLopHocs" asp-action="Index" class="text-primary small text-decoration-none fw-bold">Xem toàn bộ</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table mb-0 align-middle">
+                <thead>
+                    <tr>
+                        <th class="ps-4">Lớp học</th>
+                        <th>Sĩ số</th>
+                        <th>Ngày tạo</th>
+                        <th class="text-end pe-4">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.LopGanDays != null && Model.LopGanDays.Any())
+                    {
+                        foreach (var lop in Model.LopGanDays)
+                        {
+                            <tr>
+                                <td class="ps-4">
+                                    <span class="fw-bold text-dark">@lop.TenLop</span><br />
+                                    <small class="text-muted">Mã lớp: @lop.LopId</small>
+                                </td>
+                                <td><span class="badge bg-light text-dark border">@lop.SoSinhVien SV</span></td>
+                                <td class="text-secondary small">@lop.NgayTao?.ToString("dd/MM/yyyy")</td>
+                                <td class="text-end pe-4">
+                                    <a asp-controller="LqvLopHocs" asp-action="Details" asp-route-id="@lop.LopId" class="btn btn-sm btn-outline-primary rounded-pill px-3">Chi tiết</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exportDiemModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header bg-light border-0">
+                <h5 class="modal-title fw-bold">Tùy chọn xuất bảng điểm</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <div class="mb-4">
+                    <label class="form-label fw-bold">1. Chọn lớp học</label>
+                    <select class="form-select form-select-lg border-2" id="lopHocIdSelector">
+                        <option value="">-- Tất cả các lớp --</option>
+                        @if (Model.TatCaLopHoc != null)
+                        {
+                            foreach (var lop in Model.TatCaLopHoc)
+                            {
+                                <option value="@lop.LopId">Lớp: @lop.TenLop</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <label class="form-label fw-bold">2. Chọn kiểu báo cáo</label>
+                <div class="row g-3">
+                    <div class="col-6">
+                        <button type="button" onclick="exportExcel('ExportTongDiem')" class="export-option-card text-success">
+                            <i class="fas fa-file-invoice text-success"></i>
+                            <span class="fw-bold">Bảng tổng hợp</span>
+                            <small class="text-muted">Điểm tổng kết</small>
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" onclick="exportExcel('ExportChiTietDiem')" class="export-option-card text-primary">
+                            <i class="fas fa-file-medical text-primary"></i>
+                            <span class="fw-bold">Bảng chi tiết</span>
+                            <small class="text-muted">Từng bài tập/thi</small>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-4 alert alert-info border-0 small mb-0">
+                    <i class="fas fa-info-circle me-1"></i> Báo cáo sẽ được tải xuống dưới định dạng .xlsx
+                </div>
+            </div>
+            <div class="modal-footer bg-light border-0">
+                <button type="button" class="btn btn-secondary border-0" data-bs-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        function exportExcel(actionName) {
+            const select = document.getElementById('lopHocIdSelector');
+            const lopId = select ? select.value : '';
+
+            let url = '/GiangVien/Dashboard/' + actionName;
+
+            if (lopId !== '') {
+                url += '?lopHocId=' + lopId;
+            }
+
+            window.location.href = url;
+        }
+
+        const ctx = document.getElementById('mainDashboardChart').getContext('2d');
+        const gradientBlue = ctx.createLinearGradient(0, 0, 0, 400);
+        gradientBlue.addColorStop(0, 'rgba(26, 115, 232, 0.4)');
+        gradientBlue.addColorStop(1, 'rgba(26, 115, 232, 0)');
+
+        const daCham = @ViewBag.DaCham;
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7', 'CN'],
+                datasets: [{
+                    label: 'Số bài đã chấm',
+                    data: [
+                        daCham * 0.4,
+                        daCham * 0.6,
+                        daCham * 0.5,
+                        daCham * 0.9,
+                        daCham,
+                        daCham * 0.8,
+                        daCham * 1.1
+                    ],
+                    borderColor: '#1A73E8',
+                    borderWidth: 3,
+                    backgroundColor: gradientBlue,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#1A73E8',
+                    pointRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+    </script>
+}

@@ -1,0 +1,90 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvYeuCauCapChungChi
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Xóa Yêu cầu";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    /* CSS tương tự Details.cshtml */
+    .dl-horizontal-custom dt {
+        color: var(--color-neon-blue);
+        font-weight: 600;
+        padding-top: 0.5rem;
+    }
+
+    .dl-horizontal-custom dd {
+        color: var(--color-text-light);
+        padding-top: 0.5rem;
+    }
+
+    .card-custom {
+        background-color: var(--color-card-bg);
+        border: 1px solid #323b6b;
+        border-radius: var(--border-radius-lg);
+        padding: 2rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+</style>
+
+<h1 class="text-3xl font-bold mb-4" style="color:var(--color-neon-blue);">
+    Xóa Yêu cầu Cấp Chứng chỉ
+</h1>
+
+<h3 class="text-danger mb-4">Bạn có chắc chắn muốn xóa yêu cầu này không?</h3>
+
+<div class="card-custom">
+    <dl class="row dl-horizontal-custom">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.LqvNgayYeuCau)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.LqvNgayYeuCau)
+        </dd>
+
+        <dt class="col-sm-3">
+            Người Yêu Cầu
+        </dt>
+        <dd class="col-sm-9">
+            <strong style="color: #fff;">@Html.DisplayFor(model => model.LqvNguoiDung.LqvHoTen)</strong>
+        </dd>
+
+        <dt class="col-sm-3">
+            Khóa Học
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.LqvKhoaHoc.LqvTenKhoaHoc)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.LqvLyDoYeuCau)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.LqvLyDoYeuCau)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.LqvTrangThai)
+        </dt>
+        <dd class="col-sm-9">
+            @{
+                string badgeClass = Model.LqvTrangThai switch
+                {
+                    "Chờ duyệt" => "badge bg-warning text-dark",
+                    "Đã duyệt" => "badge bg-success",
+                    "Đã từ chối" => "badge bg-danger",
+                    _ => "badge bg-secondary"
+                };
+            }
+            <span class="@badgeClass">@Html.DisplayFor(model => model.LqvTrangThai)</span>
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="LqvId" />
+        <div class="d-flex gap-3 pt-3">
+            <input type="submit" value="Xác nhận Xóa" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-outline-secondary" style="color: var(--color-text-muted); border-color: #323b6b;">Hủy bỏ</a>
+        </div>
+    </form>
+</div>

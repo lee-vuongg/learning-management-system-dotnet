@@ -1,0 +1,140 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvTienDoHocTap>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Quản lý Tiến độ Học tập";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    :root {
+        --s4-primary: #007bff;
+        --s4-success: #28a745;
+        --s4-gray: #5f6368;
+    }
+
+    .s4-wrapper {
+        padding: 1.5rem;
+        background: #f8f9fa;
+        min-height: 100vh;
+    }
+
+    .s4-card {
+        background: #fff;
+        border-radius: 20px;
+        border: none;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        padding: 1.5rem;
+    }
+
+    .s4-table thead th {
+        background: #f1f3f4;
+        border: none;
+        color: var(--s4-gray);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 1rem;
+    }
+
+    .s4-table td {
+        padding: 1.2rem 1rem;
+        vertical-align: middle;
+        border-bottom: 1px solid #f1f3f4;
+    }
+
+    .progress {
+        height: 8px;
+        border-radius: 10px;
+        background-color: #e9ecef;
+    }
+
+    .progress-bar {
+        border-radius: 10px;
+    }
+
+    .btn-s4 {
+        border-radius: 10px;
+        font-weight: 600;
+        padding: 8px 16px;
+        transition: 0.3s;
+    }
+
+    .btn-create-s4 {
+        background: var(--s4-primary);
+        color: white;
+        border: none;
+    }
+
+        .btn-create-s4:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+</style>
+
+<div class="s4-wrapper">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h4 class="fw-bold mb-0 text-dark">📊 Quản lý Tiến độ Học tập</h4>
+            <p class="text-muted small mb-0">Theo dõi quá trình hoàn thành khóa học của sinh viên</p>
+        </div>
+        <a asp-action="Create" class="btn btn-s4 btn-create-s4 shadow-sm">
+            <i class="fas fa-plus me-2"></i>Thêm Tiến độ Mới
+        </a>
+    </div>
+
+    <div class="s4-card">
+        <div class="table-responsive">
+            <table class="table s4-table align-middle">
+                <thead>
+                    <tr>
+                        <th style="width: 25%">Sinh viên</th>
+                        <th style="width: 25%">Khóa học</th>
+                        <th style="width: 20%">Tiến độ</th>
+                        <th style="width: 15%">Cập nhật cuối</th>
+                        <th style="width: 15%" class="text-end">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        var pColor = item.LqvTiLeHoanThanh >= 100 ? "bg-success" : (item.LqvTiLeHoanThanh >= 50 ? "bg-primary" : "bg-warning");
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-dark">@item.LqvSinhVien?.LqvHoTen</div>
+                                <div class="text-muted small">MSSV: @item.LqvSinhVienId</div>
+                            </td>
+                            <td>
+                                <div class="fw-medium">@item.LqvKhoaHoc?.LqvTenKhoaHoc</div>
+                                <div class="badge bg-light text-muted fw-normal">@item.LqvKhoaHoc?.LqvMaKhoaHoc</div>
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="progress flex-grow-1 me-2">
+                                        <div class="progress-bar @pColor" style="width: @item.LqvTiLeHoanThanh%"></div>
+                                    </div>
+                                    <span class="small fw-bold @(item.LqvTiLeHoanThanh >= 100 ? "text-success" : "")">@item.LqvTiLeHoanThanh%</span>
+                                </div>
+                            </td>
+                            <td class="small text-muted">
+                                @(item.LqvNgayCapNhat?.ToString("dd/MM/yyyy HH:mm") ?? "N/A")
+                            </td>
+                            <td class="text-end">
+                                <div class="dropdown">
+                                    <button class="btn btn-light btn-sm rounded-3" data-bs-toggle="dropdown">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm">
+                                        <li><a class="dropdown-item" asp-action="Edit" asp-route-id="@item.LqvId"><i class="fas fa-edit me-2 text-primary"></i> Sửa</a></li>
+                                        <li><a class="dropdown-item" asp-action="Details" asp-route-id="@item.LqvId"><i class="fas fa-info-circle me-2 text-info"></i> Chi tiết</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item text-danger" asp-action="Delete" asp-route-id="@item.LqvId"><i class="fas fa-trash me-2"></i> Xóa</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

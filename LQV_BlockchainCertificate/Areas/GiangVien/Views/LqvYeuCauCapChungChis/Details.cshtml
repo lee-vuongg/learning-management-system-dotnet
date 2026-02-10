@@ -1,0 +1,114 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvYeuCauCapChungChi
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+    ViewData["Title"] = "Chi tiết đề xuất";
+}
+
+<style>
+    .study4-card {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .card-header-custom {
+        background-color: #2c3e50;
+        color: white;
+        border-radius: 12px 12px 0 0 !important;
+        padding: 15px 20px;
+    }
+
+    .detail-label {
+        color: #718096;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+    }
+
+    .detail-value {
+        color: #2d3748;
+        font-weight: 500;
+    }
+
+    .study4-badge {
+        border-radius: 50px;
+        padding: 5px 15px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .bg-warning-soft {
+        background: #fff3cd;
+        color: #856404;
+    }
+
+    .bg-success-soft {
+        background: #e6f4ea;
+        color: #1e7e34;
+    }
+
+    .bg-danger-soft {
+        background: #f8d7da;
+        color: #721c24;
+    }
+</style>
+
+<div class="container py-4">
+    <div class="mb-3">
+        <a asp-action="Index" class="text-decoration-none text-muted small fw-bold">
+            <i class="fas fa-chevron-left"></i> QUAY LẠI DANH SÁCH
+        </a>
+    </div>
+
+    <div class="card study4-card">
+        <div class="card-header-custom">
+            <h5 class="mb-0"><i class="fas fa-file-contract me-2"></i> Chi tiết đề xuất cấp chứng chỉ</h5>
+        </div>
+        <div class="card-body p-4">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <label class="detail-label d-block">Sinh viên</label>
+                    <span class="detail-value fs-5">@Model.LqvNguoiDung.LqvHoTen</span>
+                </div>
+                <div class="col-md-6">
+                    <label class="detail-label d-block">Khóa học</label>
+                    <span class="detail-value fs-5 text-primary">@Model.LqvKhoaHoc.LqvTenKhoaHoc</span>
+                </div>
+                <div class="col-md-6">
+                    <label class="detail-label d-block">Ngày đề xuất</label>
+                    <span class="detail-value">@Model.LqvNgayYeuCau?.ToString("dd/MM/yyyy HH:mm")</span>
+                </div>
+                <div class="col-md-6">
+                    <label class="detail-label d-block">Trạng thái</label>
+                    <div>
+                        @if (Model.LqvTrangThai == "GiangVienDeXuat")
+                        {
+                            <span class="study4-badge bg-warning-soft">Chờ Admin duyệt</span>
+                        }
+                        else if (Model.LqvTrangThai == "Đã duyệt")
+                        {
+                            <span class="study4-badge bg-success-soft">Đã duyệt</span>
+                        }
+                        else
+                        {
+                            <span class="study4-badge bg-danger-soft">Từ chối</span>
+                        }
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label class="detail-label d-block">Lý do đề xuất</label>
+                    <div class="p-3 bg-light rounded mt-1 detail-value">@Model.LqvLyDoYeuCau</div>
+                </div>
+
+                @if (!string.IsNullOrEmpty(Model.LqvLyDoTuChoi))
+                {
+                    <div class="col-12">
+                        <label class="detail-label d-block text-danger">Lý do từ chối từ Admin</label>
+                        <div class="p-3 border border-danger rounded mt-1 text-danger">@Model.LqvLyDoTuChoi</div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

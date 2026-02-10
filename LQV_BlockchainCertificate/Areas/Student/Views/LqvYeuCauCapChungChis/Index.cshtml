@@ -1,0 +1,191 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvYeuCauCapChungChi>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Lịch sử Yêu cầu Cấp Chứng chỉ";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<style>
+    :root {
+        --s4-primary: #002d72;
+        --s4-bg-light: #f8f9fa;
+    }
+
+    .page-header {
+        background: linear-gradient(90deg, var(--s4-primary), #0056b3);
+        padding: 2rem;
+        border-radius: 15px;
+        color: white;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 15px rgba(0, 45, 114, 0.2);
+    }
+
+    .table-container {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        border: none;
+    }
+
+    .table thead {
+        background-color: var(--s4-bg-light);
+    }
+
+        .table thead th {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: #555;
+            border-bottom: none;
+            padding: 1.2rem 1rem;
+        }
+
+    .status-badge {
+        padding: 0.5em 1em;
+        font-size: 0.75rem;
+        font-weight: 700;
+        border-radius: 50px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+        .status-badge::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            margin-right: 8px;
+            display: inline-block;
+        }
+
+    .status-pending {
+        background-color: #fff4e5;
+        color: #b76e00;
+    }
+
+        .status-pending::before {
+            background-color: #ffa117;
+        }
+
+    .status-approved {
+        background-color: #e6f9f0;
+        color: #008a4e;
+    }
+
+        .status-approved::before {
+            background-color: #00c46f;
+        }
+
+    .status-rejected {
+        background-color: #feebe9;
+        color: #d92d20;
+    }
+
+        .status-rejected::before {
+            background-color: #f04438;
+        }
+
+    .btn-action {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        transition: all 0.2s;
+    }
+</style>
+
+<div class="page-header d-flex justify-content-between align-items-center">
+    <div>
+        <h2 class="fw-bold mb-1">Hệ thống Skill Map</h2>
+        <p class="mb-0 opacity-75">Quản lý và theo dõi tiến trình cấp chứng chỉ Blockchain của bạn</p>
+    </div>
+    <a asp-action="Create" class="btn btn-light text-primary fw-bold rounded-pill px-4">
+        <i class="fas fa-plus-circle me-2"></i>Gửi yêu cầu mới
+    </a>
+</div>
+
+@if (TempData["SuccessMessage"] != null || TempData["InfoMessage"] != null)
+{
+    <div class="alert alert-custom bg-white border-0 shadow-sm rounded-4 mb-4 p-3 d-flex align-items-center">
+        <i class="fas fa-check-circle text-success fs-4 me-3"></i>
+        <span class="fw-medium">@(TempData["SuccessMessage"] ?? TempData["InfoMessage"])</span>
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+<div class="card table-container shadow-sm">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead>
+                <tr>
+                    <th class="ps-4">Mã số</th>
+                    <th>Khóa học</th>
+                    <th>Thời gian gửi</th>
+                    <th>Trạng thái</th>
+                    <th>Lý do (Nếu có)</th>
+                    <th class="text-end pe-4">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="ps-4 text-muted">#@item.LqvId</td>
+                        <td>
+                            <div class="fw-bold text-dark">@item.LqvKhoaHoc.LqvTenKhoaHoc</div>
+                            <div class="small text-muted">Hệ thống chứng chỉ số</div>
+                        </td>
+                        <td class="small">
+                            <i class="far fa-calendar-alt me-1 text-muted"></i>
+                            @(item.LqvNgayYeuCau?.ToString("dd/MM/yyyy"))
+                        </td>
+                        <td>
+                            @{
+                                string statusLabel = item.LqvTrangThai;
+                                string sClass = statusLabel switch
+                                {
+                                    "Chờ duyệt" => "status-pending",
+                                    "Đã duyệt" => "status-approved",
+                                    "Bị từ chối" or "Từ chối" or "Đã từ chối" => "status-rejected",
+                                    _ => "bg-light text-muted"
+                                };
+                            }
+                            <span class="status-badge @sClass">@statusLabel</span>
+                        </td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.LqvLyDoTuChoi))
+                            {
+                                <span class="text-truncate d-inline-block text-danger small" style="max-width: 150px;" title="@item.LqvLyDoTuChoi">
+                                    <i class="fas fa-comment-dots me-1"></i> @item.LqvLyDoTuChoi
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="text-muted small">---</span>
+                            }
+                        </td>
+                        <td class="text-end pe-4">
+                            <a asp-action="Details" asp-route-id="@item.LqvId" class="btn btn-action btn-outline-info" title="Xem"><i class="fas fa-eye"></i></a>
+                            @if (item.LqvTrangThai == "Chờ duyệt" || item.LqvTrangThai.Contains("từ chối"))
+                            {
+                               @*  <a asp-action="Edit" asp-route-id="@item.LqvId" class="btn btn-action btn-outline-primary mx-1"><i class="fas fa-edit"></i></a> *@
+                                <a asp-action="Delete" asp-route-id="@item.LqvId" class="btn btn-action btn-outline-danger"><i class="fas fa-trash"></i></a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    @if (!Model.Any())
+    {
+        <div class="text-center py-5">
+            <img src="https://cdn-icons-png.flaticon.com/512/7486/7486744.png" style="width: 80px; opacity: 0.5;" class="mb-3">
+            <h5 class="text-muted">Chưa có yêu cầu nào được tìm thấy</h5>
+        </div>
+    }
+</div>

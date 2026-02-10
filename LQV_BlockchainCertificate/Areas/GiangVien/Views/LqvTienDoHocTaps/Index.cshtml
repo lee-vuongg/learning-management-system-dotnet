@@ -1,0 +1,77 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvTienDoHocTap>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Tiến độ học tập";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h3 class="fw-800 mb-1">📈 Tiến độ học tập</h3>
+        <p class="text-muted small mb-0">Theo dõi lộ trình hoàn thành khóa học của sinh viên</p>
+    </div>
+    <a asp-action="Create" class="btn btn-primary rounded-3 fw-bold px-4 shadow-sm">
+        <i class="fas fa-plus-circle me-2"></i>Cập nhật tiến độ
+    </a>
+</div>
+
+<div class="card-s4 shadow-sm border-0">
+    <div class="table-responsive">
+        <table class="table table-hover mb-0 align-middle">
+            <thead class="bg-light">
+                <tr>
+                    <th class="ps-4 py-3">Sinh viên</th>
+                    <th class="py-3">Khóa học</th>
+                    <th class="py-3" style="width: 25%;">Tiến độ</th>
+                    <th class="py-3 text-center">Cập nhật cuối</th>
+                    <th class="py-3 text-end pe-4">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="ps-4">
+                            <div class="fw-bold text-dark">@item.LqvSinhVien?.LqvHoTen</div>
+                            <div class="small text-muted">Mã SV: @item.LqvSinhVienId</div>
+                        </td>
+                        <td>
+                            <span class="badge bg-soft-primary text-primary px-3 rounded-pill">
+                                @item.LqvKhoaHoc?.LqvTenKhoaHoc
+                            </span>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="progress flex-grow-1 shadow-sm" style="height: 8px; border-radius: 10px;">
+                                    @{
+                                        var colorClass = item.LqvTiLeHoanThanh >= 80 ? "bg-success" : (item.LqvTiLeHoanThanh >= 50 ? "bg-info" : "bg-warning");
+                                    }
+                                    <div class="progress-bar @colorClass progress-bar-striped progress-bar-animated"
+                                         style="width: @item.LqvTiLeHoanThanh%"></div>
+                                </div>
+                                <span class="ms-3 fw-bold text-dark small">@item.LqvTiLeHoanThanh%</span>
+                            </div>
+                        </td>
+                        <td class="text-center small text-muted">
+                            <i class="far fa-calendar-alt me-1"></i>
+                            @(item.LqvNgayCapNhat.HasValue ? item.LqvNgayCapNhat.Value.ToString("dd/MM/yyyy HH:mm") : "---")
+                        </td>
+                        <td class="text-end pe-4">
+                            <div class="btn-group shadow-sm rounded-3">
+                                <a asp-action="Details" asp-route-id="@item.LqvId" class="btn btn-white btn-sm border" title="Chi tiết">
+                                    <i class="fas fa-search-plus text-primary"></i>
+                                </a>
+                                <a asp-action="Edit" asp-route-id="@item.LqvId" class="btn btn-white btn-sm border" title="Chỉnh sửa">
+                                    <i class="fas fa-edit text-warning"></i>
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@item.LqvId" class="btn btn-white btn-sm border" title="Xóa">
+                                    <i class="fas fa-trash-alt text-danger"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

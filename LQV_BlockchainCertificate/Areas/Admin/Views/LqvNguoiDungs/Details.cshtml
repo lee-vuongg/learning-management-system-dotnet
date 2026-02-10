@@ -1,0 +1,107 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvNguoiDung
+
+@{
+    ViewData["Title"] = "Chi tiết thành viên";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .detail-card {
+        border-radius: 20px;
+        border: none;
+        background: #fff;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    }
+
+    .detail-header {
+        background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%);
+        padding: 40px;
+        border-radius: 20px 20px 0 0;
+        text-align: center;
+    }
+
+    .detail-avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 5px solid rgba(255,255,255,0.2);
+        margin-bottom: 15px;
+    }
+
+    .info-group {
+        padding: 20px;
+        border-bottom: 1px solid #f8f9fa;
+    }
+
+    .info-label {
+        color: #888;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .info-value {
+        color: #333;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    .wallet-box {
+        background: #f0f7ff;
+        padding: 15px;
+        border-radius: 12px;
+        border: 1px dashed #1976d2;
+        font-family: 'Courier New', monospace;
+        word-break: break-all;
+    }
+</style>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="detail-card">
+                <div class="detail-header text-white">
+                    <img src="@(string.IsNullOrEmpty(Model.LqvAvt) ? "/images/default-avatar.png" : Model.LqvAvt)" class="detail-avatar shadow" />
+                    <h4 class="mb-0 fw-bold">@Model.LqvHoTen</h4>
+                    <span class="badge bg-white text-primary mt-2 px-3 py-2">@Model.LqvRole?.LqvRoleName</span>
+                </div>
+
+                <div class="p-4">
+                    <div class="row">
+                        <div class="col-6 info-group">
+                            <span class="info-label">Tài khoản</span>
+                            <span class="info-value">@Model.LqvTenDangNhap</span>
+                        </div>
+                        <div class="col-6 info-group">
+                            <span class="info-label">Trạng thái</span>
+                            <span class="info-value">@(Model.LqvDaXacThuc == true ? "🟢 Hoạt động" : "🟡 Chờ duyệt")</span>
+                        </div>
+                        <div class="col-12 info-group">
+                            <span class="info-label">Email liên hệ</span>
+                            <span class="info-value">@Model.LqvEmail</span>
+                        </div>
+                        <div class="col-6 info-group">
+                            <span class="info-label">Ngày sinh</span>
+                            <span class="info-value">@Model.LqvNgaySinh?.ToString("dd/MM/yyyy")</span>
+                        </div>
+                        <div class="col-6 info-group">
+                            <span class="info-label">Ngày gia nhập</span>
+                            <span class="info-value">@Model.LqvNgayTao?.ToString("dd/MM/yyyy")</span>
+                        </div>
+                        <div class="col-12 info-group border-0">
+                            <span class="info-label">Địa chỉ ví Blockchain</span>
+                            <div class="wallet-box mt-2 text-primary">@Model.LqvWalletAddress</div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+                        <a asp-action="Index" class="btn btn-light px-4 fw-bold">Danh sách</a>
+                        <a asp-action="Edit" asp-route-id="@Model.LqvId" class="btn s4-btn-add px-4">Chỉnh sửa hồ sơ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

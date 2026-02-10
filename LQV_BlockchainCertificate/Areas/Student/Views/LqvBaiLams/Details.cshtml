@@ -1,0 +1,166 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvBaiLam
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Kết quả luyện tập";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<div class="container py-4">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+        <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-1">
+                    <li class="breadcrumb-item"><a asp-action="Index" class="text-decoration-none">Lịch sử</a></li>
+                    <li class="breadcrumb-item active">Chi tiết bài làm</li>
+                </ol>
+            </nav>
+            <h4 class="fw-bold mb-0">
+                📝 @Model.LqvLichThi?.LqvDeThi?.LqvTenDeThi
+            </h4>
+        </div>
+        <a asp-action="Index" class="btn btn-white border shadow-sm btn-sm rounded-pill px-3">
+            <i class="bi bi-chevron-left me-1"></i> Trở về
+        </a>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-lg-4">
+            <div class="card border-0 shadow-sm rounded-4 sticky-top" style="top: 24px;">
+                <div class="card-body p-4">
+                    <div class="text-center mb-4">
+                        <div class="display-4 fw-bold text-primary mb-1">
+                            @(Model.LqvDiem.HasValue ? Model.LqvDiem.Value.ToString("0.0") : "0")
+                        </div>
+                        <div class="text-muted small fw-medium text-uppercase">Điểm số đạt được</div>
+                    </div>
+
+                    <div class="list-group list-group-flush border-top pt-3">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="text-muted small">Lớp học:</span>
+                            <span class="fw-medium small">@Model.LqvLichThi?.LqvLopHoc?.LqvTenLop</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="text-muted small">Trạng thái:</span>
+                            <span class="badge rounded-pill @(Model.LqvTrangThai == "Hoàn thành" ? "bg-success-subtle text-success" : "bg-warning-subtle text-warning")">
+                                @Model.LqvTrangThai
+                            </span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="text-muted small">Bắt đầu:</span>
+                            <span class="fw-medium small text-dark">@Model.LqvThoiGianBatDau?.ToString("HH:mm, dd/MM/yyyy")</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span class="text-muted small">Nộp bài:</span>
+                            <span class="fw-medium small text-dark">@Model.LqvThoiGianNop?.ToString("HH:mm, dd/MM/yyyy")</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8">
+            <div class="d-flex align-items-center mb-3">
+                <h5 class="fw-bold mb-0 me-3">Phân tích câu hỏi</h5>
+                <hr class="flex-grow-1 opacity-10">
+            </div>
+
+            @if (Model.LqvChiTietBaiLams == null || !Model.LqvChiTietBaiLams.Any())
+            {
+                <div class="card border-0 shadow-sm p-5 text-center rounded-4">
+                    <p class="text-muted">Không tìm thấy dữ liệu chi tiết cho bài làm này.</p>
+                </div>
+            }
+            else
+            {
+                foreach (var (ct, index) in Model.LqvChiTietBaiLams.Select((v, i) => (v, i)))
+                {
+                    bool isCorrect = (ct.LqvDiem ?? 0) > 0;
+
+                    <div class="card border-0 shadow-sm mb-4 rounded-4 overflow-hidden">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-start mb-3">
+                                <span class="badge @(isCorrect ? "bg-success" : "bg-danger") me-3 px-3 py-2 rounded-3">
+                                    Câu @(index + 1)
+                                </span>
+                                <div class="flex-grow-1 pt-1 fw-bold text-dark" style="font-size: 1.05rem; line-height: 1.6;">
+                                    @ct.LqvCauHoi?.LqvNoiDung
+                                </div>
+                            </div>
+
+                            <div class="ms-1 ps-4 border-start border-2" style="border-color: #edf2f7 !important;">
+                                <div class="bg-light p-3 rounded-3 mb-3">
+                                    <small class="text-muted d-block mb-2 fw-medium text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.5px;">
+                                        Phần trả lời của bạn:
+                                    </small>
+
+                                    @if (ct.LqvCauHoi?.LqvLoai == "TuLuan")
+                                    {
+                                        <div class="text-dark" style="white-space: pre-wrap;">@ct.LqvTraLoiTuLuan</div>
+                                    }
+                                    else
+                                    {
+                                        <div class="fw-bold @(isCorrect ? "text-success" : "text-danger")">
+                                            <i class="bi @(isCorrect ? "bi-check-circle-fill" : "bi-x-circle-fill") me-2"></i>
+                                            @ct.LqvDapAn?.LqvNoiDung
+                                        </div>
+                                    }
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="small">
+                                        <span class="text-muted">Điểm đạt được:</span>
+                                        <span class="fw-bold ms-1 @(isCorrect ? "text-success" : "text-danger")">
+                                            @(ct.LqvDiem ?? 0)
+                                        </span>
+                                    </div>
+                                    @if (isCorrect)
+                                    {
+                                        <span class="text-success small fw-medium"><i class="bi bi-shield-check me-1"></i> Chính xác</span>
+                                    }
+                                    else if (ct.LqvCauHoi?.LqvLoai != "TuLuan")
+                                    {
+                                        <span class="text-danger small fw-medium"><i class="bi bi-exclamation-triangle me-1"></i> Chưa đúng</span>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #f7fafc;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+        content: "›";
+    }
+
+    .bg-success-subtle {
+        background-color: #c6f6d5 !important;
+        color: #2f855a !important;
+    }
+
+    .bg-warning-subtle {
+        background-color: #feebc8 !important;
+        color: #c05621 !important;
+    }
+
+    .card {
+        border: 1px solid rgba(0,0,0,.03) !important;
+    }
+
+    .btn-white {
+        background: #fff;
+        color: #4a5568;
+    }
+
+    .sticky-top {
+        z-index: 10;
+    }
+</style>

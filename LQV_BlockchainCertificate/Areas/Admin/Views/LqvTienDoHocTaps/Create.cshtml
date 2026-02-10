@@ -1,0 +1,57 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvTienDoHocTap
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = ViewContext.RouteData.Values["action"].ToString() == "Create" ? "Tạo mới" : "Cập nhật";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="s4-wrapper">
+    <div class="container" style="max-width: 600px;">
+        <div class="mb-4">
+            <a asp-action="Index" class="text-decoration-none text-muted small fw-bold">
+                <i class="fas fa-arrow-left me-2"></i>QUAY LẠI DANH SÁCH
+            </a>
+        </div>
+
+        <div class="s4-card">
+            <h4 class="fw-bold mb-4 text-dark">@ViewData["Title"] Tiến độ</h4>
+
+            <form asp-action="@ViewContext.RouteData.Values["action"]">
+                <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+                @if (ViewData["Title"].ToString() != "Tạo mới")
+                {
+                    <input type="hidden" asp-for="LqvId" />
+                }
+
+                <div class="mb-3">
+                    <label class="form-label small fw-bold text-muted">SINH VIÊN</label>
+                    <select asp-for="LqvSinhVienId" class="form-select rounded-3 p-2" asp-items="ViewBag.LqvSinhVienId"></select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label small fw-bold text-muted">KHÓA HỌC</label>
+                    <select asp-for="LqvKhoaHocId" class="form-select rounded-3 p-2" asp-items="ViewBag.LqvKhoaHocId"></select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label small fw-bold text-muted">TỈ LỆ HOÀN THÀNH (%)</label>
+                    <input asp-for="LqvTiLeHoanThanh" class="form-control rounded-3 p-2" type="number" min="0" max="100" />
+                    <span asp-validation-for="LqvTiLeHoanThanh" class="text-danger small"></span>
+                </div>
+
+                @if (ViewData["Title"].ToString() != "Tạo mới")
+                {
+                    <div class="mb-4">
+                        <label class="form-label small fw-bold text-muted">NGÀY CẬP NHẬT</label>
+                        <input asp-for="LqvNgayCapNhat" class="form-control rounded-3 p-2" />
+                    </div>
+                }
+
+                <div class="d-grid gap-2 mt-5">
+                    <button type="submit" class="btn btn-primary btn-s4 py-2">Lưu thông tin</button>
+                    <a asp-action="Index" class="btn btn-light btn-s4 py-2 text-muted">Hủy bỏ</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

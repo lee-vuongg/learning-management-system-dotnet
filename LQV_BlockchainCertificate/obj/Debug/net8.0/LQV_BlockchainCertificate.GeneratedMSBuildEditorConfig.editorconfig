@@ -1,0 +1,893 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = LQV_BlockchainCertificate
+build_property.RootNamespace = LQV_BlockchainCertificate
+build_property.ProjectDir = D:\Build APP IOS\LQV_BlockchainCertificate\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Build APP IOS\LQV_BlockchainCertificate
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvBoCauHois/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Qm9DYXVIb2lzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvBoCauHois/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Qm9DYXVIb2lzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvBoCauHois/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Qm9DYXVIb2lzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvBoCauHois/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Qm9DYXVIb2lzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvBoCauHois/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Qm9DYXVIb2lzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvBoCauHois/Questions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Qm9DYXVIb2lzXFF1ZXN0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvCauHois/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Q2F1SG9pc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvCauHois/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Q2F1SG9pc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvCauHois/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Q2F1SG9pc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvCauHois/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Q2F1SG9pc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvCauHois/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Q2F1SG9pc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvChungNhans/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Q2h1bmdOaGFuc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvChungNhans/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Q2h1bmdOaGFuc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvChungNhans/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Q2h1bmdOaGFuc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvChungNhans/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Q2h1bmdOaGFuc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvChungNhans/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Q2h1bmdOaGFuc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvDangKyLopHocs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2RGFuZ0t5TG9wSG9jc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvDangKyLopHocs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2RGFuZ0t5TG9wSG9jc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvDangKyLopHocs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2RGFuZ0t5TG9wSG9jc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvDangKyLopHocs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2RGFuZ0t5TG9wSG9jc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvDangKyLopHocs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2RGFuZ0t5TG9wSG9jc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvDapAns/ByCauHoi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2RGFwQW5zXEJ5Q2F1SG9pLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvDapAns/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2RGFwQW5zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvDapAns/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2RGFwQW5zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvDapAns/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2RGFwQW5zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvDapAns/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2RGFwQW5zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvDapAns/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2RGFwQW5zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvDeThis/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2RGVUaGlzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvDeThis/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2RGVUaGlzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvDeThis/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2RGVUaGlzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvDeThis/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2RGVUaGlzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvDeThis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2RGVUaGlzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvGiaoDichBlockchains/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2R2lhb0RpY2hCbG9ja2NoYWluc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvGiaoDichBlockchains/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2R2lhb0RpY2hCbG9ja2NoYWluc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvGiaoDichBlockchains/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2R2lhb0RpY2hCbG9ja2NoYWluc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvGiaoDichBlockchains/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2R2lhb0RpY2hCbG9ja2NoYWluc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvGiaoDichBlockchains/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2R2lhb0RpY2hCbG9ja2NoYWluc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvKhoaHocs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2S2hvYUhvY3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvKhoaHocs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2S2hvYUhvY3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvKhoaHocs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2S2hvYUhvY3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvKhoaHocs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2S2hvYUhvY3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvKhoaHocs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2S2hvYUhvY3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvLichThis/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2TGljaFRoaXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvLichThis/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2TGljaFRoaXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvLichThis/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2TGljaFRoaXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvLichThis/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2TGljaFRoaXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvLichThis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2TGljaFRoaXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvLopHocs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2TG9wSG9jc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvLopHocs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2TG9wSG9jc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvLopHocs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2TG9wSG9jc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvLopHocs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2TG9wSG9jc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvLopHocs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2TG9wSG9jc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvLopHocs/SinhVien.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2TG9wSG9jc1xTaW5oVmllbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvNguoiDungs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Tmd1b2lEdW5nc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvNguoiDungs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Tmd1b2lEdW5nc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvNguoiDungs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Tmd1b2lEdW5nc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvNguoiDungs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Tmd1b2lEdW5nc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvNguoiDungs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2Tmd1b2lEdW5nc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvNhatKyHoatDongs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2TmhhdEt5SG9hdERvbmdzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvNhatKyHoatDongs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2TmhhdEt5SG9hdERvbmdzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvNhatKyHoatDongs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2TmhhdEt5SG9hdERvbmdzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvPhanQuyens/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2UGhhblF1eWVuc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvPhanQuyens/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2UGhhblF1eWVuc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvPhanQuyens/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2UGhhblF1eWVuc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvPhanQuyens/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2UGhhblF1eWVuc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvPhanQuyens/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2UGhhblF1eWVuc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvTienDoHocTaps/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2VGllbkRvSG9jVGFwc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvTienDoHocTaps/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2VGllbkRvSG9jVGFwc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvTienDoHocTaps/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2VGllbkRvSG9jVGFwc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvTienDoHocTaps/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2VGllbkRvSG9jVGFwc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvTienDoHocTaps/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2VGllbkRvSG9jVGFwc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvXacThucChungNhans/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2WGFjVGh1Y0NodW5nTmhhbnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvXacThucChungNhans/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2WGFjVGh1Y0NodW5nTmhhbnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvXacThucChungNhans/LichSuTraCuu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2WGFjVGh1Y0NodW5nTmhhbnNcTGljaFN1VHJhQ3V1LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvYeuCauCapChungChis/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2WWV1Q2F1Q2FwQ2h1bmdDaGlzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvYeuCauCapChungChis/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2WWV1Q2F1Q2FwQ2h1bmdDaGlzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvYeuCauCapChungChis/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2WWV1Q2F1Q2FwQ2h1bmdDaGlzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvYeuCauCapChungChis/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2WWV1Q2F1Q2FwQ2h1bmdDaGlzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvYeuCauCapChungChis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2WWV1Q2F1Q2FwQ2h1bmdDaGlzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvYeuCauHoTroes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2WWV1Q2F1SG9Ucm9lc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvYeuCauHoTroes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2WWV1Q2F1SG9Ucm9lc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvYeuCauHoTroes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2WWV1Q2F1SG9Ucm9lc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/LqvYeuCauHoTroes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTHF2WWV1Q2F1SG9Ucm9lc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Auth/Views/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXV0aFxWaWV3c1xBY2NvdW50XEZvcmdvdFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Auth/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXV0aFxWaWV3c1xBY2NvdW50XExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Auth/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXV0aFxWaWV3c1xBY2NvdW50XFJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Auth/Views/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXV0aFxWaWV3c1xBY2NvdW50XFJlc2V0UGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Auth/Views/Account/VerifyOtp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXV0aFxWaWV3c1xBY2NvdW50XFZlcmlmeU90cC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Auth/Views/Account/VerifyOtpReset.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXV0aFxWaWV3c1xBY2NvdW50XFZlcmlmeU90cFJlc2V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXERhc2hib2FyZFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBaiLams/ChamBai.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJhaUxhbXNcQ2hhbUJhaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBaiLams/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJhaUxhbXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBaiLams/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJhaUxhbXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBaiTaps/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJhaVRhcHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBaiTaps/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJhaVRhcHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBaiTaps/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJhaVRhcHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBaiTaps/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJhaVRhcHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBaiTaps/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJhaVRhcHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBoCauHois/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJvQ2F1SG9pc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBoCauHois/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJvQ2F1SG9pc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBoCauHois/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJvQ2F1SG9pc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBoCauHois/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJvQ2F1SG9pc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBoCauHois/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJvQ2F1SG9pc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBoCauHois/Questions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJvQ2F1SG9pc1xRdWVzdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBuoiHocs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJ1b2lIb2NzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBuoiHocs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJ1b2lIb2NzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBuoiHocs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJ1b2lIb2NzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBuoiHocs/DiemDanh.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJ1b2lIb2NzXERpZW1EYW5oLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBuoiHocs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJ1b2lIb2NzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvBuoiHocs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkJ1b2lIb2NzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvCauHois/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkNhdUhvaXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvCauHois/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkNhdUhvaXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvCauHois/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkNhdUhvaXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvCauHois/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkNhdUhvaXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvCauHois/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkNhdUhvaXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvChiTietBaiLams/ByBaiLam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkNoaVRpZXRCYWlMYW1zXEJ5QmFpTGFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvChiTietBaiLams/ChamCauHoi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkNoaVRpZXRCYWlMYW1zXENoYW1DYXVIb2kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvDapAns/ByCauHoi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkRhcEFuc1xCeUNhdUhvaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvDapAns/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkRhcEFuc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvDapAns/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkRhcEFuc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvDapAns/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkRhcEFuc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvDapAns/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkRhcEFuc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvDapAns/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkRhcEFuc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvDeThis/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkRlVGhpc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvDeThis/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkRlVGhpc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvDeThis/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkRlVGhpc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvDeThis/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkRlVGhpc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvDeThis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkRlVGhpc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvDiemDanhGps/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkRpZW1EYW5oR3BzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvDiemDanhGps/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkRpZW1EYW5oR3BzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvDiemDanhGps/Map.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkRpZW1EYW5oR3BzXE1hcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvKhoaHocs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdktob2FIb2NzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvKhoaHocs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdktob2FIb2NzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvLopHocs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkxvcEhvY3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvLopHocs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkxvcEhvY3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvLopHocs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkxvcEhvY3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvLopHocs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkxvcEhvY3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvLopHocs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkxvcEhvY3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvLopHocs/SinhVien.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkxvcEhvY3NcU2luaFZpZW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvNopBaiTaps/ChamDiem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdk5vcEJhaVRhcHNcQ2hhbURpZW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvNopBaiTaps/DanhSachNop.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdk5vcEJhaVRhcHNcRGFuaFNhY2hOb3AuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvNopBaiTaps/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdk5vcEJhaVRhcHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvNopBaiTaps/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdk5vcEJhaVRhcHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvTienDoHocTaps/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdlRpZW5Eb0hvY1RhcHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvTienDoHocTaps/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdlRpZW5Eb0hvY1RhcHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvTienDoHocTaps/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdlRpZW5Eb0hvY1RhcHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvTienDoHocTaps/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdlRpZW5Eb0hvY1RhcHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvTienDoHocTaps/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdlRpZW5Eb0hvY1RhcHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvYeuCauCapChungChis/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdllldUNhdUNhcENodW5nQ2hpc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvYeuCauCapChungChis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdllldUNhdUNhcENodW5nQ2hpc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvYeuCauCapChungChis/SinhVienDuDieuKien.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdllldUNhdUNhcENodW5nQ2hpc1xTaW5oVmllbkR1RGlldUtpZW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXFNoYXJlZFxfVmFsaWRhdGlvblNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvBaiLams/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZCYWlMYW1zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvBaiLams/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZCYWlMYW1zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvBaiTaps/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZCYWlUYXBzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvBaiTaps/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZCYWlUYXBzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvBaiTaps/NopBai.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZCYWlUYXBzXE5vcEJhaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvBuoiHocs/ByLopHoc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZCdW9pSG9jc1xCeUxvcEhvYy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvBuoiHocs/CheckIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZCdW9pSG9jc1xDaGVja0luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvBuoiHocs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZCdW9pSG9jc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvBuoiHocs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZCdW9pSG9jc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvChungNhans/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZDaHVuZ05oYW5zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvChungNhans/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZDaHVuZ05oYW5zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvDangKyLopHocs/DangKy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZEYW5nS3lMb3BIb2NzXERhbmdLeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvDangKyLopHocs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZEYW5nS3lMb3BIb2NzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvDangKyLopHocs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZEYW5nS3lMb3BIb2NzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvDeThis/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZEZVRoaXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvDeThis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZEZVRoaXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvDiemDanhGps/CheckIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZEaWVtRGFuaEdwc1xDaGVja0luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvDiemDanhGps/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZEaWVtRGFuaEdwc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvGiaoDichBlockchains/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZHaWFvRGljaEJsb2NrY2hhaW5zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvGiaoDichBlockchains/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZHaWFvRGljaEJsb2NrY2hhaW5zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvKhoaHocs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZLaG9hSG9jc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvKhoaHocs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZLaG9hSG9jc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvKhoaHocs/ListAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZLaG9hSG9jc1xMaXN0QWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvLamBai/DoExam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZMYW1CYWlcRG9FeGFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvLamBai/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZMYW1CYWlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvLamBai/Result.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZMYW1CYWlcUmVzdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvLichThis/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZMaWNoVGhpc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvLichThis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZMaWNoVGhpc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvLopHocs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZMb3BIb2NzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvLopHocs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZMb3BIb2NzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvNguoiDungs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZOZ3VvaUR1bmdzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvNguoiDungs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZOZ3VvaUR1bmdzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvNguoiDungs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZOZ3VvaUR1bmdzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvNguoiDungs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZOZ3VvaUR1bmdzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvNguoiDungs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZOZ3VvaUR1bmdzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvXacThucChungNhans/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZYYWNUaHVjQ2h1bmdOaGFuc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvXacThucChungNhans/VerificationResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZYYWNUaHVjQ2h1bmdOaGFuc1xWZXJpZmljYXRpb25SZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvXacThucChungNhans/VerifyForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZYYWNUaHVjQ2h1bmdOaGFuc1xWZXJpZnlGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvYeuCauCapChungChis/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZZZXVDYXVDYXBDaHVuZ0NoaXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvYeuCauCapChungChis/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZZZXVDYXVDYXBDaHVuZ0NoaXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvYeuCauCapChungChis/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZZZXVDYXVDYXBDaHVuZ0NoaXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvYeuCauCapChungChis/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZZZXVDYXVDYXBDaHVuZ0NoaXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvYeuCauCapChungChis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZZZXVDYXVDYXBDaHVuZ0NoaXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvYeuCauHoTroes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZZZXVDYXVIb1Ryb2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvYeuCauHoTroes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZZZXVDYXVIb1Ryb2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvYeuCauHoTroes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZZZXVDYXVIb1Ryb2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvYeuCauHoTroes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZZZXVDYXVIb1Ryb2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/LqvYeuCauHoTroes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xMcXZZZXVDYXVIb1Ryb2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xTaGFyZWRcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Views/Home/VerifyCertificate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWZXJpZnlDZXJ0aWZpY2F0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Views/Home/VerifyResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWZXJpZnlSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-w3th05rtsj
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXFNoYXJlZFxfR2lhbmdWaWVuTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-84qlnq2ewm
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/Student/Views/Shared/_LayoutStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3R1ZGVudFxWaWV3c1xTaGFyZWRcX0xheW91dFN0dWRlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-t92evt6lkx
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-hgz99uq4gq

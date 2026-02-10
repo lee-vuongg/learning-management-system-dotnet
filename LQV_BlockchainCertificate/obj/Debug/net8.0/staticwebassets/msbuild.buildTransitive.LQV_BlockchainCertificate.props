@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\LQV_BlockchainCertificate.props" />
+</Project>

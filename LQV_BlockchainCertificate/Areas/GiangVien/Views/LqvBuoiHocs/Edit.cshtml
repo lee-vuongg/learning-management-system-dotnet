@@ -1,0 +1,163 @@
+﻿﻿
+@model LQV_BlockchainCertificate.Models.DBModel.LqvBuoiHoc
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var isEdit = ViewContext.RouteData.Values["action"]?.ToString() == "Edit";
+    ViewData["Title"] = isEdit ? "Cập nhật buổi học" : "Tạo buổi học";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<style>
+    .form-card {
+        background: white;
+        border-radius: 20px;
+        border: 1px solid #eef2f6;
+        padding: 2rem;
+    }
+
+    .map-container {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 2px solid #f1f5f9;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .form-label {
+        font-weight: 700;
+        color: #475569;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        border: 2px solid #f1f5f9;
+        padding: 0.6rem 1rem;
+    }
+
+        .form-control:focus {
+            border-color: #3b82f6;
+            box-shadow: none;
+        }
+</style>
+
+<div class="row mb-4">
+    <div class="col-12">
+        <h3 class="fw-800">@(isEdit ? "📍 Cập nhật vị trí & Thời gian" : "➕ Thiết lập buổi học mới")</h3>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-4">
+        <div class="form-card shadow-sm">
+            <form asp-action="@(isEdit ? "Edit" : "Create")">
+                @if (isEdit)
+                {
+                    <input type="hidden" asp-for="LqvBuoiHocId" />
+                }
+
+                <div class="mb-3">
+                    <label class="form-label">Lớp học</label>
+                    <select asp-for="LqvLopHocId"
+                            asp-items="ViewBag.LopHocList"
+                            class="form-select">
+                        <option value="">-- Chọn lớp học --</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Ngày học</label>
+                    <input asp-for="LqvNgayHoc" type="date" class="form-control" />
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <label class="form-label">Bắt đầu</label>
+                        <input asp-for="LqvGioBatDau" type="time" class="form-control" />
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Kết thúc</label>
+                        <input asp-for="LqvGioKetThuc" type="time" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <label class="form-label small text-primary">Vĩ độ (Lat)</label>
+                        <input asp-for="LqvViDo" id="lat" class="form-control bg-light fw-bold text-primary" readonly />
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label small text-primary">Kinh độ (Lng)</label>
+                        <input asp-for="LqvKinhDo" id="lng" class="form-control bg-light fw-bold text-primary" readonly />
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Bán kính điểm danh (mét)</label>
+                    <div class="input-group">
+                        <input asp-for="LqvBanKinh" id="radius" class="form-control fw-bold" min="10" />
+                        <span class="input-group-text bg-white">m</span>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg rounded-3 fw-bold shadow-sm">
+                        <i class="fas fa-save me-2"></i>Lưu thông tin
+                    </button>
+                    <a asp-action="Index" class="btn btn-light text-muted fw-bold">Hủy bỏ</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-lg-8">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-body p-2">
+                <div class="p-3 bg-soft-primary rounded-3 mb-2 small fw-bold text-primary">
+                    <i class="fas fa-info-circle me-2"></i> Click vào bản đồ để chọn tâm điểm danh GPS
+                </div>
+                <div id="map" class="map-container" style="height: 520px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+    var map = L.map('map').setView([21.0285, 105.8542], 15); // Hà Nội
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    var marker;
+    var circle;
+
+    map.on('click', function (e) {
+        var lat = e.latlng.lat;
+        var lng = e.latlng.lng;
+        var radius = document.getElementById('radius').value;
+
+        document.getElementById('lat').value = lat;
+        document.getElementById('lng').value = lng;
+
+        if (marker) map.removeLayer(marker);
+        if (circle) map.removeLayer(circle);
+
+        marker = L.marker([lat, lng]).addTo(map);
+        circle = L.circle([lat, lng], {
+            radius: radius,
+            color: 'blue',
+            fillOpacity: 0.3
+        }).addTo(map);
+    });
+
+    document.getElementById('radius').addEventListener('change', function () {
+        if (circle) {
+            circle.setRadius(this.value);
+        }
+    });
+</script>

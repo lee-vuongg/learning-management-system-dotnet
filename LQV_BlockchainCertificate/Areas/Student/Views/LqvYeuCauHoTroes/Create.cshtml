@@ -1,0 +1,99 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvYeuCauHoTro
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Gửi Yêu cầu Hỗ trợ Mới";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<style>
+    /* CSS Neon Dark Mode đã định nghĩa */
+    :root {
+        --color-card-bg: #1c233a;
+        --color-text-light: #e0e7ff;
+        --color-neon-blue: #4fd1c5;
+        --color-dark-bg: #0d1222;
+        --border-radius-lg: 12px;
+        --color-text-muted: #8c97b8;
+        --gradient-primary: linear-gradient(135deg, #4fd1c5 0%, #38b2ac 100%);
+    }
+
+    .card-custom {
+        background-color: var(--color-card-bg);
+        color: var(--color-text-light);
+        border-radius: var(--border-radius-lg);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        border: 1px solid #323b6b;
+    }
+
+    .form-control-dark, .form-select-dark {
+        background-color: #273059;
+        border: 1px solid #323b6b;
+        color: var(--color-text-light);
+        transition: border-color 0.3s;
+    }
+
+        .form-control-dark:focus, .form-select-dark:focus {
+            border-color: var(--color-neon-blue);
+            box-shadow: 0 0 0 0.25rem rgba(79, 209, 197, 0.25);
+            background-color: #273059;
+            color: var(--color-text-light);
+        }
+
+    .btn-neon-primary {
+        background: var(--gradient-primary);
+        border: none;
+        color: var(--color-dark-bg);
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+        .btn-neon-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+            color: var(--color-dark-bg);
+        }
+</style>
+
+<div class="d-flex justify-content-center">
+    <div class="card card-custom p-5 mx-auto" style="max-width: 600px;">
+        <h1 class="h3 mb-4 fw-bold text-center border-bottom pb-2" style="color: var(--color-neon-blue);">
+            @ViewData["Title"]
+        </h1>
+
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    @* Ẩn các trường không cần thiết/tự động gán *@
+                    <input type="hidden" asp-for="LqvNguoiDungId" />
+                    <input type="hidden" asp-for="LqvThoiGianGui" />
+                    <input type="hidden" asp-for="LqvTrangThai" />
+                    <input type="hidden" asp-for="LqvPhanHoi" />
+
+                    <p class="text-muted mb-4">
+                        <i class="fas fa-info-circle me-1"></i> Vui lòng mô tả chi tiết vấn đề bạn đang gặp phải. Yêu cầu của bạn sẽ được gửi và Admin sẽ phản hồi trong thời gian sớm nhất.
+                    </p>
+
+                    <div class="form-group mb-4">
+                        <label asp-for="LqvNoiDung" class="control-label fw-bold" style="color: var(--color-text-light);"><i class="fas fa-comment-alt me-2"></i>Nội dung Yêu cầu <span class="text-danger">*</span></label>
+                        <textarea asp-for="LqvNoiDung" class="form-control form-control-dark" rows="6" placeholder="Ví dụ: Lỗi không hiển thị chứng chỉ sau khi đăng nhập, cần hỗ trợ đổi mật khẩu..."></textarea>
+                        <span asp-validation-for="LqvNoiDung" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-between pt-3">
+                        <button type="submit" class="btn btn-neon-primary"><i class="fas fa-paper-plane me-2"></i>Gửi Yêu cầu</button>
+                        <a asp-action="Index" class="btn btn-outline-secondary" style="color:var(--color-text-muted); border-color:var(--color-text-muted);"><i class="fas fa-arrow-left me-2"></i>Hủy</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

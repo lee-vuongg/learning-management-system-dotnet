@@ -1,0 +1,157 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvChungNhan
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chi tiết Chứng nhận";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    :root {
+        --s4-primary: #007bff;
+        --s4-bg: #f8f9fa;
+        --s4-text-main: #202124;
+        --s4-text-muted: #5f6368;
+    }
+
+    .s4-wrapper {
+        padding: 2rem 1rem;
+        background-color: var(--s4-bg);
+        min-height: 100vh;
+    }
+
+    .s4-card {
+        background: #ffffff;
+        border-radius: 24px;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        padding: 2.5rem;
+    }
+
+    /* Nhãn bên trái */
+    .info-label {
+        color: var(--s4-text-muted);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+    }
+
+    /* Giá trị bên phải */
+    .info-value {
+        color: var(--s4-text-main);
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Badge trạng thái chuẩn Study4 */
+    .badge-s4 {
+        padding: 6px 16px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+
+    .bg-active {
+        background-color: #e6f4ea;
+        color: #1e7e34;
+    }
+
+    .bg-pending {
+        background-color: #fef7e0;
+        color: #b05a00;
+    }
+
+    /* Hash Box */
+    .hash-container {
+        background-color: #f1f3f4;
+        border-radius: 12px;
+        padding: 1rem;
+        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+        font-size: 0.85rem;
+        color: #3c4043;
+        border: 1px solid #e8eaed;
+        word-break: break-all;
+    }
+
+    .btn-s4-pill {
+        padding: 10px 24px;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+</style>
+
+<div class="s4-wrapper">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+
+                <div class="mb-4">
+                    <a asp-action="Index" class="text-decoration-none text-muted small fw-bold">
+                        <i class="fas fa-arrow-left me-2"></i>QUAY LẠI DANH SÁCH
+                    </a>
+                </div>
+
+                <div class="s4-card">
+                    <div class="d-flex justify-content-between align-items-start mb-5">
+                        <div>
+                            <h3 class="fw-bold text-dark mb-1">Thông tin Chứng nhận</h3>
+                            <p class="text-muted small">Dữ liệu được truy xuất trực tiếp từ Blockchain Core</p>
+                        </div>
+                        <span class="badge-s4 @(Model.LqvTrangThai == "Hoạt động" ? "bg-active" : "bg-pending")">
+                            <i class="fas fa-circle me-1" style="font-size: 8px;"></i> @Model.LqvTrangThai
+                        </span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="info-label">Mã chứng nhận (Code)</div>
+                            <div class="info-value text-primary fw-bold fs-5">@Model.LqvMaChungNhanCode</div>
+
+                            <div class="info-label">Sinh viên sở hữu</div>
+                            <div class="info-value">@Model.LqvSinhVien?.LqvHoTen</div>
+
+                            <div class="info-label">Thời gian cấp</div>
+                            <div class="info-value text-muted">@Model.LqvNgayCap.ToString("HH:mm - dd/MM/yyyy")</div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="info-label">Khóa học hoàn thành</div>
+                            <div class="info-value fw-bold">@Model.LqvKhoaHoc?.LqvTenKhoaHoc</div>
+
+                            <div class="info-label">Loại chứng nhận</div>
+                            <div class="info-value">Chính quy (Hệ thống)</div>
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <div class="info-label mb-2"><i class="fas fa-link me-1"></i> Chữ ký số Blockchain (Hash Value)</div>
+                            <div class="hash-container">
+                                @Model.LqvHashValue
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 pt-4 border-top d-flex gap-2">
+                        <a asp-action="Edit" asp-route-id="@Model.LqvMaChungNhan" class="btn btn-warning btn-s4-pill">
+                            <i class="fas fa-edit me-2"></i>Chỉnh sửa
+                        </a>
+                        <button class="btn btn-outline-primary btn-s4-pill" onclick="window.print()">
+                            <i class="fas fa-print me-2"></i>In chứng nhận
+                        </button>
+                        <a asp-action="Index" class="btn btn-light btn-s4-pill text-muted ms-auto">Đóng</a>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <p class="small text-muted">
+                        <i class="fas fa-shield-alt text-success me-1"></i>
+                        Chứng nhận này đã được xác thực bởi mạng lưới Blockchain bảo mật.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

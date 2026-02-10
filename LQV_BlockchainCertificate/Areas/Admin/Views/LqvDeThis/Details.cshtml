@@ -1,0 +1,69 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvDeThi
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chi tiết đề thi";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow rounded-4 p-4">
+                <div class="text-center mb-4 border-bottom pb-3">
+                    <h3 class="fw-bold text-primary mb-1">📄 Chi tiết đề thi</h3>
+                    <p class="text-muted small">Thông tin cấu trúc đề thi đã thiết lập</p>
+                </div>
+
+                <div class="row gy-3">
+                    <div class="col-5 text-muted small fw-bold">TÊN ĐỀ THI:</div>
+                    <div class="col-7 fw-bold">@Model.LqvTenDeThi</div>
+
+                    <div class="col-5 text-muted small fw-bold">BỘ CÂU HỎI:</div>
+                    <div class="col-7 text-primary fw-bold">
+                        @(Model.LqvBoCauHoi != null
+                            ? $"#{Model.LqvBoCauHoi.LqvBoCauHoiId}"
+                            : "Chưa gán")
+                    </div>
+
+                    <div class="col-5 text-muted small fw-bold">GIẢNG VIÊN:</div>
+                    <div class="col-7">
+                        @(Model.LqvGiangVien != null
+                            ? Model.LqvGiangVien.LqvHoTen
+                            : "Chưa xác định")
+                    </div>
+
+                    <div class="col-5 text-muted small fw-bold">THỜI GIAN:</div>
+                    <div class="col-7">@Model.LqvThoiGianThi phút</div>
+
+                    <div class="col-5 text-muted small fw-bold">TỔNG ĐIỂM:</div>
+                    <div class="col-7 text-success fw-bold">@Model.LqvTongDiem điểm</div>
+
+                    <div class="col-5 text-muted small fw-bold">TRẠNG THÁI:</div>
+                    <div class="col-7">
+                        @if (Model.LqvDaDuyet == true)
+                        {
+                            <span class="badge bg-success">Đã duyệt</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-warning text-dark">Chưa duyệt</span>
+                        }
+                    </div>
+                </div>
+
+                <div class="mt-4 d-flex gap-2">
+                    <a asp-action="Index" class="btn btn-outline-secondary flex-grow-1">Quay lại</a>
+
+                    @if (Model.LqvDaDuyet != true)
+                    {
+                        <a asp-action="Edit"
+                           asp-route-id="@Model.LqvDeThiId"
+                           class="btn btn-warning fw-bold">
+                            Sửa đề
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

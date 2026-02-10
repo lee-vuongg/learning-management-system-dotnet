@@ -1,0 +1,376 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Areas.GiangVien.Controllers.LqvDiemDanhGpsController.LqvDiemDanhGroupVM>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Lịch sử điểm danh";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+
+    // Nhóm trực tiếp theo NgayHoc vì nó đã là kiểu DateOnly
+    var groupedByDate = Model.GroupBy(x => x.NgayHoc).OrderByDescending(x => x.Key);
+}
+
+<style>
+    :root {
+        --s4-primary: #3b82f6;
+        --s4-success: #10b981;
+        --s4-danger: #ef4444;
+        --s4-bg: #f8fafc;
+        --s4-border: #e2e8f0;
+        --s4-excel: #1d6f42;
+    }
+
+    body {
+        background-color: var(--s4-bg);
+        font-family: 'Inter', sans-serif;
+    }
+
+    .s4-wrapper {
+        padding: 2rem 1.5rem;
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* Header Button Export */
+    .btn-export-main {
+        background: var(--s4-excel);
+        color: white;
+        border: none;
+        padding: 10px 24px;
+        border-radius: 12px;
+        font-weight: 700;
+        transition: all 0.3s;
+        box-shadow: 0 4px 12px rgba(29, 111, 66, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+        .btn-export-main:hover {
+            background: #155231;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+    /* Timeline style cho Ngày học */
+    .date-group {
+        border-left: 3px solid var(--s4-primary);
+        padding-left: 1.5rem;
+        margin-bottom: 3rem;
+        position: relative;
+    }
+
+        .date-group::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--s4-primary);
+        }
+
+    .date-label {
+        font-weight: 800;
+        font-size: 1.2rem;
+        color: #1e293b;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Card Lớp trong ngày */
+    .class-card-dd {
+        background: white;
+        border-radius: 16px;
+        border: 1px solid var(--s4-border);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        margin-bottom: 1rem;
+        overflow: hidden;
+    }
+
+    .dd-trigger {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        background: #fff;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    /* Table UI */
+    .table-dd thead th {
+        background: #f8fafc;
+        color: #64748b;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 1rem;
+        border: none;
+    }
+
+    .table-dd td {
+        padding: 1rem;
+        vertical-align: middle;
+        border-bottom: 1px solid #f1f5f9;
+        font-size: 0.85rem;
+    }
+
+    /* Avatar & Badge */
+    .avatar-sm {
+        width: 34px;
+        height: 34px;
+        background: #eff6ff;
+        color: var(--s4-primary);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 0.8rem;
+    }
+
+    .gps-code {
+        font-family: 'Fira Code', monospace;
+        background: #f1f5f9;
+        padding: 3px 8px;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        color: #475569;
+    }
+
+    .status-badge {
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.7rem;
+    }
+
+    .valid {
+        background: #dcfce7;
+        color: #15803d;
+    }
+
+    .invalid {
+        background: #fee2e2;
+        color: #b91c1c;
+    }
+
+    .btn-action-dd {
+        padding: 5px 12px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 0.75rem;
+        border: 1px solid #e2e8f0;
+        background: #fff;
+        transition: all 0.2s;
+    }
+
+        .btn-action-dd:hover {
+            background: #f8fafc;
+            border-color: var(--s4-primary);
+            color: var(--s4-primary);
+        }
+</style>
+
+<div class="s4-wrapper">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <div>
+            <h3 class="fw-800 mb-1">📋 Nhật ký điểm danh GPS</h3>
+            <p class="text-muted small mb-0">Hệ thống Skill Map - Quản lý sự hiện diện thực tế</p>
+        </div>
+        <button type="button" class="btn-export-main" data-bs-toggle="modal" data-bs-target="#exportModal">
+            <i class="fas fa-file-excel"></i> Xuất báo cáo Excel
+        </button>
+    </div>
+
+    @foreach (var dateGroup in groupedByDate)
+    {
+        <div class="date-group">
+            <div class="date-label">
+                <i class="far fa-calendar-alt text-primary"></i>
+                Ngày @dateGroup.Key.ToString("dd/MM/yyyy")
+                <span class="badge bg-light text-muted fw-normal border fs-6">@dateGroup.Count() lớp học</span>
+            </div>
+
+            @foreach (var classGroup in dateGroup)
+            {
+                var collapseId = $"collapse_{classGroup.TenLop.Replace(" ", "")}_{dateGroup.Key.ToString("yyyyMMdd")}";
+
+                <div class="class-card-dd">
+                    <button class="dd-trigger collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#@collapseId">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width:32px; height:32px;">
+                                <i class="fas fa-graduation-cap small" style="font-size: 0.8rem;"></i>
+                            </div>
+                            <div class="text-start">
+                                <span class="fw-bold text-dark d-block">Lớp: @classGroup.TenLop</span>
+                                <small class="text-muted">@classGroup.Items.Count lượt quét thành công</small>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-down text-muted small"></i>
+                    </button>
+
+                    <div id="@collapseId" class="collapse">
+                        <div class="table-responsive">
+                            <table class="table table-dd mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="ps-4">Sinh viên</th>
+                                        <th class="text-center">Giờ quét</th>
+                                        <th class="text-center">Vị trí GPS</th>
+                                        <th class="text-center">Trạng thái</th>
+                                        <th class="text-end pe-4">Công cụ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in classGroup.Items)
+                                    {
+                                        <tr>
+                                            <td class="ps-4">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div class="avatar-sm">@item.LqvSinhVien.LqvHoTen.Substring(0, 1).ToUpper()</div>
+                                                    <div>
+                                                        <div class="fw-bold text-dark">@item.LqvSinhVien.LqvHoTen</div>
+                                                        <div class="text-muted" style="font-size: 10px;">ID: @item.LqvSinhVienId</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="fw-800 text-dark">@item.LqvThoiGian.ToString("HH:mm:ss")</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <code class="gps-code">@($"{item.LqvViDo:F4}, {item.LqvKinhDo:F4}")</code>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="status-badge @(item.LqvHopLe ? "valid" : "invalid")">
+                                                    <i class="fas @(item.LqvHopLe ? "fa-check" : "fa-map-marker-slash") me-1"></i>
+                                                    @(item.LqvHopLe ? "Hợp lệ" : "Ngoài vùng")
+                                                </span>
+                                            </td>
+                                            <td class="text-end pe-4">
+                                                <div class="d-flex justify-content-end gap-2">
+                                                    <a asp-action="Map" asp-route-buoiHocId="@item.LqvBuoiHocId" class="btn-action-dd text-decoration-none">
+                                                        <i class="fas fa-map-marked-alt text-primary"></i> Map
+                                                    </a>
+                                                    <a asp-action="Details" asp-route-id="@item.LqvId" class="btn-action-dd text-decoration-none">Chi tiết</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+
+    @if (!Model.Any())
+    {
+        <div class="text-center py-5 bg-white rounded-4 border shadow-sm">
+            <img src="https://cdn-icons-png.flaticon.com/512/6598/6598519.png" width="60" class="opacity-25 mb-3">
+            <p class="text-muted fw-bold">Chưa có nhật ký điểm danh nào trong hệ thống</p>
+        </div>
+    }
+</div>
+
+<div class="modal fade" id="exportModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header bg-light border-0">
+                <h5 class="modal-title fw-bold">Tùy chọn xuất dữ liệu Excel</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="exportForm" method="get">
+                <div class="modal-body p-4">
+                    <div class="mb-4">
+                        <label class="form-label fw-bold text-dark">1. Bạn muốn xuất dữ liệu nào?</label>
+                        <select class="form-select form-select-lg" id="exportType">
+                            <option value="buoi">Chỉ xuất Buổi học này (Chi tiết GPS)</option>
+                            <option value="lop">Xuất tất cả ngày học của Lớp</option>
+                            <option value="all">🚀 Xuất TẤT CẢ các lớp (Phân Sheet)</option>
+                        </select>
+                    </div>
+
+                    <div id="selectionArea">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-dark">2. Chọn Lớp học & Ngày</label>
+                            <select class="form-select" name="id" id="dataSelector">
+                                @foreach (var dateGroup in groupedByDate)
+                                {
+                                    <optgroup label="Ngày @dateGroup.Key.ToString("dd/MM/yyyy")">
+                                        @foreach (var classGroup in dateGroup)
+                                        {
+                                            var bId = classGroup.Items.First().LqvBuoiHocId;
+                                            var lId = classGroup.Items.First().LqvLopHocId;
+                                            <option value="@bId" data-lopid="@lId">Lớp @classGroup.TenLop</option>
+                                        }
+                                    </optgroup>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="allNote" class="alert alert-info border-0 small mt-2" style="display:none;">
+                        <i class="fas fa-info-circle me-2"></i> Hệ thống sẽ xuất toàn bộ dữ liệu. Mỗi lớp học sẽ được tự động tách thành một Sheet riêng biệt.
+                    </div>
+                </div>
+                <div class="modal-footer bg-light border-0">
+                    <button type="button" class="btn btn-secondary border-0" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-success px-4 fw-bold">
+                        <i class="fas fa-file-download me-2"></i>Tải file ngay
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const exportType = document.getElementById('exportType');
+        const exportForm = document.getElementById('exportForm');
+        const selector = document.getElementById('dataSelector');
+        const selectionArea = document.getElementById('selectionArea');
+        const allNote = document.getElementById('allNote');
+
+        exportType.addEventListener('change', function() {
+            const type = this.value;
+            selectionArea.style.display = "block";
+            allNote.style.display = "none";
+
+            if (type === 'buoi') {
+                exportForm.action = '@Url.Action("ExportExcel")';
+                selector.name = "buoiHocId";
+            }
+            else if (type === 'lop') {
+                exportForm.action = '@Url.Action("ExportExcelByLop")';
+                selector.name = "lopHocId";
+                syncLopId();
+            }
+            else if (type === 'all') {
+                exportForm.action = '@Url.Action("ExportExcelAllClasses")';
+                selectionArea.style.display = "none";
+                allNote.style.display = "block";
+            }
+        });
+
+        function syncLopId() {
+            if (exportType.value === 'lop') {
+                const selected = selector.options[selector.selectedIndex];
+                const lopId = selected.getAttribute('data-lopid');
+                selector.value = lopId;
+            }
+        }
+
+        selector.addEventListener('change', syncLopId);
+
+        // Khởi tạo mặc định
+        window.onload = () => { exportType.dispatchEvent(new Event('change')); };
+    </script>
+}

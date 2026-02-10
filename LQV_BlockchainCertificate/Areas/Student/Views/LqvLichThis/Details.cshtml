@@ -1,0 +1,57 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvLichThi
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Thông tin bài thi";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+    var now = DateTime.Now;
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="bg-primary p-4 text-white text-center">
+                    <h4 class="mb-0 fw-bold">Thông tin chi tiết kỳ thi</h4>
+                </div>
+                <div class="card-body p-4 p-md-5">
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold text-dark">@Model.LqvDeThi.LqvTenDeThi</h2>
+                        <span class="text-muted">Lớp: @Model.LqvLopHoc.LqvTenLop</span>
+                    </div>
+
+                    <div class="row g-4 mb-5">
+                        <div class="col-6 text-center border-end">
+                            <p class="text-muted mb-1 small uppercase fw-bold">THỜI GIAN MỞ</p>
+                            <h6 class="fw-bold">@Model.LqvBatDau.ToString("dd/MM/yyyy HH:mm")</h6>
+                        </div>
+                        <div class="col-6 text-center">
+                            <p class="text-muted mb-1 small uppercase fw-bold">THỜI GIAN ĐÓNG</p>
+                            <h6 class="fw-bold">@Model.LqvKetThuc.ToString("dd/MM/yyyy HH:mm")</h6>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info border-0 rounded-4 p-3 d-flex align-items-center">
+                        <i class="bi bi-info-circle-fill fs-4 me-3"></i>
+                        <div>
+                            Vui lòng đảm bảo kết nối internet ổn định trong suốt quá trình làm bài. Hệ thống sẽ tự động nộp bài khi hết giờ.
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-5 gap-3">
+                        <a asp-action="Index" class="btn btn-light rounded-pill px-4">Quay lại</a>
+                        @if (now >= Model.LqvBatDau && now <= Model.LqvKetThuc)
+                        {
+                            <a asp-action="VaoThi" asp-route-id="@Model.LqvLichThiId" class="btn btn-success btn-lg rounded-pill px-5 fw-bold shadow-sm">
+                                🚀 BẮT ĐẦU LÀM BÀI
+                            </a>
+                        }
+                        else
+                        {
+                            <button class="btn btn-secondary btn-lg rounded-pill px-5 disabled">Chưa đến giờ thi</button>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

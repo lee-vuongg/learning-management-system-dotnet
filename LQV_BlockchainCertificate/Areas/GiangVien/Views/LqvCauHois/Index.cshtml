@@ -1,0 +1,80 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvCauHoi>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Câu hỏi";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<h3>Bộ câu hỏi: <b>@ViewBag.TenBo</b></h3>
+
+<a class="btn btn-primary mb-3"
+   asp-action="Create"
+   asp-route-boId="@ViewBag.BoId">
+    + Thêm câu hỏi
+</a>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>#</th>
+            <th>Nội dung</th>
+            <th>Điểm</th>
+            <th>Loại</th>
+            <th width="260">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var q in Model)
+        {
+            <tr>
+                <td>@q.LqvCauHoiId</td>
+                <td>@q.LqvNoiDung</td>
+                <td>@q.LqvDiem</td>
+                <td>@q.LqvLoai</td>
+                <td>
+                    <a class="btn btn-sm btn-warning"
+                       asp-action="Edit"
+                       asp-route-id="@q.LqvCauHoiId">Sửa</a>
+
+                    <form asp-action="Delete"
+                          asp-route-id="@q.LqvCauHoiId"
+                          method="post"
+                          class="d-inline"
+                          onsubmit="return confirm('Xóa câu hỏi này?')">
+                        <button class="btn btn-sm btn-danger">Xóa</button>
+                    </form>
+
+                    <button class="btn btn-sm btn-success"
+                            onclick="toggleAnswers(@q.LqvCauHoiId)">
+                        Đáp án
+                    </button>
+                </td>
+            </tr>
+
+            <tr id="answers-@q.LqvCauHoiId" style="display:none">
+                <td colspan="5">
+                    <div id="answers-content-@q.LqvCauHoiId"></div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function toggleAnswers(id) {
+        const row = document.getElementById('answers-' + id);
+        const box = document.getElementById('answers-content-' + id);
+
+        if (row.style.display === 'none') {
+            fetch('/GiangVien/LqvDapAns/ByCauHoi?cauHoiId=' + id)
+                .then(r => r.text())
+                .then(html => {
+                    box.innerHTML = html;
+                    row.style.display = '';
+                });
+        } else {
+            row.style.display = 'none';
+        }
+    }
+</script>

@@ -1,0 +1,57 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Xác thực Email";
+    var email = ViewBag.Email as string;
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5" style="max-width: 500px;">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4">
+            <h3 class="text-center mb-4 text-primary fw-bold">Xác thực Email</h3>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger">@ViewBag.Error</div>
+            }
+            @if (ViewBag.Success != null)
+            {
+                <div class="alert alert-success">@ViewBag.Success</div>
+            }
+
+            <p class="text-center text-muted">
+                Chúng tôi đã gửi mã OTP đến địa chỉ email: <br />
+                <strong>@email</strong>
+            </p>
+
+            <form asp-action="VerifyOtp" method="post" class="text-center">
+                <input type="hidden" name="email" value="@email" />
+
+                <div class="mb-3">
+                    <label for="otp" class="form-label fw-semibold">Nhập mã OTP</label>
+                    <input type="text" id="otp" name="otp" class="form-control text-center"
+                           placeholder="Nhập 6 chữ số OTP" maxlength="6" required />
+                </div>
+
+                <button type="submit" class="btn btn-success w-100 mb-3">
+                    <i class="bi bi-check-circle"></i> Xác nhận mã
+                </button>
+            </form>
+
+            <form asp-action="ResendOtp" method="post" class="text-center">
+                <input type="hidden" name="email" value="@email" />
+                <button type="submit" class="btn btn-outline-primary w-100">
+                    <i class="bi bi-arrow-repeat"></i> Gửi lại mã OTP
+                </button>
+            </form>
+
+            <div class="text-center mt-4">
+                <a asp-action="Login" asp-controller="Account" class="text-decoration-none">
+                    <i class="bi bi-box-arrow-in-right"></i> Quay lại đăng nhập
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+

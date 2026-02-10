@@ -1,0 +1,121 @@
+﻿@model LQV_BlockchainCertificate.Models.ViewModels.SinhVienLopHocListViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Sinh viên lớp";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="vision-card">
+
+    <div class="card-header-vision d-flex justify-content-between">
+        <h5>
+            <i class="fas fa-user-graduate me-2"></i>
+            Sinh viên – <strong>@Model.TenLop</strong>
+        </h5>
+
+        <button class="btn btn-sm vision-btn-create"
+                data-bs-toggle="modal"
+                data-bs-target="#addModal">
+            <i class="fas fa-user-plus"></i> Gán sinh viên
+        </button>
+    </div>
+
+    <div class="card-body">
+        <table class="table vision-table">
+            <thead>
+                <tr>
+                    <th>Họ tên</th>
+                    <th>Email</th>
+                    <th>% Chuyên cần</th>
+                    <th>Chứng chỉ</th>
+                    <th class="text-center" width="120">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sv in Model.SinhViens)
+                {
+                    <tr>
+                        <td>@sv.HoTen</td>
+                        <td>@sv.Email</td>
+                        <td>@sv.ChuyenCan %</td>
+                        <td>
+                            @Html.Raw(sv.DuDieuKienChungChi
+                                     ? "<span class='text-success'>✔</span>"
+                                     : "<span class='text-danger'>✖</span>")
+                        </td>
+
+                        <td class="text-center">
+                            <button class="btn btn-sm btn-danger"
+                                    onclick="xoaSV(@Model.LopHocId,@sv.SinhVienId)">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- MODAL GÁN SINH VIÊN -->
+<div class="modal fade" id="addModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Gán sinh viên vào lớp</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                @foreach (var sv in ViewBag.SinhVienChuaCoLop)
+                {
+                    <div class="form-check">
+                        <input class="form-check-input sv"
+                               type="checkbox"
+                               value="@sv.LqvId" />
+                        <label class="form-check-label">
+                            @sv.LqvHoTen (@sv.LqvEmail)
+                        </label>
+                    </div>
+                }
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="ganSV()">
+                    <i class="fas fa-save"></i> Lưu
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function ganSV() {
+            let ids = [];
+            document.querySelectorAll('.sv:checked')
+                .forEach(x => ids.push(parseInt(x.value)));
+
+            fetch('/Admin/LqvLopHocs/GanSinhVien', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    lopHocId: @Model.LopHocId,
+                    sinhVienIds: ids
+                })
+            }).then(() => location.reload());
+        }
+
+        function xoaSV(lop, sv) {
+            fetch('/Admin/LqvLopHocs/XoaSinhVien', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    lopHocId: lop,
+                    sinhVienId: sv
+                })
+            }).then(() => location.reload());
+        }
+    </script>
+}

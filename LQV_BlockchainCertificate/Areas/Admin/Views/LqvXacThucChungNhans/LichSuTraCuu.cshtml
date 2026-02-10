@@ -1,0 +1,156 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvXacThucChungNhan>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Lịch sử Tra cứu Xác minh";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    :root {
+        --s4-primary: #007bff;
+        --s4-success: #28a745;
+        --s4-danger: #dc3545;
+        --s4-gray: #5f6368;
+    }
+
+    .s4-wrapper {
+        padding: 1.5rem;
+        background: #f8f9fa;
+        min-height: 100vh;
+    }
+
+    .s4-card {
+        background: #fff;
+        border-radius: 20px;
+        border: none;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        padding: 1.5rem;
+    }
+
+    .s4-table thead th {
+        background: #f1f3f4;
+        border: none;
+        color: var(--s4-gray);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 1rem;
+    }
+
+    .s4-table tbody tr {
+        border-bottom: 1px solid #f1f3f4;
+        transition: 0.2s;
+    }
+
+        .s4-table tbody tr:hover {
+            background-color: #f8faff;
+        }
+
+    .s4-table td {
+        padding: 1rem;
+        vertical-align: middle;
+        font-size: 0.9rem;
+        color: #202124;
+    }
+
+    /* Badge phong cách Study4 */
+    .s4-badge {
+        border-radius: 50px;
+        padding: 5px 12px;
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+
+    .bg-s4-success {
+        background: #e6f4ea;
+        color: var(--s4-success);
+    }
+
+    .bg-s4-danger {
+        background: #fce8e6;
+        color: var(--s4-danger);
+    }
+
+    .bg-s4-secondary {
+        background: #f1f3f4;
+        color: var(--s4-gray);
+    }
+
+    .btn-action-s4 {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+    }
+</style>
+
+<div class="s4-wrapper">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h4 class="fw-bold mb-0 text-dark">Lịch sử Tra cứu</h4>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item small"><a href="#">Hệ thống</a></li>
+                    <li class="breadcrumb-item small active">Xác minh</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="s4-card">
+        <div class="table-responsive">
+            <table class="table s4-table">
+                <thead>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th>Mã Chứng nhận</th>
+                        <th>Địa chỉ Người tra cứu</th>
+                        <th>Thời gian</th>
+                        <th class="text-center">Kết quả</th>
+                        <th class="text-end">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="text-center text-muted fw-bold">#@item.LqvId</td>
+                                <td><span class="fw-bold text-primary">@item.LqvMaChungNhanCode</span></td>
+                                <td>
+                                    <div class="text-truncate" style="max-width: 180px;" title="@item.LqvDiaChiNguoiXacThuc">
+                                        @item.LqvDiaChiNguoiXacThuc
+                                    </div>
+                                </td>
+                                <td>@item.LqvThoiGianXacThuc.ToString("dd/MM/yyyy HH:mm")</td>
+                                <td class="text-center">
+                                    @{
+                                        var statusClass = item.LqvKetQua == "Hợp lệ" ? "bg-s4-success" :
+                                        (item.LqvKetQua == "Không hợp lệ" ? "bg-s4-danger" : "bg-s4-secondary");
+                                    }
+                                    <span class="s4-badge @statusClass">@item.LqvKetQua</span>
+                                </td>
+                                <td class="text-end">
+                                    <a asp-action="Details" asp-route-id="@item.LqvId" class="btn-action-s4 bg-light text-info me-1 shadow-sm">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a asp-action="Delete" asp-route-id="@item.LqvId" class="btn-action-s4 bg-light text-danger shadow-sm">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="6" class="text-center py-5 text-muted">Chưa có dữ liệu tra cứu.</td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

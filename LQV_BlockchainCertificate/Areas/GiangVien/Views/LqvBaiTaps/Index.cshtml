@@ -1,0 +1,263 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Areas.GiangVien.Controllers.LqvBaiTapsController.LqvBaiTapGroupVM>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Danh sách bài tập";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+
+    // Gom nhóm bài tập theo TenLop để giao diện gọn gàng
+    var groupedExercises = Model.GroupBy(x => x.TenLop).ToList();
+}
+
+<style>
+    :root {
+        --s4-primary: #4f46e5;
+        --s4-bg: #f8fafc;
+        --s4-border: #e2e8f0;
+    }
+
+    body {
+        background-color: var(--s4-bg);
+        font-family: 'Inter', sans-serif;
+    }
+
+    .fw-800 {
+        font-weight: 800;
+        letter-spacing: -0.02em;
+    }
+
+    /* Card lớp học */
+    .class-section {
+        background: white;
+        border-radius: 16px;
+        border: 1px solid var(--s4-border);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        margin-bottom: 2.5rem;
+        overflow: hidden;
+    }
+
+    .class-section-header {
+        padding: 1.25rem 1.5rem;
+        background: #ffffff;
+        border-bottom: 2px solid #f1f5f9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Table Styling */
+    .table-s4 thead th {
+        background: #f8fafc;
+        color: #64748b;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 1rem;
+        border: none;
+    }
+
+    .table-s4 td {
+        padding: 1.25rem 1rem;
+        vertical-align: middle;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    /* Exercise Info */
+    .ex-title {
+        color: var(--s4-primary);
+        font-weight: 700;
+        font-size: 0.95rem;
+        margin-bottom: 2px;
+    }
+
+    .ex-desc {
+        font-size: 0.8rem;
+        color: #64748b;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* Badges */
+    .s4-badge {
+        padding: 5px 12px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.75rem;
+    }
+
+    .badge-submitted {
+        background: #eef2ff;
+        color: var(--s4-primary);
+        border: 1px solid #e0e7ff;
+    }
+
+    .badge-open {
+        background: #f0fdf4;
+        color: #16a34a;
+        border: 1px solid #dcfce7;
+    }
+
+    .badge-closed {
+        background: #f8fafc;
+        color: #94a3b8;
+        border: 1px solid #e2e8f0;
+    }
+
+    /* Action Buttons */
+    .action-link {
+        width: 34px;
+        height: 34px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        transition: all 0.2s;
+        border: 1px solid #f1f5f9;
+        background: white;
+        color: #64748b;
+        text-decoration: none;
+    }
+
+        .action-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+    .link-inbox:hover {
+        color: var(--s4-primary);
+        border-color: #c7d2fe;
+        background: #f5f3ff;
+    }
+
+    .link-edit:hover {
+        color: #d97706;
+        border-color: #fde68a;
+        background: #fffbeb;
+    }
+
+    .link-delete:hover {
+        color: #dc2626;
+        border-color: #fecaca;
+        background: #fef2f2;
+    }
+
+    .btn-create {
+        background: var(--s4-primary);
+        border: none;
+        padding: 10px 24px;
+        border-radius: 99px;
+        transition: all 0.3s;
+    }
+
+        .btn-create:hover {
+            background: #4338ca;
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.4);
+        }
+</style>
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <div>
+            <h3 class="fw-800 mb-1 text-dark">📚 Quản lý bài tập</h3>
+            <p class="text-muted small mb-0">Hệ thống gợi ý lộ trình phát triển kỹ năng</p>
+        </div>
+        <a asp-action="Create" class="btn btn-primary btn-create fw-bold shadow-sm">
+            <i class="fas fa-plus-circle me-2"></i>Tạo bài tập mới
+        </a>
+    </div>
+
+    @foreach (var group in groupedExercises)
+    {
+        <div class="class-section">
+            <div class="class-section-header">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="bg-light rounded-3 p-2 px-3 border">
+                        <i class="fas fa-graduation-cap text-primary"></i>
+                    </div>
+                    <div>
+                        <h5 class="mb-0 fw-bold">Lớp: @group.Key</h5>
+                        <small class="text-muted">Đang có @group.Count() bài tập</small>
+                    </div>
+                </div>
+                <div class="d-flex gap-2">
+                    <span class="badge bg-white text-primary border px-3 py-2 rounded-pill fw-bold">
+                        Tổng: @group.Sum(x => x.TongBaiNop) lượt nộp
+                    </span>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-s4 mb-0">
+                    <thead>
+                        <tr>
+                            <th class="ps-4" style="width: 35%;">Tên bài tập</th>
+                            <th class="text-center">Hạn nộp</th>
+                            <th class="text-center">Đã nộp</th>
+                            <th class="text-center">Trạng thái</th>
+                            <th class="text-end pe-4">Công cụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in group)
+                        {
+                            <tr>
+                                <td class="ps-4">
+                                    <div class="ex-title">@item.TieuDe</div>
+                                    <div class="ex-desc" title="@item.MoTa">@item.MoTa</div>
+                                </td>
+                                <td class="text-center">
+                                    <div class="fw-bold text-dark small">@item.HanNop.ToString("dd/MM/yyyy")</div>
+                                    <div class="text-muted" style="font-size: 11px;">@item.HanNop.ToString("HH:mm")</div>
+                                </td>
+                                <td class="text-center">
+                                    <span class="s4-badge badge-submitted">
+                                        <i class="fas fa-file-import me-1"></i> @item.TongBaiNop
+                                    </span>
+                                </td>
+                                <td class="text-center">
+                                    @if (item.TrangThai == "Mo" || item.TrangThai == "DangMo")
+                                    {
+                                        <span class="s4-badge badge-open">
+                                            <i class="fas fa-check-circle me-1"></i> Đang mở
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="s4-badge badge-closed">Đã đóng</span>
+                                    }
+                                </td>
+                                <td class="text-end pe-4">
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <a asp-area="GiangVien" asp-controller="LqvNopBaiTaps" asp-action="DanhSachNop" asp-route-baiTapId="@item.LqvBaiTapId"
+                                           class="action-link link-inbox" title="Danh sách nộp">
+                                            <i class="fas fa-inbox"></i>
+                                        </a>
+                                        <a asp-action="Edit" asp-route-id="@item.LqvBaiTapId"
+                                           class="action-link link-edit" title="Chỉnh sửa">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.LqvBaiTapId"
+                                           class="action-link link-delete" title="Xóa">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+
+    @if (!Model.Any())
+    {
+        <div class="text-center py-5 bg-white rounded-4 border shadow-sm">
+            <img src="https://cdn-icons-png.flaticon.com/512/5089/5089735.png" width="80" class="opacity-25 mb-3">
+            <h5 class="text-muted">Chưa có bài tập nào được tạo</h5>
+            <a asp-action="Create" class="btn btn-link text-primary text-decoration-none">Bấm vào đây để tạo bài tập đầu tiên</a>
+        </div>
+    }
+</div>

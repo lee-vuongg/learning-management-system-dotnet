@@ -1,0 +1,73 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Đăng ký tài khoản";
+    var email = TempData["Email"] as string;
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/Register.css" rel="stylesheet" />
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-4">
+                    <h3 class="text-center mb-4 text-primary fw-bold">Đăng ký tài khoản</h3>
+
+                    @if (TempData["Error"] != null)
+                    {
+                        <div class="alert alert-danger text-center">@TempData["Error"]</div>
+                    }
+
+                    @if (TempData["Success"] != null)
+                    {
+                        <div class="alert alert-success text-center">@TempData["Success"]</div>
+
+                        @* Nếu đăng ký thành công, tự động chuyển sang VerifyOtp *@
+                        @if (!string.IsNullOrEmpty(email))
+                        {
+                            <script>
+                                setTimeout(function() {
+                                    window.location.href = '/Auth/Account/VerifyOtp?email=@email';
+                                }, 2000);
+                            </script>
+                        }
+                    }
+
+                    <form asp-action="Register" method="post" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Tên đăng nhập</label>
+                            <input type="text" name="tenDangNhap" class="form-control rounded-3" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Họ và tên</label>
+                            <input type="text" name="hoTen" class="form-control rounded-3" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email</label>
+                            <input type="email" name="email" class="form-control rounded-3" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Mật khẩu</label>
+                            <input type="password" name="matKhau" class="form-control rounded-3" required />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 rounded-3 fw-semibold">
+                            <i class="bi bi-person-plus"></i> Đăng ký
+                        </button>
+
+                        <div class="text-center mt-3">
+                            <small>
+                                Bạn đã có tài khoản?
+                                <a asp-action="Login" class="text-decoration-none fw-semibold">Đăng nhập</a>
+                            </small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

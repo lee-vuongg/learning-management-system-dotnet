@@ -1,0 +1,140 @@
+[
+  {
+    "ContainingType": "LQV_BlockchainCertificate.Controllers.Api.MobileAuthController",
+    "Method": "Login",
+    "RelativePath": "api/mobile/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "LQV_BlockchainCertificate.Controllers.Api.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LQV_BlockchainCertificate.Controllers.Api.MobileAuthController",
+    "Method": "Register",
+    "RelativePath": "api/mobile/auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "LQV_BlockchainCertificate.Controllers.Api.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LQV_BlockchainCertificate.Controllers.Api.MobileController",
+    "Method": "GetCertificate",
+    "RelativePath": "api/mobile/certificate/{code}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LQV_BlockchainCertificate.Controllers.Api.MobileController",
+    "Method": "Chat",
+    "RelativePath": "api/mobile/chat",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LQV_BlockchainCertificate.Controllers.Api.ChatRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LQV_BlockchainCertificate.Controllers.Api.MobileController",
+    "Method": "Ping",
+    "RelativePath": "api/mobile/ping",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LQV_BlockchainCertificate.Controllers.Api.BuoiHocApiController",
+    "Method": "GetBuoiHoc",
+    "RelativePath": "api/student/buoihoc/{studentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "studentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LQV_BlockchainCertificate.Controllers.Api.ChungNhanApiController",
+    "Method": "GetChungNhan",
+    "RelativePath": "api/student/chungnhan/{studentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "studentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StudentDashboardApiController",
+    "Method": "GetDashboard",
+    "RelativePath": "api/student/dashboard/{studentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "studentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LQV_BlockchainCertificate.Controllers.Api.DiemDanhApiController",
+    "Method": "CheckIn",
+    "RelativePath": "api/student/diemdanh/checkin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "LQV_BlockchainCertificate.Controllers.Api.DiemDanhApiController\u002BDiemDanhRequestVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

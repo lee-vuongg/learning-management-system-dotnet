@@ -1,0 +1,219 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvNguoiDung
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Thêm Người Dùng Mới";
+    ViewData["Active"] = "LqvNguoiDungs";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    :root {
+        --s4-primary: #1976d2;
+        --s4-success: #2e7d32;
+        --s4-bg: #f8f9fa;
+        --s4-text: #2d3436;
+        --s4-border: #edf2f7;
+    }
+
+    .s4-wrapper {
+        background-color: var(--s4-bg);
+        min-height: 100vh;
+        padding: 3rem 0;
+        font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    /* Card Style */
+    .s4-card {
+        border: none;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        background: #fff;
+        overflow: hidden;
+    }
+
+    .s4-card-header {
+        padding: 2rem 2rem 1rem;
+        border-bottom: none;
+        background: #fff;
+    }
+
+    .s4-title {
+        font-weight: 800;
+        color: var(--s4-text);
+        font-size: 1.5rem;
+        letter-spacing: -0.5px;
+    }
+
+    /* Form Elements */
+    .s4-label {
+        font-weight: 600;
+        color: #4a5568;
+        font-size: 0.875rem;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .s4-input {
+        border: 2px solid var(--s4-border);
+        border-radius: 10px;
+        padding: 12px 16px;
+        transition: all 0.2s ease;
+        font-size: 0.95rem;
+    }
+
+        .s4-input:focus {
+            border-color: var(--s4-primary);
+            box-shadow: 0 0 0 4px rgba(25, 118, 210, 0.1);
+            outline: none;
+        }
+
+    /* Wallet Special Style */
+    .s4-blockchain-section {
+        background: #f0f7ff;
+        border-radius: 12px;
+        padding: 1.5rem;
+        border: 1px solid #d1e9ff;
+    }
+
+    .s4-input-wallet {
+        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+        background-color: #fff !important;
+        font-weight: 600;
+        color: var(--s4-primary);
+    }
+
+    /* Buttons */
+    .s4-btn-primary {
+        background: var(--s4-primary);
+        color: #fff;
+        border-radius: 10px;
+        padding: 12px 30px;
+        font-weight: 700;
+        border: none;
+        transition: all 0.3s;
+    }
+
+        .s4-btn-primary:hover {
+            background: #1565c0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(25, 118, 210, 0.3);
+        }
+
+    .s4-btn-light {
+        background: #f1f5f9;
+        color: #64748b;
+        border-radius: 10px;
+        padding: 12px 25px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+
+        .s4-btn-light:hover {
+            background: #e2e8f0;
+            color: #334155;
+        }
+
+    .error-msg {
+        color: #e53e3e;
+        font-size: 0.8rem;
+        font-weight: 500;
+        margin-top: 5px;
+        display: block;
+    }
+</style>
+
+<div class="s4-wrapper">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-7">
+                <div class="s4-card">
+                    <div class="s4-card-header text-center">
+                        <div class="mb-3">
+                            <span class="p-3 rounded-circle bg-light d-inline-block">
+                                <i class="fas fa-user-plus fa-2x text-primary"></i>
+                            </span>
+                        </div>
+                        <h2 class="s4-title">Tạo Tài Khoản Mới</h2>
+                        <p class="text-muted">Khởi tạo định danh người dùng trên nền tảng Blockchain</p>
+                    </div>
+
+                    <form asp-action="Create" method="post" class="p-4 p-md-5 pt-0">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger border-0 rounded-3 small"></div>
+
+                        <div class="row g-4">
+                            @* Thông tin cơ bản *@
+                            <div class="col-md-6">
+                                <label asp-for="LqvTenDangNhap" class="s4-label">Tên đăng nhập <span class="text-danger">*</span></label>
+                                <input asp-for="LqvTenDangNhap" class="form-control s4-input" placeholder="Ví dụ: lqv_admin" />
+                                <span asp-validation-for="LqvTenDangNhap" class="error-msg"></span>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label asp-for="LqvHoTen" class="s4-label">Họ và tên đầy đủ <span class="text-danger">*</span></label>
+                                <input asp-for="LqvHoTen" class="form-control s4-input" placeholder="Nguyễn Văn A" />
+                                <span asp-validation-for="LqvHoTen" class="error-msg"></span>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label asp-for="LqvEmail" class="s4-label">Địa chỉ Email</label>
+                                <input asp-for="LqvEmail" type="email" class="form-control s4-input" placeholder="name@example.com" />
+                                <span asp-validation-for="LqvEmail" class="error-msg"></span>
+                            </div>
+
+                            @* Bảo mật *@
+                            <div class="col-md-6">
+                                <label for="LqvMatKhau" class="s4-label">Mật khẩu</label>
+                                <input id="LqvMatKhau" name="LqvMatKhau" type="password" class="form-control s4-input" placeholder="••••••••" />
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="LqvXacNhanMatKhau" class="s4-label">Xác nhận mật khẩu</label>
+                                <input id="LqvXacNhanMatKhau" name="LqvXacNhanMatKhau" type="password" class="form-control s4-input" placeholder="••••••••" />
+                            </div>
+
+                            @* Phân quyền *@
+                            <div class="col-md-12">
+                                <label asp-for="LqvRoleId" class="s4-label">Vai trò hệ thống</label>
+                                <select asp-for="LqvRoleId" class="form-select s4-input" asp-items="ViewBag.LqvRoleId">
+                                    <option value="">-- Chọn quyền hạn --</option>
+                                </select>
+                                <span asp-validation-for="LqvRoleId" class="error-msg"></span>
+                            </div>
+
+                            @* Blockchain Section *@
+                            <div class="col-md-12 mt-4">
+                                <div class="s4-blockchain-section">
+                                    <label asp-for="LqvWalletAddress" class="s4-label d-flex align-items-center">
+                                        <i class="fab fa-ethereum me-2 text-primary"></i> Địa chỉ Ví Blockchain (Ethereum)
+                                    </label>
+                                    <input asp-for="LqvWalletAddress" class="form-control s4-input s4-input-wallet" placeholder="0x..." />
+                                    <div class="form-text mt-2 small text-muted">
+                                        <i class="fas fa-info-circle me-1"></i> Địa chỉ ví dùng để ký và xác thực chứng chỉ số.
+                                    </div>
+                                    <span asp-validation-for="LqvWalletAddress" class="error-msg"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mt-5">
+                            <a asp-action="Index" class="s4-btn-light">
+                                <i class="fas fa-chevron-left me-2"></i> Quay lại
+                            </a>
+                            <button type="submit" class="s4-btn-primary">
+                                <i class="fas fa-check-circle me-2"></i> Xác nhận tạo mới
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

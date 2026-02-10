@@ -1,0 +1,93 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvCauHoi
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Quản lý đáp án";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container py-4">
+    <h4 class="fw-bold mb-2">🧠 @Model.LqvNoiDung</h4>
+    <p class="text-muted small">Danh sách đáp án</p>
+
+    <form id="formAdd" class="row g-2 mb-4">
+        <input type="hidden" name="cauHoiId" value="@Model.LqvCauHoiId" />
+
+        <div class="col-md-8">
+            <input name="noiDung" class="form-control" placeholder="Nội dung đáp án..." />
+        </div>
+
+        <div class="col-md-2">
+            <select name="lqvDung" class="form-select">
+                <option value="false">Sai</option>
+                <option value="true">Đúng</option>
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary w-100">➕ Thêm</button>
+        </div>
+    </form>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nội dung</th>
+                <th style="width:10%">Đúng</th>
+                <th style="width:10%">Xóa</th>
+            </tr>
+        </thead>
+        <tbody id="dapAnTable">
+            @foreach (var da in Model.LqvDapAns)
+            {
+                <tr id="row_@da.LqvDapAnId">
+                    <td>@da.LqvNoiDung</td>
+                    <td class="text-center">
+                        @if (da.LqvDung)
+                        {
+                            <span class="badge bg-success">✔</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">✖</span>
+                        }
+                    </td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-danger"
+                                onclick="deleteDapAn(@da.LqvDapAnId)">
+                            🗑
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-controller="LqvBoCauHois"
+       asp-action="Questions"
+       asp-route-id="@Model.LqvBoCauHoiId"
+       class="btn btn-light">
+        ← Quay lại câu hỏi
+    </a>
+</div>
+
+@section Scripts {
+    <script>
+        $("#formAdd").submit(function (e) {
+            e.preventDefault();
+
+            $.post("/Admin/LqvDapAns/Create", $(this).serialize(), function (res) {
+                if (res.success) location.reload();
+                else alert(res.message);
+            });
+        });
+
+        function deleteDapAn(id) {
+            if (!confirm("Xóa đáp án?")) return;
+
+            $.post("/Admin/LqvDapAns/Delete", { id }, function (res) {
+                if (res.success) $("#row_" + id).remove();
+            });
+        }
+    </script>
+}

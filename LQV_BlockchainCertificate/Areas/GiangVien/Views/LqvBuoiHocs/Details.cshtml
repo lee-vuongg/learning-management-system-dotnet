@@ -1,0 +1,49 @@
+﻿﻿
+@model LQV_BlockchainCertificate.Models.DBModel.LqvBuoiHoc
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chi tiết buổi học";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-9">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <div class="p-4 bg-primary text-white d-flex justify-content-between align-items-center">
+                    <div>
+                        <h4 class="fw-bold mb-0">📘 Chi tiết buổi học #@Model.LqvBuoiHocId</h4>
+                        <p class="mb-0 opacity-75">Thông tin cấu hình điểm danh GPS</p>
+                    </div>
+                    <a asp-action="Edit" asp-route-id="@Model.LqvBuoiHocId" class="btn btn-white btn-sm fw-bold">Sửa thông tin</a>
+                </div>
+                <div class="card-body p-4">
+                    <div class="row g-4">
+                        <div class="col-md-6 border-end">
+                            <h6 class="text-muted fw-bold text-uppercase mb-3 small">Thông tin thời gian</h6>
+                            <p class="mb-2"><strong>Lớp:</strong> @Model.LqvLopHoc?.LqvTenLop</p>
+                            <p class="mb-2"><strong>Ngày:</strong> @Model.LqvNgayHoc.ToString("dd/MM/yyyy")</p>
+                            <p class="mb-2"><strong>Bắt đầu:</strong> @Model.LqvGioBatDau</p>
+                            <p><strong>Kết thúc:</strong> @Model.LqvGioKetThuc</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-muted fw-bold text-uppercase mb-3 small">Cấu hình địa lý</h6>
+                            <p class="mb-2"><strong>Vĩ độ:</strong> @Model.LqvViDo</p>
+                            <p class="mb-2"><strong>Kinh độ:</strong> @Model.LqvKinhDo</p>
+                            <p class="mb-2"><strong>Bán kính:</strong> <span class="badge bg-soft-primary text-primary">@Model.LqvBanKinh m</span></p>
+                            <p>
+                                <strong>Trạng thái:</strong>
+                                @(Model.LqvDangMo ? Html.Raw("<span class='text-success fw-bold'>Đang mở</span>") : Html.Raw("<span class='text-danger fw-bold'>Đã đóng</span>"))
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 d-flex gap-2">
+                        <a asp-action="DiemDanh" asp-route-id="@Model.LqvBuoiHocId" class="btn btn-success fw-bold px-4 rounded-3">Xem danh sách có mặt</a>
+                        <a asp-action="Index" class="btn btn-light fw-bold px-4 rounded-3">Quay lại</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

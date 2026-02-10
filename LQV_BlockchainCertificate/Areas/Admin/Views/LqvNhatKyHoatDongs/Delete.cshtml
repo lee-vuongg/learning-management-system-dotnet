@@ -1,0 +1,27 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvNhatKyHoatDong
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Xác nhận xóa nhật ký";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="log-wrapper d-flex justify-content-center">
+    <div class="log-card border-top border-danger border-4" style="max-width: 500px; height: fit-content;">
+        <div class="p-4 text-center">
+            <div class="text-danger mb-3" style="font-size: 3rem;"><i class="fas fa-exclamation-triangle"></i></div>
+            <h4 class="fw-bold text-dark">Xác nhận xóa?</h4>
+            <p class="text-muted px-3">Bạn có chắc chắn muốn xóa nhật ký của <strong>@Model.LqvTaiKhoan</strong>? Dữ liệu này sẽ biến mất vĩnh viễn khỏi hệ thống.</p>
+
+            <div class="bg-light p-3 rounded-3 text-start my-4">
+                <div class="small mb-1 text-muted">Hành động: <span class="text-dark fw-bold">@Model.LqvHanhDong</span></div>
+                <div class="small text-muted">Ngày: <span class="text-dark fw-bold">@Model.LqvThoiGian?.ToString("dd/MM/yyyy")</span></div>
+            </div>
+
+            <form asp-action="Delete" method="post" class="d-grid gap-2">
+                <input type="hidden" asp-for="LqvId" />
+                <button type="submit" class="btn btn-danger py-2 fw-bold rounded-pill">Đồng ý xóa bản ghi</button>
+                <a asp-action="Index" class="btn btn-light py-2 text-muted rounded-pill">Hủy và quay lại</a>
+            </form>
+        </div>
+    </div>
+</div>

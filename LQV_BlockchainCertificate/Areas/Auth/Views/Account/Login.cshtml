@@ -1,0 +1,123 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Đăng nhập tài khoản";
+    // Đảm bảo đường dẫn Layout chính xác
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" />
+
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    "s4-primary": "#1d3557", // Navy
+                    "s4-accent": "#2a9d8f",  // Teal (Chuẩn Study4)
+                    "s4-bg": "#f8f9fa",
+                    "s4-gray": "#636e72",
+                },
+                fontFamily: {
+                    sans: ["Inter", "sans-serif"],
+                },
+            },
+        },
+    }
+</script>
+
+<style>
+    /* Tránh xung đột với CSS toàn cục */
+    .login-wrapper {
+        font-family: 'Inter', sans-serif;
+        background-color: transparent; /* Để sử dụng màu nền của Layout */
+    }
+
+    .s4-input:focus {
+        border-color: #2a9d8f !important;
+        box-shadow: 0 0 0 4px rgba(42, 157, 143, 0.1) !important;
+        outline: none;
+    }
+
+    .s4-card-shadow {
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    }
+</style>
+
+<div class="login-wrapper min-h-screen flex flex-col items-center justify-center p-4">
+
+    <main class="w-full max-w-[450px] bg-white rounded-[24px] s4-card-shadow border border-gray-100 overflow-hidden transition-all">
+
+        <div class="p-8 md:p-10">
+            <div class="flex flex-col items-center text-center mb-8">
+                <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#f0f9f8] text-s4-accent">
+                    <span class="material-symbols-outlined text-4xl">account_circle</span>
+                </div>
+                <h1 class="text-s4-primary text-2xl font-extrabold tracking-tight mb-2">
+                    Chào mừng bạn!
+                </h1>
+                <p class="text-s4-gray text-sm">
+                    Đăng nhập để tiếp tục hành trình tại <span class="text-s4-accent font-semibold">Study4</span>
+                </p>
+            </div>
+
+            @if (TempData["Error"] != null)
+            {
+                <div class="mb-6 p-4 rounded-xl bg-red-50 border border-red-100 text-red-600 text-sm font-medium flex items-center gap-3 animate-pulse">
+                    <span class="material-symbols-outlined text-lg">error</span>
+                    @TempData["Error"]
+                </div>
+            }
+
+            <form asp-action="Login" method="post" class="space-y-5">
+                <div class="space-y-1.5">
+                    <label class="text-s4-primary text-xs font-bold uppercase tracking-wider ml-1">Tài khoản</label>
+                    <div class="relative">
+                        <input type="text" name="tenDangNhap" required
+                               class="s4-input w-full rounded-xl border-gray-200 bg-gray-50/50 h-12 px-4 text-sm transition-all placeholder:text-gray-400"
+                               placeholder="Email hoặc tên đăng nhập" />
+                    </div>
+                </div>
+
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center ml-1">
+                        <label class="text-s4-primary text-xs font-bold uppercase tracking-wider">Mật khẩu</label>
+                        <a asp-action="ForgotPassword" class="text-xs text-s4-accent font-bold hover:text-s4-primary transition-colors">Quên mật khẩu?</a>
+                    </div>
+                    <input type="password" name="matKhau" required
+                           class="s4-input w-full rounded-xl border-gray-200 bg-gray-50/50 h-12 px-4 text-sm transition-all placeholder:text-gray-400"
+                           placeholder="••••••••" />
+                </div>
+
+                <button type="submit" class="w-full rounded-xl h-12 bg-s4-accent hover:bg-[#23867a] text-white text-sm font-bold transition-all shadow-md shadow-teal-100 active:scale-[0.98] mt-4">
+                    Đăng nhập
+                </button>
+
+                <div class="relative flex items-center py-4">
+                    <div class="flex-grow border-t border-gray-100"></div>
+                    <span class="flex-shrink-0 mx-4 text-gray-300 text-[10px] font-bold uppercase tracking-[0.2em]">Hoặc</span>
+                    <div class="flex-grow border-t border-gray-100"></div>
+                </div>
+
+                <button type="button" class="w-full flex items-center justify-center gap-3 rounded-xl h-12 border border-gray-200 bg-white hover:bg-gray-50 text-sm font-semibold text-gray-700 transition-all">
+                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" class="w-5 h-5" alt="Google">
+                    <span>Tiếp tục với Google</span>
+                </button>
+
+                <div class="pt-6 text-center border-t border-gray-50 mt-4">
+                    <p class="text-sm text-s4-gray">
+                        Bạn là thành viên mới?
+                        <a asp-action="Register" class="ml-1 text-s4-accent font-bold hover:underline">Tạo tài khoản</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <div class="mt-8 text-center text-xs text-gray-400">
+        &copy; 2026 Study4 Learning Platform. All rights reserved.
+    </div>
+</div>

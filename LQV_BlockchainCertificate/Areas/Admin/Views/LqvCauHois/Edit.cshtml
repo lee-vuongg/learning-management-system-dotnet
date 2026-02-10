@@ -1,0 +1,52 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvCauHoi
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Sửa câu hỏi";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>✏️ Sửa câu hỏi</h3>
+<p class="text-muted">Bộ câu hỏi: <strong>@ViewBag.TenBo</strong></p>
+<hr />
+
+<form asp-action="Edit" method="post">
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" asp-for="LqvCauHoiId" />
+    <input type="hidden" asp-for="LqvBoCauHoiId" />
+
+    <!-- NỘI DUNG -->
+    <div class="mb-3">
+        <label asp-for="LqvNoiDung" class="form-label">Nội dung câu hỏi</label>
+        <textarea asp-for="LqvNoiDung"
+                  class="form-control"
+                  rows="3"></textarea>
+        <span asp-validation-for="LqvNoiDung" class="text-danger"></span>
+    </div>
+
+    <!-- LOẠI -->
+    <div class="mb-3">
+        <label asp-for="LqvLoai" class="form-label">Loại câu hỏi</label>
+        <select asp-for="LqvLoai" class="form-select">
+            <option value="TracNghiem">Trắc nghiệm</option>
+            <option value="TuLuan">Tự luận</option>
+        </select>
+    </div>
+
+    <!-- ĐIỂM -->
+    <div class="mb-3">
+        <label asp-for="LqvDiem" class="form-label">Điểm</label>
+        <input asp-for="LqvDiem"
+               type="number"
+               step="0.25"
+               class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">💾 Cập nhật</button>
+    <a asp-action="Index"
+       asp-route-boId="@ViewBag.BoId"
+       class="btn btn-secondary">
+        Quay lại
+    </a>
+</form>

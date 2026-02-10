@@ -1,0 +1,72 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvLopHoc
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Cập nhật lớp học";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="vision-card">
+    <div class="card-header-vision">
+        <h5 class="mb-0">
+            <i class="fas fa-edit me-2"></i> Cập nhật lớp học
+        </h5>
+    </div>
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="LqvLopHocId" />
+
+        <div class="card-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="vision-label">Tên lớp</label>
+                    <input asp-for="LqvTenLop" class="form-control vision-form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="vision-label">Khóa học</label>
+                    <select asp-for="LqvKhoaHocId"
+                            class="form-select vision-form-select"
+                            asp-items="ViewBag.LqvKhoaHocId"></select>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="vision-label">Giảng viên</label>
+                    <select asp-for="LqvGiangVienId"
+                            class="form-select vision-form-select"
+                            asp-items="ViewBag.LqvGiangVienId"></select>
+                </div>
+
+                <div class="col-md-12 mb-3">
+                    <label class="vision-label">Mô tả</label>
+                    <textarea asp-for="LqvMoTa"
+                              rows="4"
+                              class="form-control vision-form-control"></textarea>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="vision-label">Ngày tạo</label>
+                    <input asp-for="LqvNgayTao"
+                           class="form-control"
+                           readonly />
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer text-end">
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Quay lại
+            </a>
+            <button type="submit" class="btn btn-warning">
+                <i class="fas fa-save"></i> Cập nhật
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

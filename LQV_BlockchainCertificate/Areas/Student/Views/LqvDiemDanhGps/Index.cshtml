@@ -1,0 +1,158 @@
+﻿﻿
+@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvDiemDanhGp>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Điểm danh của tôi";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<style>
+    :root {
+        --s4-primary: #0056b3;
+        --s4-bg: #f8f9fa;
+        --s4-card-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    body {
+        background-color: #f4f7fb;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .page-title {
+        font-weight: 700;
+        color: #2d3436;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Modern Table Style */
+    .table-container {
+        background: white;
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: var(--s4-card-shadow);
+    }
+
+    .table {
+        border-collapse: separate;
+        border-spacing: 0 10px;
+        border: none;
+    }
+
+        .table thead th {
+            background-color: transparent;
+            border: none;
+            color: #636e72;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            padding: 15px;
+        }
+
+        .table tbody tr {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+        }
+
+            .table tbody tr:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+                background-color: #fff;
+            }
+
+        .table tbody td {
+            padding: 20px 15px;
+            border: none;
+            vertical-align: middle;
+            color: #2d3436;
+            border-top: 1px solid #f1f2f6;
+            border-bottom: 1px solid #f1f2f6;
+        }
+
+            .table tbody td:first-child {
+                border-left: 1px solid #f1f2f6;
+                border-radius: 12px 0 0 12px;
+            }
+
+            .table tbody td:last-child {
+                border-right: 1px solid #f1f2f6;
+                border-radius: 0 12px 12px 0;
+            }
+
+    /* Status Badges */
+    .s4-badge {
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .bg-success-light {
+        background-color: #e3f9e5;
+        color: #1f8b24;
+    }
+
+    .bg-danger-light {
+        background-color: #ffeef0;
+        color: #d63031;
+    }
+
+    .text-buoi {
+        font-weight: 700;
+        color: var(--s4-primary);
+    }
+</style>
+
+<div class="container py-4">
+    <h2 class="page-title">📍 Lịch sử điểm danh</h2>
+
+    <div class="table-container">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Buổi học</th>
+                        <th>Lớp học</th>
+                        <th>Thời gian thực hiện</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <span class="text-buoi">Buổi @item.LqvBuoiHoc?.LqvBuoiHocId</span>
+                            </td>
+                            <td class="fw-medium">
+                                @item.LqvBuoiHoc?.LqvLopHoc?.LqvTenLop
+                            </td>
+
+                            <td class="text-muted">
+                                <i class="far fa-calendar-alt me-1"></i> @item.LqvThoiGian.ToString("dd/MM/yyyy HH:mm")
+                            </td>
+                            <td>
+                                @if (item.LqvHopLe == true)
+                                {
+                                    <span class="s4-badge bg-success-light">
+                                        <i class="fas fa-check-circle"></i> Hợp lệ
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="s4-badge bg-danger-light">
+                                        <i class="fas fa-times-circle"></i> Không hợp lệ
+                                    </span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

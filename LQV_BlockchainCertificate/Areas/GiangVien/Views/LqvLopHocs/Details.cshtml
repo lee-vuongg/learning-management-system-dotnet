@@ -1,0 +1,125 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvLopHoc
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Chi tiết lớp học";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<style>
+    .info-label { font-weight: 700; color: #64748b; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    .info-value { color: #1e293b; font-weight: 600; font-size: 1.1rem; }
+    .status-pill { padding: 4px 12px; border-radius: 50px; background: #f1f5f9; color: #475569; font-size: 0.8rem; font-weight: 600; }
+    .course-badge { background: #e0e7ff; color: #4338ca; padding: 8px 16px; border-radius: 12px; display: inline-block; }
+    .stats-card { background: white; border-radius: 16px; border: 1px solid #eef2f6; padding: 1.5rem; transition: 0.3s; }
+    .stats-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    .description-box { background: #f8fafc; border-radius: 12px; padding: 1.5rem; border: 1px dashed #e2e8f0; line-height: 1.6; color: #475569; }
+</style>
+
+<div class="d-flex justify-content-between align-items-end mb-4">
+    <div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-1">
+                <li class="breadcrumb-item"><a asp-action="Index" class="text-decoration-none">Lớp học</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Chi tiết</li>
+            </ol>
+        </nav>
+        <h2 class="fw-800 mb-0">🏫 @Model.LqvTenLop</h2>
+    </div>
+    <div class="d-flex gap-2">
+        <a asp-action="Edit" asp-route-id="@Model.LqvLopHocId" class="btn btn-warning rounded-3 fw-bold px-4 shadow-sm">
+            <i class="fas fa-edit me-2"></i>Chỉnh sửa
+        </a>
+        <a asp-action="Index" class="btn btn-light rounded-3 fw-bold px-3 border">
+            <i class="fas fa-chevron-left me-1"></i> Quay lại
+        </a>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-8">
+        <div class="study-card shadow-sm h-100">
+            <div class="study-card-header bg-white border-bottom py-3">
+                <h5 class="mb-0 fw-bold text-primary"><i class="fas fa-file-alt me-2"></i>Tổng quan nội dung</h5>
+            </div>
+            <div class="card-body p-4">
+                <div class="mb-4">
+                    <label class="info-label mb-2 d-block">Khóa học trực thuộc</label>
+                    <div class="course-badge">
+                        <i class="fas fa-graduation-cap me-2"></i>
+                        <span class="fw-bold">@Model.LqvKhoaHoc?.LqvTenKhoaHoc</span>
+                    </div>
+                </div>
+
+                <div class="mb-0">
+                    <label class="info-label mb-2 d-block">Mô tả chi tiết</label>
+                    <div class="description-box">
+                        @if (string.IsNullOrEmpty(Model.LqvMoTa))
+                        {
+                            <em class="text-muted">Không có mô tả cho lớp học này.</em>
+                        }
+                        else
+                        {
+                            @Model.LqvMoTa
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="row g-3">
+            <div class="col-12">
+                <div class="stats-card">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 bg-soft-primary p-3 rounded-circle text-primary me-3">
+                            <i class="fas fa-users fa-2x"></i>
+                        </div>
+                        <div>
+                            <label class="info-label d-block">Sĩ số lớp</label>
+                            <span class="info-value">@Model.LqvDangKyLopHocs.Count sinh viên</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="stats-card">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 bg-soft-success p-3 rounded-circle text-success me-3">
+                            <i class="fas fa-calendar-check fa-2x"></i>
+                        </div>
+                        <div>
+                            <label class="info-label d-block">Số buổi học</label>
+                            <span class="info-value">@Model.LqvBuoiHocs.Count buổi đã tạo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="stats-card">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 bg-soft-info p-3 rounded-circle text-info me-3">
+                            <i class="fas fa-id-badge fa-2x"></i>
+                        </div>
+                        <div>
+                            <label class="info-label d-block">Mã định danh</label>
+                            <span class="info-value text-uppercase">#@Model.LqvLopHocId</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-4">
+             <a asp-controller="LqvBuoiHocs" asp-action="Create" asp-route-lopId="@Model.LqvLopHocId" class="btn btn-outline-primary w-100 rounded-3 fw-bold mb-2 py-2">
+                <i class="fas fa-plus-circle me-2"></i>Thêm buổi học mới
+             </a>
+            <a asp-action="LqvLopHocs" asp-route-id="@Model.LqvLopHocId" class="btn btn-outline-dark w-100 rounded-3 fw-bold py-2">
+                <i class="fas fa-user-graduate me-2"></i>Xem danh sách sinh viên
+             </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,131 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvCauHoi
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Quản lý đáp án";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<div class="container py-4">
+    <h4 class="fw-bold mb-2">🧠 @Model.LqvNoiDung</h4>
+    <p class="text-muted small">Danh sách đáp án</p>
+
+    <!-- FORM THÊM ĐÁP ÁN -->
+    <div class="row g-2 mb-4" id="formAdd">
+        <input type="hidden" id="cauHoiId" value="@Model.LqvCauHoiId" />
+
+        <div class="col-md-8">
+            <input id="noiDung"
+                   class="form-control"
+                   placeholder="Nội dung đáp án..."
+                   required />
+        </div>
+
+        <div class="col-md-2">
+            <select id="dung" class="form-select">
+                <option value="false">Sai</option>
+                <option value="true">Đúng</option>
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <button type="button"
+                    class="btn btn-primary w-100"
+                    onclick="addDapAn()">
+                ➕ Thêm
+            </button>
+        </div>
+    </div>
+
+    <!-- DANH SÁCH ĐÁP ÁN -->
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nội dung</th>
+                <th style="width:10%">Đúng</th>
+                <th style="width:10%">Xóa</th>
+            </tr>
+        </thead>
+        <tbody id="dapAnTable">
+            @foreach (var da in Model.LqvDapAns)
+            {
+                <tr id="row_@da.LqvDapAnId">
+                    <td>@da.LqvNoiDung</td>
+                    <td class="text-center">
+                        @if (da.LqvDung)
+                        {
+                            <span class="badge bg-success">✔</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">✖</span>
+                        }
+                    </td>
+                    <td class="text-center">
+                        <button type="button"
+                                class="btn btn-sm btn-danger"
+                                onclick="deleteDapAn(@da.LqvDapAnId)">
+                            🗑
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-controller="LqvBoCauHois"
+       asp-action="Index"
+       asp-route-boId="@Model.LqvBoCauHoiId"
+       class="btn btn-light">
+        ← Quay lại câu hỏi
+    </a>
+</div>
+
+@section Scripts {
+    <script>
+        function addDapAn() {
+            const cauHoiId = $("#cauHoiId").val();
+            const noiDung = $("#noiDung").val();
+            const dung = $("#dung").val();
+
+            console.log("===== ADD ĐÁP ÁN =====");
+            console.log("cauHoiId =", cauHoiId);
+            console.log("noiDung =", noiDung);
+            console.log("dung =", dung);
+
+            if (!noiDung.trim()) {
+                alert("❌ Nội dung không được rỗng");
+                return;
+            }
+
+            $.post("/GiangVien/LqvDapAns/Create", {
+                cauHoiId: cauHoiId,
+                noiDung: noiDung,
+                dung: dung
+            })
+            .done(function () {
+                console.log("✅ INSERT OK");
+                location.reload();
+            })
+            .fail(function (err) {
+                console.error("❌ INSERT FAIL", err);
+                alert("❌ Lỗi khi thêm đáp án");
+            });
+        }
+
+        function deleteDapAn(id) {
+            console.log("DELETE id =", id);
+
+            if (!confirm("Xóa đáp án?")) return;
+
+            $.post("/GiangVien/LqvDapAns/Delete", { id })
+                .done(function () {
+                    console.log("DELETE OK");
+                    $("#row_" + id).remove();
+                })
+                .fail(function (err) {
+                    console.error("DELETE FAIL", err);
+                });
+        }
+    </script>
+}

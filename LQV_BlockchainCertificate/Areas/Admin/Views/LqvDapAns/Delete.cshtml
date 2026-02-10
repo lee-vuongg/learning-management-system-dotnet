@@ -1,0 +1,23 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvDapAn
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Xóa đáp án";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="text-danger">⚠️ Xác nhận xóa đáp án</h3>
+<hr />
+
+<p><strong>Câu hỏi:</strong> @Model.LqvCauHoi?.LqvNoiDung</p>
+<p><strong>Đáp án:</strong> @Model.LqvNoiDung</p>
+<p>
+    <strong>Trạng thái:</strong>
+    @(Model.LqvDung ? "Đúng" : "Sai")
+</p>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="LqvDapAnId" />
+    <button type="submit" class="btn btn-danger">🗑 Xóa</button>
+    <a asp-action="Index" class="btn btn-secondary">⬅ Hủy</a>
+</form>

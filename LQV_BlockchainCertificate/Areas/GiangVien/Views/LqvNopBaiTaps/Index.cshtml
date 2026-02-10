@@ -1,0 +1,253 @@
+﻿@model IEnumerable<IGrouping<LQV_BlockchainCertificate.Models.DBModel.LqvLopHoc, LQV_BlockchainCertificate.Models.DBModel.LqvBaiTap>>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Quản lý bài tập";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<style>
+    /* Study4 Theme Variables */
+    :root {
+        --s4-primary: #2c5891;
+        --s4-secondary: #64748b;
+        --s4-accent: #3b82f6;
+        --s4-bg: #f8fafc;
+        --s4-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    body {
+        background-color: var(--s4-bg);
+    }
+
+    .fw-800 {
+        font-weight: 800;
+    }
+
+    /* Header Styles */
+    .page-header {
+        margin-bottom: 2rem;
+    }
+
+    /* Card & Table Styles */
+    .course-group-card {
+        background: white;
+        border-radius: 16px;
+        border: none;
+        box-shadow: var(--s4-card-shadow);
+        margin-bottom: 2rem;
+        overflow: hidden;
+    }
+
+    .course-header {
+        background: white;
+        padding: 1.25rem 1.5rem;
+        border-bottom: 2px solid #f1f5f9;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .course-title {
+        color: var(--s4-primary);
+        font-size: 1.2rem;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .course-icon {
+        width: 40px;
+        height: 40px;
+        background: #eff6ff;
+        color: var(--s4-accent);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .table thead th {
+        background-color: #f8fafc;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        color: var(--s4-secondary);
+        border-top: none;
+        padding: 1rem;
+    }
+
+    .table tbody tr {
+        transition: all 0.2s;
+    }
+
+        .table tbody tr:hover {
+            background-color: #f1f5f9;
+        }
+
+    /* Custom Badges */
+    .badge-s4 {
+        padding: 6px 14px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.85rem;
+    }
+
+    .bg-soft-warning {
+        background-color: #fffbeb;
+        color: #92400e;
+        border: 1px solid #fde68a;
+    }
+
+    .bg-soft-primary {
+        background-color: #eff6ff;
+        color: #1e40af;
+    }
+
+    /* Action Buttons */
+    .btn-action {
+        border-radius: 10px;
+        padding: 8px 18px;
+        font-weight: 700;
+        transition: transform 0.2s;
+    }
+
+        .btn-action:hover {
+            transform: translateY(-2px);
+        }
+
+    .submission-count {
+        background: var(--s4-primary);
+        color: white;
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 8px;
+    }
+</style>
+
+<div class="container-fluid px-4 py-3">
+    <div class="page-header d-flex justify-content-between align-items-center">
+        <div>
+            <h3 class="fw-800 text-dark mb-1">📚 Quản lý bài tập</h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Giảng viên</a></li>
+                    <li class="breadcrumb-item active">Lộ trình kỹ năng</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="d-flex gap-2">
+            <a asp-action="ThongKe" class="btn btn-white border shadow-sm btn-action text-dark">
+                <i class="fas fa-chart-line me-2 text-primary"></i> Thống kê
+            </a>
+            <a href="#" class="btn btn-primary btn-action shadow">
+                <i class="fas fa-plus me-2"></i> Tạo bài tập mới
+            </a>
+        </div>
+    </div>
+
+    @* ===== VÒNG LẶP GROUP THEO LỚP ===== *@
+    @foreach (var lopGroup in Model)
+    {
+        <div class="course-group-card">
+            <div class="course-header">
+                <h5 class="course-title fw-800">
+                    <div class="course-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    Lớp: @(lopGroup.Key?.LqvTenLop ?? "Chưa phân lớp")
+                </h5>
+                <span class="badge bg-soft-primary badge-s4">
+                    @lopGroup.Count() bài tập hiện có
+                </span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th class="ps-4">Thông tin bài tập</th>
+                            <th class="text-center">Hạn cuối nộp bài</th>
+                            <th class="text-center">Tỷ lệ nộp bài</th>
+                            <th class="text-end pe-4">Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in lopGroup)
+                        {
+                            <tr>
+                                <td class="ps-4">
+                                    <div class="d-flex align-items-center">
+                                        <div class="me-3">
+                                            <i class="fas fa-file-alt fa-2x text-light"></i>
+                                        </div>
+                                        <div>
+                                            <div class="fw-bold text-dark h6 mb-0">@item.LqvTieuDe</div>
+                                            <div class="text-muted small">Mã: <span class="badge bg-light text-dark">#@item.LqvTieuDe</span></div>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td class="text-center">
+                                    <span class="badge-s4 bg-soft-warning">
+                                        <i class="far fa-calendar-alt me-2"></i>
+                                        @item.LqvHanNop.ToString("dd/MM/yyyy HH:mm")
+                                    </span>
+                                </td>
+
+                                <td class="text-center">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <span class="submission-count fw-bold">
+                                            @item.LqvNopBaiTaps.Count()
+                                        </span>
+                                        <div class="text-start">
+                                            <div class="small fw-bold text-dark">Đã nộp</div>
+                                            <div class="text-muted" style="font-size: 10px;">Sinh viên</div>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td class="text-end pe-4">
+                                    <div class="btn-group shadow-sm" style="border-radius: 10px; overflow: hidden;">
+                                        <a asp-action="DanhSachNop" asp-route-baiTapId="@item.LqvBaiTapId"
+                                           class="btn btn-primary btn-sm px-3 fw-bold">
+                                            <i class="fas fa-graduation-cap me-1"></i> Chấm bài
+                                        </a>
+                                        <a href="#" class="btn btn-white btn-sm border-start px-3">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+
+    @if (!Model.Any())
+    {
+        <div class="text-center py-5 bg-white rounded-4 shadow-sm">
+            <i class="fas fa-inbox fa-4x text-light mb-3"></i>
+            <h5 class="text-muted">Chưa có bài tập nào được tạo cho giảng viên này.</h5>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        // Hiệu ứng hover cho card
+        $(document).ready(function() {
+            $(".course-group-card").hover(
+                function() { $(this).css("transform", "translateY(-5px)"); $(this).css("transition", "0.3s"); },
+                function() { $(this).css("transform", "translateY(0)"); }
+            );
+        });
+    </script>
+}

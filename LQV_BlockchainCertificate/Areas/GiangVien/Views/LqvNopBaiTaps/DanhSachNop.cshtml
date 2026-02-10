@@ -1,0 +1,278 @@
+﻿@model LQV_BlockchainCertificate.Areas.GiangVien.Controllers.LqvNopBaiTapsController.LqvChamBaiViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Chấm bài: " + Model.BaiTap.LqvTieuDe;
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<style>
+    :root {
+        --s4-primary: #2c5891;
+        --s4-border: #eef2f7;
+        --s4-sidebar-bg: #ffffff;
+        --s4-active-item: #f0f7ff;
+    }
+
+    /* Layout Classroom */
+    .classroom-container {
+        display: flex;
+        height: calc(100vh - 160px); /* Cố định chiều cao để scroll nội bộ */
+        background: #f8fafc;
+        border: 1px solid var(--s4-border);
+        border-radius: 16px;
+        overflow: hidden;
+        margin-top: 15px;
+    }
+
+    /* Cột trái - Danh sách SV */
+    .s4-sidebar-students {
+        width: 350px;
+        background: var(--s4-sidebar-bg);
+        border-right: 1px solid var(--s4-border);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar-header-search {
+        padding: 20px;
+        border-bottom: 1px solid var(--s4-border);
+    }
+
+    .student-list-scroll {
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    .student-card {
+        padding: 16px 20px;
+        border-bottom: 1px solid #f1f5f9;
+        display: block;
+        text-decoration: none !important;
+        color: inherit;
+        transition: all 0.2s;
+        border-left: 4px solid transparent;
+    }
+
+        .student-card:hover {
+            background: #f8fafc;
+        }
+
+        .student-card.active {
+            background: var(--s4-active-item);
+            border-left-color: var(--s4-primary);
+        }
+
+    /* Cột phải - Nội dung chi tiết & Chấm điểm */
+    .s4-main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: white;
+    }
+
+    .content-header {
+        padding: 15px 30px;
+        border-bottom: 1px solid var(--s4-border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+    }
+
+    .grading-area {
+        flex: 1;
+        display: flex;
+        overflow: hidden;
+    }
+
+    .submission-detail {
+        flex: 1;
+        padding: 30px;
+        overflow-y: auto;
+        border-right: 1px solid var(--s4-border);
+    }
+
+    .grading-form-panel {
+        width: 320px;
+        background: #f8fafc;
+        padding: 25px;
+        overflow-y: auto;
+    }
+
+    /* UI Components */
+    .avatar-circle {
+        width: 40px;
+        height: 40px;
+        background: var(--s4-primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+
+    .file-attachment {
+        background: #f1f5f9;
+        border-radius: 12px;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+        border: 1px solid #e2e8f0;
+    }
+
+    .status-badge {
+        font-size: 0.75rem;
+        padding: 4px 12px;
+        border-radius: 20px;
+    }
+
+    .bg-soft-success {
+        background: #dcfce7;
+        color: #166534;
+    }
+
+    .bg-soft-warning {
+        background: #fef9c3;
+        color: #854d0e;
+    }
+</style>
+
+<div class="container-fluid px-4">
+    <div class="d-flex align-items-center justify-content-between mt-3">
+        <div>
+            <a asp-area="GiangVien"
+               asp-controller="LqvNopBaiTaps"
+               asp-action="Index"
+               asp-route-lopHocId="@ViewBag.LopHocId"
+             
+               class="text-decoration-none small fw-bold text-muted">
+                <i class="fas fa-chevron-left"></i> QUAY LẠI DANH SÁCH BÀI TẬP
+            </a>
+            <h4 class="fw-800 mb-0 mt-1">📝 @Model.BaiTap.LqvTieuDe</h4>
+        </div>
+        <div class="text-end">
+            <span class="text-muted small">Hạn nộp: @Model.BaiTap.LqvHanNop.ToString("dd/MM/yyyy HH:mm")</span>
+        </div>
+    </div>
+
+    <div class="classroom-container shadow-sm">
+
+        <div class="s4-sidebar-students">
+            <div class="sidebar-header-search">
+                <div class="input-group">
+                    <span class="input-group-text bg-light border-0"><i class="fas fa-search text-muted"></i></span>
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm sinh viên...">
+                </div>
+            </div>
+            <div class="student-list-scroll">
+                @foreach (var item in Model.DanhSachNop)
+                {
+                    <a asp-action="DanhSachNop" asp-route-baiTapId="@Model.BaiTap.LqvBaiTapId" asp-route-nopBaiId="@item.LqvId"
+                       class="student-card @(Model.BaiDangXem?.LqvId == item.LqvId ? "active" : "")">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="fw-bold text-dark">@item.LqvSinhVien?.LqvHoTen</div>
+                            @if (item.LqvDaCham)
+                            {
+                                <span class="text-success fw-bold small">@item.LqvDiem đ</span>
+                            }
+                            else
+                            {
+                                <span class="status-badge bg-soft-warning">Chờ chấm</span>
+                            }
+                        </div>
+                        <div class="small text-muted mt-1">@item.LqvThoiGianNop.ToString("dd/MM HH:mm")</div>
+                    </a>
+                }
+            </div>
+        </div>
+
+        <div class="s4-main-content">
+            @if (Model.BaiDangXem != null)
+            {
+                <div class="content-header">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar-circle me-3">
+                            @Model.BaiDangXem.LqvSinhVien?.LqvHoTen.Substring(0, 1).ToUpper()
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-bold">@Model.BaiDangXem.LqvSinhVien?.LqvHoTen</h6>
+                            <span class="small text-muted">ID: @Model.BaiDangXem.LqvSinhVienId</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="small text-muted me-3">Nộp vào: @Model.BaiDangXem.LqvThoiGianNop.ToString("dd/MM/yyyy HH:mm")</span>
+                    </div>
+                </div>
+
+                <div class="grading-area">
+                    <div class="submission-detail">
+                        <label class="fw-bold text-muted small text-uppercase mb-3">Nội dung bài làm:</label>
+                        <div class="p-4 border rounded-4 bg-light shadow-sm mb-4" style="min-height: 200px; white-space: pre-line;">
+                            @Model.BaiDangXem.LqvNoiDung
+                        </div>
+
+                        @if (!string.IsNullOrEmpty(Model.BaiDangXem.LqvFile))
+                        {
+                            <label class="fw-bold text-muted small text-uppercase mb-2">Tệp đính kèm:</label>
+                            <div class="file-attachment">
+                                <i class="fas fa-file-pdf fa-2x text-danger"></i>
+                                <div class="flex-grow-1 overflow-hidden">
+                                    <div class="fw-bold text-truncate">Tài liệu đính kèm</div>
+                                    <a href="@Model.BaiDangXem.LqvFile" target="_blank" class="small text-primary">Xem trực tuyến</a>
+                                </div>
+                                <a href="@Model.BaiDangXem.LqvFile" download class="btn btn-sm btn-outline-secondary">
+                                    <i class="fas fa-download"></i>
+                                </a>
+                            </div>
+                        }
+                    </div>
+
+                    <div class="grading-form-panel">
+                        <form asp-action="ChamDiem" method="post">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="id" value="@Model.BaiDangXem.LqvId" />
+
+                            <div class="mb-4">
+                                <label class="fw-bold small mb-2">ĐIỂM SỐ</label>
+                                <input type="number" step="0.1" name="diem" value="@Model.BaiDangXem.LqvDiem"
+                                       class="form-control form-control-lg fw-bold text-center border-2 border-primary"
+                                       placeholder="0.0" min="0" max="10" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="fw-bold small mb-2">NHẬN XÉT</label>
+                                <textarea name="nhanXet" class="form-control" rows="10"
+                                          placeholder="Viết phản hồi cho sinh viên...">@Model.BaiDangXem.LqvNhanXet</textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 py-3 fw-bold rounded-4 shadow-sm">
+                                <i class="fas fa-check-circle me-2"></i> LƯU ĐIỂM
+                            </button>
+                        </form>
+
+                        @if (Model.BaiDangXem.LqvDaCham)
+                        {
+                            <div class="mt-3 text-center">
+                                <span class="badge bg-soft-success w-100 py-2">
+                                    <i class="fas fa-check me-1"></i> Đã hoàn thành chấm bài
+                                </span>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="h-100 d-flex flex-column align-items-center justify-content-center text-muted">
+                    <i class="fas fa-user-edit fa-4x mb-3 opacity-20"></i>
+                    <h5>Chọn một sinh viên để chấm bài</h5>
+                    <p class="small">Danh sách bên trái hiển thị tất cả các bài đã nộp.</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

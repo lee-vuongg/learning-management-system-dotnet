@@ -1,0 +1,70 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvLopHoc
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Thêm lớp học";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="vision-card">
+    <div class="card-header-vision">
+        <h5 class="mb-0">
+            <i class="fas fa-plus-circle me-2"></i> Thêm lớp học
+        </h5>
+    </div>
+
+    <form asp-action="Create" method="post">
+        <div class="card-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="vision-label">Tên lớp</label>
+                    <input asp-for="LqvTenLop" class="form-control vision-form-control" />
+                    <span asp-validation-for="LqvTenLop" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="vision-label">Khóa học</label>
+                    <select asp-for="LqvKhoaHocId"
+                            class="form-select vision-form-select"
+                            asp-items="ViewBag.LqvKhoaHocId">
+                        <option value="">-- Chọn khóa học --</option>
+                    </select>
+                    <span asp-validation-for="LqvKhoaHocId" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="vision-label">Giảng viên</label>
+                    <select asp-for="LqvGiangVienId"
+                            class="form-select vision-form-select"
+                            asp-items="ViewBag.LqvGiangVienId">
+                        <option value="">-- Chọn giảng viên --</option>
+                    </select>
+                    <span asp-validation-for="LqvGiangVienId" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-12 mb-3">
+                    <label class="vision-label">Mô tả</label>
+                    <textarea asp-for="LqvMoTa"
+                              rows="4"
+                              class="form-control vision-form-control"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer text-end">
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Quay lại
+            </a>
+            <button type="submit" class="btn vision-btn-create">
+                <i class="fas fa-save"></i> Lưu
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

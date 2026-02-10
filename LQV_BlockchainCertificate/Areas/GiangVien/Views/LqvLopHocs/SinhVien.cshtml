@@ -1,0 +1,64 @@
+﻿@model LQV_BlockchainCertificate.Models.ViewModels.SinhVienLopHocListViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Sinh viên lớp";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<div class="study-card">
+
+    <div class="study-card-header">
+        <h5>
+            <i class="fas fa-user-graduate me-2"></i>
+            Sinh viên – <strong>@Model.TenLop</strong>
+        </h5>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table study-table align-middle">
+            <thead>
+                <tr>
+                    <th>Họ tên</th>
+                    <th>Email</th>
+                    <th class="text-center">% Chuyên cần</th>
+                    <th class="text-center">Chứng chỉ</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sv in Model.SinhViens)
+                {
+                    <tr>
+                        <td>@sv.HoTen</td>
+                        <td>@sv.Email</td>
+                        <td class="text-center">
+                            <span class="badge bg-info">
+                                @sv.ChuyenCan %
+                            </span>
+                        </td>
+                        <td class="text-center">
+                            @if (sv.DuDieuKienChungChi)
+                            {
+                                <span class="badge bg-success">
+                                    <i class="fas fa-check"></i> Đủ điều kiện
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">
+                                    <i class="fas fa-times"></i> Chưa đủ
+                                </span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card-footer text-end">
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Quay lại
+        </a>
+    </div>
+</div>

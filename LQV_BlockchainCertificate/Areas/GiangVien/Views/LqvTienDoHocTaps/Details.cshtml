@@ -1,0 +1,44 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvTienDoHocTap
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chi tiết tiến độ";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-7">
+        <div class="card-s4 border-0 shadow-sm overflow-hidden">
+            <div class="bg-primary p-5 text-center text-white">
+                <div class="display-4 fw-800 mb-2">@Model.LqvTiLeHoanThanh%</div>
+                <p class="text-uppercase fw-bold opacity-75 letter-spacing-1">Tiến độ khóa học</p>
+                <div class="progress bg-white bg-opacity-25 rounded-pill mx-auto" style="height: 10px; width: 60%;">
+                    <div class="progress-bar bg-white" style="width: @Model.LqvTiLeHoanThanh%"></div>
+                </div>
+            </div>
+            <div class="card-body p-5">
+                <div class="row g-4">
+                    <div class="col-md-6 border-end">
+                        <label class="small text-muted fw-bold text-uppercase d-block mb-1">Sinh viên</label>
+                        <h5 class="fw-bold">@Model.LqvSinhVien?.LqvHoTen</h5>
+                        <p class="text-muted small">ID: @Model.LqvSinhVienId</p>
+                    </div>
+                    <div class="col-md-6 ps-md-4">
+                        <label class="small text-muted fw-bold text-uppercase d-block mb-1">Khóa học</label>
+                        <h5 class="fw-bold">@Model.LqvKhoaHoc?.LqvTenKhoaHoc</h5>
+                        <p class="text-muted small">Mã KH: @Model.LqvKhoaHoc?.LqvMaKhoaHoc</p>
+                    </div>
+                    <div class="col-12 mt-4 pt-4 border-top">
+                        <div class="d-flex justify-content-between align-items-center bg-light p-3 rounded-3">
+                            <span class="text-muted small fw-bold">📅 CẬP NHẬT LẦN CUỐI</span>
+                            <span class="fw-bold">@Model.LqvNgayCapNhat?.ToString("dd MMMM, yyyy HH:mm")</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 d-flex gap-2">
+                    <a asp-action="Edit" asp-route-id="@Model.LqvId" class="btn btn-warning flex-grow-1 rounded-3 fw-bold">Chỉnh sửa</a>
+                    <a asp-action="Index" class="btn btn-outline-secondary px-4 rounded-3">Quay lại</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvBoCauHoi
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Xóa bộ câu hỏi";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card border-0 shadow rounded-4 p-4 text-center">
+                <div class="text-danger mb-3">
+                    <i class="fas fa-exclamation-circle fa-4x"></i>
+                </div>
+                <h4 class="fw-bold">Xác nhận xóa bộ câu hỏi?</h4>
+                <p class="text-muted small">Mọi dữ liệu liên quan đến bộ câu hỏi <strong>"@Model.LqvTenBo"</strong> sẽ bị gỡ bỏ vĩnh viễn.</p>
+
+                <div class="alert alert-light border text-start mt-3">
+                    <small class="d-block text-muted">Mô tả:</small>
+                    <span class="small">@Model.LqvMoTa</span>
+                </div>
+
+                <form asp-action="Delete" class="mt-4">
+                    <input type="hidden" asp-for="LqvBoCauHoiId" />
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-danger rounded-pill fw-bold py-2">Xác nhận xóa</button>
+                        <a asp-action="Index" class="btn btn-light rounded-pill py-2 border">Hủy thao tác</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

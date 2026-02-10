@@ -1,0 +1,71 @@
+﻿﻿
+@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvBuoiHoc>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Danh sách buổi học";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+    var lopHoc = ViewBag.LopHoc as LQV_BlockchainCertificate.Models.DBModel.LqvLopHoc;
+}
+
+<div class="container-fluid py-4">
+
+    <h4 class="text-primary mb-3">
+        📚 Buổi học - @lopHoc?.LqvTenLop
+    </h4>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info text-white">
+            Chưa có buổi học nào cho lớp này.
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-lg-4 mb-3">
+                    <div class="card shadow-sm h-100">
+
+                        <div class="card-body">
+                            <h6 class="mb-2">
+                                📅 @item.LqvNgayHoc.ToString("dd/MM/yyyy")
+                            </h6>
+
+                            <p class="text-sm mb-1">
+                                ⏰ @item.LqvGioBatDau - @item.LqvGioKetThuc
+                            </p>
+
+                            <p class="text-sm">
+                                @if (item.LqvDangMo)
+                                {
+                                    <span class="badge bg-success">Đang mở</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">Chưa mở</span>
+                                }
+                            </p>
+                        </div>
+
+                        <div class="card-footer text-end">
+                            <a asp-action="Details"
+                               asp-route-id="@item.LqvBuoiHocId"
+                               class="btn btn-primary btn-sm">
+                                Xem chi tiết →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+
+    <a asp-area="Student"
+       asp-controller="LqvLopHocs"
+       asp-action="Index"
+       class="btn btn-outline-secondary btn-sm mt-3">
+        ⬅ Quay lại lớp học
+    </a>
+</div>

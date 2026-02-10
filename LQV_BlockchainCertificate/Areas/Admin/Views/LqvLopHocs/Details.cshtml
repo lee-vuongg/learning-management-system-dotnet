@@ -1,0 +1,58 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvLopHoc
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chi tiết lớp học";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="vision-card">
+    <div class="card-header-vision">
+        <h5 class="mb-0">
+            <i class="fas fa-info-circle me-2"></i> Chi tiết lớp học
+        </h5>
+    </div>
+
+    <div class="card-body">
+        <table class="table vision-table">
+            <tr>
+                <th width="200">Tên lớp</th>
+                <td><strong>@Model.LqvTenLop</strong></td>
+            </tr>
+
+            <tr>
+                <th>Khóa học</th>
+                <td>@Model.LqvKhoaHoc?.LqvTenKhoaHoc</td>
+            </tr>
+
+            <tr>
+                <th>Giảng viên</th>
+                <td>
+                    <span class="badge bg-info">
+                        @Model.LqvGiangVien?.LqvHoTen
+                    </span>
+                </td>
+            </tr>
+
+            <tr>
+                <th>Mô tả</th>
+                <td>@Model.LqvMoTa</td>
+            </tr>
+
+            <tr>
+                <th>Ngày tạo</th>
+                <td>@Model.LqvNgayTao?.ToString("dd/MM/yyyy")</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card-footer text-end">
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Quay lại
+        </a>
+        <a asp-action="Edit"
+           asp-route-id="@Model.LqvLopHocId"
+           class="btn btn-warning">
+            <i class="fas fa-edit"></i> Chỉnh sửa
+        </a>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvLopHoc>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Đăng ký lớp học";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<div class="container py-4">
+    <div class="mb-4">
+        <h3 class="fw-bold">📝 Danh sách lớp đang mở</h3>
+        <p class="text-muted small">Chọn lớp học phù hợp với lộ trình Skill Map của bạn.</p>
+    </div>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger rounded-3 border-0 shadow-sm">@TempData["Error"]</div>
+    }
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success rounded-3 border-0 shadow-sm">@TempData["Success"]</div>
+    }
+
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+        <div class="table-responsive">
+            <table class="table align-items-center mb-0">
+                <thead class="bg-light">
+                    <tr>
+                        <th class="ps-4 py-3 text-uppercase text-xs font-weight-bold">Tên lớp & Khóa học</th>
+                        <th class="py-3 text-uppercase text-xs font-weight-bold">Giảng viên</th>
+                        <th class="py-3 text-center text-uppercase text-xs font-weight-bold">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var lop in Model)
+                    {
+                        <tr>
+                            <td class="ps-4">
+                                <div class="fw-bold text-dark">@lop.LqvTenLop</div>
+                                <div class="text-muted small">@lop.LqvKhoaHoc?.LqvTenKhoaHoc</div>
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar-sm bg-soft-primary rounded-circle me-2"></div>
+                                    <span class="small fw-medium">@lop.LqvGiangVien?.LqvTenDangNhap</span>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <form asp-action="DangKy" method="post" class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="lopHocId" value="@lop.LqvLopHocId" />
+                                    <button type="submit" class="btn btn-success btn-sm rounded-pill px-4"
+                                            onclick="return confirm('Bạn muốn đăng ký lớp học này?')">
+                                        Ghi danh
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

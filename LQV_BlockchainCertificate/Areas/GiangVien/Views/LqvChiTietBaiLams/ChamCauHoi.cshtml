@@ -1,0 +1,56 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvChiTietBaiLam
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chấm câu hỏi";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<h2>Chấm câu hỏi tự luận</h2>
+<hr />
+
+<div class="mb-3">
+    <label><strong>Câu hỏi:</strong></label>
+    <div class="border p-2">
+        @Model.LqvCauHoi?.LqvNoiDung
+    </div>
+</div>
+
+<div class="mb-3">
+    <label><strong>Bài làm sinh viên:</strong></label>
+    <div class="border p-2">
+        @Model.LqvDapAn?.LqvNoiDung
+    </div>
+</div>
+
+<form asp-area="GiangVien"
+      asp-controller="LqvChiTietBaiLams"
+      asp-action="ChamCauHoi"
+      method="post">
+
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" name="id" value="@Model.LqvId" />
+
+    <div class="mb-3">
+        <label>Điểm (0 – 10)</label>
+        <input type="number"
+               name="diem"
+               class="form-control"
+               step="0.01"
+               min="0"
+               max="10"
+               required />
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Lưu điểm
+    </button>
+
+    <a asp-area="GiangVien"
+       asp-controller="LqvChiTietBaiLams"
+       asp-action="ByBaiLam"
+       asp-route-baiLamId="@Model.LqvBaiLamId"
+       class="btn btn-secondary">
+        Quay lại
+    </a>
+</form>

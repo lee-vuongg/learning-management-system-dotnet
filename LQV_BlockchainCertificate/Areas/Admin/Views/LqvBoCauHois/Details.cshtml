@@ -1,0 +1,50 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvBoCauHoi
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chi tiết bộ câu hỏi";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow rounded-4 p-4">
+                <div class="d-flex align-items-center mb-4 border-bottom pb-3">
+                    <div class="bg-info bg-opacity-10 text-info p-3 rounded-3 me-3">
+                        <i class="fas fa-info-circle fa-2x"></i>
+                    </div>
+                    <div>
+                        <h4 class="fw-bold mb-0">Chi tiết bộ câu hỏi</h4>
+                        <p class="text-muted small mb-0">ID: #@Model.LqvBoCauHoiId</p>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="text-muted small fw-bold text-uppercase">Tên bộ câu hỏi</label>
+                    <div class="h5 fw-bold text-dark">@Model.LqvTenBo</div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="text-muted small fw-bold text-uppercase">Mô tả nội dung</label>
+                    <div class="text-dark">@Model.LqvMoTa</div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-6">
+                        <label class="text-muted small fw-bold text-uppercase">Ngày tạo</label>
+                        <div class="text-dark">@Model.LqvNgayTao?.ToString("dd/MM/yyyy")</div>
+                    </div>
+                    <div class="col-6">
+                        <label class="text-muted small fw-bold text-uppercase">Giảng viên</label>
+                        <div class="text-dark fw-bold">@Model.LqvGiangVien?.LqvHoTen</div>
+                    </div>
+                </div>
+
+                <div class="mt-2 d-flex gap-2">
+                    <a asp-action="Edit" asp-route-id="@Model.LqvBoCauHoiId" class="btn btn-warning rounded-pill px-4 flex-grow-1 fw-bold">Sửa thông tin</a>
+                    <a asp-action="Index" class="btn btn-light rounded-pill px-4 border flex-grow-1">Quay lại</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

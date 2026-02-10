@@ -1,0 +1,261 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvBuoiHoc
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var isEdit = ViewContext.RouteData.Values["action"]?.ToString() == "Edit";
+    ViewData["Title"] = isEdit ? "Cập nhật buổi học" : "Tạo buổi học";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+
+<style>
+    :root {
+        --google-blue: #1a73e8;
+        --google-gray: #5f6368;
+        --google-border: #dadce0;
+        --google-bg: #ffffff;
+    }
+
+    body {
+        background-color: #f8f9fa;
+        color: #3c4043;
+    }
+
+    .classroom-card {
+        background: var(--google-bg);
+        border: 1px solid var(--google-border);
+        border-radius: 8px;
+        transition: box-shadow 0.2s;
+    }
+
+        .classroom-card:hover {
+            box-shadow: 0 1px 2px 0 rgba(60,64,67,0.30), 0 1px 3px 1px rgba(60,64,67,0.15);
+        }
+
+    .form-body {
+        padding: 1.5rem;
+    }
+
+    .classroom-title {
+        font-size: 1.375rem;
+        color: var(--google-blue);
+        font-weight: 500;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: var(--google-gray);
+        font-size: 0.9rem;
+    }
+
+    .form-control, .form-select {
+        border-radius: 4px;
+        border: 1px solid var(--google-border);
+        background-color: #f1f3f4;
+    }
+
+        .form-control:focus, .form-select:focus {
+            background-color: #fff;
+            border-color: var(--google-blue);
+            outline: 1px solid var(--google-blue);
+            box-shadow: none;
+        }
+
+        .form-control[readonly] {
+            background-color: #e8f0fe;
+            color: var(--google-blue);
+        }
+
+    .btn-classroom-primary {
+        background-color: var(--google-blue);
+        color: #fff;
+        font-weight: 500;
+        border-radius: 4px;
+    }
+
+    .btn-classroom-outline {
+        color: var(--google-blue);
+        border: 1px solid var(--google-border);
+        background: transparent;
+        border-radius: 4px;
+    }
+
+    .map-container {
+        border-radius: 8px;
+        border: 1px solid var(--google-border);
+        overflow: hidden;
+    }
+
+    .info-banner {
+        background-color: #e8f0fe;
+        color: #1967d2;
+        padding: 12px 16px;
+        border-radius: 4px;
+        font-size: 0.875rem;
+        display: flex;
+        gap: 8px;
+        margin-bottom: 1rem;
+    }
+</style>
+
+<div class="container-fluid py-4">
+    <div class="row mb-4">
+        <div class="col-12 d-flex align-items-center">
+            <a asp-action="Index" class="btn btn-link me-3">←</a>
+            <h3 class="classroom-title">@(isEdit ? "Chỉnh sửa buổi học" : "Tạo buổi học mới")</h3>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <!-- FORM -->
+        <div class="col-lg-4">
+            <div class="classroom-card">
+                <div class="form-body">
+                    <form asp-action="@(isEdit ? "Edit" : "Create")">
+                        @if (isEdit)
+                        {
+                            <input type="hidden" asp-for="LqvBuoiHocId" />
+                        }
+
+                        <div class="mb-4">
+                            <label class="form-label">Lớp học</label>
+                            <select asp-for="LqvLopHocId" asp-items="ViewBag.LopHocList" class="form-select">
+                                <option value="">-- Chọn lớp học --</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label">Ngày học</label>
+                            <input asp-for="LqvNgayHoc" type="date" class="form-control" />
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <label class="form-label">Bắt đầu</label>
+                                <input asp-for="LqvGioBatDau" type="time" class="form-control" />
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Kết thúc</label>
+                                <input asp-for="LqvGioKetThuc" type="time" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <label class="form-label">Vĩ độ</label>
+                                <input asp-for="LqvViDo" id="lat" class="form-control" readonly />
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Kinh độ</label>
+                                <input asp-for="LqvKinhDo" id="lng" class="form-control" readonly />
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label">Bán kính điểm danh (m)</label>
+                            <input asp-for="LqvBanKinh" id="radius" class="form-control" value="50" />
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-2 pt-3 border-top">
+                            <a asp-action="Index" class="btn btn-classroom-outline">Hủy</a>
+                            <button type="submit" class="btn btn-classroom-primary">Lưu</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAP -->
+        <div class="col-lg-8">
+            <div class="classroom-card">
+                <div class="form-body">
+                    <div class="d-flex gap-2 mb-3">
+                        <input id="searchLocation" class="form-control" placeholder="Tìm địa điểm..." />
+                        <button type="button" class="btn btn-classroom-outline" onclick="getCurrentLocation()">📍</button>
+                    </div>
+
+                    <div class="info-banner">ℹ️ Chọn vị trí trên bản đồ để làm tâm điểm danh</div>
+
+                    <div id="map" class="map-container" style="height:550px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+<script>
+    var map = L.map('map').setView([21.0285, 105.8542], 15);
+
+    // ====== MAP LAYERS ======
+    var normalMap = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        { attribution: '© OpenStreetMap' }
+    );
+
+    var satelliteMap = L.tileLayer(
+        'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+        { attribution: '© Esri' }
+    );
+
+    normalMap.addTo(map);
+
+    L.control.layers({
+        "🗺️ Bản đồ": normalMap,
+        "🛰️ Vệ tinh": satelliteMap
+    }).addTo(map);
+
+    var marker, circle;
+
+    function setLocation(lat, lng) {
+        var radius = document.getElementById('radius').value || 50;
+
+        document.getElementById('lat').value = lat;
+        document.getElementById('lng').value = lng;
+
+        if (marker) map.removeLayer(marker);
+        if (circle) map.removeLayer(circle);
+
+        marker = L.marker([lat, lng]).addTo(map);
+        circle = L.circle([lat, lng], {
+            radius: radius,
+            color: '#1a73e8',
+            fillOpacity: 0.25
+        }).addTo(map);
+
+        map.setView([lat, lng], 17);
+    }
+
+    map.on('click', e => setLocation(e.latlng.lat, e.latlng.lng));
+
+    document.getElementById('radius').addEventListener('input', e => {
+        if (circle) circle.setRadius(e.target.value);
+    });
+
+    var geocoder = L.Control.Geocoder.nominatim();
+    document.getElementById('searchLocation').addEventListener('keypress', e => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            geocoder.geocode(e.target.value, r => {
+                if (r.length) setLocation(r[0].center.lat, r[0].center.lng);
+                else alert("Không tìm thấy địa điểm");
+            });
+        }
+    });
+
+    function getCurrentLocation() {
+        navigator.geolocation.getCurrentPosition(
+            pos => setLocation(pos.coords.latitude, pos.coords.longitude),
+            () => alert("Không lấy được vị trí")
+        );
+    }
+
+    window.onload = function () {
+        var lat = document.getElementById('lat').value;
+        var lng = document.getElementById('lng').value;
+        if (lat && lng) setLocation(lat, lng);
+    }
+</script>

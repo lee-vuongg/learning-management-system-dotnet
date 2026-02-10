@@ -1,0 +1,44 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvDeThi
+
+@{
+    ViewData["Title"] = "Chi tiết đề thi";
+}
+
+<h2>Chi tiết đề thi</h2>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Tên đề thi</dt>
+            <dd class="col-sm-9">@Model.LqvTenDeThi</dd>
+
+            <dt class="col-sm-3">Thời gian thi</dt>
+            <dd class="col-sm-9">@Model.LqvThoiGianThi phút</dd>
+
+            <dt class="col-sm-3">Tổng điểm</dt>
+            <dd class="col-sm-9">@Model.LqvTongDiem</dd>
+
+            <dt class="col-sm-3">Giảng viên</dt>
+            <dd class="col-sm-9">@Model.LqvGiangVien?.LqvHoTen</dd>
+
+            <dt class="col-sm-3">Ngày duyệt</dt>
+            <dd class="col-sm-9">
+                @Model.LqvNgayDuyet?.ToString("dd/MM/yyyy")
+            </dd>
+        </dl>
+
+        <div class="mt-3">
+            <a asp-area="Student"
+               asp-controller="LqvLamBai"
+               asp-action="Start"
+               asp-route-deThiId="@Model.LqvDeThiId"
+               class="btn btn-success">
+                Vào làm bài
+            </a>
+
+            <a asp-action="Index" class="btn btn-secondary">
+                Quay lại
+            </a>
+        </div>
+    </div>
+</div>

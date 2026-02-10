@@ -1,0 +1,186 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvYeuCauCapChungChi>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Quản lý Yêu cầu Cấp Chứng chỉ";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    :root {
+        --color-card-bg: #1c233a;
+        --color-text-light: #e0e7ff;
+        --color-neon-blue: #4fd1c5;
+        --color-dark-bg: #0d1222;
+        --color-text-muted: #8c97b8;
+    }
+
+    .table-custom {
+        background-color: var(--color-card-bg);
+        color: var(--color-text-light);
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #1a2455;
+    }
+
+    .btn-neon-success {
+        background: linear-gradient(135deg, #4fd1c5 0%, #38b2ac 100%);
+        border: none;
+        color: #000;
+        font-weight: 600;
+    }
+
+    .btn-neon-danger {
+        background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+        border: none;
+        color: #fff;
+        font-weight: 600;
+    }
+</style>
+
+<div class="content-body-area">
+    <h1 class="text-3xl font-bold mb-4 text-info">
+        Quản lý Yêu cầu Cấp Chứng chỉ
+    </h1>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    <div class="table-responsive">
+        <table class="table table-custom table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Người dùng</th>
+                    <th>Khóa học</th>
+                    <th>Ngày yêu cầu</th>
+                    <th>Lý do</th>
+                    <th>Trạng thái</th>
+                    <th>Ghi chú</th>
+                    <th width="180">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.LqvId</td>
+                        <td>
+                            @item.LqvNguoiDung.LqvHoTen <br />
+                            <small class="text-muted">@item.LqvNguoiDung.LqvEmail</small>
+                        </td>
+                        <td>@item.LqvKhoaHoc.LqvTenKhoaHoc</td>
+                        <td>@item.LqvNgayYeuCau?.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>@item.LqvLyDoYeuCau</td>
+
+                        <!-- TRẠNG THÁI -->
+                        <td>
+                            @if (item.LqvTrangThai == "Chờ duyệt")
+                            {
+                                <span class="badge bg-warning text-dark">🟡 Chờ duyệt</span>
+                            }
+                            else if (item.LqvTrangThai == "Đã duyệt")
+                            {
+                                <span class="badge bg-success">🟢 Đã duyệt</span>
+                            }
+                            else if (item.LqvTrangThai == "Đã duyệt (Trùng)")
+                            {
+                                <span class="badge bg-info text-dark">⚠️ Đã duyệt (Trùng)</span>
+                            }
+                            else if (item.LqvTrangThai == "Đã từ chối")
+                            {
+                                <span class="badge bg-danger">❌ Đã từ chối</span>
+                            }
+                        </td>
+
+                        <td class="text-danger">
+                            @item.LqvLyDoTuChoi
+                        </td>
+
+                        <!-- HÀNH ĐỘNG -->
+                        <td>
+                            @if (item.LqvTrangThai == "Chờ duyệt")
+                            {
+                                <form asp-action="Approve"
+                                      asp-route-id="@item.LqvId"
+                                      method="post"
+                                      class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-sm btn-neon-success me-1">
+                                        ✔ Duyệt
+                                    </button>
+                                </form>
+
+                                <button class="btn btn-sm btn-neon-danger"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#rejectModal-@item.LqvId">
+                                    ❌ Từ chối
+                                </button>
+                            }
+                            else
+                            {
+                                <a asp-area="Admin"
+                                   asp-controller="LqvYeuCauCapChungChis"
+                                   asp-action="Details"
+                                   asp-route-id="@item.LqvId"
+                                   class="btn btn-sm btn-outline-info">
+                                    👁 Xem
+                                </a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- MODAL TỪ CHỐI -->
+@foreach (var item in Model.Where(x => x.LqvTrangThai == "Chờ duyệt"))
+{
+    <div class="modal fade" id="rejectModal-@item.LqvId" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color:#1c233a;color:#fff;">
+                <form asp-action="Reject" asp-route-id="@item.LqvId" method="post">
+                    @Html.AntiForgeryToken()
+
+                    <div class="modal-header border-bottom">
+                        <h5 class="modal-title">
+                            ❌ Từ chối yêu cầu #@item.LqvId
+                        </h5>
+                        <button type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                style="filter:invert(1);"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <label class="form-label">Lý do từ chối</label>
+                        <textarea name="lqvlydotuchoi"
+                                  class="form-control bg-dark text-white"
+                                  rows="3"
+                                  required></textarea>
+                    </div>
+
+                    <div class="modal-footer border-top">
+                        <button type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal">
+                            Hủy
+                        </button>
+                        <button type="submit"
+                                class="btn btn-neon-danger">
+                            Xác nhận
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}

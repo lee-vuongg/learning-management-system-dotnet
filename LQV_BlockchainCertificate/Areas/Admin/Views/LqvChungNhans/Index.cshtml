@@ -1,0 +1,108 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvChungNhan>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Quản lý chứng nhận";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    :root {
+        --s4-primary: #3366FF;
+        --s4-bg: #F8FAFC;
+        --s4-text: #1E293B;
+    }
+
+    .s4-card {
+        background: #ffffff;
+        border-radius: 16px;
+        border: 1px solid #E2E8F0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+    }
+
+    .s4-table thead th {
+        background-color: #F8FAFC;
+        color: #64748B;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.025em;
+        border-top: none;
+    }
+
+    .badge-s4 {
+        padding: 0.5em 0.8em;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+
+    .hash-text {
+        font-family: 'Courier New', monospace;
+        background: #F1F5F9;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+    }
+</style>
+
+<div class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="fw-bold text-dark mb-1">Quản lý Chứng nhận</h3>
+            <p class="text-muted small">Xem và quản lý các chứng chỉ blockchain đã cấp</p>
+        </div>
+        <a asp-action="Create" class="btn btn-primary rounded-pill px-4 fw-bold">
+            <i class="fas fa-plus me-2"></i> Cấp chứng nhận mới
+        </a>
+    </div>
+
+    <div class="s4-card">
+        <div class="table-responsive">
+            <table class="table s4-table align-middle">
+                <thead>
+                    <tr>
+                        <th>Mã số</th>
+                        <th>Thông tin cấp</th>
+                        <th>Ngày cấp</th>
+                        <th>Trạng thái</th>
+                        <th>Blockchain Hash</th>
+                        <th class="text-center">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td><span class="fw-bold text-primary">@item.LqvMaChungNhanCode</span></td>
+                            <td>
+                                <div class="fw-bold">@item.LqvSinhVien?.LqvHoTen</div>
+                                <div class="small text-muted">@item.LqvKhoaHoc?.LqvTenKhoaHoc</div>
+                            </td>
+                            <td>@item.LqvNgayCap.ToString("dd/MM/yyyy")</td>
+                            <td>
+                                @if (item.LqvTrangThai == "Đã cấp")
+                                {
+                                    <span class="badge bg-success-subtle text-success badge-s4">Đã cấp</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-warning-subtle text-warning badge-s4">@item.LqvTrangThai</span>
+                                }
+                            </td>
+                            <td>
+                                <div class="hash-text text-truncate" style="max-width: 120px;">@item.LqvHashValue</div>
+                            </td>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    <a asp-action="Details" asp-route-id="@item.LqvMaChungNhan" class="btn btn-light btn-sm text-info"><i class="fas fa-eye"></i></a>
+                                    <a asp-action="Edit" asp-route-id="@item.LqvMaChungNhan" class="btn btn-light btn-sm text-warning"><i class="fas fa-edit"></i></a>
+                                    <a asp-action="Delete" asp-route-id="@item.LqvMaChungNhan" class="btn btn-light btn-sm text-danger"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

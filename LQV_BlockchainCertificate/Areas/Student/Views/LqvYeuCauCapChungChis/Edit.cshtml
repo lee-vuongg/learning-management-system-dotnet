@@ -1,0 +1,65 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvYeuCauCapChungChi
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chỉnh sửa Yêu cầu";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+    // Lấy tên khóa học hiện tại từ ViewBag, giả định Controller đã truyền nó qua `ViewBag.CurrentKhoaHocName`
+    // Nếu bạn đang dùng Include() trong Controller, bạn có thể dùng Model.LqvKhoaHoc.LqvTenKhoaHoc
+    var currentCourseName = Model.LqvKhoaHoc?.LqvTenKhoaHoc ?? ViewData["CurrentKhoaHocName"] as string;
+}
+
+<div class="d-flex justify-content-center">
+    <div class="card p-4 mx-auto shadow-lg" style="max-width: 600px; border-radius: 0.75rem;">
+
+        <h3 class="fw-bold text-primary mb-2">@ViewData["Title"]</h3>
+        <h5 class="text-muted border-bottom pb-3 mb-4">Yêu cầu #@Model.LqvId</h5>
+
+        @if (TempData["WarningMessage"] != null)
+        {
+            <div class="alert alert-warning card" role="alert">
+                <i class="fas fa-exclamation-triangle me-2"></i>@TempData["WarningMessage"]
+            </div>
+        }
+
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+            <input type="hidden" asp-for="LqvId" />
+
+            <!-- Trường Khóa học -->
+            <div class="mb-3">
+
+                <!-- HIỂN THỊ TÊN KHÓA HỌC HIỆN TẠI ĐƯỢC CHỌN -->
+                @if (!string.IsNullOrEmpty(currentCourseName))
+                {
+                    <p class="mb-1 text-sm text-success fw-bold">
+                        Khóa học hiện tại: <strong>@currentCourseName</strong>
+                    </p>
+                }
+
+                <label asp-for="LqvKhoaHocId" class="form-label fw-bold">Chọn Khóa học khác (Nếu cần)</label>
+                <select asp-for="LqvKhoaHocId" class="form-select" asp-items="@(ViewData["LqvKhoaHocId"] as SelectList)" required>
+                    <option value="">-- Chọn Khóa học đã hoàn thành --</option>
+                </select>
+                <span asp-validation-for="LqvKhoaHocId" class="text-danger"></span>
+            </div>
+
+            <!-- Trường Lý do Yêu cầu -->
+            <div class="mb-4">
+                <label asp-for="LqvLyDoYeuCau" class="form-label fw-bold">Lý do Yêu cầu</label>
+                <textarea asp-for="LqvLyDoYeuCau" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="LqvLyDoYeuCau" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                <a asp-action="Index" class="btn btn-outline-secondary"><i class="fas fa-arrow-left me-2"></i>Quay lại</a>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-save me-2"></i>Lưu Thay đổi</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

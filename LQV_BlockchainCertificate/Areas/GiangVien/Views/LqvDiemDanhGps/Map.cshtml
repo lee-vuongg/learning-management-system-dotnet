@@ -1,0 +1,285 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvDiemDanhGp>
+@using System.Globalization
+@using System.IO
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var buoiHoc = ViewBag.BuoiHoc;
+    ViewData["Title"] = "Bản đồ điểm danh";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+
+    var lat = buoiHoc.LqvViDo?.ToString(CultureInfo.InvariantCulture);
+    var lng = buoiHoc.LqvKinhDo?.ToString(CultureInfo.InvariantCulture);
+    var radius = buoiHoc.LqvBanKinh ?? 50;
+}
+
+<style>
+    /* Tổng thể */
+    body {
+        background-color: #f8fafc;
+    }
+
+    .fw-800 {
+        font-weight: 800;
+    }
+
+    /* Info Cards */
+    .info-card-map {
+        background: white;
+        border-radius: 16px;
+        padding: 20px;
+        border: none;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        transition: transform 0.2s;
+        border-left: 6px solid #3b82f6;
+    }
+
+        .info-card-map:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card-map label {
+            color: #64748b;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .info-card-map .value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+    /* Map Styling */
+    .map-container-outer {
+        background: white;
+        padding: 10px;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    #map {
+        height: 650px;
+        border-radius: 18px;
+        z-index: 1;
+    }
+
+    /* Custom Markers */
+    .avatar-marker {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        border: 3px solid white;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+        .avatar-marker:hover {
+            transform: scale(1.2) translateY(-5px);
+            z-index: 1000 !important;
+        }
+
+    .avatar-valid {
+        border-color: #10b981;
+    }
+
+    .avatar-invalid {
+        border-color: #ef4444;
+    }
+
+    /* Modal mượt mà */
+    #imgModal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(15, 23, 42, 0.9);
+        z-index: 99999;
+        backdrop-filter: blur(8px);
+        cursor: zoom-out;
+        transition: opacity 0.3s;
+    }
+
+    #imgPreview {
+        max-width: 90%;
+        max-height: 80%;
+        margin-top: 5%;
+        border-radius: 15px;
+        border: 4px solid white;
+        box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        animation: zoomIn 0.3s ease;
+    }
+
+    @@keyframes zoomIn {
+        from {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* Popup Leaflet Custom */
+    .leaflet-popup-content-wrapper {
+        border-radius: 12px;
+        padding: 5px;
+    }
+
+    .btn-checkin {
+        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 10px;
+        border: none;
+        font-weight: 600;
+        font-size: 12px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+</style>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h3 class="fw-800 text-dark mb-1"><i class="fas fa-map-marked-alt text-primary me-2"></i>Bản đồ điểm danh GPS</h3>
+        <p class="text-muted small mb-0">Hệ thống giám sát vị trí sinh viên thời gian thực</p>
+    </div>
+    <a asp-action="Index" class="btn btn-white shadow-sm rounded-pill px-4 fw-bold border">
+        <i class="fas fa-arrow-left me-2"></i>Quay lại danh sách
+    </a>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-4">
+        <div class="info-card-map shadow-sm">
+            <label class="fw-bold uppercase"><i class="fas fa-bullseye me-2"></i>TÂM ĐIỂM DANH</label>
+            <div class="value">@buoiHoc.LqvViDo, @buoiHoc.LqvKinhDo</div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="info-card-map shadow-sm" style="border-left-color:#10b981">
+            <label class="fw-bold uppercase"><i class="fas fa-ruler-combined me-2"></i>PHẠM VI CHO PHÉP</label>
+            <div class="value">@radius <small class="text-muted">mét</small></div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="info-card-map shadow-sm" style="border-left-color:#f59e0b">
+            <label class="fw-bold uppercase"><i class="fas fa-users me-2"></i>TỔNG LƯỢT QUÉT</label>
+            <div class="value">@Model.Count() <small class="text-muted">sinh viên</small></div>
+        </div>
+    </div>
+</div>
+
+<div class="map-container-outer">
+    <div id="map"></div>
+</div>
+
+<div id="imgModal" onclick="this.style.display='none'">
+    <div class="d-flex flex-column align-items-center justify-content-center h-100">
+        <img id="imgPreview">
+        <p class="text-white mt-3 fw-bold">Nhấn bất kỳ đâu để đóng</p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+    // 1. Khởi tạo Map
+    const centerLat = @lat;
+    const centerLng = @lng;
+    const radius = @radius;
+
+    var map = L.map('map', {
+        zoomControl: true,
+        scrollWheelZoom: true
+    }).setView([centerLat, centerLng], 18);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    // 2. Vùng bán kính (Giảng viên)
+    L.circle([centerLat, centerLng], {
+        radius: radius,
+        color: '#3b82f6',
+        fillColor: '#3b82f6',
+        fillOpacity: 0.1,
+        weight: 2,
+        dashArray: '5, 10'
+    }).addTo(map);
+
+    // Marker Giảng viên (Icon đặc biệt)
+    var teacherIcon = L.divIcon({
+        html: '<div style="background:#3b82f6; width:20px; height:20px; border-radius:50%; border:4px solid white; box-shadow:0 0 15px rgba(59,130,246,0.6)"></div>',
+        className: ''
+    });
+    L.marker([centerLat, centerLng], {icon: teacherIcon}).addTo(map).bindPopup("<b>👨‍🏫 Vị trí của bạn (Tâm)</b>");
+
+    // 3. Render Marker Sinh viên
+    @foreach (var sv in Model)
+    {
+        var svLat = sv.LqvViDo.ToString(CultureInfo.InvariantCulture);
+        var svLng = sv.LqvKinhDo.ToString(CultureInfo.InvariantCulture);
+        var avatar = string.IsNullOrEmpty(sv.LqvSinhVien?.LqvAvt) ? "/images/default-avatar.png" : sv.LqvSinhVien.LqvAvt;
+        var statusText = sv.LqvHopLe ? "Hợp lệ" : "Ngoài phạm vi";
+        var statusCss = sv.LqvHopLe ? "avatar-valid" : "avatar-invalid";
+
+        // Logic lấy ảnh check-in
+        var prefix = $"checkin_{sv.LqvSinhVienId}_{sv.LqvBuoiHocId}_";
+        var folderPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "checkin-faces");
+        string imgUrl = "";
+        if (Directory.Exists(folderPath))
+        {
+            var file = Directory.GetFiles(folderPath, prefix + "*.jpg")
+                        .Select(x => new FileInfo(x))
+                        .OrderByDescending(x => x.CreationTime).FirstOrDefault();
+            if (file != null) imgUrl = "/checkin-faces/" + file.Name + "?v=" + file.CreationTime.Ticks;
+        }
+
+        <text>
+            var icon_@sv.LqvId = L.divIcon({
+                html: `<div class="avatar-marker @statusCss" style="background-image:url('@avatar')"></div>`,
+                iconSize: [48, 48],
+                className: ''
+            });
+
+            L.marker([@svLat, @svLng], { icon: icon_@sv.LqvId })
+                .addTo(map)
+                .bindPopup(`
+                    <div style="text-align:center; padding:10px">
+                        <img src="@avatar" style="width:70px;height:70px;border-radius:50%;object-fit:cover;border:2px solid #eee;margin-bottom:8px">
+                        <div style="font-weight:800;font-size:14px;color:#1e293b">@sv.LqvSinhVien?.LqvHoTen</div>
+                        <div style="margin:5px 0; font-weight:600; color:@(sv.LqvHopLe ? "#10b981" : "#ef4444")">
+                             <i class="fas @(sv.LqvHopLe ? "fa-check-circle" : "fa-exclamation-triangle")"></i> @statusText
+                        </div>
+                        <div style="font-size:11px;color:#64748b;margin-bottom:10px">⏰ @sv.LqvThoiGian.ToString("HH:mm:ss dd/MM")</div>
+                @if (!string.IsNullOrEmpty(imgUrl))
+                {
+                                <button class="btn-checkin" onclick="showImage('@imgUrl')">
+                                    <i class="fas fa-camera me-1"></i> Xem ảnh Check-in
+                                </button>
+                }
+                else
+                {
+                                <small class="text-muted italic text-center d-block">Không có ảnh</small>
+                }
+                    </div>
+                `, { maxWidth: 250 });
+        </text>
+    }
+
+    // 4. Hàm hiển thị ảnh
+    function showImage(url) {
+        const modal = document.getElementById("imgModal");
+        const preview = document.getElementById("imgPreview");
+        preview.src = url;
+        modal.style.display = "block";
+        modal.style.opacity = "1";
+    }
+</script>

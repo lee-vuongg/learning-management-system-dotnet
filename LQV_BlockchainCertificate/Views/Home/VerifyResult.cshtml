@@ -1,0 +1,167 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvChungNhan
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Kết quả xác thực chứng chỉ";
+}
+
+<style>
+    :root {
+        --s4-success: #28a745;
+        --s4-bg: #f4f7f9;
+        --s4-text: #2d3748;
+    }
+
+    body {
+        background-color: var(--s4-bg);
+    }
+
+    .result-card {
+        background: #fff;
+        border-radius: 16px;
+        border: none;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .result-header {
+        background: #fff;
+        border-bottom: 2px solid #f0f2f5;
+        padding: 25px;
+    }
+
+    .info-group {
+        padding: 15px;
+        border-radius: 10px;
+        background-color: #f8fafc;
+        margin-bottom: 15px;
+    }
+
+    .info-label {
+        color: #718096;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+
+    .info-value {
+        color: var(--s4-text);
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+
+    .qr-container {
+        background: #fff;
+        border: 2px dashed #e2e8f0;
+        border-radius: 12px;
+        padding: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .hash-box {
+        background: #1a202c;
+        color: #63b3ed;
+        padding: 15px;
+        border-radius: 8px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.85rem;
+        word-break: break-all;
+    }
+
+    .status-badge {
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-weight: 600;
+    }
+</style>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+            @if (ViewBag.Invalid == true || Model == null)
+            {
+                <div class="text-center p-5 result-card">
+                    <div class="display-1 text-danger mb-3">❌</div>
+                    <h4 class="fw-bold">Không tìm thấy chứng chỉ</h4>
+                    <p class="text-muted">Mã chứng chỉ bạn nhập không tồn tại trên hệ thống hoặc blockchain.</p>
+                    <a asp-action="VerifyCertificate" class="btn btn-outline-primary px-4 mt-3 rounded-pill">
+                        Quay lại tra cứu
+                    </a>
+                </div>
+            }
+            else
+            {
+                var tx = Model.LqvGiaoDichBlockchains?.OrderByDescending(x => x.LqvGioTao).FirstOrDefault();
+                var blockchainUrl = tx != null ? $"https://sepolia.etherscan.io/tx/{tx.LqvTxHash}" : null;
+
+                <div class="result-card">
+                    <div class="result-header d-flex align-items-center justify-content-between">
+                        <div>
+                            <span class="badge bg-success status-badge mb-2">Verified Blockchain</span>
+                            <h3 class="fw-bold mb-0" style="color: var(--s4-text);">Chứng chỉ hợp lệ</h3>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Ethereum-icon-purple.svg" width="40" alt="Eth Logo">
+                    </div>
+
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="info-group">
+                                    <div class="info-label">Mã chứng chỉ</div>
+                                    <div class="info-value">@Model.LqvMaChungNhanCode</div>
+                                </div>
+                                <div class="info-group">
+                                    <div class="info-label">Sinh viên</div>
+                                    <div class="info-value">@Model.LqvSinhVien?.LqvHoTen</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-group">
+                                    <div class="info-label">Khóa học</div>
+                                    <div class="info-value">@Model.LqvKhoaHoc?.LqvTenKhoaHoc</div>
+                                </div>
+                                <div class="info-group">
+                                    <div class="info-label">Ngày cấp</div>
+                                    <div class="info-value">@Model.LqvNgayCap.ToString("dd/MM/yyyy")</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4" style="opacity: 0.1;">
+
+                        <div class="row align-items-center">
+                            @if (blockchainUrl != null)
+                            {
+                                <div class="col-md-4 text-center">
+                                    <div class="qr-container">
+                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=@blockchainUrl"
+                                             class="img-fluid" alt="QR Verify" />
+                                    </div>
+                                    <p class="small text-muted mt-2 mb-0">Quét để xác thực</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <p class="fw-bold mb-2"><i class="bi bi-shield-check text-success"></i> Chữ ký Blockchain (Hash)</p>
+                                    <div class="hash-box mb-3">
+                                        @Model.LqvHashValue
+                                    </div>
+                                    <a href="@blockchainUrl" target="_blank" class="btn btn-dark btn-sm rounded-pill px-4">
+                                        <i class="bi bi-box-arrow-up-right me-1"></i> Kiểm tra trên Etherscan
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a asp-action="VerifyCertificate" class="text-decoration-none text-muted small fw-bold">
+                        ← TRA CỨU CHỨNG CHỈ KHÁC
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

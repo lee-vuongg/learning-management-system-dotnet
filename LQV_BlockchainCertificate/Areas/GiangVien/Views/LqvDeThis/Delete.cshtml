@@ -1,0 +1,30 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvDeThi
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Xoá đề thi";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center text-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-lg rounded-4 p-5">
+                <div class="mb-4">
+                    <div class="bg-soft-danger text-danger rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                        <i class="fas fa-trash-alt fa-2x"></i>
+                    </div>
+                </div>
+                <h3 class="fw-800">Xác nhận gỡ bỏ?</h3>
+                <p class="text-muted">Bạn có chắc muốn xoá đề thi <strong>@Model.LqvTenDeThi</strong>? Dữ liệu này sẽ không thể khôi phục.</p>
+
+                <form asp-action="Delete" class="mt-4">
+                    <input type="hidden" asp-for="LqvDeThiId" />
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-danger btn-lg rounded-3 fw-bold shadow-sm">Xoá vĩnh viễn</button>
+                        <a asp-action="Index" class="btn btn-light btn-lg rounded-3 fw-bold">Không, giữ lại</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

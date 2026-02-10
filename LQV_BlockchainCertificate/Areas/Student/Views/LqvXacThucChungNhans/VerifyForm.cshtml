@@ -1,0 +1,140 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Tra cứu Blockchain";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<style>
+    :root {
+        --study4-blue: #1d4ed8;
+        --study4-hover: #1e40af;
+        --study4-bg: #f8fafc;
+        --study4-text: #1e293b;
+    }
+
+    /* Đổi font cho toàn bộ trang */
+    .blockchain-page {
+        font-family: 'Inter', -apple-system, sans-serif;
+        color: var(--study4-text);
+    }
+
+    /* Icon shape bo góc mềm mại */
+    .icon-shape {
+        width: 72px;
+        height: 72px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+        border-radius: 20px !important;
+        box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2) !important;
+    }
+
+    /* Card với shadow cực nhẹ */
+    .card.rounded-4 {
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.04), 0 10px 10px -5px rgba(0, 0, 0, 0.02) !important;
+        border-radius: 24px !important;
+    }
+
+    /* Input tập trung vào trải nghiệm */
+    .form-control-lg {
+        border: 2px solid #e2e8f0 !important;
+        padding: 0.8rem !important;
+        font-size: 1.1rem !important;
+        transition: all 0.2s ease !important;
+        font-weight: 500;
+    }
+
+        .form-control-lg:focus {
+            border-color: var(--study4-blue) !important;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1) !important;
+        }
+
+    /* Nút bấm Study4 style */
+    .btn-primary.btn-lg {
+        background-color: var(--study4-blue) !important;
+        border: none !important;
+        font-weight: 700 !important;
+        padding: 1rem !important;
+        transition: all 0.3s ease !important;
+    }
+
+        .btn-primary.btn-lg:hover {
+            background-color: var(--study4-hover) !important;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(29, 78, 216, 0.2);
+        }
+
+    /* Link lịch sử */
+    .hover-primary:hover {
+        color: var(--study4-blue) !important;
+    }
+
+    /* Alert thông báo lỗi */
+    .alert-danger {
+        background-color: #fef2f2 !important;
+        border: 1px solid #fee2e2 !important;
+        color: #991b1b !important;
+        font-weight: 500;
+    }
+</style>
+
+<div class="container py-5 blockchain-page">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+            <div class="mb-4">
+                <div class="icon-shape bg-primary text-white rounded-circle mb-3 shadow-primary">
+                    <i class="fas fa-shield-alt fa-2x"></i>
+                </div>
+                <h2 class="fw-bold">Xác thực chứng nhận</h2>
+                <p class="text-muted">Công nghệ Blockchain đảm bảo tính minh bạch và không thể giả mạo</p>
+            </div>
+
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger border-0 shadow-sm rounded-3 mb-4">
+                    <i class="fas fa-exclamation-circle me-2"></i> @TempData["ErrorMessage"]
+                </div>
+            }
+
+            <div class="card border-0 shadow-lg rounded-4 p-4 p-md-5">
+                <form asp-area="Student"
+                      asp-controller="LqvXacThucChungNhans"
+                      asp-action="VerifyPost"
+                      method="post">
+
+                    @Html.AntiForgeryToken()
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold text-dark d-block text-start mb-2">
+                            Mã chứng nhận của bạn
+                        </label>
+                        <input type="text"
+                               name="maChungNhanCode"
+                               class="form-control form-control-lg border-2 shadow-none rounded-3 text-center"
+                               placeholder="Ví dụ: 2024KH001..."
+                               required />
+                    </div>
+
+                    <button type="submit"
+                            class="btn btn-primary btn-lg w-100 rounded-3 shadow-sm py-3 fw-bold">
+                        <i class="fas fa-search me-2"></i> Kiểm tra ngay
+                    </button>
+                </form>
+
+                <div class="mt-4 border-top pt-4">
+                    <a asp-action="Index"
+                       asp-area="Student"
+                       class="text-decoration-none text-muted small hover-primary">
+                        <i class="fas fa-history me-1"></i> Xem lịch sử tra cứu của bạn
+                    </a>
+                </div>
+            </div>
+
+            <p class="mt-4 text-muted small">
+                © @DateTime.Now.Year Skill Map - Hệ thống quản lý lộ trình kỹ năng
+            </p>
+        </div>
+    </div>
+</div>

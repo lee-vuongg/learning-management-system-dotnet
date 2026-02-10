@@ -1,0 +1,741 @@
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\appsettings.Development.json
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\appsettings.json
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LQV_BlockchainCertificate.staticwebassets.runtime.json
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LQV_BlockchainCertificate.staticwebassets.endpoints.json
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LQV_BlockchainCertificate.exe
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LQV_BlockchainCertificate.deps.json
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LQV_BlockchainCertificate.runtimeconfig.json
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LQV_BlockchainCertificate.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LQV_BlockchainCertificate.pdb
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ADRaffy.ENSNormalize.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Azure.Core.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Azure.Identity.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\DinkToPdf.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Humanizer.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Build.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Build.Framework.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Features.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.Elfie.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.Features.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.Razor.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.Scripting.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.DiaSymReader.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.DotNet.Scaffolding.Shared.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Http.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.NET.StringTools.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\dotnet-aspnet-codegenerator-design.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Mono.TextTemplating.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\NBitcoin.Secp256k1.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.ABI.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Accounts.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.BlockchainProcessing.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Contracts.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Hex.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.JsonRpc.Client.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.JsonRpc.RpcClient.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.KeyStore.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Merkle.Patricia.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Model.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.RLP.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.RPC.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Signer.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Signer.EIP712.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Util.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Util.Rest.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Web3.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.Common.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.Configuration.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.DependencyResolver.Core.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.Frameworks.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.LibraryModel.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.Packaging.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.ProjectModel.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.Protocol.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.Versioning.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\QRCoder.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.ClientModel.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.CodeDom.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Composition.Convention.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Composition.Hosting.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Composition.Runtime.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Composition.TypedParts.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Drawing.Common.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Formats.Asn1.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.IO.Pipelines.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Memory.Data.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Runtime.Caching.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Text.Json.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\X.PagedList.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\af\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ar\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\az\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\bg\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\bn-BD\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\da\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\el\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\fa\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\fi-FI\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\fr-BE\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\he\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\hr\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\hu\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\hy\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\id\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\is\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ko-KR\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ku\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\lv\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ms-MY\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\mt\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\nb\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\nb-NO\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\nl\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pt\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ro\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\sk\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\sl\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\sr\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\sr-Latn\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\sv\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\th-TH\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\uk\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\uz-Cyrl-UZ\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\uz-Latn-UZ\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\vi\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-CN\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Humanizer.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.csproj.AssemblyReference.cache
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.GeneratedMSBuildEditorConfig.editorconfig
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.AssemblyInfoInputs.cache
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.AssemblyInfo.cs
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.csproj.CoreCompileInputs.cache
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.MvcApplicationPartsAssemblyInfo.cs
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.MvcApplicationPartsAssemblyInfo.cache
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.RazorAssemblyInfo.cache
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.RazorAssemblyInfo.cs
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\scopedcss\Areas\GiangVien\Views\Shared\_GiangVienLayout.cshtml.rz.scp.css
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\scopedcss\Areas\Student\Views\Shared\_LayoutStudent.cshtml.rz.scp.css
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\scopedcss\bundle\LQV_BlockchainCertificate.styles.css
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\scopedcss\projectbundle\LQV_BlockchainCertificate.bundle.scp.css
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets.build.json
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets.development.json
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets\msbuild.LQV_BlockchainCertificate.Microsoft.AspNetCore.StaticWebAssets.props
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets\msbuild.LQV_BlockchainCertificate.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets\msbuild.build.LQV_BlockchainCertificate.props
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.LQV_BlockchainCertificate.props
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.LQV_BlockchainCertificate.props
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets.pack.json
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_Bloc.567D0488.Up2Date
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.dll
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\refint\LQV_BlockchainCertificate.dll
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.pdb
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.genruntimeconfig.cache
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\ref\LQV_BlockchainCertificate.dll
+D:\DATN\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.sourcelink.json
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ClosedXML.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ClosedXML.Parser.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\ExcelNumberFormat.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\RBush.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\SixLabors.Fonts.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\System.IO.Packaging.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\BCrypt.Net-Next.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-Black.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-BlackItalic.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-Bold.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-BoldItalic.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-ExtraBold.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-ExtraBoldItalic.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-ExtraLight.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-ExtraLightItalic.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-Italic.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-Light.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-LightItalic.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-Medium.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-MediumItalic.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-Regular.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-SemiBold.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-SemiBoldItalic.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-Thin.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-ThinItalic.ttf
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\OFL.txt
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\QuestPDF.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\linux-arm64\native\libQuestPdfSkia.so
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\linux-arm64\native\libqpdf.so
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\linux-musl-x64\native\libQuestPdfSkia.so
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\linux-musl-x64\native\libqpdf.so
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\linux-x64\native\libQuestPdfSkia.so
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\linux-x64\native\libqpdf.so
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\osx-arm64\native\libQuestPdfSkia.dylib
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\osx-arm64\native\libqpdf.dylib
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\osx-x64\native\libQuestPdfSkia.dylib
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\osx-x64\native\libqpdf.dylib
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x64\native\QuestPdfSkia.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x64\native\libgcc_s_seh-1.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x64\native\libstdc++-6.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x64\native\libwinpthread-1.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x64\native\qpdf.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x64\native\zlib1.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x86\native\QuestPdfSkia.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x86\native\libgcc_s_dw2-1.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x86\native\libstdc++-6.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x86\native\libwinpthread-1.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x86\native\qpdf.dll
+D:\DATN\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x86\native\zlib1.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\appsettings.Development.json
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\appsettings.json
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LQV_BlockchainCertificate.staticwebassets.endpoints.json
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-Black.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-BlackItalic.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-Bold.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-BoldItalic.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-ExtraBold.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-ExtraBoldItalic.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-ExtraLight.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-ExtraLightItalic.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-Italic.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-Light.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-LightItalic.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-Medium.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-MediumItalic.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-Regular.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-SemiBold.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-SemiBoldItalic.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-Thin.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\Lato-ThinItalic.ttf
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LatoFont\OFL.txt
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LQV_BlockchainCertificate.staticwebassets.runtime.json
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LQV_BlockchainCertificate.exe
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LQV_BlockchainCertificate.deps.json
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LQV_BlockchainCertificate.runtimeconfig.json
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LQV_BlockchainCertificate.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\LQV_BlockchainCertificate.pdb
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ADRaffy.ENSNormalize.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Azure.Core.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Azure.Identity.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\BCrypt.Net-Next.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ClosedXML.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ClosedXML.Parser.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\DinkToPdf.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ExcelNumberFormat.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Humanizer.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Build.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Build.Framework.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Features.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.Elfie.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.Features.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.Razor.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.Scripting.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.DiaSymReader.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.DotNet.Scaffolding.Shared.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Http.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.NET.StringTools.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\dotnet-aspnet-codegenerator-design.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Mono.TextTemplating.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\NBitcoin.Secp256k1.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.ABI.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Accounts.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.BlockchainProcessing.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Contracts.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Hex.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.JsonRpc.Client.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.JsonRpc.RpcClient.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.KeyStore.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Merkle.Patricia.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Model.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.RLP.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.RPC.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Signer.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Signer.EIP712.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Util.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Util.Rest.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Nethereum.Web3.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.Common.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.Configuration.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.DependencyResolver.Core.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.Frameworks.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.LibraryModel.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.Packaging.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.ProjectModel.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.Protocol.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\NuGet.Versioning.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\QRCoder.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\QuestPDF.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\RBush.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\SixLabors.Fonts.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.ClientModel.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.CodeDom.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Composition.Convention.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Composition.Hosting.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Composition.Runtime.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Composition.TypedParts.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Drawing.Common.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Formats.Asn1.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.IO.Packaging.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.IO.Pipelines.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Memory.Data.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Runtime.Caching.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\System.Text.Json.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\X.PagedList.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\af\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ar\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\az\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\bg\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\bn-BD\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\da\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\el\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\fa\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\fi-FI\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\fr-BE\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\he\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\hr\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\hu\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\hy\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\id\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\is\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ko-KR\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ku\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\lv\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ms-MY\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\mt\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\nb\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\nb-NO\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\nl\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pt\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ro\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\sk\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\sl\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\sr\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\sr-Latn\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\sv\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\th-TH\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\uk\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\uz-Cyrl-UZ\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\uz-Latn-UZ\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\vi\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-CN\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Humanizer.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\linux-arm64\native\libQuestPdfSkia.so
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\linux-arm64\native\libqpdf.so
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\linux-musl-x64\native\libQuestPdfSkia.so
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\linux-musl-x64\native\libqpdf.so
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\linux-x64\native\libQuestPdfSkia.so
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\linux-x64\native\libqpdf.so
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\osx-arm64\native\libQuestPdfSkia.dylib
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\osx-arm64\native\libqpdf.dylib
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\osx-x64\native\libQuestPdfSkia.dylib
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\osx-x64\native\libqpdf.dylib
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x64\native\QuestPdfSkia.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x64\native\libgcc_s_seh-1.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x64\native\libstdc++-6.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x64\native\libwinpthread-1.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x64\native\qpdf.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x64\native\zlib1.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x86\native\QuestPdfSkia.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x86\native\libgcc_s_dw2-1.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x86\native\libstdc++-6.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x86\native\libwinpthread-1.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x86\native\qpdf.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win-x86\native\zlib1.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.csproj.AssemblyReference.cache
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.GeneratedMSBuildEditorConfig.editorconfig
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.AssemblyInfoInputs.cache
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.AssemblyInfo.cs
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.csproj.CoreCompileInputs.cache
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.MvcApplicationPartsAssemblyInfo.cs
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.MvcApplicationPartsAssemblyInfo.cache
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.RazorAssemblyInfo.cache
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.RazorAssemblyInfo.cs
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\scopedcss\Areas\GiangVien\Views\Shared\_GiangVienLayout.cshtml.rz.scp.css
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\scopedcss\Areas\Student\Views\Shared\_LayoutStudent.cshtml.rz.scp.css
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\scopedcss\bundle\LQV_BlockchainCertificate.styles.css
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\scopedcss\projectbundle\LQV_BlockchainCertificate.bundle.scp.css
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets.build.json
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets.development.json
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets\msbuild.LQV_BlockchainCertificate.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets\msbuild.LQV_BlockchainCertificate.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets\msbuild.build.LQV_BlockchainCertificate.props
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.LQV_BlockchainCertificate.props
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.LQV_BlockchainCertificate.props
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets.pack.json
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_Bloc.567D0488.Up2Date
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\refint\LQV_BlockchainCertificate.dll
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.pdb
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\LQV_BlockchainCertificate.genruntimeconfig.cache
+D:\Build APP IOS\LQV_BlockchainCertificate\obj\Debug\net8.0\ref\LQV_BlockchainCertificate.dll

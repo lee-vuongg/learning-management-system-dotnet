@@ -1,0 +1,674 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvChungNhan
+
+@{
+    ViewData["Title"] = "Xác thực chứng chỉ Blockchain - Xuân Bính Ngọ 2026";
+}
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<style>
+    /* Biến màu sắc */
+    :root {
+        --s4-blue: #1976d2;
+        --s4-dark: #0f172a;
+        --tet-red: #d63031;
+        --firework-gold: #ffcf4b;
+        --firework-pink: #ff4d6d;
+        --firework-cyan: #00f5d4;
+    }
+
+    /* Hiệu ứng cuộn toàn trang mượt */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* --- HỆ THỐNG PHÁO HOA --- */
+    .fireworks-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    .firework {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        opacity: 0;
+    }
+
+    .fw-1 {
+        top: 15%;
+        right: 10%;
+        color: var(--firework-gold);
+        animation: firework-boom 4s infinite 0.5s;
+    }
+
+    .fw-2 {
+        top: 35%;
+        right: 30%;
+        color: var(--firework-cyan);
+        animation: firework-boom 4.5s infinite 1.8s;
+    }
+
+    .fw-3 {
+        top: 10%;
+        right: 45%;
+        color: var(--firework-pink);
+        animation: firework-boom 5s infinite 3.2s;
+    }
+
+    .fw-4 {
+        top: 40%;
+        right: 5%;
+        color: var(--tet-red);
+        animation: firework-boom 3.8s infinite 0s;
+    }
+
+    @@keyframes firework-boom {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        15% {
+            box-shadow: 0 -60px 0 currentcolor, 40px -40px 0 currentcolor, 60px 0 0 currentcolor, 40px 40px 0 currentcolor, 0 60px 0 currentcolor, -40px 40px 0 currentcolor, -60px 0 0 currentcolor, -40px -40px 0 currentcolor, 20px -70px 0 1px currentcolor, -20px 70px 0 1px currentcolor;
+            opacity: 1;
+        }
+
+        35% {
+            box-shadow: 0 -80px 4px currentcolor, 55px -55px 4px currentcolor, 80px 0 4px currentcolor, 55px 55px 4px currentcolor, 0 80px 4px currentcolor, -55px 55px 4px currentcolor, -80px 0 4px currentcolor, -55px -55px 4px currentcolor, 25px -90px 4px 1px currentcolor, -25px 90px 4px 1px currentcolor;
+            opacity: 0;
+            transform: scale(1.2) translateY(20px);
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* --- UI COMPONENTS --- */
+    .hero-section {
+        padding: 120px 0 100px;
+        background: radial-gradient(circle at top right, rgba(25, 118, 210, 0.08), transparent), radial-gradient(circle at bottom left, rgba(214, 48, 49, 0.05), transparent);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-title {
+        font-size: 4.2rem;
+        font-weight: 900;
+        letter-spacing: -3px;
+        line-height: 1.1;
+        color: var(--s4-dark);
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-tag {
+        color: var(--tet-red);
+        background: rgba(214, 48, 49, 0.1);
+        padding: 10px 24px;
+        border-radius: 100px;
+        font-size: 0.9rem;
+        font-weight: 800;
+        display: inline-block;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 2;
+    }
+
+    .stats-container {
+        background: var(--s4-dark);
+        border-radius: 50px;
+        padding: 70px;
+        color: white;
+        margin-top: 50px;
+        position: relative;
+        z-index: 5;
+    }
+
+    .counter-val {
+        font-size: 3.5rem;
+        font-weight: 900;
+        display: block;
+    }
+
+    .step-card {
+        text-align: center;
+        position: relative;
+        padding: 20px;
+        transition: transform 0.5s ease;
+    }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+        }
+
+    .step-number {
+        width: 60px;
+        height: 60px;
+        background: var(--s4-blue);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        margin: 0 auto 25px;
+        font-size: 1.5rem;
+        box-shadow: 0 10px 20px rgba(25, 118, 210, 0.3);
+    }
+
+    .step-line {
+        position: absolute;
+        top: 55px;
+        left: 60%;
+        width: 80%;
+        height: 2px;
+        border-top: 2px dashed #e2e8f0;
+        z-index: -1;
+    }
+
+    .bc-impact-card {
+        background: var(--s4-dark);
+        border-radius: 40px;
+        padding: 60px;
+        color: white;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .s4-feature-card {
+        border-radius: 40px;
+        border: 1px solid rgba(226, 232, 240, 0.8);
+        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        padding: 50px;
+        background: #fff;
+        height: 100%;
+    }
+
+        .s4-feature-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            border-color: var(--s4-blue);
+        }
+
+    .icon-box {
+        width: 85px;
+        height: 85px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 24px;
+        margin-bottom: 35px;
+        font-size: 2.2rem;
+    }
+
+    /* --- CHATBOX UI --- */
+    #chat-wrapper {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 9999;
+        font-family: 'Inter', sans-serif;
+    }
+
+    #chat-button {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background: var(--s4-blue);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 10px 25px rgba(25, 118, 210, 0.4);
+        transition: all 0.3s;
+    }
+
+        #chat-button:hover {
+            transform: scale(1.1);
+        }
+
+    .ai-icon-svg {
+        width: 40px;
+        height: 40px;
+        fill: currentColor;
+    }
+
+    .ai-eye {
+        animation: eye-blink 3s infinite;
+        transform-origin: center;
+    }
+
+    .ai-antenna {
+        animation: antenna-pulse 1.5s infinite;
+    }
+
+    @@keyframes eye-blink {
+        0%, 90%, 100% {
+            transform: scaleY(1);
+        }
+
+        95% {
+            transform: scaleY(0.1);
+        }
+    }
+
+    @@keyframes antenna-pulse {
+        0%, 100% {
+            opacity: 0.5;
+        }
+
+        50% {
+            opacity: 1;
+            filter: drop-shadow(0 0 5px #fff);
+        }
+    }
+
+    #chat-window {
+        position: absolute;
+        bottom: 85px;
+        right: 0;
+        width: 380px;
+        height: 550px;
+        background: white;
+        border-radius: 24px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid #eee;
+    }
+
+    .chat-header {
+        background: var(--s4-blue);
+        color: white;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    #chat-content {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+        background: #f8fafc;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .message {
+        max-width: 85%;
+        padding: 12px 16px;
+        border-radius: 18px;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .bot-msg {
+        background: white;
+        color: var(--s4-dark);
+        align-self: flex-start;
+        border-bottom-left-radius: 4px;
+        border: 1px solid #e2e8f0;
+    }
+
+    .user-msg {
+        background: var(--s4-blue);
+        color: white;
+        align-self: flex-end;
+        border-bottom-right-radius: 4px;
+    }
+
+    .chat-footer {
+        padding: 15px;
+        background: white;
+        border-top: 1px solid #eee;
+        display: flex;
+        gap: 10px;
+    }
+
+    #chat-input {
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        padding: 10px 15px;
+        flex: 1;
+        outline: none;
+    }
+</style>
+
+<section class="hero-section">
+    <div class="fireworks-wrapper d-none d-lg-block">
+        <div class="firework fw-1"></div><div class="firework fw-2"></div>
+        <div class="firework fw-3"></div><div class="firework fw-4"></div>
+    </div>
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7" data-aos="fade-up" data-aos-duration="1000">
+                <span class="hero-tag" data-aos="fade-down" data-aos-delay="200"><i class="fas fa-fire me-2"></i> Chúc mừng năm mới Bính Ngọ 2026</span>
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">Chứng chỉ số <br><span style="color: var(--s4-blue)">Vạn dặm tin cậy</span></h1>
+                <p class="lead text-secondary mb-5 fs-5 pe-lg-5" data-aos="fade-up" data-aos-delay="600">Sử dụng công nghệ <b>Blockchain</b> phi tập trung để biến bằng cấp của bạn thành tài sản số vĩnh cửu, không thể bị xóa nhòa hay làm giả.</p>
+                <div class="d-flex gap-3 flex-wrap" data-aos="fade-up" data-aos-delay="800">
+                    <a class="btn btn-primary btn-lg px-5 py-3 shadow-lg fw-bold" style="border-radius:18px;" asp-area="Auth" asp-controller="Account" asp-action="Register">Bắt đầu miễn phí</a>
+                    <a class="btn btn-outline-dark btn-lg px-5 py-3 rounded-4 fw-bold" href="javascript:void(0)" id="btn-show-search">
+                        <i class="fas fa-search me-2"></i> Tra cứu ngay
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5 mt-5 mt-lg-0 text-center" data-aos="zoom-in" data-aos-duration="1200">
+                <div class="position-relative">
+                    <img src="~/img/logo.png" class="img-fluid" style="max-height: 480px; filter: drop-shadow(30px 40px 70px rgba(0,0,0,0.15));" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@{
+    bool isSearching = Model != null || ViewBag.Error != null || ViewBag.Invalid == true;
+    string displayStyle = isSearching ? "display: block;" : "display: none;";
+}
+<section id="tra-cuu" class="container my-5" style="position: relative; z-index: 10; margin-top: -50px !important; @displayStyle" data-aos="fade-down">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-4 p-md-5">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3 class="fw-bold mb-0">🔍 Tra cứu chứng chỉ Blockchain</h3>
+                        <button type="button" class="btn-close" id="btn-close-x" aria-label="Close"></button>
+                    </div>
+
+                    <form method="post" asp-action="Index">
+                        @Html.AntiForgeryToken()
+                        <div class="input-group input-group-lg mb-3">
+                            <input type="text" name="code" class="form-control rounded-start-4" placeholder="VD: CC-14-453235BF" value="@ViewBag.Code" required />
+                            <button type="submit" class="btn btn-primary px-4 fw-bold">Xác thực</button>
+                        </div>
+                    </form>
+
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-warning mt-3">⚠️ @ViewBag.Error</div>
+                    }
+                    @if (ViewBag.Invalid == true)
+                    {
+                        <div class="alert alert-danger mt-3">❌ Chứng chỉ không tồn tại hoặc chưa được cấp.</div>
+                    }
+
+                    @if (Model != null)
+                    {
+                        <div data-aos="fade-up">
+                            <hr class="my-4" />
+                            <h4 class="fw-bold text-success mb-3">✅ Chứng chỉ hợp lệ</h4>
+                            <p><b>Mã chứng chỉ:</b> @Model.LqvMaChungNhanCode</p>
+                            <p><b>Sinh viên:</b> @Model.LqvSinhVien?.LqvHoTen</p>
+                            <p><b>Khóa học:</b> @Model.LqvKhoaHoc?.LqvTenKhoaHoc</p>
+                            <p><b>Ngày cấp:</b> @Model.LqvNgayCap.ToString("dd/MM/yyyy")</p>
+                            <span class="badge bg-success mb-3">@Model.LqvTrangThai</span>
+
+                            @if (ViewBag.BlockchainUrl != null)
+                            {
+                                <div class="text-center my-4">
+                                    <p class="fw-semibold">📱 Quét QR để xác thực trên Blockchain</p>
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=@ViewBag.BlockchainUrl" class="border rounded p-2 bg-white" />
+                                    <div class="mt-2">
+                                        <a href="@ViewBag.BlockchainUrl" target="_blank" class="small">🔗 Xem giao dịch trên Etherscan</a>
+                                    </div>
+                                </div>
+                            }
+
+                            @if (!string.IsNullOrWhiteSpace(Model.LqvHashValue))
+                            {
+                                <p class="text-muted small mb-1">🔐 Hash Blockchain</p>
+                                <code class="d-block p-2 bg-light rounded text-break">@Model.LqvHashValue</code>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container mb-5">
+    <div class="stats-container shadow-lg" data-aos="fade-up" data-aos-offset="200">
+        <div class="row text-center g-5">
+            <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+                <span class="counter-val counter" data-target="2026">0</span>
+                <div class="text-info small fw-bold">XUÂN MỚI</div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
+                <span class="counter-val counter" data-target="85000">0</span>
+                <div class="text-info small fw-bold">CHỨNG CHỈ</div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
+                <span class="counter-val counter" data-target="150">0</span>
+                <div class="text-info small fw-bold">ĐỐI TÁC</div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="400">
+                <span class="counter-val counter" data-target="100">0</span>
+                <div class="text-info small fw-bold">% BẢO MẬT</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 my-5">
+    <div class="container">
+        <div class="text-center mb-5 pb-4" data-aos="fade-up">
+            <h2 class="fw-900 display-5 text-dark">Quy trình 3 bước đơn giản</h2>
+            <p class="text-muted fs-5">Minh bạch hóa mọi bằng cấp chỉ trong tích tắc</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4" data-aos="fade-right" data-aos-delay="200">
+                <div class="step-card">
+                    <div class="step-line d-none d-md-block"></div>
+                    <div class="step-number">1</div>
+                    <h5 class="fw-bold">Khởi tạo dữ liệu</h5>
+                    <p class="text-secondary">Nhà trường mã hóa thông tin học viên vào hệ thống.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="step-card">
+                    <div class="step-line d-none d-md-block"></div>
+                    <div class="step-number">2</div>
+                    <h5 class="fw-bold">Đúc (Mint) Blockchain</h5>
+                    <p class="text-secondary">Mỗi chứng chỉ nhận mã Hash duy nhất vĩnh viễn.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-left" data-aos-delay="600">
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h5 class="fw-bold">Xác thực tức thì</h5>
+                    <p class="text-secondary">Quét QR để kiểm tra tính chính xác ngay lập tức.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container mb-5 py-5">
+    <div class="bc-impact-card shadow-lg" data-aos="zoom-in-up" data-aos-duration="1000">
+        <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300">
+                <h2 class="display-6 fw-900 mb-4 text-white">Tại sao Blockchain thay đổi <br><span class="text-info">tương lai giáo dục?</span></h2>
+                <div class="d-flex gap-4 mb-4">
+                    <div class="fs-1 text-info"><i class="fas fa-shield-alt"></i></div>
+                    <div>
+                        <h5 class="fw-bold">Tính bất biến (Immutability)</h5>
+                        <p class="text-light opacity-75 mb-0">Dữ liệu không thể bị xóa hay sửa đổi trái phép.</p>
+                    </div>
+                </div>
+                <div class="d-flex gap-4">
+                    <div class="fs-1 text-info"><i class="fas fa-globe"></i></div>
+                    <div>
+                        <h5 class="fw-bold">Xác thực không biên giới</h5>
+                        <p class="text-light opacity-75 mb-0">Tấm bằng được công nhận toàn cầu không cần giấy tờ.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center mt-5 mt-lg-0" data-aos="zoom-out" data-aos-delay="500">
+                <div class="p-4 bg-white bg-opacity-10 rounded-4 border border-info border-opacity-25">
+                    <h1 class="display-1 fw-900 text-info">ZERO</h1>
+                    <p class="h4 fw-bold">RỦI RO LÀM GIẢ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="py-5 my-5">
+    <div class="container">
+        <div class="text-center mb-5 pb-4" data-aos="fade-up">
+            <h2 class="fw-900 display-5 text-dark">Giải pháp toàn diện</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="s4-feature-card">
+                    <div class="icon-box bg-primary bg-opacity-10 text-primary"><i class="fas fa-building-columns"></i></div>
+                    <h4 class="fw-bold mb-3">Nhà Trường</h4>
+                    <p class="text-secondary lh-lg">Giảm thiểu sai sót và tiết kiệm 90% chi phí xác minh.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="s4-feature-card">
+                    <div class="icon-box bg-success bg-opacity-10 text-success"><i class="fas fa-user-graduate"></i></div>
+                    <h4 class="fw-bold mb-3">Học Viên</h4>
+                    <p class="text-secondary lh-lg">Toàn quyền sở hữu chứng chỉ số của mình trọn đời.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="s4-feature-card">
+                    <div class="icon-box bg-warning bg-opacity-10 text-warning"><i class="fas fa-search-dollar"></i></div>
+                    <h4 class="fw-bold mb-3">Doanh Nghiệp</h4>
+                    <p class="text-secondary lh-lg">Tuyển dụng nhanh dựa trên dữ liệu minh bạch tuyệt đối.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="chat-wrapper">
+    <div id="chat-window">
+        <div class="chat-header">
+            <div class="bg-white rounded-circle p-2 text-primary d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                <svg class="ai-icon-svg" viewBox="0 0 24 24" style="width: 30px; height: 30px; fill: #1976d2;">
+                    <path d="M12,2A2,2 0 0,1 14,4C14,4.74 13.59,5.39 13,5.73V7H14A3,3 0 0,1 17,10V11H18A2,2 0 0,1 20,13V17A2,2 0 0,1 18,19H17V20A2,2 0 0,1 15,22H9A2,2 0 0,1 7,20V19H6A2,2 0 0,1 4,17V13A2,2 0 0,1 6,11H7V10A3,3 0 0,1 10,7H11V5.73C10.41,5.39 10,4.74 10,4A2,2 0 0,1 12,2M7.5,13A1.5,1.5 0 0,0 6,14.5A1.5,1.5 0 0,0 7.5,16A1.5,1.5 0 0,0 9,14.5A1.5,1.5 0 0,0 7.5,13M16.5,13A1.5,1.5 0 0,0 15,14.5A1.5,1.5 0 0,0 16.5,16A1.5,1.5 0 0,0 18,14.5A1.5,1.5 0 0,0 16.5,13M12,14L10.75,16H13.25L12,14Z" />
+                </svg>
+            </div>
+            <div>
+                <div class="fw-bold">LQV_SkillMap AI</div>
+                <small class="opacity-75">Trợ lý ảo</small>
+            </div>
+        </div>
+        <div id="chat-content"><div class="message bot-msg">Xin chào! Bạn cần hỗ trợ gì về Skill Map hay Chứng chỉ?</div></div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Nhập câu hỏi..." />
+            <button class="btn btn-primary" id="btn-send-chat"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <div id="chat-button">
+        <svg class="ai-icon-svg" viewBox="0 0 24 24">
+            <circle class="ai-antenna" cx="12" cy="3" r="1.5" fill="white" />
+            <path d="M12,5V7" stroke="white" stroke-width="1.5" />
+            <path d="M7,10 C7,8.34 8.34,7 10,7 L14,7 C15.66,7 17,8.34 17,10 L17,18 C17,19.66 15.66,21 14,21 L10,21 C8.34,21 7,19.66 7,18 L7,10 Z" fill="none" stroke="white" stroke-width="1.5" />
+            <ellipse class="ai-eye" cx="10" cy="12" rx="1.2" ry="1.5" fill="white" />
+            <ellipse class="ai-eye" cx="14" cy="12" rx="1.2" ry="1.5" fill="white" />
+        </svg>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Khởi tạo AOS với các tham số mượt mà
+        AOS.init({
+            duration: 1000,
+            once: false, // Để hiệu ứng chạy lại khi cuộn ngược lên
+            mirror: true, // Tạo hiệu ứng MetaMask khi cuộn
+            anchorPlacement: 'top-bottom'
+        });
+
+        // Xử lý Tra cứu
+        const btnShowSearch = document.getElementById('btn-show-search');
+        const btnCloseX = document.getElementById('btn-close-x');
+        const searchSection = document.getElementById('tra-cuu');
+
+        btnShowSearch?.addEventListener('click', () => {
+            searchSection.style.display = 'block';
+            searchSection.scrollIntoView({ behavior: 'smooth' });
+        });
+        btnCloseX?.addEventListener('click', () => {
+            searchSection.style.display = 'none';
+        });
+
+        // Xử lý Chatbox
+        const chatBtn = document.getElementById('chat-button');
+        const chatWindow = document.getElementById('chat-window');
+        chatBtn.addEventListener('click', () => {
+            chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        async function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const text = input.value.trim();
+            if (!text) return;
+            const content = document.getElementById('chat-content');
+
+            content.innerHTML += `<div class="message user-msg">${text}</div>`;
+            input.value = '';
+            content.scrollTop = content.scrollHeight;
+
+            try {
+                const res = await fetch('/Home/Chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams({ message: text })
+                });
+                const data = await res.json();
+                content.innerHTML += `<div class="message bot-msg">${data.reply}</div>`;
+            } catch {
+                content.innerHTML += `<div class="message bot-msg">❌ Lỗi kết nối.</div>`;
+            }
+            content.scrollTop = content.scrollHeight;
+        }
+        document.getElementById('btn-send-chat').addEventListener('click', sendMessage);
+        document.getElementById('chat-input').addEventListener('keypress', e => { if(e.key === 'Enter') sendMessage(); });
+
+        // Counter Animation mượt mà
+        const counters = document.querySelectorAll('.counter');
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = +el.dataset.target;
+                    let count = 0;
+                    const update = () => {
+                        const inc = target / 50;
+                        if (count < target) {
+                            count += inc;
+                            el.innerText = Math.ceil(count).toLocaleString();
+                            setTimeout(update, 30);
+                        } else el.innerText = target.toLocaleString();
+                    };
+                    update();
+                    obs.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(c => obs.observe(c));
+    </script>
+}

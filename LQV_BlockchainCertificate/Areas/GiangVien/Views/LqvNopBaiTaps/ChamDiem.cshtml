@@ -1,0 +1,45 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvNopBaiTap
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chấm điểm";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card-s4 shadow border-0 p-4">
+                <div class="text-center mb-4">
+                    <div class="bg-soft-primary d-inline-block p-3 rounded-circle mb-3">
+                        <i class="fas fa-user-edit fa-2x text-primary"></i>
+                    </div>
+                    <h4 class="fw-800">✍️ Chấm điểm bài nộp</h4>
+                    <p class="text-muted">Sinh viên: <strong>@Model.LqvSinhVien?.LqvHoTen</strong></p>
+                </div>
+
+                <form asp-action="ChamDiem" method="post">
+                    <input type="hidden" name="id" value="@Model.LqvId" />
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold text-uppercase small">Điểm số (thang 10)</label>
+                        <input name="diem" type="number" step="0.1" max="10" min="0" class="form-control form-control-lg rounded-3 border-2"
+                               value="@Model.LqvDiem" required placeholder="0.0" />
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold text-uppercase small">Nhận xét của giảng viên</label>
+                        <textarea name="nhanXet" class="form-control rounded-3" rows="5"
+                                  placeholder="Nhập góp ý cho sinh viên tại đây...">@Model.LqvNhanXet</textarea>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg rounded-3 fw-bold shadow-sm">
+                            <i class="fas fa-save me-2"></i>Lưu kết quả chấm
+                        </button>
+                        <a asp-action="DanhSachNop" asp-route-baiTapId="@Model.LqvBaiTapId" class="btn btn-light rounded-3 text-muted">Hủy</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

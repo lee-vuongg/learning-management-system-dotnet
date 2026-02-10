@@ -1,0 +1,47 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvBoCauHoi
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Thêm bộ câu hỏi";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-lg rounded-4 p-4">
+                <div class="text-center mb-4">
+                    <div class="h1 text-primary"><i class="fas fa-folder-plus"></i></div>
+                    <h4 class="fw-bold">Thêm Bộ câu hỏi</h4>
+                </div>
+
+                <form asp-action="Create" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="LqvTenBo" class="form-label fw-bold small">Tên bộ câu hỏi</label>
+                        <input asp-for="LqvTenBo" class="form-control rounded-3 py-2" placeholder="Ví dụ: Kiến thức cơ bản về Blockchain" />
+                        <span asp-validation-for="LqvTenBo" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="LqvMoTa" class="form-label fw-bold small">Mô tả chi tiết</label>
+                        <textarea asp-for="LqvMoTa" class="form-control rounded-3" rows="3" placeholder="Nhập mô tả ngắn gọn về nội dung bộ câu hỏi..."></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="LqvGiangVienId" class="form-label fw-bold small">Giảng viên phụ trách</label>
+                        <select asp-for="LqvGiangVienId" asp-items="ViewBag.LqvGiangVienId" class="form-select rounded-3 py-2">
+                            <option value="">-- Chọn giảng viên --</option>
+                        </select>
+                        <span asp-validation-for="LqvGiangVienId" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-top d-flex justify-content-end gap-2">
+                        <a asp-action="Index" class="btn btn-light rounded-pill px-4">Hủy</a>
+                        <button type="submit" class="btn btn-primary rounded-pill px-4 fw-bold">💾 Lưu thông tin</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

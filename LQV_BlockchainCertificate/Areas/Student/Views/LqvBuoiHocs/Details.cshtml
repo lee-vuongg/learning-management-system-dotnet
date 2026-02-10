@@ -1,0 +1,161 @@
+﻿﻿
+@model LQV_BlockchainCertificate.Models.DBModel.LqvBuoiHoc
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Chi tiết buổi học";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<style>
+    .s4-detail-card {
+        border-radius: 16px;
+        overflow: hidden;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .s4-header-gradient {
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        padding: 2rem;
+    }
+
+    .info-label {
+        color: #6c757d;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+    }
+
+    .info-value {
+        color: #2d3436;
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+
+    .action-section {
+        background-color: #f8f9fa;
+        border-radius: 12px;
+        padding: 1.5rem;
+    }
+
+    .s4-btn-lg {
+        padding: 12px 25px;
+        border-radius: 10px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: 0.3s;
+    }
+
+        .s4-btn-lg:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+</style>
+
+<div class="container py-5">
+    @if (TempData["success"] != null)
+    {
+        <div class="container mt-3">
+            <div class="alert alert-success text-center fw-bold shadow">
+                @TempData["success"]
+            </div>
+        </div>
+    }
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="container">
+            <div class="alert alert-info text-center fw-bold shadow">
+                @TempData["SuccessMessage"]
+            </div>
+        </div>
+    }
+
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+            <a asp-action="Index" class="btn btn-link text-decoration-none text-muted mb-3 p-0">
+                <i class="fas fa-chevron-left me-1"></i> Quay lại danh sách
+            </a>
+
+            <div class="card s4-detail-card">
+                <div class="s4-header-gradient text-white">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <span class="badge bg-white text-primary mb-2 px-3 py-2">Chi tiết buổi học</span>
+                            <h2 class="fw-bold mb-1">@Model.LqvLopHoc?.LqvTenLop</h2>
+                            <p class="opacity-75 mb-0">
+                                <i class="far fa-calendar-check me-1"></i> Ngày @Model.LqvNgayHoc.ToString("dd/MM/yyyy")
+                            </p>
+                        </div>
+                        @if (Model.LqvDangMo)
+                        {
+                            <span class="badge rounded-pill bg-success px-3 py-2">Đang mở điểm danh</span>
+                        }
+                    </div>
+                </div>
+
+                <div class="card-body p-4 p-md-5">
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-4">
+                            <div class="info-label mb-1">Thời gian</div>
+                            <div class="info-value">
+                                <i class="far fa-clock text-primary me-2"></i>@Model.LqvGioBatDau - @Model.LqvGioKetThuc
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="info-label mb-1">Vị trí GPS</div>
+                            <div class="info-value text-truncate">
+                                <i class="fas fa-map-marker-alt text-danger me-2"></i>@Model.LqvViDo, @Model.LqvKinhDo
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="info-label mb-1">Bán kính cho phép</div>
+                            <div class="info-value">
+                                <i class="fas fa-radar text-info me-2"></i>@Model.LqvBanKinh mét
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-section">
+                        <h6 class="fw-bold mb-4 text-center text-uppercase text-muted" style="font-size: 0.8rem;">Hoạt động lớp học</h6>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                @if (Model.LqvDangMo)
+                                {
+                                    <a asp-area="Student" asp-controller="LqvDiemDanhGps" asp-action="CheckIn" asp-route-buoiHocId="@Model.LqvBuoiHocId"
+                                       class="btn btn-success s4-btn-lg w-100">
+                                        <i class="fas fa-location-arrow"></i> Điểm danh GPS
+                                    </a>
+                                }
+                                else
+                                {
+                                    <button class="btn btn-secondary s4-btn-lg w-100" disabled>
+                                        <i class="fas fa-lock"></i> Đã đóng
+                                    </button>
+                                }
+                            </div>
+                          @*   <div class="col-md-4">
+                                <a asp-area="Student" asp-controller="LqvBaiTaps" asp-action="ByBuoiHoc" asp-route-buoiHocId="@Model.LqvBuoiHocId"
+                                   class="btn btn-outline-primary s4-btn-lg w-100">
+                                    <i class="fas fa-tasks"></i> Làm bài tập
+                                </a>
+                            </div> *@
+                            <div class="col-md-4">
+                                <a asp-controller="LqvBaiTaps" asp-action="Index" asp-route-lopHocId="@Model.LqvLopHocId" 
+                                   class="btn btn-outline-warning s4-btn-lg w-100">
+                                    <i class="fas fa-user-graduate"></i> Làm bài tập
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

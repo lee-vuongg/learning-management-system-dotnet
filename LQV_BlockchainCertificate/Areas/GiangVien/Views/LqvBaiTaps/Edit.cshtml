@@ -1,0 +1,109 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvBaiTap
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var isEdit = ViewContext.RouteData.Values["action"]?.ToString() == "Edit";
+    ViewData["Title"] = isEdit ? "Cập nhật bài tập" : "Tạo bài tập";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<style>
+    .form-card {
+        background: white;
+        border-radius: 20px;
+        border: 1px solid var(--s4-border);
+        padding: 2.5rem;
+    }
+
+    .form-label {
+        font-weight: 700;
+        color: var(--s4-text);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        margin-bottom: 0.7rem;
+    }
+
+    .form-control, .form-select {
+        border-radius: 12px;
+        border: 2px solid #F1F5F9;
+        padding: 0.75rem 1rem;
+        transition: 0.3s;
+    }
+
+        .form-control:focus {
+            border-color: var(--s4-primary);
+            box-shadow: none;
+            background: #fff;
+        }
+
+    .btn-s4-primary {
+        background: var(--s4-primary);
+        color: white;
+        border-radius: 12px;
+        padding: 12px 30px;
+        font-weight: 700;
+        border: none;
+    }
+</style>
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="mb-4">
+                <a asp-action="Index" class="text-decoration-none text-muted small fw-bold">
+                    <i class="fas fa-chevron-left me-1"></i> TRỞ LẠI DANH SÁCH
+                </a>
+                <h2 class="fw-800 mt-2">@(isEdit ? "Cập nhật bài tập 📝" : "Tạo bài tập mới ✨")</h2>
+            </div>
+
+            <div class="form-card shadow-sm">
+                <form asp-action="@(isEdit ? "Edit" : "Create")">
+                    @if (isEdit)
+                    {
+                        <input type="hidden" asp-for="LqvBaiTapId" />
+                    }
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <label class="form-label">Lớp học tiếp nhận</label>
+                            <select asp-for="LqvLopHocId" class="form-select shadow-sm" asp-items="ViewBag.LqvLopHocId"></select>
+                            <span asp-validation-for="LqvLopHocId" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <label class="form-label">Hạn chót nộp bài</label>
+                            <input asp-for="LqvHanNop" type="datetime-local" class="form-control shadow-sm" />
+                            <span asp-validation-for="LqvHanNop" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Tiêu đề bài tập</label>
+                        <input asp-for="LqvTieuDe" class="form-control shadow-sm" placeholder="VD: Bài tập về nhà tuần 1 - MVC..." />
+                        <span asp-validation-for="LqvTieuDe" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Yêu cầu & Mô tả chi tiết</label>
+                        <textarea asp-for="LqvMoTa" rows="5" class="form-control shadow-sm" placeholder="Viết hướng dẫn cho sinh viên tại đây..."></textarea>
+                    </div>
+
+                    <div class="mb-4 col-md-4">
+                        <label class="form-label">Trạng thái hiển thị</label>
+                        <select asp-for="LqvTrangThai" class="form-select shadow-sm">
+                            <option value="Mo">Mở nộp bài</option>
+                            <option value="Dong">Đóng nộp bài</option>
+                        </select>
+                    </div>
+
+                    <hr class="my-4 opacity-50">
+
+                    <div class="d-flex gap-3">
+                        <button type="submit" class="btn-s4-primary shadow-sm">
+                            <i class="fas fa-check me-2"></i>@(isEdit ? "Lưu thay đổi" : "Phát hành bài tập")
+                        </button>
+                        <a asp-action="Index" class="btn btn-light rounded-3 px-4 py-2 d-flex align-items-center fw-bold">Hủy</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

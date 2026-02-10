@@ -1,0 +1,136 @@
+﻿@using LQV_BlockchainCertificate.Models.DBModel
+@model IEnumerable<LqvLichThi>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Lịch thi đang mở";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+    var now = DateTime.Now;
+}
+
+<div class="container py-4">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+        <div class="d-flex align-items-center">
+            <div class="bg-primary bg-gradient rounded-3 p-2 me-3 shadow-sm">
+                <i class="bi bi-clock-history fs-3 text-white"></i>
+            </div>
+            <div>
+                <h2 class="fw-bold mb-0 text-dark">Lịch thi đang mở</h2>
+                <p class="text-muted mb-0 small">Danh sách các bài thi bạn có thể tham gia ngay bây giờ</p>
+            </div>
+        </div>
+        <div class="badge bg-danger rounded-pill px-3 py-2 animate-pulse">
+            <i class="bi bi-broadcast me-1"></i> LIVE
+        </div>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="text-center py-5 shadow-sm rounded-4 bg-white">
+            <img src="~/images/no-exam.svg" alt="No exam" style="width: 150px;" class="mb-3 opacity-50">
+            <p class="text-muted">Hiện tại không có kỳ thi nào đang mở.</p>
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden exam-card transition">
+                        <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <span class="badge bg-light text-primary border border-primary-subtle rounded-pill px-3">
+                                    <i class="bi bi-journal-code me-1"></i> @item.LqvLopHoc.LqvTenLop
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-dark mb-3">@item.LqvDeThi.LqvTenDeThi</h5>
+
+                            <div class="exam-info-list small">
+                                <div class="d-flex align-items-center mb-2 text-muted">
+                                    <i class="bi bi-calendar-check me-2 text-success"></i>
+                                    <span>Bắt đầu: <b>@item.LqvBatDau.ToString("dd/MM/yyyy HH:mm")</b></span>
+                                </div>
+                                <div class="d-flex align-items-center mb-4 text-muted">
+                                    <i class="bi bi-calendar-x me-2 text-danger"></i>
+                                    <span>Kết thúc: <b>@item.LqvKetThuc.ToString("dd/MM/yyyy HH:mm")</b></span>
+                                </div>
+                            </div>
+
+                            <div class="d-grid">
+                                <a asp-action="Start" asp-route-lichThiId="@item.LqvLichThiId"
+                                   class="btn btn-primary rounded-pill py-2 fw-bold shadow-sm btn-start-exam">
+                                    <i class="bi bi-pencil-square me-2"></i>Vào làm bài ngay
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="progress rounded-0" style="height: 4px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+<style>
+    /* CSS Tùy chỉnh chuẩn phong cách Study4 */
+    :root {
+        --s4-primary: #2c5891;
+        --s4-hover: #1e3d66;
+    }
+
+    .btn-primary {
+        background-color: var(--s4-primary);
+        border-color: var(--s4-primary);
+    }
+
+        .btn-primary:hover {
+            background-color: var(--s4-hover);
+            transform: translateY(-2px);
+        }
+
+    .exam-card {
+        background-color: #ffffff;
+        border: 1px solid #edf2f7 !important;
+    }
+
+        .exam-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08) !important;
+            border-color: var(--s4-primary) !important;
+        }
+
+    .transition {
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    }
+
+    .animate-pulse {
+        animation: pulse-red 2s infinite;
+    }
+
+    @@keyframes pulse-red {
+        0% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+        }
+
+        70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 10px rgba(220, 53, 69, 0);
+        }
+
+        100% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+        }
+    }
+
+    .bg-primary-soft {
+        background-color: rgba(44, 88, 145, 0.1);
+    }
+</style>

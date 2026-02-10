@@ -1,0 +1,41 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvKhoaHoc
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="s4-wrapper mx-auto" style="max-width: 900px;">
+    <div class="s4-card">
+        <div class="d-flex justify-content-between align-items-start mb-4">
+            <div>
+                <span class="badge-s4 mb-2 d-inline-block">ID: #@Model.LqvMaKhoaHoc</span>
+                <h3 class="fw-extrabold">@Model.LqvTenKhoaHoc</h3>
+            </div>
+            <a asp-action="Edit" asp-route-id="@Model.LqvMaKhoaHoc" class="btn btn-light rounded-circle p-3 shadow-sm">
+                <i class="fas fa-pencil-alt text-primary"></i>
+            </a>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-8">
+                <h6 class="text-muted small fw-bold text-uppercase">Mô tả khóa học</h6>
+                <p class="text-dark lh-base">@Model.LqvMoTa</p>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 rounded-4 bg-light">
+                    <div class="mb-3">
+                        <label class="text-muted small d-block">Giảng viên</label>
+                        <span class="fw-bold text-primary">@(Model.LqvGiangVien?.LqvHoTen ?? "N/A")</span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="text-muted small d-block">Thời gian</label>
+                        <span class="fw-bold">@Model.LqvNgayBatDau?.ToString("dd/MM/yyyy") - @Model.LqvNgayKetThuc?.ToString("dd/MM/yyyy")</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5 pt-4 border-top">
+            <a asp-action="Index" class="text-decoration-none fw-bold"><i class="fas fa-arrow-left me-2"></i>Quay lại danh sách</a>
+        </div>
+    </div>
+</div>

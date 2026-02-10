@@ -1,0 +1,164 @@
+﻿@model List<LQV_BlockchainCertificate.Models.ViewModels.BaiLamGroupViewModel>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Lịch sử học tập";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<div class="container py-4">
+    <div class="mb-4">
+        <h3 class="fw-bold text-dark mb-1">📚 Lịch sử học tập</h3>
+        <p class="text-muted">Xem lại lộ trình phát triển kỹ năng và kết quả các bài thi của bạn.</p>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="card border-0 shadow-sm rounded-4 p-5 text-center">
+            <div class="py-4">
+                <i class="bi bi-journal-x display-1 text-light mb-3"></i>
+                <h5 class="text-muted">Bạn chưa thực hiện bài kiểm tra nào.</h5>
+                <a href="/" class="btn btn-primary rounded-pill px-4 mt-3">Khám phá đề thi ngay</a>
+            </div>
+        </div>
+    }
+    else
+    {
+        @foreach (var lop in Model)
+        {
+            <div class="mb-5">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary rounded-3 p-2 me-3 shadow-sm">
+                        <i class="bi bi-door-open-fill text-white"></i>
+                    </div>
+                    <h4 class="fw-bold mb-0 text-secondary">Lớp: @lop.TenLop</h4>
+                </div>
+
+                @foreach (var de in lop.DeThis)
+                {
+                    <div class="card border-0 shadow-sm rounded-4 mb-4 overflow-hidden">
+                        <div class="card-header bg-white border-bottom py-3 px-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">
+                                    <i class="bi bi-file-earmark-check me-2"></i>@de.TenDeThi
+                                </span>
+                                <span class="badge bg-light text-dark rounded-pill border">@de.BaiLams.Count() lần làm bài</span>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="bg-light-subtle">
+                                    <tr>
+                                        <th class="ps-4 border-0 text-muted small text-uppercase py-3">Ngày làm bài</th>
+                                        <th class="border-0 text-muted small text-uppercase text-center py-3">Kết quả</th>
+                                        <th class="border-0 text-muted small text-uppercase py-3">Trạng thái</th>
+                                        <th class="pe-4 border-0 py-3"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in de.BaiLams)
+                                    {
+                                        <tr>
+                                            <td class="ps-4 py-3">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="calendar-icon me-3 text-center">
+                                                        <div class="small text-uppercase text-muted" style="font-size: 0.65rem;">Tháng @item.LqvThoiGianBatDau?.Month</div>
+                                                        <div class="fw-bold fs-5 line-height-1">@item.LqvThoiGianBatDau?.Day</div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="fw-medium text-dark">@item.LqvThoiGianBatDau?.ToString("HH:mm")</div>
+                                                        <div class="small text-muted">Bắt đầu lúc</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-center py-3">
+                                                <div class="score-circle mx-auto @(item.LqvDiem >= 5 ? "border-success text-success" : "border-danger text-danger")">
+                                                    @(item.LqvDiem?.ToString("0.0") ?? "—")
+                                                </div>
+                                            </td>
+                                            <td class="py-3">
+                                                <span class="badge rounded-pill px-3 py-2 @(item.LqvTrangThai == "Hoàn thành" ? "bg-success-subtle text-success" : "bg-info-subtle text-info")" style="font-weight: 500;">
+                                                    @item.LqvTrangThai
+                                                </span>
+                                            </td>
+                                            <td class="pe-4 text-end py-3">
+                                                <a asp-action="Details" asp-route-id="@item.LqvBaiLamId"
+                                                   class="btn btn-sm btn-white border rounded-pill px-3 shadow-sm hover-primary">
+                                                    Xem chi tiết <i class="bi bi-chevron-right ms-1"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    }
+</div>
+
+<style>
+    body {
+        background-color: #f8fafc;
+        font-family: 'Inter', sans-serif;
+    }
+
+    /* Custom Score Circle */
+    .score-circle {
+        width: 45px;
+        height: 45px;
+        line-height: 41px;
+        border: 2px solid;
+        border-radius: 50%;
+        font-weight: 700;
+        font-size: 0.9rem;
+        background-color: #fff;
+    }
+
+    /* Subtle Badge Colors */
+    .bg-success-subtle {
+        background-color: #d1e7dd !important;
+        color: #0f5132 !important;
+    }
+
+    .bg-info-subtle {
+        background-color: #cff4fc !important;
+        color: #055160 !important;
+    }
+
+    /* Calendar Icon Style */
+    .calendar-icon {
+        background: #f1f5f9;
+        border-radius: 8px;
+        padding: 4px 10px;
+        min-width: 55px;
+    }
+
+    .line-height-1 {
+        line-height: 1;
+    }
+
+    /* Button Hover */
+    .hover-primary:hover {
+        background-color: #3182ce !important;
+        color: white !important;
+        border-color: #3182ce !important;
+    }
+
+    .card {
+        transition: all 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+    .table thead th {
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        background-color: #fbfcfe;
+    }
+</style>

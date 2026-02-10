@@ -1,0 +1,69 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvBaiLam
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Chi tiết bài làm";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<h2>Chi tiết bài làm</h2>
+<hr />
+
+<div class="mb-3">
+    <p><strong>Sinh viên:</strong> @Model.LqvNguoiDung?.LqvHoTen</p>
+    <p><strong>Lớp:</strong> @Model.LqvLichThi?.LqvLopHoc?.LqvTenLop</p>
+    <p><strong>Tổng điểm:</strong> @Model.LqvDiem</p>
+    <p><strong>Trạng thái:</strong> @Model.LqvTrangThai</p>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Câu hỏi</th>
+            <th>Loại</th>
+            <th>Bài làm SV</th>
+            <th>Điểm</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int stt = 1;
+        }
+        @foreach (var ct in Model.LqvChiTietBaiLams)
+        {
+            <tr>
+                <td>@stt</td>
+                <td>@ct.LqvCauHoi?.LqvNoiDung</td>
+                <td>@ct.LqvCauHoi?.LqvLoai</td>
+                <td>@ct.LqvDapAn?.LqvNoiDung</td>
+                <td>@ct.LqvDiem</td>
+                <td>
+                    @if (ct.LqvCauHoi?.LqvLoai == "TuLuan")
+                    {
+                        if (!ct.LqvDaCham)
+                        {
+                            <a asp-area="GiangVien"
+                               asp-controller="LqvChiTietBaiLams"
+                               asp-action="ChamCauHoi"
+                               asp-route-id="@ct.LqvId"
+                               class="btn btn-sm btn-primary">
+                                Chấm
+                            </a>
+                        }
+                        else
+                        {
+                            <span class="badge bg-success">Đã chấm</span>
+                        }
+                    }
+                    else
+                    {
+                        <span class="badge bg-info">Tự động</span>
+                    }
+                </td>
+            </tr>
+            stt++;
+        }
+    </tbody>
+</table>

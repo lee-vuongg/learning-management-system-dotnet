@@ -1,0 +1,29 @@
+﻿
+body {
+    background: #f4f6f9;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.card {
+    background: white;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: 0.3s;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+a {
+    transition: 0.3s;
+}
+
+    a:hover {
+        color: #0056b3 !important;
+    }
+
+

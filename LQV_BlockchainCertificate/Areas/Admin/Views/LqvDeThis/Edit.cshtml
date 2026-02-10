@@ -1,0 +1,45 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvDeThi
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chỉnh sửa đề thi";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="card border-0 shadow-lg rounded-4 p-4">
+                <h4 class="fw-bold text-warning mb-4 text-center">✏️ Chỉnh sửa đề thi</h4>
+                <form asp-action="Edit" method="post">
+                    <input type="hidden" asp-for="LqvDeThiId" />
+
+                    <div class="mb-3">
+                        <label asp-for="LqvTenDeThi" class="form-label fw-bold small">Tên đề thi</label>
+                        <input asp-for="LqvTenDeThi" class="form-control rounded-3 py-2" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="LqvBoCauHoiId" class="form-label fw-bold small">Bộ câu hỏi</label>
+                        <select asp-for="LqvBoCauHoiId" asp-items="ViewBag.LqvBoCauHoiId" class="form-select rounded-3 py-2"></select>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="LqvThoiGianThi" class="form-label fw-bold small">Thời gian (phút)</label>
+                            <input asp-for="LqvThoiGianThi" type="number" class="form-control rounded-3 py-2" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold small">Tổng điểm hiện tại</label>
+                            <input class="form-control rounded-3 py-2 bg-light text-dark fw-bold" value="@Model.LqvTongDiem" disabled />
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-top d-flex justify-content-end gap-2">
+                        <a asp-action="Index" class="btn btn-light rounded-pill px-4">Quay lại</a>
+                        <button type="submit" class="btn btn-warning rounded-pill px-4 fw-bold text-dark">💾 Cập nhật</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

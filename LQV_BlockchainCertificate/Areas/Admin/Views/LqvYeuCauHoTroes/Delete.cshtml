@@ -1,0 +1,105 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvYeuCauHoTro
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Xóa Yêu cầu Hỗ trợ";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+
+    // Logic xác định class CSS cho trạng thái
+    string statusText = Model.LqvTrangThai ?? "Không xác định";
+    string statusClass = statusText switch
+    {
+        "Chờ xử lý" => "text-warning",
+        "Đang xử lý" => "text-info",
+        "Đã xử lý" => "text-success",
+        _ => "text-secondary"
+    };
+}
+
+<style>
+    :root {
+        --color-card-bg: #1c233a;
+        --color-text-light: #e0e7ff;
+        --color-neon-blue: #4fd1c5;
+        --color-dark-bg: #0d1222;
+        --border-radius-lg: 12px;
+        --color-text-muted: #8c97b8;
+        --gradient-danger: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+    }
+
+    .card-custom {
+        background-color: var(--color-card-bg);
+        color: var(--color-text-light);
+        border-radius: var(--border-radius-lg);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        border: 1px solid #323b6b;
+    }
+
+    .btn-neon-danger {
+        background: var(--gradient-danger);
+        border: none;
+        color: #fff;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+        .btn-neon-danger:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+            color: #fff;
+        }
+</style>
+
+<div class="d-flex justify-content-center">
+    <div class="card card-custom p-5 mx-auto" style="max-width: 700px;">
+        <h1 class="h3 mb-3 fw-bold text-center" style="color: #f56565;"><i class="fas fa-trash-alt me-2"></i>Xác nhận Xóa Yêu cầu</h1>
+        <h3 class="text-warning text-center mb-4">Bạn có chắc chắn muốn xóa yêu cầu hỗ trợ này không?</h3>
+
+        <hr style="border-color: #323b6b;" />
+
+        <dl class="row">
+            <dt class="col-sm-4" style="color: var(--color-text-muted);">ID Yêu cầu:</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.LqvId)</dd>
+
+            <dt class="col-sm-4" style="color: var(--color-text-muted);">Người gửi:</dt>
+            <dd class="col-sm-8"><strong>@Html.DisplayFor(model => model.LqvNguoiDung.LqvHoTen)</strong></dd>
+
+            <dt class="col-sm-4" style="color: var(--color-text-muted);">Thời gian gửi:</dt>
+            <dd class="col-sm-8">@(Model.LqvThoiGianGui.HasValue ? Model.LqvThoiGianGui.Value.ToString("dd/MM/yyyy HH:mm") : "N/A")</dd>
+
+            <dt class="col-sm-4" style="color: var(--color-text-muted);">Trạng thái:</dt>
+            <dd class="col-sm-8">
+                <span class="fw-bold @statusClass">
+                    @statusText
+                </span>
+            </dd>
+
+            <dt class="col-sm-12 fw-bold mt-3" style="color: var(--color-text-muted);">Nội dung:</dt>
+            <dd class="col-sm-12"><div class="p-2 border rounded" style="background-color: #273059; border-color: #323b6b !important;">@Html.DisplayFor(model => model.LqvNoiDung)</div></dd>
+
+            <dt class="col-sm-12 fw-bold mt-3" style="color: var(--color-text-muted);">Phản hồi Admin:</dt>
+            <dd class="col-sm-12">
+                <div class="p-2 border rounded" style="background-color: #273059; border-color: #323b6b !important;">
+                    @if (!string.IsNullOrEmpty(Model.LqvPhanHoi))
+                    {
+                        @Html.DisplayFor(model => model.LqvPhanHoi)
+                    }
+                    else
+                    {
+                        <span class="fst-italic">Chưa có phản hồi.</span>
+                    }
+                </div>
+            </dd>
+        </dl>
+
+        <hr class="mt-4" style="border-color: #323b6b;" />
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="LqvId" />
+            <div class="d-flex justify-content-between pt-2">
+                <input type="submit" value="Xóa Vĩnh viễn" class="btn btn-neon-danger" />
+                <a asp-action="Index" class="btn btn-outline-secondary" style="color:var(--color-text-muted); border-color:var(--color-text-muted);"><i class="fas fa-arrow-left me-2"></i>Hủy</a>
+            </div>
+        </form>
+    </div>
+</div>

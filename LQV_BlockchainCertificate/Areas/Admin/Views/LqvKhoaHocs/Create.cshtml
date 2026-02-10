@@ -1,0 +1,58 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvKhoaHoc
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="s4-wrapper mx-auto" style="max-width: 800px;">
+    <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index" class="text-decoration-none">Khóa học</a></li>
+            <li class="breadcrumb-item active">@ViewData["Title"]</li>
+        </ol>
+    </nav>
+
+    <div class="s4-card">
+        <h4 class="fw-extrabold mb-4">Thông tin khóa học</h4>
+        <form asp-action="@ViewContext.RouteData.Values["action"]" method="post" class="row g-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @if (ViewContext.RouteData.Values["action"]?.ToString() == "Edit")
+            {
+                <input type="hidden" asp-for="LqvMaKhoaHoc" />
+            }
+
+            <div class="col-12">
+                <label class="form-label fw-bold">Tên khóa học</label>
+                <input asp-for="LqvTenKhoaHoc" class="form-control s4-input" placeholder="VD: Lập trình Blockchain nâng cao" />
+                <span asp-validation-for="LqvTenKhoaHoc" class="text-danger small"></span>
+            </div>
+
+            <div class="col-12">
+                <label class="form-label fw-bold">Mô tả khóa học</label>
+                <textarea asp-for="LqvMoTa" class="form-control s4-input" rows="4" placeholder="Viết mô tả chi tiết..."></textarea>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-bold">Ngày bắt đầu</label>
+                <input asp-for="LqvNgayBatDau" type="date" class="form-control s4-input" />
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-bold">Ngày kết thúc</label>
+                <input asp-for="LqvNgayKetThuc" type="date" class="form-control s4-input" />
+            </div>
+
+            <div class="col-12">
+                <label class="form-label fw-bold">Giảng viên phụ trách</label>
+                <select asp-for="LqvGiangVienId" class="form-select s4-input" asp-items="ViewBag.LqvGiangVienId">
+                    <option value="">-- Chọn giảng viên --</option>
+                </select>
+            </div>
+
+            <div class="col-12 pt-3 d-flex gap-2">
+                <button type="submit" class="btn btn-s4-primary px-5">Lưu thông tin</button>
+                <a asp-action="Index" class="btn btn-s4-outline px-4">Hủy bỏ</a>
+            </div>
+        </form>
+    </div>
+</div>

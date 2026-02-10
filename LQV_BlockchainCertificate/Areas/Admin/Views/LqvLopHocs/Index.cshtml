@@ -1,0 +1,120 @@
+﻿@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<LQV_BlockchainCertificate.Models.DBModel.LqvLopHoc>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Quản lý lớp học";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="vision-card">
+
+    <!-- HEADER -->
+    <div class="card-header-vision d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">
+            <i class="fas fa-users-class me-2"></i> Quản lý lớp học
+        </h5>
+        <a asp-action="Create" class="btn vision-btn-create btn-sm">
+            <i class="fas fa-plus"></i> Thêm lớp
+        </a>
+    </div>
+
+    <!-- FILTER -->
+    <form method="get" class="row g-3 mb-4 mt-2">
+        <div class="col-md-3">
+            <input name="searchString"
+                   value="@ViewBag.CurrentFilter"
+                   class="form-control vision-form-control"
+                   placeholder="🔍 Tên lớp..." />
+        </div>
+
+        <div class="col-md-3">
+            @Html.DropDownList(
+                     "khoaHocId",
+                     ViewBag.KhoaHocId as SelectList,
+                     "Tất cả khóa học",
+                     new { @class = "form-select vision-form-select" })
+        </div>
+
+        <div class="col-md-3">
+            @Html.DropDownList(
+                     "giangVienId",
+                     ViewBag.GiangVienId as SelectList,
+                     "Tất cả giảng viên",
+                     new { @class = "form-select vision-form-select" })
+        </div>
+
+        <div class="col-md-3">
+            <button class="btn vision-search-btn w-100">
+                <i class="fas fa-filter"></i> Lọc
+            </button>
+        </div>
+    </form>
+
+    <!-- TABLE -->
+    <div class="table-responsive">
+        <table class="table vision-table align-middle">
+            <thead>
+                <tr>
+                    <th>Tên lớp</th>
+                    <th>Khóa học</th>
+                    <th>Giảng viên</th>
+                    <th class="text-center">Sĩ số</th>
+                    <th class="text-center" width="220">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><strong>@item.LqvTenLop</strong></td>
+                        <td>@item.LqvKhoaHoc?.LqvTenKhoaHoc</td>
+                        <td>
+                            <span class="badge bg-info">
+                                @item.LqvGiangVien?.LqvHoTen
+                            </span>
+                        </td>
+                        <td class="text-center">
+                            <span class="badge bg-success">
+                                @item.LqvDangKyLopHocs.Count SV
+                            </span>
+                        </td>
+                        <td class="text-center">
+                            <a asp-action="SinhVien"
+                               asp-route-id="@item.LqvLopHocId"
+                               class="btn btn-sm btn-info text-white"
+                               title="Sinh viên">
+                                <i class="fas fa-users"></i>
+                            </a>
+
+                            <a asp-action="Edit"
+                               asp-route-id="@item.LqvLopHocId"
+                               class="btn btn-sm btn-warning"
+                               title="Sửa">
+                                <i class="fas fa-edit"></i>
+                            </a>
+
+                            <a asp-action="Delete"
+                               asp-route-id="@item.LqvLopHocId"
+                               class="btn btn-sm btn-danger"
+                               title="Xóa">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- PAGINATION -->
+    <div class="d-flex justify-content-center mt-4">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new
+            {
+                page,
+                searchString = ViewBag.CurrentFilter,
+                khoaHocId = Context.Request.Query["khoaHocId"],
+                giangVienId = Context.Request.Query["giangVienId"]
+            }))
+    </div>
+</div>

@@ -1,0 +1,60 @@
+﻿@using LQV_BlockchainCertificate.Models.DBModel
+@model LqvBaiLam
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow rounded-4 text-center p-5 mb-4">
+                <div class="mb-4">
+                    <div class="display-1 fw-bold text-primary">@Model.LqvDiem</div>
+                    <p class="text-muted fs-5">Tổng điểm đạt được</p>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-6 text-end border-end">
+                        <span class="text-muted d-block">Thời gian nộp</span>
+                        <span class="fw-bold">@Model.LqvThoiGianNop?.ToString("HH:mm dd/MM/yyyy")</span>
+                    </div>
+                    <div class="col-6 text-start">
+                        <span class="text-muted d-block">Trạng thái</span>
+                        <span class="badge bg-success rounded-pill">Hoàn thành</span>
+                    </div>
+                </div>
+
+                <div>
+                    <a asp-action="Index" class="btn btn-outline-primary rounded-pill px-4">Về danh sách</a>
+                    <button onclick="window.print()" class="btn btn-light rounded-pill px-4 ms-2">In kết quả</button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-4 shadow-sm p-4">
+                <h5 class="fw-bold mb-4">Chi tiết từng câu</h5>
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Câu hỏi</th>
+                                <th class="text-center">Điểm số</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var ct in Model.LqvChiTietBaiLams)
+                            {
+                                <tr>
+                                    <td class="text-wrap">@ct.LqvCauHoi.LqvNoiDung</td>
+                                    <td class="text-center">
+                                        <span class="badge @(ct.LqvDiem > 0 ? "bg-success" : "bg-danger")">@ct.LqvDiem</span>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

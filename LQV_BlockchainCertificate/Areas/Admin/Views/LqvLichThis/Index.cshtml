@@ -1,0 +1,266 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvLichThi>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Quản lý lịch thi";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    :root {
+        --s4-primary: #007bff;
+        --s4-primary-hover: #0056b3;
+        --s4-bg: #f8f9fa;
+        --s4-text-main: #212529;
+        --s4-text-muted: #6c757d;
+        --s4-border: #e9ecef;
+        --s4-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        --s4-radius: 8px;
+    }
+
+    body {
+        background-color: var(--s4-bg);
+        font-family: 'Inter', sans-serif;
+    }
+
+    .s4-container {
+        padding: 1.5rem 0;
+    }
+
+    /* Card Layout */
+    .s4-card {
+        background: #fff;
+        border: 1px solid var(--s4-border);
+        border-radius: var(--s4-radius);
+        box-shadow: var(--s4-shadow);
+        overflow: hidden;
+    }
+
+    /* Header Section */
+    .s4-header {
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid var(--s4-border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #fff;
+    }
+
+    .s4-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--s4-text-main);
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+        .s4-title i {
+            margin-right: 10px;
+            color: var(--s4-primary);
+        }
+
+    /* Button Style */
+    .s4-btn-primary {
+        background-color: var(--s4-primary);
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-decoration: none !important;
+        transition: all 0.2s ease;
+        border: none;
+        display: inline-flex;
+        align-items: center;
+    }
+
+        .s4-btn-primary:hover {
+            background-color: var(--s4-primary-hover);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+    /* Table Design */
+    .s4-table-container {
+        padding: 0;
+    }
+
+    .s4-table {
+        width: 100%;
+        margin-bottom: 0;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
+        .s4-table thead th {
+            background-color: #fcfcfd;
+            color: var(--s4-text-muted);
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 12px 1.5rem;
+            border-bottom: 1px solid var(--s4-border);
+        }
+
+        .s4-table tbody td {
+            padding: 1rem 1.5rem;
+            vertical-align: middle;
+            border-bottom: 1px solid var(--s4-border);
+            color: var(--s4-text-main);
+            font-size: 0.95rem;
+        }
+
+        .s4-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .s4-table tbody tr:hover {
+            background-color: #fbfcfe;
+        }
+
+    /* Table Elements */
+    .exam-link {
+        color: var(--s4-primary);
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+        .exam-link:hover {
+            text-decoration: underline;
+        }
+
+    .badge-class {
+        background: #ebf5ff;
+        color: #007bff;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+
+    .time-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        font-size: 0.85rem;
+    }
+
+        .time-info span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+    .icon-start {
+        color: #28a745;
+    }
+
+    .icon-end {
+        color: #dc3545;
+    }
+
+    /* Action Buttons */
+    .s4-action-group {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .s4-action-btn {
+        width: 34px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        border: 1px solid #dee2e6;
+        background: #fff;
+        color: #495057;
+        transition: all 0.2s;
+        text-decoration: none;
+    }
+
+        .s4-action-btn:hover {
+            background: #f8f9fa;
+            color: var(--s4-primary);
+            border-color: var(--s4-primary);
+        }
+
+        .s4-action-btn.edit:hover {
+            color: #fd7e14;
+            border-color: #fd7e14;
+        }
+
+        .s4-action-btn.delete:hover {
+            color: #dc3545;
+            border-color: #dc3545;
+        }
+</style>
+
+<div class="s4-container">
+    <div class="container-fluid">
+        <div class="s4-card">
+            <div class="s4-header">
+                <h1 class="s4-title">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Quản lý lịch thi hệ thống
+                </h1>
+                <a asp-action="Create" class="s4-btn-primary">
+                    <i class="fa-solid fa-plus me-2"></i> Thêm lịch mới
+                </a>
+            </div>
+
+            <div class="table-responsive s4-table-container">
+                <table class="table s4-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 30%">Tên đề thi</th>
+                            <th style="width: 20%">Lớp học áp dụng</th>
+                            <th style="width: 30%">Thời gian diễn ra</th>
+                            <th style="width: 20%" class="text-center">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <div class="exam-link">@item.LqvDeThi?.LqvTenDeThi</div>
+                                    <small class="text-muted">ID: #@item.LqvLichThiId</small>
+                                </td>
+                                <td>
+                                    <span class="badge-class">
+                                        <i class="fa-solid fa-users me-1"></i> @item.LqvLopHoc?.LqvTenLop
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="time-info">
+                                        <span><i class="fa-regular fa-circle-play icon-start"></i> <b>Bắt đầu:</b> @item.LqvBatDau.ToString("dd/MM/yyyy HH:mm")</span>
+                                        <span><i class="fa-regular fa-circle-stop icon-end"></i> <b>Kết thúc:</b> @item.LqvKetThuc.ToString("dd/MM/yyyy HH:mm")</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="s4-action-group">
+                                        <a asp-action="Details" asp-route-id="@item.LqvLichThiId" class="s4-action-btn" title="Xem chi tiết">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        <a asp-action="Edit" asp-route-id="@item.LqvLichThiId" class="s4-action-btn edit" title="Chỉnh sửa">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.LqvLichThiId" class="s4-action-btn delete" title="Xóa lịch">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

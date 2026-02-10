@@ -1,0 +1,44 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvXacThucChungNhan
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chi tiết Lịch sử";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="s4-wrapper mx-auto" style="max-width: 800px;">
+    <div class="mb-4">
+        <a asp-action="Index" class="text-decoration-none text-muted small fw-bold">
+            <i class="fas fa-chevron-left me-1"></i> TRỞ VỀ DANH SÁCH
+        </a>
+    </div>
+
+    <div class="s4-card shadow-sm">
+        <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+            <h4 class="fw-bold mb-0">Chi tiết bản ghi #@Model.LqvId</h4>
+            <span class="s4-badge @(Model.LqvKetQua == "Hợp lệ" ? "bg-s4-success" : "bg-s4-danger")">
+                @Model.LqvKetQua
+            </span>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <label class="text-muted small fw-bold d-block text-uppercase mb-1">Mã chứng nhận tra cứu</label>
+                <div class="fs-5 fw-bold text-dark">@Model.LqvMaChungNhanCode</div>
+            </div>
+            <div class="col-md-6">
+                <label class="text-muted small fw-bold d-block text-uppercase mb-1">Thời gian hệ thống</label>
+                <div class="text-dark fw-medium">@Model.LqvThoiGianXacThuc.ToString("dd/MM/yyyy HH:mm:ss")</div>
+            </div>
+            <div class="col-12">
+                <label class="text-muted small fw-bold d-block text-uppercase mb-1">Địa chỉ IP / Client ID</label>
+                <div class="p-3 bg-light rounded-3 text-break font-monospace small">@Model.LqvDiaChiNguoiXacThuc</div>
+            </div>
+        </div>
+
+        <div class="mt-5 d-flex gap-2">
+            <a asp-action="Delete" asp-route-id="@Model.LqvId" class="btn btn-outline-danger border-0 fw-bold">
+                <i class="fas fa-trash-alt me-2"></i>Xóa bản ghi này
+            </a>
+        </div>
+    </div>
+</div>

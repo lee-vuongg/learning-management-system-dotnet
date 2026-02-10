@@ -1,0 +1,202 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<LQV_BlockchainCertificate.Models.DBModel.LqvKhoaHoc>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Quản lý Khóa học";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    :root {
+        --s4-primary: #007bff;
+        --s4-bg: #f8f9fa;
+        --s4-text: #202124;
+    }
+
+    body {
+        background-color: var(--s4-bg);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .s4-wrapper {
+        padding: 2rem;
+    }
+
+    .s4-card {
+        background: #fff;
+        border-radius: 24px;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        padding: 1.5rem;
+    }
+
+    /* Search & Filter */
+    .s4-input {
+        border-radius: 12px !important;
+        border: 1px solid #dadce0;
+        padding: 0.6rem 1rem;
+        transition: all 0.2s;
+    }
+
+        .s4-input:focus {
+            border-color: var(--s4-primary);
+            box-shadow: 0 0 0 4px rgba(0,123,255,0.1);
+        }
+
+    /* Button Styles */
+    .btn-s4-primary {
+        background: var(--s4-primary);
+        color: #fff;
+        border-radius: 50px;
+        padding: 0.6rem 1.5rem;
+        font-weight: 700;
+        border: none;
+    }
+
+        .btn-s4-primary:hover {
+            background: #0069d9;
+            color: #fff;
+        }
+
+    .btn-s4-outline {
+        border-radius: 50px;
+        border: 1px solid #dadce0;
+        font-weight: 600;
+        background: #fff;
+    }
+
+    /* Table Customization */
+    .s4-table thead th {
+        background: transparent;
+        border-bottom: 2px solid #f1f3f4;
+        color: #5f6368;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 1rem;
+    }
+
+    .s4-table tbody tr {
+        transition: all 0.2s;
+        border-bottom: 1px solid #f8f9fa;
+    }
+
+        .s4-table tbody tr:hover {
+            background-color: #f8faff;
+        }
+
+    .s4-table td {
+        padding: 1.2rem 1rem;
+        vertical-align: middle;
+        color: var(--s4-text);
+        font-weight: 500;
+    }
+
+    .badge-s4 {
+        background: #e8f0fe;
+        color: var(--s4-primary);
+        border-radius: 8px;
+        padding: 5px 12px;
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+
+    /* Pagination */
+    .pagination .page-item .page-link {
+        border: none;
+        border-radius: 8px;
+        margin: 0 3px;
+        color: var(--s4-text);
+        font-weight: 600;
+    }
+
+    .pagination .page-item.active .page-link {
+        background: var(--s4-primary);
+        color: #fff;
+    }
+</style>
+
+<div class="s4-wrapper">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="fw-extrabold mb-1">Quản lý Khóa học</h3>
+            <p class="text-muted small">Danh sách các khóa học hiện có trên hệ thống</p>
+        </div>
+        <a asp-action="Create" class="btn btn-s4-primary shadow-sm">
+            <i class="fas fa-plus me-2"></i>Tạo khóa học mới
+        </a>
+    </div>
+
+    <div class="s4-card mb-4">
+        <form asp-action="Index" method="get" class="row g-3 align-items-center">
+            <div class="col-md-5">
+                <input type="text" name="searchString" value="@ViewBag.CurrentFilter" class="form-control s4-input" placeholder="Tìm tên khóa học..." />
+            </div>
+            <div class="col-md-4">
+                @Html.DropDownList("giangVienId", (SelectList)ViewBag.LqvGiangVienId, "Tất cả giảng viên", new { @class = "form-select s4-input" })
+            </div>
+            <div class="col-md-3 d-flex gap-2">
+                <button type="submit" class="btn btn-s4-primary w-100">Lọc</button>
+                <a asp-action="Index" class="btn btn-s4-outline w-100 text-center">Reset</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="s4-card">
+        <div class="table-responsive">
+            <table class="table s4-table">
+                <thead>
+                    <tr>
+                        <th>Khóa học</th>
+                        <th>Giảng viên</th>
+                        <th class="text-center">Thời gian</th>
+                        <th class="text-end">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td style="max-width: 300px;">
+                                <div class="fw-bold text-dark">@item.LqvTenKhoaHoc</div>
+                                <div class="text-muted small text-truncate">@item.LqvMoTa</div>
+                            </td>
+                            <td>
+                                <span class="badge-s4">@item.LqvGiangVien?.LqvTenDangNhap</span>
+                            </td>
+                            <td class="text-center small">
+                                <div>@item.LqvNgayBatDau?.ToString("dd/MM/yyyy")</div>
+                                <div class="text-muted">đến @item.LqvNgayKetThuc?.ToString("dd/MM/yyyy")</div>
+                            </td>
+                            <td class="text-end">
+                                <div class="dropdown">
+                                    <button class="btn btn-light btn-sm rounded-circle" data-bs-toggle="dropdown">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm rounded-4">
+                                        <li><a class="dropdown-item py-2" asp-action="Edit" asp-route-id="@item.LqvMaKhoaHoc"><i class="fas fa-edit me-2 text-warning"></i> Sửa</a></li>
+                                        <li><a class="dropdown-item py-2" asp-action="Details" asp-route-id="@item.LqvMaKhoaHoc"><i class="fas fa-eye me-2 text-info"></i> Chi tiết</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item py-2 text-danger" asp-action="Delete" asp-route-id="@item.LqvMaKhoaHoc" onclick="return confirm('Xóa khóa học?')"><i class="fas fa-trash me-2"></i> Xóa</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="d-flex justify-content-center mt-4">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchString = ViewBag.CurrentFilter }),
+                     new PagedListRenderOptions
+            {
+                UlElementClasses = new[] { "pagination" },
+                LiElementClasses = new[] { "page-item" },
+                PageClasses = new[] { "page-link" }
+            })
+        </div>
+    </div>
+</div>

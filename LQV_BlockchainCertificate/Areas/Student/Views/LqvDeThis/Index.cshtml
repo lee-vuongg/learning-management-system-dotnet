@@ -1,0 +1,47 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvDeThi>
+
+@{
+    ViewData["Title"] = "Danh sách đề thi";
+}
+
+<h2>Danh sách đề thi</h2>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Tên đề thi</th>
+            <th>Thời gian (phút)</th>
+            <th>Tổng điểm</th>
+            <th>Ngày duyệt</th>
+            <th>Giảng viên</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Where(x => x.LqvDaDuyet == true))
+        {
+            <tr>
+                <td>@item.LqvTenDeThi</td>
+                <td>@item.LqvThoiGianThi</td>
+                <td>@item.LqvTongDiem</td>
+                <td>@item.LqvNgayDuyet?.ToString("dd/MM/yyyy")</td>
+                <td>@item.LqvGiangVien?.LqvHoTen</td>
+                <td>
+                    <a asp-action="Details"
+                       asp-route-id="@item.LqvDeThiId"
+                       class="btn btn-info btn-sm">
+                        Chi tiết
+                    </a>
+
+                    <a asp-area="Student"
+                       asp-controller="LqvLamBai"
+                       asp-action="Start"
+                       asp-route-deThiId="@item.LqvDeThiId"
+                       class="btn btn-success btn-sm">
+                        Vào làm bài
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

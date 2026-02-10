@@ -1,0 +1,51 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvNhatKyHoatDong
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chi tiết bản ghi nhật ký";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="log-wrapper d-flex justify-content-center align-items-center">
+    <div class="log-card shadow-lg" style="max-width: 650px; width: 100%;">
+        <div class="p-4 border-bottom bg-light d-flex justify-content-between align-items-center">
+            <h5 class="mb-0 fw-bold"><i class="fas fa-file-alt text-primary me-2"></i>Chi tiết Nhật ký</h5>
+            <span class="text-muted small">#@Model.LqvId</span>
+        </div>
+
+        <div class="p-4">
+            <div class="mb-4 text-center">
+                <div class="display-6 text-muted mb-2"><i class="fas fa-user-shield"></i></div>
+                <h6 class="text-uppercase fw-bold text-muted small mb-1">Người thực hiện</h6>
+                <div class="h5 fw-bold text-dark">@Model.LqvTaiKhoan</div>
+            </div>
+
+            <hr class="opacity-10">
+
+            <div class="row gy-4 mt-2">
+                <div class="col-md-6">
+                    <label class="small text-muted fw-bold d-block mb-1">HÀNH ĐỘNG</label>
+                    <span class="badge bg-primary px-3 py-2 rounded-pill">@Model.LqvHanhDong</span>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <label class="small text-muted fw-bold d-block mb-1">THỜI GIAN XÁC THỰC</label>
+                    <span class="text-dark fw-medium">@Model.LqvThoiGian?.ToString("dd/MM/yyyy HH:mm:ss")</span>
+                </div>
+                <div class="col-12">
+                    <label class="small text-muted fw-bold d-block mb-2">CHI TIẾT NỘI DUNG</label>
+                    <div class="p-3 bg-light rounded-3 text-dark border-start border-primary border-4" style="white-space: pre-wrap; line-height: 1.6;">
+                        @Model.LqvChiTiet
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5 d-flex gap-2">
+                <a asp-action="Index" class="btn btn-outline-secondary rounded-pill px-4 flex-grow-1">
+                    <i class="fas fa-chevron-left me-2"></i>Quay lại
+                </a>
+                <a asp-action="Delete" asp-route-id="@Model.LqvId" class="btn btn-danger rounded-pill px-4 flex-grow-1">
+                    <i class="fas fa-trash-alt me-2"></i>Xóa bản ghi
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

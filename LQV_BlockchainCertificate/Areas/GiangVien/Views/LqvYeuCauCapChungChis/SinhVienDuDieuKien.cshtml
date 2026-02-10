@@ -1,0 +1,95 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvTienDoHocTap>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Sinh viên đủ điều kiện";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<style>
+    .student-card-list {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        border: 1px solid #edf2f7;
+    }
+
+    .progress {
+        height: 8px;
+        border-radius: 10px;
+        background-color: #edf2f7;
+    }
+
+    .progress-bar {
+        background-color: #2ecc71;
+    }
+
+    .btn-dexuat {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        font-weight: 600;
+        border-radius: 6px;
+        padding: 6px 16px;
+        transition: 0.3s;
+    }
+
+        .btn-dexuat:hover {
+            background-color: #2980b9;
+            transform: translateY(-1px);
+        }
+</style>
+
+<div class="container py-4">
+    <div class="mb-4">
+        <h3 class="fw-bold text-dark"><i class="fas fa-user-graduate text-primary me-2"></i> Sinh viên đủ điều kiện</h3>
+        <p class="text-muted">Danh sách sinh viên đã hoàn thành lộ trình học tập và đủ điều kiện cấp chứng chỉ.</p>
+    </div>
+
+    <div class="student-card-list">
+        <table class="table mb-0 align-middle">
+            <thead class="bg-light">
+                <tr>
+                    <th class="ps-4 py-3">Thông tin sinh viên</th>
+                    <th class="py-3">Tiến độ hoàn thành</th>
+                    <th class="py-3 text-end pe-4">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Any())
+                {
+                    <tr><td colspan="3" class="text-center py-5">Không có sinh viên nào đủ điều kiện.</td></tr>
+                }
+                else
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="ps-4">
+                                <div class="fw-bold text-dark">@item.LqvSinhVien.LqvHoTen</div>
+                                <div class="small text-muted">@item.LqvSinhVien.LqvEmail</div>
+                            </td>
+                            <td style="min-width: 200px;">
+                                <div class="d-flex align-items-center">
+                                    <div class="progress flex-grow-1 me-2">
+                                        <div class="progress-bar" role="progressbar" style="width: @item.LqvTiLeHoanThanh%"></div>
+                                    </div>
+                                    <span class="fw-bold text-success small">@item.LqvTiLeHoanThanh%</span>
+                                </div>
+                            </td>
+                            <td class="text-end pe-4">
+                                <form asp-action="DeXuat" method="post">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="sinhVienId" value="@item.LqvSinhVienId" />
+                                    <input type="hidden" name="khoaHocId" value="@ViewBag.KhoaHocId" />
+                                    <button type="submit" class="btn-dexuat" onclick="return confirm('Xác nhận đề xuất cấp chứng chỉ cho sinh viên này?')">
+                                        <i class="fas fa-paper-plane me-1"></i> Gửi đề xuất
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

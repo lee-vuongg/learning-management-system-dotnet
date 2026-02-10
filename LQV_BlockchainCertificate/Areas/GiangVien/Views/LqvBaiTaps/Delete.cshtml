@@ -1,0 +1,33 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvBaiTap
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Xóa bài tập";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<div class="d-flex justify-content-center py-5">
+    <div class="col-md-5">
+        <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+            <div class="bg-danger py-4 text-center text-white">
+                <i class="fas fa-exclamation-triangle fa-3x mb-2"></i>
+                <h4 class="fw-bold">Xác nhận xóa bài tập?</h4>
+            </div>
+            <div class="card-body p-4 text-center">
+                <p class="text-muted">Bạn đang thực hiện xóa bài tập:</p>
+                <h5 class="fw-800 mb-4">@Model.LqvTieuDe</h5>
+
+                <div class="alert alert-warning small border-0 rounded-3">
+                    Hành động này không thể hoàn tác. Toàn bộ các bài nộp liên quan cũng sẽ bị ảnh hưởng.
+                </div>
+
+                <form asp-action="Delete" class="mt-4">
+                    <input type="hidden" asp-for="LqvBaiTapId" />
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-danger btn-lg rounded-3 fw-bold">Vẫn xóa bài tập</button>
+                        <a asp-action="Index" class="btn btn-light btn-lg rounded-3 fw-bold text-muted">Hủy bỏ</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

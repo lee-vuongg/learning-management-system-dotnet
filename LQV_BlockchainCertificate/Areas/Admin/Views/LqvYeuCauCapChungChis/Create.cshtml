@@ -1,0 +1,80 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvYeuCauCapChungChi
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Tạo Yêu cầu Cấp Chứng chỉ";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .card-custom {
+        background-color: var(--color-card-bg);
+        border: 1px solid #323b6b;
+        border-radius: var(--border-radius-lg);
+        padding: 2rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .form-control-dark {
+        background-color: #273059;
+        border: 1px solid #323b6b;
+        color: var(--color-text-light);
+        border-radius: 8px;
+    }
+
+        .form-control-dark:focus {
+            border-color: var(--color-neon-blue);
+            box-shadow: 0 0 0 0.25rem rgba(79, 209, 197, 0.25); /* Neon Blue Glow */
+            background-color: #1a2455;
+        }
+
+    .control-label {
+        color: var(--color-text-muted);
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+</style>
+
+<h1 class="text-3xl font-bold mb-4" style="color:var(--color-neon-blue);">
+    Tạo Yêu cầu Mới
+</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card-custom">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-4"></div>
+
+                <div class="mb-3">
+                    <label asp-for="LqvNguoiDungId" class="control-label">Người Dùng</label>
+                    <select asp-for="LqvNguoiDungId" class="form-control form-control-dark" asp-items="ViewBag.LqvNguoiDungId"></select>
+                    <span asp-validation-for="LqvNguoiDungId" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="LqvKhoaHocId" class="control-label">Khóa Học</label>
+                    <select asp-for="LqvKhoaHocId" class="form-control form-control-dark" asp-items="ViewBag.LqvKhoaHocId"></select>
+                    <span asp-validation-for="LqvKhoaHocId" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="LqvLyDoYeuCau" class="control-label">Lý Do Yêu Cầu</label>
+                    <input asp-for="LqvLyDoYeuCau" class="form-control form-control-dark" />
+                    <span asp-validation-for="LqvLyDoYeuCau" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex justify-content-between pt-3">
+                    <input type="submit" value="Tạo Mới" class="btn btn-primary" style="background: var(--gradient-primary); border: none;" />
+                    <a asp-action="Index" class="btn btn-outline-secondary" style="color: var(--color-text-muted); border-color: #323b6b;">
+                        Quay lại Danh sách
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,351 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvBaiLam
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+    var cauHois = Model.LqvLichThi?
+                         .LqvDeThi?
+                         .LqvBoCauHoi?
+                         .LqvCauHois?
+                         .ToList() ?? new List<LQV_BlockchainCertificate.Models.DBModel.LqvCauHoi>();
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --s4-primary: #35509a; /* Xanh Study4 */
+        --s4-primary-light: #eef2ff;
+        --s4-secondary: #64748b; /* Màu text phụ */
+        --s4-success: #22c55e;
+        --s4-danger: #ef4444;
+        --s4-bg: #f8fafc; /* Nền xám cực nhẹ */
+        --s4-border: #e2e8f0;
+        --radius-lg: 16px;
+        --radius-md: 10px;
+        --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+        background-color: var(--s4-bg);
+        font-family: 'Inter', sans-serif;
+        color: #1e293b;
+        line-height: 1.6;
+    }
+
+    /* Header thanh mảnh chuyên nghiệp */
+    .exam-top-bar {
+        background: #ffffff;
+        border-bottom: 1px solid var(--s4-border);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 10px 0;
+        box-shadow: var(--shadow-sm);
+    }
+
+    /* Card câu hỏi */
+    .question-card {
+        background: #ffffff;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--s4-border);
+        padding: 30px;
+        margin-bottom: 24px;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.2s ease;
+    }
+
+        .question-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+    .question-number {
+        display: inline-block;
+        background: var(--s4-primary-light);
+        color: var(--s4-primary);
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Đáp án thiết kế hiện đại */
+    .option-item {
+        margin-bottom: 12px;
+    }
+
+        .option-item input[type="radio"] {
+            display: none;
+        }
+
+        .option-item label {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            border: 2px solid var(--s4-border);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+            color: #475569;
+            background: #fff;
+            width: 100%;
+        }
+
+            .option-item label:hover {
+                border-color: #cbd5e1;
+                background-color: #f8fafc;
+            }
+
+        .option-item input[type="radio"]:checked + label {
+            background-color: var(--s4-primary-light);
+            border-color: var(--s4-primary);
+            color: var(--s4-primary);
+        }
+
+        .option-item label:before {
+            content: "";
+            width: 22px;
+            height: 22px;
+            border: 2px solid #cbd5e1;
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+            background: #fff;
+        }
+
+        .option-item input[type="radio"]:checked + label:before {
+            border-color: var(--s4-primary);
+            background: radial-gradient(var(--s4-primary) 50%, #fff 55%);
+        }
+
+    /* Sidebar - Bảng điều hướng */
+    .card-navigation {
+        border-radius: var(--radius-lg);
+        border: none;
+        box-shadow: var(--shadow-md);
+    }
+
+    .nav-box {
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        border: 1px solid var(--s4-border);
+        background: #fff;
+        text-decoration: none;
+        color: #64748b;
+        font-weight: 600;
+        font-size: 0.85rem;
+        transition: all 0.2s;
+    }
+
+        .nav-box.answered {
+            background-color: var(--s4-primary) !important;
+            color: #fff !important;
+            border-color: var(--s4-primary);
+        }
+
+        .nav-box:hover:not(.answered) {
+            border-color: var(--s4-primary);
+            color: var(--s4-primary);
+            background: var(--s4-primary-light);
+        }
+
+    /* Timer & Progress */
+    .timer-display {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--s4-danger);
+        font-family: 'Inter', sans-serif;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .btn-submit-exam {
+        background-color: var(--s4-primary);
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: 700;
+        box-shadow: 0 4px 14px 0 rgba(53, 80, 154, 0.3);
+        transition: all 0.2s;
+    }
+
+        .btn-submit-exam:hover {
+            background-color: #2a407a;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+    textarea.form-control {
+        border-radius: var(--radius-md);
+        border: 2px solid var(--s4-border);
+        padding: 15px;
+    }
+
+        textarea.form-control:focus {
+            border-color: var(--s4-primary);
+            box-shadow: 0 0 0 4px var(--s4-primary-light);
+        }
+</style>
+
+<div class="exam-top-bar">
+    <div class="container-fluid px-md-5">
+        <div class="d-flex justify-content-between align-items-center">
+            <h5 class="fw-bold mb-0 text-truncate" style="max-width: 400px; color: var(--s4-primary);">
+                <i class="fas fa-file-alt me-2"></i>
+                @Model.LqvLichThi.LqvDeThi.LqvTenDeThi
+            </h5>
+
+            <div class="d-flex align-items-center">
+                <div class="me-4 d-none d-md-block text-end">
+                    <div class="text-muted small">Tiến độ làm bài</div>
+                    <div id="progress-text" class="fw-bold text-dark">0/@cauHois.Count</div>
+                </div>
+
+                <div class="px-3 border-start">
+                    <div id="timer" class="timer-display">00:00</div>
+                </div>
+
+                <button type="button" onclick="confirmSubmit()" class="btn btn-submit-exam ms-3">
+                    Nộp bài
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-4 px-md-5">
+    <div class="row">
+        <div class="col-lg-9">
+            <form asp-area="Student" asp-controller="LqvLamBai" asp-action="Submit" method="post" id="examForm">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="baiLamId" value="@Model.LqvBaiLamId" />
+
+                @for (int i = 0; i < cauHois.Count; i++)
+                {
+                    var item = cauHois[i];
+                    <div class="question-card" id="q-@(i+1)">
+                        <span class="question-number">Câu hỏi @(i + 1)</span>
+
+                        <div class="fw-bold fs-5 mb-4 text-dark">
+                            @item.LqvNoiDung
+                            <small class="text-muted fw-normal ms-2">(@item.LqvDiem điểm)</small>
+                        </div>
+
+                        @if (item.LqvLoai == "TracNghiem")
+                        {
+                            <div class="options-container">
+                                @foreach (var da in item.LqvDapAns)
+                                {
+                                    <div class="option-item">
+                                        <input type="radio"
+                                               id="da-@da.LqvDapAnId"
+                                               name="answers[@item.LqvCauHoiId]"
+                                               value="@da.LqvDapAnId"
+                                               onchange="markAnswered(@(i+1))" />
+                                        <label for="da-@da.LqvDapAnId">@da.LqvNoiDung</label>
+                                    </div>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            <textarea class="form-control"
+                                      name="tuLuan[@item.LqvCauHoiId]"
+                                      rows="5"
+                                      placeholder="Nhập nội dung câu trả lời của bạn tại đây..."
+                                      oninput="markAnswered(@(i+1))"></textarea>
+                        }
+                    </div>
+                }
+            </form>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="sticky-top" style="top: 90px;">
+                <div class="card card-navigation">
+                    <div class="card-body p-4">
+                        <h6 class="fw-bold mb-3 d-flex justify-content-between align-items-center">
+                            Danh sách câu hỏi
+                            <span class="badge bg-light text-primary">@cauHois.Count câu</span>
+                        </h6>
+                        <hr class="text-muted opacity-25">
+                        <div class="d-flex flex-wrap gap-2">
+                            @for (int i = 1; i <= cauHois.Count; i++)
+                            {
+                                <a href="#q-@i" id="nav-q-@i" class="nav-box">@i</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // ✅ PROGRESS
+        function markAnswered(qNum) {
+            document.getElementById(`nav-q-${qNum}`)?.classList.add('answered');
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const total = @cauHois.Count;
+            const answered = document.querySelectorAll('.nav-box.answered').length;
+            document.getElementById('progress-text').innerText = `${answered}/${total}`;
+        }
+
+        function confirmSubmit() {
+            if (confirm("Bạn có chắc chắn muốn nộp bài thi ngay bây giờ?")) {
+                document.getElementById("examForm").submit();
+            }
+        }
+
+        // ⏱ TIMER
+        let totalSeconds = @((int)(ViewBag.ThoiGianConLai ?? 0));
+        const timer = document.getElementById("timer");
+        const form = document.getElementById("examForm");
+
+        function renderTimer() {
+            let m = Math.floor(totalSeconds / 60);
+            let s = totalSeconds % 60;
+            timer.innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        }
+
+        renderTimer();
+
+        const countdown = setInterval(() => {
+            if (totalSeconds <= 0) {
+                clearInterval(countdown);
+                alert("⏰ Hết giờ làm bài! Hệ thống đang tự động nộp bài.");
+                form.submit();
+                return;
+            }
+            totalSeconds--;
+            renderTimer();
+            if (totalSeconds < 60) timer.style.color = "#dc3545"; // Đổi đỏ khi dưới 1 phút
+        }, 1000);
+
+        // 🖥 FULLSCREEN
+        window.onload = () => {
+            alert("⚠️ Lưu ý: Bài thi yêu cầu chế độ TOÀN MÀN HÌNH. Nếu bạn thoát ra, hệ thống sẽ tự động nộp bài.");
+            document.documentElement.requestFullscreen?.();
+        };
+
+        document.addEventListener("fullscreenchange", () => {
+            if (!document.fullscreenElement) {
+                alert("Hành động thoát toàn màn hình đã được ghi nhận. Hệ thống tự động nộp bài!");
+                form.submit();
+            }
+        });
+    </script>
+}

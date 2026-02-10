@@ -1,0 +1,76 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvLichThi
+@{
+    ViewData["Title"] = "Chi tiết lịch thi";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .s4-detail-card {
+        border-radius: 20px;
+        overflow: hidden;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        background: #fff;
+    }
+
+    .s4-detail-header {
+        background: #1976d2;
+        color: #fff;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .info-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        border-bottom: 1px solid #f8f9fa;
+    }
+
+    .info-label {
+        font-weight: 700;
+        color: #636e72;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+    }
+
+    .info-value {
+        font-weight: 600;
+        color: #2d3436;
+    }
+</style>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="s4-detail-card">
+                <div class="s4-detail-header">
+                    <i class="fas fa-file-alt fa-3x mb-3 shadow-sm p-3 rounded-circle" style="background: rgba(255,255,255,0.1)"></i>
+                    <h4 class="mb-0 fw-bold">Thông tin lịch thi</h4>
+                </div>
+                <div class="p-2">
+                    <div class="info-row">
+                        <span class="info-label">Đề thi:</span>
+                        <span class="info-value">@Model.LqvDeThi?.LqvTenDeThi</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Lớp học:</span>
+                        <span class="info-value text-primary">@Model.LqvLopHoc?.LqvTenLop</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Bắt đầu:</span>
+                        <span class="info-value text-success">@Model.LqvBatDau.ToString("f")</span>
+                    </div>
+                    <div class="info-row border-0">
+                        <span class="info-label">Kết thúc:</span>
+                        <span class="info-value text-danger">@Model.LqvKetThuc.ToString("f")</span>
+                    </div>
+                </div>
+                <div class="p-4 bg-light d-flex gap-2">
+                    <a asp-action="Index" class="btn btn-outline-secondary w-100 fw-bold border-0">Trở lại</a>
+                    <a asp-action="Edit" asp-route-id="@Model.LqvLichThiId" class="btn btn-warning w-100 fw-bold text-white shadow-sm">Chỉnh sửa</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

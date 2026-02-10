@@ -1,0 +1,63 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvYeuCauCapChungChi
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Xác nhận Xóa Yêu cầu";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<div class="d-flex justify-content-center">
+    <div class="card p-5 mx-auto shadow-lg" style="max-width: 700px; border-radius: 0.75rem;">
+
+        <h1 class="h3 mb-3 text-danger text-center fw-bold">@ViewData["Title"]</h1>
+        <h4 class="text-center text-muted mb-4">Bạn có chắc chắn muốn hủy bỏ yêu cầu này?</h4>
+
+        <!-- Vùng cảnh báo -->
+        <div class="alert alert-danger p-4 mb-4 border-2 border-danger" role="alert">
+            <h5 class="alert-heading fw-bold"><i class="fas fa-exclamation-triangle me-2"></i>Cảnh Báo!</h5>
+            <p class="mb-0">Hành động này sẽ **xóa vĩnh viễn** yêu cầu cấp chứng chỉ **#@Model.LqvId** khỏi hệ thống. Bạn không thể phục hồi lại sau khi xóa.</p>
+        </div>
+
+        <div class="row mb-4 border rounded p-3 bg-light">
+            <div class="col-12">
+                <dl class="row mb-0">
+                    <dt class="col-sm-4 fw-bold">Mã Yêu cầu:</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.LqvId)</dd>
+
+                    <dt class="col-sm-4 fw-bold">Khóa học:</dt>
+                    <dd class="col-sm-8"><strong>@(Model.LqvKhoaHoc?.LqvTenKhoaHoc ?? "Không xác định")</strong></dd>
+
+                    <dt class="col-sm-4 fw-bold">Ngày Yêu cầu:</dt>
+                    <dd class="col-sm-8">@(Model.LqvNgayYeuCau.HasValue ? Model.LqvNgayYeuCau.Value.ToString("dd/MM/yyyy HH:mm") : "N/A")</dd>
+
+                    <dt class="col-sm-4 fw-bold">Trạng thái hiện tại:</dt>
+                    <dd class="col-sm-8">
+                        <span class="badge bg-warning text-dark fw-bold">@Html.DisplayFor(model => model.LqvTrangThai)</span>
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="col-12 mt-3">
+                <h6 class="fw-bold text-dark border-top pt-3">Lý do Yêu cầu đã gửi:</h6>
+                <p class="text-wrap text-break fst-italic">
+                    @Html.DisplayFor(model => model.LqvLyDoYeuCau)
+                </p>
+            </div>
+        </div>
+
+        <!-- Form xác nhận Xóa -->
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="LqvId" />
+
+            <div class="d-flex justify-content-between pt-3">
+                <a asp-action="Index" class="btn btn-outline-secondary"><i class="fas fa-arrow-left me-2"></i>Không xóa, Quay lại</a>
+                <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt me-2"></i>Xác nhận HỦY Yêu cầu</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

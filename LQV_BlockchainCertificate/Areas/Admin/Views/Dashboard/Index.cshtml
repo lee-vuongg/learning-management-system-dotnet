@@ -1,0 +1,250 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Bảng điều khiển";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    /* 1. MÀU SẮC CHUẨN STUDY4 */
+    :root {
+        --s4-primary: #3366FF;
+        --s4-primary-light: rgba(51, 102, 255, 0.1);
+        --s4-success: #00BA34;
+        --s4-text-main: #2B3674;
+        --s4-text-muted: #A3AED0;
+        --s4-border: #F4F7FE;
+        --s4-card-shadow: 0px 18px 40px rgba(112, 144, 176, 0.12);
+    }
+
+    /* 2. CARD NÂNG CẤP */
+    .card {
+        border: none !important;
+        border-radius: 20px !important;
+        box-shadow: var(--s4-card-shadow) !important;
+        transition: all 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+    .card-header {
+        border-bottom: none !important;
+        padding: 1.5rem 1.5rem 0 !important;
+        font-size: 1.1rem;
+        color: var(--s4-text-main) !important;
+    }
+
+    /* 3. WELCOME BANNER NÂNG CẤP */
+    .welcome-banner {
+        background: linear-gradient(135deg, #3366FF 0%, #83a4ff 100%);
+        border-radius: 20px;
+        padding: 3rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* 4. CHỈ SỐ (METRIC) */
+    .metric-icon-wrapper {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #F4F7FE;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+
+    /* 5. BLOCKCHAIN HASH BADGE */
+    .hash-box {
+        background: #F4F7FE;
+        border: 1px solid var(--s4-border);
+        border-radius: 12px;
+        padding: 12px;
+        font-family: 'Monaco', 'Consolas', monospace;
+        font-size: 0.8rem;
+        color: var(--s4-primary);
+    }
+
+    /* 6. CHART CONTAINER */
+    .chart-container {
+        position: relative;
+        height: 300px;
+        width: 100%;
+    }
+</style>
+
+<div class="container-fluid py-4">
+    <div class="welcome-banner text-white mb-4 shadow">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1 class="fw-bold mb-2">Xin chào, @ViewBag.FullName! ✨</h1>
+                <p class="fs-5 opacity-75 mb-4">Hệ thống ghi nhận <strong>@ViewBag.TotalTransactions</strong> giao dịch Blockchain thành công trong tuần này.</p>
+                <div class="d-flex gap-2">
+                    <a href="/Admin/LqvGiaoDichBlockchains" class="btn btn-light text-primary fw-bold rounded-pill px-4">Báo cáo chi tiết</a>
+                    <button class="btn btn-outline-light rounded-pill px-4">Hướng dẫn</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-4">
+        @foreach (var item in new[] {
+        new { Title = "Tổng người dùng", Val = ViewBag.TotalUsers, Icon = "fa-users", Color = "#4318FF", Bg = "#F4F7FE" },
+        new { Title = "Khóa học", Val = ViewBag.TotalCourses, Icon = "fa-book-open", Color = "#01B574", Bg = "#E2FFF3" },
+        new { Title = "Chứng nhận", Val = ViewBag.TotalCertificates, Icon = "fa-award", Color = "#FFB547", Bg = "#FFF9E9" },
+        new { Title = "Giao dịch", Val = ViewBag.TotalTransactions, Icon = "fa-link", Color = "#3366FF", Bg = "#EDF2FF" }
+        })
+        {
+            <div class="col-md-3">
+                <div class="card p-3">
+                    <div class="d-flex align-items-center">
+                        <div class="metric-icon-wrapper me-3" style="background: @item.Bg; color: @item.Color;">
+                            <i class="fas @item.Icon"></i>
+                        </div>
+                        <div>
+                            <p class="text-muted small fw-bold mb-0">@item.Title</p>
+                            <h3 class="fw-bold mb-0 counter">@item.Val</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="card h-100">
+                <div class="card-header d-flex justify-content-between">
+                    <div>
+                        <h5 class="fw-bold mb-0">Tăng trưởng người dùng</h5>
+                        <p class="text-muted small">Dữ liệu cập nhật theo thời gian thực</p>
+                    </div>
+                    <select class="form-select form-select-sm w-auto border-0 bg-light rounded-pill px-3">
+                        <option>7 ngày qua</option>
+                        <option>30 ngày qua</option>
+                    </select>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h5 class="fw-bold mb-0">Trạng thái Blockchain</h5>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container" style="height: 200px;">
+                        <canvas id="statusChart"></canvas>
+                    </div>
+
+                    <div class="mt-4">
+                        <div class="hash-box">
+                            <span class="d-block text-muted small fw-bold mb-1">LATEST BLOCK HASH:</span>
+                            <div class="text-truncate">@ViewBag.LatestBlockHash</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6 class="fw-bold small mb-3">Hoạt động mới nhất</h6>
+                        @if (ViewBag.RecentActivities != null)
+                        {
+                            foreach (var log in (IEnumerable<dynamic>)ViewBag.RecentActivities)
+                            {
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="rounded-circle bg-primary me-2" style="width: 8px; height: 8px;"></div>
+                                    <div class="flex-grow-1">
+                                        <div class="small fw-bold">@log.LqvTaiKhoan <span class="fw-normal text-muted">@log.LqvHanhDong</span></div>
+                                    </div>
+                                    <div class="text-muted" style="font-size: 0.7rem;">@log.LqvThoiGian?.ToString("HH:mm")</div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // 1. AREA CHART (Tăng trưởng người dùng - Kiểu Study4)
+        const ctxGrowth = document.getElementById('growthChart').getContext('2d');
+        const gradient = ctxGrowth.createLinearGradient(0, 0, 0, 300);
+        gradient.addColorStop(0, 'rgba(51, 102, 255, 0.2)');
+        gradient.addColorStop(1, 'rgba(51, 102, 255, 0)');
+
+        new Chart(ctxGrowth, {
+            type: 'line',
+            data: {
+                labels: ['Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7', 'CN'],
+                datasets: [{
+                    label: 'Người dùng mới',
+                    data: [12, 19, 15, 25, 22, 30, 45], // Dữ liệu mẫu, thay bằng ViewBag nếu có
+                    borderColor: '#3366FF',
+                    borderWidth: 3,
+                    fill: true,
+                    backgroundColor: gradient,
+                    tension: 0.4, // Tạo độ cong mềm mại
+                    pointRadius: 0,
+                    pointHoverRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { display: false },
+                    x: { grid: { display: false }, border: { display: false } }
+                }
+            }
+        });
+
+        // 2. BAR CHART (Trạng thái Blockchain)
+        const ctxStatus = document.getElementById('statusChart').getContext('2d');
+        new Chart(ctxStatus, {
+            type: 'bar',
+            data: {
+                labels: ['Hợp lệ', 'Cảnh báo'],
+                datasets: [{
+                    data: [@(ViewBag.ValidCertificates ?? 10), @(ViewBag.InvalidCertificates ?? 2)],
+                    backgroundColor: ['#01B574', '#EE5D50'],
+                    borderRadius: 10,
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { display: false },
+                    x: { grid: { display: false }, border: { display: false } }
+                }
+            }
+        });
+
+        // 3. COUNTER ANIMATION (Giữ nguyên)
+        document.querySelectorAll('.counter').forEach(el => {
+            const val = parseInt(el.innerText.replace(/,/g, '')) || 0;
+            let start = 0;
+            const duration = 1500;
+            const step = timestamp => {
+                if (!start) start = timestamp;
+                const progress = Math.min((timestamp - start) / duration, 1);
+                el.innerHTML = Math.floor(progress * val).toLocaleString();
+                if (progress < 1) window.requestAnimationFrame(step);
+            };
+            window.requestAnimationFrame(step);
+        });
+    </script>
+}

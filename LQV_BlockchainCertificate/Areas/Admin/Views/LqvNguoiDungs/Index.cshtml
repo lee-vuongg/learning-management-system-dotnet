@@ -1,0 +1,269 @@
+﻿@using X.PagedList.Mvc.Core
+@using X.PagedList
+@using Microsoft.AspNetCore.Mvc.Rendering
+@model IPagedList<LQV_BlockchainCertificate.Models.DBModel.LqvNguoiDung>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Quản lý người dùng";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    :root {
+        --s4-primary: #1976d2;
+        --s4-bg: #f4f7fa;
+        --s4-text: #2d3436;
+        --s4-gray: #636e72;
+    }
+
+    .s4-wrapper {
+        background-color: var(--s4-bg);
+        min-height: 100vh;
+        padding: 2rem 0;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .s4-card {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        background: #fff;
+        overflow: hidden;
+    }
+
+    .s4-header {
+        padding: 1.5rem;
+        border-bottom: 1px solid #f1f2f6;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .s4-title {
+        font-weight: 700;
+        color: var(--s4-text);
+        margin: 0;
+        font-size: 1.25rem;
+    }
+
+    .s4-btn-add {
+        background: var(--s4-primary);
+        color: #fff;
+        border-radius: 8px;
+        padding: 8px 20px;
+        font-weight: 600;
+        transition: 0.3s;
+        border: none;
+        text-decoration: none;
+    }
+
+        .s4-btn-add:hover {
+            background: #1565c0;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+    .s4-filter-box {
+        padding: 1.5rem;
+        background: #fff;
+        margin-bottom: 1rem;
+        border-radius: 12px;
+        border: 1px solid #edf2f7;
+    }
+
+    .s4-input {
+        border: 2px solid #edf2f7;
+        border-radius: 8px;
+        padding: 10px 15px;
+        transition: 0.3s;
+    }
+
+        .s4-input:focus {
+            border-color: var(--s4-primary);
+            box-shadow: none;
+        }
+
+    .s4-table thead {
+        background: #f8f9fa;
+    }
+
+    .s4-table th {
+        font-weight: 600;
+        color: var(--s4-gray);
+        border: none;
+        padding: 15px;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+    .s4-table td {
+        padding: 15px;
+        vertical-align: middle;
+        border-color: #f1f2f6;
+    }
+
+    .user-avatar {
+        width: 45px;
+        height: 45px;
+        border-radius: 10px;
+        object-fit: cover;
+        margin-right: 12px;
+        border: 2px solid #eee;
+    }
+
+    .user-name {
+        font-weight: 600;
+        color: var(--s4-text);
+        margin-bottom: 2px;
+    }
+
+    .user-email {
+        font-size: 0.85rem;
+        color: var(--s4-gray);
+    }
+
+    .badge-s4 {
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.75rem;
+    }
+
+    .badge-admin {
+        background: #fff0f0;
+        color: #eb2f06;
+    }
+
+    .badge-user {
+        background: #f0f7ff;
+        color: #0984e3;
+    }
+
+    .action-btn {
+        width: 35px;
+        height: 35px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        margin: 0 2px;
+        transition: 0.2s;
+        color: var(--s4-gray);
+        border: 1px solid #edf2f7;
+        text-decoration: none;
+    }
+
+        .action-btn:hover {
+            background: var(--s4-primary);
+            color: #fff;
+            border-color: var(--s4-primary);
+        }
+
+        .action-btn.delete:hover {
+            background: #ff7675;
+            border-color: #ff7675;
+        }
+
+    .pagination-s4 .page-item.active .page-link {
+        background: var(--s4-primary);
+        border-color: var(--s4-primary);
+        border-radius: 8px;
+    }
+
+    .pagination-s4 .page-link {
+        color: var(--s4-text);
+        border: none;
+        margin: 0 3px;
+        border-radius: 8px;
+        font-weight: 600;
+    }
+</style>
+
+<div class="s4-wrapper">
+    <div class="container">
+        <div class="s4-card">
+            <div class="s4-header">
+                <h5 class="s4-title"><i class="fas fa-users-cog me-2 text-primary"></i> Quản lý người dùng</h5>
+                <a asp-action="Create" class="s4-btn-add"><i class="fas fa-plus me-1"></i> Thêm mới</a>
+            </div>
+
+            <div class="p-4">
+                <form asp-action="Index" method="get" class="row g-3 mb-4">
+                    <div class="col-md-5">
+                        <input type="text" name="searchString" value="@ViewBag.CurrentFilter" class="form-control s4-input" placeholder="Tìm kiếm theo tên hoặc email..." />
+                    </div>
+                    <div class="col-md-4">
+                        @Html.DropDownList("roleId", ViewBag.RoleList as SelectList, "Tất cả vai trò", new { @class = "form-select s4-input" })
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn s4-btn-add w-100">Lọc kết quả</button>
+                    </div>
+                </form>
+
+                <div class="table-responsive">
+                    <table class="table s4-table">
+                        <thead>
+                            <tr>
+                                <th>Thông tin thành viên</th>
+                                <th>Tên đăng nhập</th>
+                                <th>Vai trò</th>
+                                <th>Xác thực</th>
+                                <th class="text-center">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="@(string.IsNullOrEmpty(item.LqvAvt) ? "/images/default-avatar.png" : item.LqvAvt)" class="user-avatar" />
+                                            <div>
+                                                <div class="user-name">@item.LqvHoTen</div>
+                                                <div class="user-email">@item.LqvEmail</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-muted">@item.LqvTenDangNhap</td>
+                                    <td>
+                                        @{
+                                            var rClass = item.LqvRole?.LqvRoleName == "Admin" ? "badge-admin" : "badge-user";
+                                        }
+                                        <span class="badge-s4 @rClass">@item.LqvRole?.LqvRoleName</span>
+                                    </td>
+                                    <td>
+                                        @if (item.LqvDaXacThuc == true)
+                                        {
+                                            <span class="text-success small fw-bold"><i class="fas fa-check-circle me-1"></i> Đã duyệt</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-warning small fw-bold"><i class="fas fa-clock me-1"></i> Chờ duyệt</span>
+                                        }
+                                    </td>
+                                    <td class="text-center">
+                                        <a asp-action="Edit" asp-route-id="@item.LqvId" class="action-btn" title="Chỉnh sửa"><i class="fas fa-pen-nib"></i></a>
+                                        <a asp-action="Details" asp-route-id="@item.LqvId" class="action-btn" title="Chi tiết"><i class="fas fa-eye"></i></a>
+                                        <a asp-action="Delete" asp-route-id="@item.LqvId" class="action-btn delete" onclick="return confirm('Xác nhận xóa người dùng này?')" title="Xóa"><i class="fas fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-4">
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchString = ViewBag.CurrentFilter, roleId = Context.Request.Query["roleId"] }),
+                             new PagedListRenderOptions
+                    {
+                        UlElementClasses = new[] { "pagination", "pagination-s4", "justify-content-center" },
+                        LiElementClasses = new[] { "page-item" },
+                        PageClasses = new[] { "page-link" }
+                    })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

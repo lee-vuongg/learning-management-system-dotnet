@@ -1,0 +1,240 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Check-in buổi học";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<style>
+    .study4-card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        max-width: 500px;
+        margin: 30px auto;
+    }
+
+    .study4-header {
+        background-color: #2c3e50;
+        color: white;
+        padding: 1.5rem;
+        border-radius: 10px 10px 0 0;
+        text-align: center;
+    }
+
+    .study4-body {
+        padding: 2rem;
+    }
+
+    .btn-checkin {
+        background-color: #3498db;
+        border: none;
+        padding: 12px;
+        font-weight: bold;
+        width: 100%;
+        border-radius: 6px;
+    }
+
+        .btn-checkin:disabled {
+            background-color: #bdc3c7;
+        }
+
+    .status-container {
+        background: #f8f9fa;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #e9ecef;
+        font-size: 0.9rem;
+    }
+</style>
+
+<div class="container">
+    <div class="card study4-card">
+        <div class="study4-header">
+            <h4 class="mb-0">📍 Check-in buổi học</h4>
+        </div>
+
+        <div class="study4-body">
+
+            <div class="alert alert-info text-center">
+                <small>Vui lòng bật GPS và nhìn vào camera để điểm danh.</small>
+            </div>
+
+            <!-- 🎥 CHỌN CAMERA -->
+            <div class="mb-2 text-center">
+                <select id="cameraSelect" class="form-select form-select-sm">
+                    <option>Đang tải camera...</option>
+                </select>
+            </div>
+
+            <!-- 🎥 CAMERA -->
+            <div class="text-center mb-3">
+                <video id="video" width="320" height="240" autoplay muted
+                       style="border-radius:10px;border:2px solid #ddd"></video>
+                <canvas id="canvas" width="320" height="240" style="display:none"></canvas>
+
+                <div id="faceStatus" class="mt-2 text-danger">
+                    🔍 Đang khởi động camera...
+                </div>
+            </div>
+
+            @if (ViewBag.ThoiGianConLai != null)
+            {
+                <div class="alert alert-warning text-center fw-bold mb-3">
+                    ⏳ Thời gian điểm danh còn lại:
+                    <span id="countdown" class="text-danger"></span>
+                </div>
+            }
+
+            <form id="checkinForm" asp-action="CheckIn" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="buoiHocId" value="@ViewBag.BuoiHoc.LqvBuoiHocId" />
+                <input type="hidden" id="viDo" name="viDo" />
+                <input type="hidden" id="kinhDo" name="kinhDo" />
+                <input type="file" name="faceImage" id="faceImageInput" hidden />
+
+                <button type="submit" class="btn btn-success btn-checkin" id="btnCheckIn" disabled>
+                    📍 CHECK-IN NGAY
+                </button>
+            </form>
+
+            <div class="mt-4 text-center">
+                <div id="gpsStatus" class="status-container text-muted">
+                    <span class="spinner-border spinner-border-sm me-2"></span>
+                    Đang lấy vị trí...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script>
+        let video = document.getElementById("video");
+        let canvas = document.getElementById("canvas");
+        let faceInput = document.getElementById("faceImageInput");
+        let cameraSelect = document.getElementById("cameraSelect");
+        let currentStream = null;
+
+        // ================= LOAD CAMERA LIST =================
+        async function loadCameras() {
+            const devices = await navigator.mediaDevices.enumerateDevices();
+            const cams = devices.filter(d => d.kind === "videoinput");
+
+            cameraSelect.innerHTML = "";
+
+            cams.forEach((cam, index) => {
+                const option = document.createElement("option");
+                option.value = cam.deviceId;
+                option.text = cam.label || ("Camera " + (index + 1));
+                cameraSelect.appendChild(option);
+            });
+
+            if (cams.length > 0) startCamera(cams[0].deviceId);
+        }
+
+        // ================= START CAMERA =================
+        async function startCamera(deviceId = null) {
+            if (currentStream) {
+                currentStream.getTracks().forEach(track => track.stop());
+            }
+
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    video: deviceId ? { deviceId: { exact: deviceId } } : true
+                });
+
+                currentStream = stream;
+                video.srcObject = stream;
+                document.getElementById("faceStatus").innerText = "✔ Camera sẵn sàng";
+            }
+            catch {
+                document.getElementById("faceStatus").innerText = "❌ Không mở được camera";
+            }
+        }
+
+        // đổi camera
+        cameraSelect.addEventListener("change", function () {
+            startCamera(this.value);
+        });
+
+        // load cam khi mở trang
+        loadCameras();
+
+
+        // ================= SUBMIT =================
+        document.getElementById("checkinForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            canvas.toBlob(function(blob) {
+
+                let file = new File([blob], "face.jpg", { type: "image/jpeg" });
+                let dt = new DataTransfer();
+                dt.items.add(file);
+                faceInput.files = dt.files;
+
+                document.getElementById("faceStatus").innerText = "📸 Đang gửi FaceID lên AI...";
+                e.target.submit();
+
+            }, "image/jpeg");
+        });
+
+
+        // ================= GPS =================
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    document.getElementById("viDo").value = position.coords.latitude;
+                    document.getElementById("kinhDo").value = position.coords.longitude;
+
+                    document.getElementById("gpsStatus").innerHTML =
+                        "✔ GPS sẵn sàng (" +
+                        position.coords.latitude.toFixed(6) + ", " +
+                        position.coords.longitude.toFixed(6) + ")";
+
+                    document.getElementById("btnCheckIn").disabled = false;
+                },
+                function () {
+                    document.getElementById("gpsStatus").innerHTML =
+                        "❌ Không lấy được vị trí GPS";
+                }
+            );
+        }
+        else {
+            document.getElementById("gpsStatus").innerHTML =
+                "❌ Trình duyệt không hỗ trợ GPS";
+        }
+    </script>
+
+
+    @if (ViewBag.ThoiGianConLai != null)
+    {
+        <script>
+            let seconds = @ViewBag.ThoiGianConLai;
+            let timer = null;
+
+            function updateCountdown() {
+                if (seconds <= 0) {
+                    clearInterval(timer);
+                    document.getElementById("countdown").innerText = "0 phút 0 giây";
+                    document.getElementById("btnCheckIn").disabled = true;
+                    return;
+                }
+
+                let minutes = Math.floor(seconds / 60);
+                let secs = seconds % 60;
+
+                document.getElementById("countdown").innerText =
+                    minutes + " phút " + secs + " giây";
+
+                seconds--;
+            }
+
+            updateCountdown();
+            timer = setInterval(updateCountdown, 1000);
+        </script>
+    }
+}

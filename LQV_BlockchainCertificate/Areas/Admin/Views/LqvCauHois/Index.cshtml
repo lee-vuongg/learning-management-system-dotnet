@@ -1,0 +1,77 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvCauHoi>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var bo = ViewBag.BoCauHoi;
+    ViewData["Title"] = "Câu hỏi - " + bo.LqvTenBo;
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Bộ câu hỏi: <b>@bo.LqvTenBo</b></h3>
+
+<a class="btn btn-primary mb-3"
+   asp-action="Create"
+   asp-route-boId="@bo.LqvBoCauHoiId">
+    + Thêm câu hỏi
+</a>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th width="5%">#</th>
+            <th>Nội dung</th>
+            <th width="10%">Điểm</th>
+            <th width="15%">Loại</th>
+            <th width="25%">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var q in Model)
+        {
+            <tr>
+                <td>@q.LqvCauHoiId</td>
+                <td>@q.LqvNoiDung</td>
+                <td>@q.LqvDiem</td>
+                <td>@q.LqvLoai</td>
+                <td>
+                    <a class="btn btn-sm btn-warning"
+                       asp-action="Edit"
+                       asp-route-id="@q.LqvCauHoiId">Sửa</a>
+
+                    <a class="btn btn-sm btn-danger"
+                       asp-action="Delete"
+                       asp-route-id="@q.LqvCauHoiId">Xóa</a>
+
+                    <button class="btn btn-sm btn-success"
+                            onclick="toggleAnswers(@q.LqvCauHoiId)">
+                        Đáp án
+                    </button>
+                </td>
+            </tr>
+
+            <!-- KHU VỰC ĐÁP ÁN -->
+            <tr id="answers-@q.LqvCauHoiId" style="display:none">
+                <td colspan="5">
+                    <div id="answers-content-@q.LqvCauHoiId"></div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function toggleAnswers(cauHoiId) {
+        let row = document.getElementById('answers-' + cauHoiId);
+        let container = document.getElementById('answers-content-' + cauHoiId);
+
+        if (row.style.display === 'none') {
+            fetch(`/Admin/LqvDapAns/ByCauHoi?cauHoiId=${cauHoiId}`)
+                .then(res => res.text())
+                .then(html => {
+                    container.innerHTML = html;
+                    row.style.display = '';
+                });
+        } else {
+            row.style.display = 'none';
+        }
+    }
+</script>

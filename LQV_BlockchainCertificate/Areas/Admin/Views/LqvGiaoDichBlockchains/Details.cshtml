@@ -1,0 +1,62 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvGiaoDichBlockchain
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chi tiết Giao dịch";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="s4-wrapper">
+    <div class="container" style="max-width: 800px;">
+        <div class="s4-card overflow-hidden p-0">
+            <div class="bg-primary p-4 text-white">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="mb-1 fw-bold">Chi tiết bản ghi Blockchain</h5>
+                        <p class="mb-0 small opacity-75">Mã định danh: #@Model.LqvMaGiaoDich</p>
+                    </div>
+                    <i class="fas fa-shield-alt fa-2x opacity-50"></i>
+                </div>
+            </div>
+
+            <div class="p-4">
+                <div class="row gy-4">
+                    <div class="col-12">
+                        <label class="text-muted small fw-bold d-block mb-2">TRANSACTION HASH</label>
+                        <div class="p-3 bg-light rounded-3 font-monospace text-break border">@Model.LqvTxHash</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="text-muted small fw-bold d-block mb-1">BLOCK NUMBER</label>
+                        <div class="h5 fw-bold text-dark mb-0">#@Model.LqvBlockNumber</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="text-muted small fw-bold d-block mb-1">TRẠNG THÁI MẠNG</label>
+                        <div class="text-success fw-bold"><i class="fas fa-check-circle me-1"></i> @Model.LqvStatus</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="text-muted small fw-bold d-block mb-1">THỜI GIAN XÁC THỰC</label>
+                        <div class="text-dark fw-medium">@Model.LqvGioTao.ToString("F")</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="text-muted small fw-bold d-block mb-1">MÃ CHỨNG NHẬN LIÊN KẾT</label>
+                        <a href="#" class="btn btn-sm btn-outline-warning fw-bold px-3">
+                            <i class="fas fa-certificate me-1"></i> @Model.LqvChungNhan?.LqvMaChungNhan
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-5 pt-4 border-top d-flex gap-2">
+                    <a asp-action="Edit" asp-route-id="@Model.LqvMaGiaoDich" class="btn btn-warning px-4 rounded-pill fw-bold">Chỉnh sửa</a>
+                    <a asp-action="Index" class="btn btn-light px-4 rounded-pill text-muted">Quay lại danh sách</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4 text-muted small">
+            <i class="fas fa-info-circle me-1"></i> Dữ liệu này được đồng bộ từ hệ thống quản lý chứng chỉ Blockchain Core.
+        </div>
+    </div>
+</div>

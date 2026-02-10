@@ -1,0 +1,133 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvChungNhan
+@{
+    ViewData["Title"] = "Xác thực Chứng nhận";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<style>
+    .hash-box {
+        background: #f8fafc;
+        border: 1px dashed #cbd5e0;
+        border-radius: 12px;
+        padding: 15px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .info-label {
+        color: #718096;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .info-value {
+        color: #2d3748;
+        font-weight: 500;
+    }
+
+    .btn-verify {
+        background: linear-gradient(135deg, #3182ce 0%, #2b6cb0 100%);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 12px;
+        transition: 0.3s;
+    }
+
+        .btn-verify:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(49, 130, 206, 0.4);
+            color: white;
+        }
+</style>
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+            <div class="d-flex align-items-center mb-4">
+                <a asp-action="Index" class="btn btn-outline-secondary btn-sm rounded-circle me-3">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <h4 class="fw-bold mb-0">Chi tiết xác thực Blockchain</h4>
+            </div>
+
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <div class="card-header bg-white border-0 pt-4 px-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge bg-primary-soft text-primary rounded-pill px-3 py-2">
+                            <i class="fas fa-shield-alt me-1"></i> Blockchain Secured
+                        </span>
+                        <small class="text-muted">Ngày cấp: @Model.LqvNgayCap.ToString("dd/MM/yyyy")</small>
+                    </div>
+                </div>
+
+                <div class="card-body px-4">
+                    <h3 class="fw-bold mb-4">@Model.LqvKhoaHoc.LqvTenKhoaHoc</h3>
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <div class="info-label mb-1">Học viên sở hữu</div>
+                                <div class="info-value d-flex align-items-center">
+                                    <div class="avatar-sm bg-light rounded-circle me-2 p-2 text-center" style="width:32px; height:32px; line-height:16px;">
+                                        <i class="fas fa-user text-muted small"></i>
+                                    </div>
+                                    @Model.LqvSinhVien.LqvHoTen
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="info-label mb-1">Mã định danh (Code)</div>
+                                <div class="info-value"><code class="fs-6">@Model.LqvMaChungNhanCode</code></div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="info-label mb-1">Trạng thái</div>
+                                <div class="info-value">
+                                    @if (Model.LqvTrangThai == "Đã ghi chain")
+                                    {
+                                        <span class="text-success"><i class="fas fa-check-circle me-1"></i> Hợp lệ & Đã ghi nhận</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-warning"><i class="fas fa-clock me-1"></i> @Model.LqvTrangThai</span>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 border-start ps-md-4">
+                            <div class="mb-3">
+                                <div class="info-label mb-1">Blockchain Hash</div>
+                                <div class="hash-box text-break small text-primary">
+                                    @Model.LqvHashValue
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="info-label mb-1">Địa chỉ ví chủ sở hữu</div>
+                                <div class="small text-muted text-break">@Model.LqvSinhVien.LqvWalletAddress</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 p-4 bg-light rounded-4 text-center">
+                        <h5 class="fw-bold mb-3">Xác thực chứng chỉ này</h5>
+                        <p class="text-muted small mb-4 px-lg-5">Chứng chỉ này được bảo mật bằng công nghệ Blockchain. Bạn có thể kiểm tra tính toàn vẹn của dữ liệu bằng cách đối chiếu mã Hash trực tiếp với mạng lưới.</p>
+                        <div class="d-flex flex-wrap justify-content-center gap-3">
+                            <button class="btn btn-verify shadow">
+                                <i class="fas fa-search me-2"></i> Xác thực ngay
+                            </button>
+                            <button class="btn btn-outline-dark border-0 rounded-3">
+                                <i class="fas fa-file-pdf me-2"></i> Xuất bản in (PDF)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-primary-soft {
+        background-color: #ebf4ff;
+    }
+</style>

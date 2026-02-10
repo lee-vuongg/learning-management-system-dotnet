@@ -1,0 +1,89 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvDapAn>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Quản lý đáp án";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<h2 class="mb-3">Quản lý đáp án</h2>
+
+<div class="mb-3">
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="fa fa-plus"></i> Thêm đáp án
+    </a>
+</div>
+
+<table class="table table-bordered table-hover align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th style="width:50px">#</th>
+            <th>Nội dung đáp án</th>
+            <th style="width:120px" class="text-center">Đúng / Sai</th>
+            <th>Câu hỏi</th>
+            <th style="width:220px" class="text-center">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int stt = 1;
+        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@stt</td>
+
+                <td>
+                    @item.LqvNoiDung
+                </td>
+
+                <td class="text-center">
+                    @if (item.LqvDung)
+                    {
+                        <span class="badge bg-success">Đáp án đúng</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">Sai</span>
+                    }
+                </td>
+
+                <td>
+                    <div>
+                        <strong>ID:</strong> @item.LqvCauHoiId <br />
+                        <span class="text-muted">
+                            @item.LqvCauHoi?.LqvNoiDung
+                        </span>
+                    </div>
+                </td>
+
+                <td class="text-center">
+                    <a asp-action="Edit" asp-route-id="@item.LqvDapAnId"
+                       class="btn btn-sm btn-warning me-1">
+                        Sửa
+                    </a>
+
+                    <a asp-action="Details" asp-route-id="@item.LqvDapAnId"
+                       class="btn btn-sm btn-info me-1">
+                        Xem
+                    </a>
+
+                    <form asp-action="Delete"
+                          asp-controller="LqvDapAns"
+                          asp-area="GiangVien"
+                          method="post"
+                          class="d-inline">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="id" value="@item.LqvDapAnId" />
+                        <button type="submit" class="btn btn-danger btn-sm"
+                                onclick="return confirm('Xóa đáp án này?')">
+                            🗑
+                        </button>
+                    </form>
+
+                </td>
+            </tr>
+            stt++;
+        }
+    </tbody>
+</table>

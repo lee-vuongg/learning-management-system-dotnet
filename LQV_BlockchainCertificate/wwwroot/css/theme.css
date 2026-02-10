@@ -1,0 +1,46 @@
+﻿/* ===============================
+   LIGHT MODE (default)
+================================ */
+:root {
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+    --primary: #10b981;
+}
+
+/* ===============================
+   DARK MODE
+================================ */
+[data-theme="dark"] {
+    --bg-main: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #e5e7eb;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --primary: #22c55e;
+}
+
+/* ===============================
+   APPLY THEME TO SITE
+================================ */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+}
+
+.card,
+.table,
+.course-table-container {
+    background-color: var(--bg-card);
+    border-color: var(--border-color);
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+.btn-graduate {
+    background-color: var(--primary);
+}

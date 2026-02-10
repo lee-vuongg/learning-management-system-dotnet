@@ -1,0 +1,341 @@
+﻿@using Microsoft.AspNetCore.Http
+@using System.Security.Claims
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    var user = HttpContextAccessor.HttpContext?.User;
+    var userName = user?.Identity?.Name ?? "admin";
+    var fullName = user?.FindFirstValue("FullName") ?? "Quản trị viên";
+    var userAvatarUrl = user?.FindFirstValue("AvatarUrl") ?? "/img/default-avatar.png";
+    var currentController = ViewContext.RouteData.Values["Controller"]?.ToString();
+    var currentArea = ViewContext.RouteData.Values["Area"]?.ToString() ?? "Admin";
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Admin Panel | Blockchain Cert</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        /* ================================================= */
+        /* CSS VARIABLES (Study4 Style - Light Mode) */
+        /* ================================================= */
+        :root {
+            --s4-bg-body: #F4F7FE;
+            --s4-sidebar-bg: #FFFFFF;
+            --s4-primary: #3366FF;
+            --s4-text-main: #2B3674;
+            --s4-text-muted: #A3AED0;
+            --s4-border: #E9EDF7;
+            --sidebar-width: 290px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--s4-bg-body);
+            color: var(--s4-text-main);
+            overflow-x: hidden;
+        }
+
+        .app-wrapper {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* ================================================= */
+        /* SIDEBAR CHUẨN STUDY4 */
+        /* ================================================= */
+        .sidebar {
+            width: var(--sidebar-width);
+            flex-shrink: 0;
+            background-color: var(--s4-sidebar-bg);
+            border-right: 1px solid var(--s4-border);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Logo to rõ ràng */
+        .brand-logo {
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            display: block;
+            border-bottom: 1px solid var(--s4-border);
+            margin-bottom: 1rem;
+        }
+
+            .brand-logo .logo-img {
+                max-width: 100%;
+                height: auto;
+                max-height: 120px; /* Tăng kích thước hiển thị logo */
+                object-fit: contain;
+            }
+
+        .user-panel-minimal {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            margin: 0.5rem 1rem 1rem 1rem;
+            background: #F8FAFC;
+            border-radius: 12px;
+        }
+
+            .user-panel-minimal img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid #fff;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+            .user-panel-minimal .info a {
+                color: var(--s4-text-main);
+                font-weight: 700;
+                text-decoration: none;
+                font-size: 0.9rem;
+            }
+
+        /* Menu Items */
+        .nav-header {
+            font-size: 0.75rem;
+            color: var(--s4-text-muted);
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 1.5rem 1.5rem 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-item-link {
+            display: flex;
+            align-items: center;
+            padding: 0.85rem 1.5rem;
+            color: var(--s4-text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s all;
+            border-right: 4px solid transparent;
+        }
+
+            .nav-item-link i {
+                width: 24px;
+                margin-right: 12px;
+                font-size: 1.1rem;
+            }
+
+            .nav-item-link:hover {
+                color: var(--s4-primary);
+                background: #F4F7FE;
+            }
+
+            .nav-item-link.active {
+                color: var(--s4-primary);
+                font-weight: 700;
+                border-right-color: var(--s4-primary);
+                background: linear-gradient(90deg, transparent 0%, #F4F7FE 100%);
+            }
+
+        /* ================================================= */
+        /* MAIN CONTENT */
+        /* ================================================= */
+        .main-content-area {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            width: calc(100% - var(--sidebar-width));
+        }
+
+        .header {
+            background-color: rgba(244, 247, 254, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+            .header .form-control {
+                background-color: #FFFFFF;
+                border: none;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.03);
+                border-radius: 30px;
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+        .content-body-area {
+            padding: 0 2rem 2rem 2rem;
+        }
+
+        /* Breadcrumb */
+        .custom-breadcrumb .breadcrumb-item a {
+            color: var(--s4-text-muted);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .custom-breadcrumb .breadcrumb-item.active {
+            color: var(--s4-text-main);
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 1.5rem;
+            background: transparent;
+            color: var(--s4-text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--s4-border);
+            text-align: center;
+        }
+
+        .btn-search {
+            background: #FFFFFF;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+            color: var(--s4-primary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-wrapper">
+
+        <aside class="sidebar">
+            <a asp-area="@currentArea" asp-controller="Dashboard" asp-action="Index" class="brand-logo">
+                <img src="~/img/logo.png" alt="Block Cert Logo" class="logo-img">
+            </a>
+
+            <div class="user-panel-minimal">
+                <img src="@userAvatarUrl" alt="User Image">
+                <div class="info ms-3">
+                    <a href="#">@fullName</a>
+                    <div class="text-muted small">@userName</div>
+                </div>
+            </div>
+
+            <nav class="flex-grow-1 overflow-auto">
+                <a asp-area="@currentArea" asp-controller="Dashboard" asp-action="Index" class="nav-item-link @(currentController=="Dashboard"?"active":"")">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Bảng điều khiển</span>
+                </a>
+
+                <div class="nav-header">Quản lý hệ thống</div>
+                <a asp-area="@currentArea" asp-controller="LqvNguoiDungs" asp-action="Index" class="nav-item-link @(currentController=="LqvNguoiDungs"?"active":"")">
+                    <i class="fas fa-users"></i><span>Người dùng</span>
+                </a>
+                <a asp-area="@currentArea" asp-controller="LqvKhoaHocs" asp-action="Index" class="nav-item-link @(currentController=="LqvKhoaHocs"?"active":"")">
+                    <i class="fas fa-book-open"></i><span>Khóa học</span>
+                </a>
+               @*  <a asp-area="@currentArea" asp-controller="LqvBoCauHois" asp-action="Index" class="nav-item-link @(currentController=="LqvBoCauHois"?"active":"")">
+                    <i class="fas fa-question-circle"></i><span>Bộ câu hỏi</span>
+                </a> *@
+                <a asp-area="@currentArea" asp-controller="LqvLichThis" asp-action="Index" class="nav-item-link @(currentController=="LqvLichThis"?"active":"")">
+                    <i class="fas fa-calendar-alt"></i><span>Lịch Thi</span>
+                </a>
+                <a asp-area="@currentArea" asp-controller="LqvDeThis" asp-action="Index" class="nav-item-link @(currentController=="LqvDeThis"?"active":"")">
+                    <i class="fas fa-file-alt"></i><span>Đề Thi</span>
+                </a>
+                <a asp-area="@currentArea" asp-controller="LqvLopHocs" asp-action="Index" class="nav-item-link @(currentController=="LqvLopHocs"?"active":"")">
+                    <i class="fas fa-chalkboard-teacher"></i><span>Lớp Học</span>
+                </a>
+                <a asp-area="@currentArea" asp-controller="LqvChungNhans" asp-action="Index" class="nav-item-link @(currentController=="LqvChungNhans"?"active":"")">
+                    <i class="fas fa-award"></i><span>Chứng nhận</span>
+                </a>
+              @*   <a asp-area="@currentArea" asp-controller="LqvXacThucChungNhans" asp-action="LichSuTraCuu" class="nav-item-link @(currentController=="LqvXacThucChungNhans"?"active":"")">
+                    <i class="fas fa-user-check"></i><span>Xác thực chứng chỉ</span>
+                </a> *@
+                <a asp-area="@currentArea" asp-controller="LqvTienDoHocTaps" asp-action="Index" class="nav-item-link @(currentController=="LqvTienDoHocTaps"?"active":"")">
+                    <i class="fas fa-tasks"></i><span>Tiến độ học tập</span>
+                </a>
+
+                <div class="nav-header">Công nghệ & Bảo mật</div>
+                <a asp-area="@currentArea" asp-controller="LqvGiaoDichBlockchains" asp-action="Index" class="nav-item-link @(currentController=="LqvGiaoDichBlockchains"?"active":"")">
+                    <i class="fas fa-link"></i><span>Giao dịch Blockchain</span>
+                </a>
+               @*  <a asp-area="@currentArea" asp-controller="LqvPhanQuyens" asp-action="Index" class="nav-item-link @(currentController=="LqvPhanQuyens"?"active":"")">
+                    <i class="fas fa-shield-alt"></i><span>Phân quyền</span>
+                </a> *@
+                <a asp-area="@currentArea" asp-controller="LqvYeuCauCapChungChis" asp-action="Index" class="nav-item-link @(currentController=="LqvYeuCauCapChungChis"?"active":"")">
+                    <i class="fas fa-paper-plane"></i><span>Yêu cầu cấp bằng</span>
+                </a>
+                <a asp-area="@currentArea" asp-controller="LqvYeuCauHoTroes" asp-action="Index" class="nav-item-link @(currentController=="LqvYeuCauHoTroes"?"active":"")">
+                    <i class="fas fa-headset"></i><span>Hỗ trợ</span>
+                </a>
+                <a asp-area="@currentArea" asp-controller="LqvNhatKyHoatDongs" asp-action="Index" class="nav-item-link @(currentController=="LqvNhatKyHoatDongs"?"active":"")">
+                    <i class="fas fa-history"></i><span>Nhật ký</span>
+                </a>
+            </nav>
+        </aside>
+
+        <div class="main-content-area">
+            <header class="header">
+                <div>
+                    <nav class="custom-breadcrumb">
+                        <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                            <li class="breadcrumb-item active">@ViewData["Title"]</li>
+                        </ol>
+                    </nav>
+                    <h3 class="fw-bold mb-0" style="color: var(--s4-text-main);">@ViewData["Title"]</h3>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <div class="d-none d-md-flex align-items-center bg-white rounded-pill px-3 py-1 shadow-sm me-4">
+                        <i class="fas fa-search text-muted me-2"></i>
+                        <input class="form-control border-0 bg-transparent" type="search" placeholder="Tìm kiếm..." style="width: 200px; box-shadow: none;">
+                    </div>
+
+                    <div class="dropdown">
+                        <a class="d-flex align-items-center text-decoration-none" data-bs-toggle="dropdown" href="#">
+                            <img src="@userAvatarUrl" class="rounded-circle" width="40" height="40" alt="avatar" />
+                            <div class="ms-2 d-none d-lg-block text-start">
+                                <div class="fw-bold text-dark small" style="line-height: 1.2;">@fullName</div>
+                                <div class="text-muted" style="font-size: 0.7rem;">Admin</div>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-3 p-2" style="border-radius: 12px; min-width: 200px;">
+                            <li><a class="dropdown-item rounded-3 py-2" href="#"><i class="fas fa-user-circle me-2 text-primary"></i> Tài khoản</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item rounded-3 py-2 text-danger" asp-area="Auth" asp-controller="Account" asp-action="Logout">
+                                    <i class="fas fa-power-off me-2"></i> Đăng xuất
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            <section class="content-body-area">
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </section>
+
+            <footer class="footer">
+                <div>&copy; 2025 Block Cert - Hệ thống quản lý chứng chỉ Blockchain</div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

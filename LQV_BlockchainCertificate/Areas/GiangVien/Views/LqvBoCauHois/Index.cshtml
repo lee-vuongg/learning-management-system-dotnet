@@ -1,0 +1,159 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvBoCauHoi>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Quản lý Bộ câu hỏi";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<style>
+    .s4-card {
+        background: white;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        padding: 1.5rem;
+    }
+
+    .btn-action {
+        width: 34px;
+        height: 34px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        margin: 0 3px;
+        transition: all 0.2s;
+    }
+
+        .btn-action:hover {
+            transform: translateY(-2px);
+            filter: brightness(0.9);
+        }
+
+    .excel-btn {
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-left: 6px;
+    }
+</style>
+
+<div class="container-fluid py-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4 px-3">
+        <div>
+            <h3 class="fw-bold text-dark mb-1">📚 Quản lý Bộ câu hỏi</h3>
+            <p class="text-muted small mb-0">Tổ chức và phân loại ngân hàng câu hỏi theo chủ đề</p>
+        </div>
+
+        <a asp-action="Create" class="btn btn-primary rounded-pill px-4 fw-bold">
+            <i class="fas fa-plus me-2"></i> Thêm bộ mới
+        </a>
+    </div>
+
+    <div class="s4-card mx-3">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th style="width: 25%">Tên bộ</th>
+                        <th style="width: 30%">Mô tả</th>
+                        <th style="width: 15%">Ngày tạo</th>
+                        <th style="width: 30%" class="text-center">Hành động</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if (!Model.Any())
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center py-5 text-muted small">
+                                Chưa có bộ câu hỏi nào
+                            </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <div class="fw-bold">@item.LqvTenBo</div>
+                                    <span class="small text-muted">ID: #@item.LqvBoCauHoiId</span>
+                                </td>
+
+                                <td class="small text-muted">
+                                    @item.LqvMoTa
+                                </td>
+
+                                <td>
+                                    <i class="far fa-calendar-alt me-1"></i>
+                                    @(item.LqvNgayTao?.ToString("dd/MM/yyyy"))
+                                </td>
+
+                                <td class="text-center">
+                                    <div class="d-flex flex-wrap justify-content-center">
+
+                                        <!-- Danh sách câu hỏi -->
+                                        <a asp-action="Questions"
+                                           asp-route-id="@item.LqvBoCauHoiId"
+                                           class="btn-action bg-success text-white"
+                                           title="Danh sách câu hỏi">
+                                            <i class="fas fa-list"></i>
+                                        </a>
+
+                                        <!-- Export Excel -->
+                                        <a asp-action="ExportExcel"
+                                           asp-route-id="@item.LqvBoCauHoiId"
+                                           class="btn-action bg-emerald text-white"
+                                           style="background:#16a34a"
+                                           title="Xuất Excel">
+                                            <i class="fas fa-file-excel"></i>
+                                        </a>
+
+                                        <!-- Import Excel -->
+                                        <form asp-action="ImportExcel"
+                                              asp-route-id="@item.LqvBoCauHoiId"
+                                              method="post"
+                                              enctype="multipart/form-data"
+                                              class="d-inline">
+                                            @Html.AntiForgeryToken()
+                                            <label class="btn-action bg-sky text-white"
+                                                   style="background:#0284c7"
+                                                   title="Import Excel">
+                                                <i class="fas fa-upload"></i>
+                                                <input type="file"
+                                                       name="excelFile"
+                                                       accept=".xlsx"
+                                                       hidden
+                                                       onchange="this.form.submit()" />
+                                            </label>
+                                        </form>
+
+                                        <!-- Edit -->
+                                        <a asp-action="Edit"
+                                           asp-route-id="@item.LqvBoCauHoiId"
+                                           class="btn-action bg-warning text-dark"
+                                           title="Sửa">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+
+                                        <!-- Delete -->
+                                        <a asp-action="Delete"
+                                           asp-route-id="@item.LqvBoCauHoiId"
+                                           class="btn-action bg-danger text-white"
+                                           title="Xóa">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

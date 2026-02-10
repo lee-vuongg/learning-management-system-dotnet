@@ -1,0 +1,230 @@
+﻿@model IEnumerable<IGrouping<dynamic, LQV_BlockchainCertificate.Models.DBModel.LqvBaiLam>>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Quản lý bài làm";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+    var groupedByClass = Model.GroupBy(g => g.Key.TenLop).ToList();
+}
+
+<style>
+    :root {
+        --s4-primary: #2563eb;
+        --s4-bg: #f8fafc;
+        --s4-border: #e2e8f0;
+    }
+
+    body {
+        background-color: var(--s4-bg);
+        font-family: 'Inter', sans-serif;
+    }
+
+    .s4-wrapper {
+        padding: 2rem 1.5rem;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    /* Card Lớp */
+    .class-card {
+        background: white;
+        border-radius: 16px;
+        border: 1px solid var(--s4-border);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        margin-bottom: 2rem;
+        overflow: hidden;
+    }
+
+    .class-header {
+        padding: 1.25rem 1.5rem;
+        background: #fff;
+        border-bottom: 2px solid #f1f5f9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Accordion Custom */
+    .exam-accordion-item {
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .exam-trigger {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        background: #fdfdfd;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: background 0.2s;
+        cursor: pointer;
+    }
+
+        .exam-trigger:hover {
+            background: #f8fafc;
+        }
+
+        .exam-trigger.collapsed .rotate-icon {
+            transform: rotate(-90deg);
+        }
+
+    .rotate-icon {
+        transition: transform 0.3s;
+    }
+
+    /* Table Styling */
+    .table-s4 {
+        margin-bottom: 0 !important;
+    }
+
+        .table-s4 thead th {
+            background: #f8fafc;
+            color: #64748b;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 1rem;
+            border: none;
+        }
+
+        .table-s4 td {
+            padding: 1rem;
+            vertical-align: middle;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+    .score-pill {
+        background: #eff6ff;
+        padding: 4px 12px;
+        border-radius: 99px;
+        font-weight: 800;
+        color: var(--s4-primary);
+        font-size: 0.9rem;
+    }
+
+    .s4-badge {
+        padding: 5px 12px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.75rem;
+    }
+
+    .badge-done {
+        background: #dcfce7;
+        color: #15803d;
+    }
+
+    .badge-pending {
+        background: #fff7ed;
+        color: #c2410c;
+    }
+</style>
+
+<div class="s4-wrapper">
+    <div class="mb-4">
+        <h3 class="fw-800 mb-1">📄 Quản lý bài làm</h3>
+        <p class="text-muted small">Hệ thống gợi ý lộ trình kỹ năng - Skill Map</p>
+    </div>
+
+    @for (int i = 0; i < groupedByClass.Count; i++)
+    {
+        var classGroup = groupedByClass[i];
+        var classId = $"class_{i}";
+
+        <div class="class-card">
+            <div class="class-header">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="bg-primary text-white rounded-3 p-2 px-3">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <h5 class="mb-0 fw-bold text-dark">Lớp: @classGroup.Key</h5>
+                        <small class="text-muted">Có @classGroup.Count() đề thi đang hoạt động</small>
+                    </div>
+                </div>
+                <span class="badge bg-primary rounded-pill px-3">@classGroup.Sum(g => g.Count()) bài nộp</span>
+            </div>
+
+            <div class="accordion accordion-flush" id="accordion_@classId">
+                @{
+                    int j = 0;
+                }
+                @foreach (var exam in classGroup)
+                {
+                    var examId = $"{classId}_exam_{j}";
+                    <div class="exam-accordion-item">
+                        <button class="exam-trigger @(j == 0 ? "" : "collapsed")"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#collapse_@examId">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="far fa-file-alt text-primary"></i>
+                                <span class="fw-600 text-dark">Đề thi: @exam.Key.TenDeThi</span>
+                                <span class="badge bg-light text-muted fw-normal border">@exam.Count() bài</span>
+                            </div>
+                            <i class="fas fa-chevron-down rotate-icon text-muted small"></i>
+                        </button>
+
+                        <div id="collapse_@examId" class="collapse @(j == 0 ? "show" : "")"
+                             data-bs-parent="#accordion_@classId">
+                            <div class="table-responsive">
+                                <table class="table table-s4">
+                                    <thead>
+                                        <tr>
+                                            <th class="ps-4">Sinh viên</th>
+                                            <th>Nộp lúc</th>
+                                            <th class="text-center">Kết quả</th>
+                                            <th class="text-center">Trạng thái</th>
+                                            <th class="text-end pe-4">Thao tác</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in exam)
+                                        {
+                                            <tr>
+                                                <td class="ps-4">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center fw-bold text-secondary" style="width:32px; height:32px; font-size:12px;">
+                                                            @item.LqvNguoiDung.LqvHoTen.Substring(0, 1)
+                                                        </div>
+                                                        <div>
+                                                            <div class="fw-bold text-dark small">@item.LqvNguoiDung.LqvHoTen</div>
+                                                            <div class="text-muted" style="font-size: 10px;">@item.LqvNguoiDung.LqvEmail</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="small">
+                                                    <span class="text-dark fw-bold">@item.LqvThoiGianNop?.ToString("HH:mm")</span><br />
+                                                    <span class="text-muted" style="font-size:10px">@item.LqvThoiGianNop?.ToString("dd/MM/yyyy")</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="score-pill">@item.LqvDiem / 10</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    @if (item.LqvTrangThai == "DaCham")
+                                                    {
+                                                        <span class="s4-badge badge-done"><i class="fas fa-check me-1"></i> Đã chấm</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="s4-badge badge-pending"><i class="fas fa-clock me-1"></i> Chờ chấm</span>
+                                                    }
+                                                </td>
+                                                <td class="text-end pe-4">
+                                                    <a asp-action="ChamBai" asp-route-id="@item.LqvBaiLamId"
+                                                       class="btn btn-sm btn-outline-primary border-0 fw-bold">
+                                                        <i class="fas fa-edit me-1"></i> Chấm điểm
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    j++;
+                }
+            </div>
+        </div>
+    }
+</div>

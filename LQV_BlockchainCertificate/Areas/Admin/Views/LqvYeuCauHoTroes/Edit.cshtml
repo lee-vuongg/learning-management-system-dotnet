@@ -1,0 +1,125 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvYeuCauHoTro
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Cập nhật & Phản hồi Yêu cầu Hỗ trợ";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+
+    // Danh sách trạng thái cho Admin
+    var trangThaiList = new List<SelectListItem>
+    {
+        new SelectListItem { Value = "Chờ xử lý", Text = "Chờ xử lý" },
+        new SelectListItem { Value = "Đang xử lý", Text = "Đang xử lý" },
+        new SelectListItem { Value = "Đã xử lý", Text = "Đã xử lý" }
+    };
+}
+
+<style>
+    /* CSS Neon Dark Mode đã định nghĩa */
+    :root {
+        --color-card-bg: #1c233a;
+        --color-text-light: #e0e7ff;
+        --color-neon-blue: #4fd1c5;
+        --color-dark-bg: #0d1222;
+        --border-radius-lg: 12px;
+        --color-text-muted: #8c97b8;
+        --gradient-primary: linear-gradient(135deg, #4fd1c5 0%, #38b2ac 100%);
+    }
+
+    .card-custom {
+        background-color: var(--color-card-bg);
+        color: var(--color-text-light);
+        border-radius: var(--border-radius-lg);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        border: 1px solid #323b6b;
+    }
+
+    .form-control-dark, .form-select-dark {
+        background-color: #273059;
+        border: 1px solid #323b6b;
+        color: var(--color-text-light);
+        transition: border-color 0.3s;
+    }
+
+        .form-control-dark:focus, .form-select-dark:focus {
+            border-color: var(--color-neon-blue);
+            box-shadow: 0 0 0 0.25rem rgba(79, 209, 197, 0.25);
+            background-color: #273059;
+            color: var(--color-text-light);
+        }
+
+    .btn-neon-primary {
+        background: var(--gradient-primary);
+        border: none;
+        color: var(--color-dark-bg);
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+        .btn-neon-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+            color: var(--color-dark-bg);
+        }
+</style>
+
+<div class="d-flex justify-content-center">
+    <div class="card card-custom p-5 mx-auto" style="max-width: 800px;">
+        <h1 class="h3 mb-4 fw-bold text-center border-bottom pb-2" style="color: var(--color-neon-blue);">
+            @ViewData["Title"] - #@Model.LqvId
+        </h1>
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="LqvId" />
+            <input type="hidden" asp-for="LqvNguoiDungId" />
+            <input type="hidden" asp-for="LqvThoiGianGui" />
+            <input type="hidden" asp-for="LqvNoiDung" />
+
+
+            <div class="row mb-4 p-3 rounded" style="background-color: #273059;">
+                <h5 class="fw-bold" style="color: var(--color-neon-blue);"><i class="fas fa-info-circle me-2"></i>Thông tin Yêu cầu</h5>
+                <dl class="row mb-0">
+                    <dt class="col-sm-4" style="color: var(--color-text-muted);">Người gửi:</dt>                  
+                    <dd class="col-sm-8"><strong>@(Model.LqvNguoiDung?.LqvHoTen ?? "N/A")</strong></dd>
+
+                    <dt class="col-sm-4" style="color: var(--color-text-muted);">Thời gian gửi:</dt>
+                    <dd class="col-sm-8">@(Model.LqvThoiGianGui.HasValue ? Model.LqvThoiGianGui.Value.ToString("dd/MM/yyyy HH:mm") : "N/A")</dd>
+
+                    <dt class="col-sm-12 fw-bold mt-2" style="color: var(--color-text-muted);">Nội dung:</dt>
+                    <dd class="col-sm-12"><div class="p-2 border rounded" style="border-color: #323b6b !important;">@Model.LqvNoiDung</div></dd>
+                </dl>
+            </div>
+
+            <hr style="border-color: #323b6b;" />
+
+            <div class="form-group mb-3">
+                <label asp-for="LqvTrangThai" class="control-label fw-bold" style="color: var(--color-neon-blue);"><i class="fas fa-list-check me-2"></i>Trạng thái Xử lý</label>
+                <select asp-for="LqvTrangThai" class="form-select form-select-dark">
+                    @foreach (var item in trangThaiList)
+                    {
+                        <option value="@item.Value" selected="@(Model.LqvTrangThai == item.Value)">@item.Text</option>
+                    }
+                </select>
+                <span asp-validation-for="LqvTrangThai" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-4">
+                <label asp-for="LqvPhanHoi" class="control-label fw-bold" style="color: var(--color-neon-blue);"><i class="fas fa-comment-dots me-2"></i>Phản hồi của Admin</label>
+                <textarea asp-for="LqvPhanHoi" class="form-control form-control-dark" rows="5" placeholder="Nhập phản hồi chi tiết cho sinh viên..."></textarea>
+                <span asp-validation-for="LqvPhanHoi" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-between pt-3">
+                <input type="submit" value="Cập nhật & Phản hồi" class="btn btn-neon-primary" />
+                <a asp-action="Index" class="btn btn-outline-secondary" style="color:var(--color-text-muted); border-color:var(--color-text-muted);"><i class="fas fa-arrow-left me-2"></i>Hủy</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

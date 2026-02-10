@@ -1,0 +1,120 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvYeuCauCapChungChi
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chi tiết Yêu cầu";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+
+    string statusText = Model.LqvTrangThai ?? "Không xác định";
+    bool isRejected = statusText.Contains("từ chối") || statusText.Contains("Bị từ chối");
+}
+
+<style>
+    .detail-card {
+        border: none;
+        border-radius: 20px;
+        background: #fff;
+    }
+
+    .info-label {
+        color: #6c757d;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.25rem;
+    }
+
+    .info-value {
+        color: #2d3436;
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .reason-box {
+        background-color: #f8f9fa;
+        border-radius: 12px;
+        padding: 1.5rem;
+        border-left: 4px solid #dee2e6;
+    }
+
+    .reject-box {
+        background-color: #fff5f5;
+        border-radius: 12px;
+        padding: 1.5rem;
+        border: 1px dashed #feb2b2;
+    }
+</style>
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+            <div class="card detail-card shadow-lg p-4 p-md-5">
+                <div class="d-flex align-items-center mb-5">
+                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                        <i class="fas fa-file-contract fa-lg"></i>
+                    </div>
+                    <div class="ms-4">
+                        <h2 class="fw-bold mb-0">Yêu cầu cấp mã #@Model.LqvId</h2>
+                        <span class="badge @(statusText == "Đã duyệt" ? "bg-success" : isRejected ? "bg-danger" : "bg-warning text-dark") rounded-pill">
+                            @statusText
+                        </span>
+                    </div>
+                    <a asp-action="Index" class="ms-auto btn btn-outline-secondary rounded-pill">
+                        <i class="fas fa-times"></i>
+                    </a>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="info-label">Khóa học hoàn thành</div>
+                        <div class="info-value text-primary">@Model.LqvKhoaHoc.LqvTenKhoaHoc</div>
+
+                        <div class="info-label">Ngày gửi yêu cầu</div>
+                        <div class="info-value">
+                            <i class="far fa-clock me-2 text-muted"></i>
+                            @(Model.LqvNgayYeuCau?.ToString("HH:mm, dd/MM/yyyy"))
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="info-label">Phương thức xác thực</div>
+                        <div class="info-value"><span class="badge bg-light text-dark border"><i class="fas fa-cube me-1"></i> Blockchain Network</span></div>
+
+                        <div class="info-label">Mã số sinh viên</div>
+                        <div class="info-value">SV-@Model.LqvNguoiDung.LqvHoTen</div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h6 class="fw-bold mb-3"><i class="fas fa-pen-nib me-2"></i>Nội dung lý do từ sinh viên:</h6>
+                    <div class="reason-box">
+                        <p class="mb-0 italic text-dark">"@Model.LqvLyDoYeuCau"</p>
+                    </div>
+                </div>
+
+                @if (isRejected)
+                {
+                    <div class="mt-4">
+                        <h6 class="fw-bold text-danger mb-3"><i class="fas fa-exclamation-circle me-2"></i>Phản hồi từ Quản trị viên:</h6>
+                        <div class="reject-box">
+                            <p class="mb-0 text-danger fw-medium">
+                                @(string.IsNullOrEmpty(Model.LqvLyDoTuChoi) ? "Yêu cầu không được phê duyệt do chưa đủ điều kiện hoặc hồ sơ bị thiếu." : Model.LqvLyDoTuChoi)
+                            </p>
+                        </div>
+                    </div>
+                }
+
+                <div class="d-flex gap-3 mt-5 pt-4 border-top">
+                    @if (statusText == "Chờ duyệt" || isRejected)
+                    {
+                        <a asp-action="Edit" asp-route-id="@Model.LqvId" class="btn btn-warning px-4 rounded-pill fw-bold text-dark shadow-sm">
+                            <i class="fas fa-edit me-2"></i>Cập nhật lại yêu cầu
+                        </a>
+                    }
+                    <button onclick="window.print()" class="btn btn-light px-4 rounded-pill border fw-bold shadow-sm">
+                        <i class="fas fa-print me-2"></i>In phiếu yêu cầu
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

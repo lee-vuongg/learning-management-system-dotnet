@@ -1,0 +1,210 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvBuoiHoc>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Quản lý buổi học";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+
+    // Nhóm theo Lớp -> Sau đó nhóm theo Ngày
+    var groupByLop = Model
+        .GroupBy(x => x.LqvLopHoc)
+        .OrderBy(g => g.Key?.LqvTenLop);
+
+    var today = DateOnly.FromDateTime(DateTime.Now);
+}
+
+<style>
+    :root {
+        --s4-primary: #2563eb;
+        --s4-bg: #f8fafc;
+        --s4-border: #e2e8f0;
+    }
+
+    body {
+        background-color: var(--s4-bg);
+        font-family: 'Inter', sans-serif;
+    }
+
+    /* Accordion Custom */
+    .accordion-item {
+        border: 1px solid var(--s4-border) !important;
+        border-radius: 12px !important;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        background: white;
+    }
+
+    .accordion-button {
+        background-color: white !important;
+        color: #1e293b !important;
+        font-weight: 700;
+        padding: 1.25rem;
+    }
+
+        .accordion-button:not(.collapsed) {
+            box-shadow: none;
+            border-bottom: 1px solid var(--s4-border);
+            background-color: #f8faff !important;
+        }
+
+    .date-badge {
+        background: #eff6ff;
+        color: var(--s4-primary);
+        padding: 5px 12px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        margin-right: 10px;
+    }
+
+    /* Giữ style cũ cho table và các nút */
+    .table-s4 td {
+        vertical-align: middle;
+        padding: 1rem;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .gps-tag {
+        background: #f1f5f9;
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-family: monospace;
+        font-size: 0.8rem;
+    }
+
+    .s4-status {
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.7rem;
+    }
+
+    .status-active {
+        background: #dcfce7;
+        color: #15803d;
+    }
+
+    .status-locked {
+        background: #f1f5f9;
+        color: #64748b;
+    }
+
+    .btn-action-s4 {
+        width: 32px;
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+        color: #64748b;
+        text-decoration: none;
+    }
+</style>
+
+<div class="container-fluid py-4 px-lg-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="fw-800 mb-1">📅 Quản lý buổi học</h3>
+            <p class="text-muted small mb-0">Lịch trình được sắp xếp theo ngày để dễ dàng quản lý</p>
+        </div>
+        <a asp-action="Create" class="btn btn-primary rounded-pill px-4 fw-bold shadow">
+            <i class="fas fa-plus-circle me-2"></i>Thêm buổi học
+        </a>
+    </div>
+
+    @foreach (var lop in groupByLop)
+    {
+        <div class="mb-5">
+            <div class="d-flex align-items-center gap-2 mb-3">
+                <div class="bg-primary p-2 rounded-3 text-white">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h4 class="mb-0 fw-bold text-dark">Lớp: @(lop.Key?.LqvTenLop ?? "N/A")</h4>
+            </div>
+
+            <div class="accordion" id="accLop_@lop.Key?.LqvLopHocId">
+                @{
+                    var sessionsByDate = lop.GroupBy(s => s.LqvNgayHoc).OrderByDescending(d => d.Key);
+                }
+
+                @foreach (var dateGroup in sessionsByDate)
+                {
+                    var isToday = dateGroup.Key == today;
+                    var collapseId = $"collapse_{lop.Key?.LqvLopHocId}_{dateGroup.Key.ToString("yyyyMMdd")}";
+
+                    <div class="accordion-item shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button @(isToday ? "" : "collapsed")" type="button" data-bs-toggle="collapse" data-bs-target="#@collapseId">
+                                <span class="date-badge">
+                                    <i class="far fa-calendar-check me-1"></i>
+                                    @dateGroup.Key.ToString("dd/MM/yyyy")
+                                </span>
+                                <span class="text-muted small fw-normal">(@dateGroup.Count() buổi học)</span>
+                                @if (isToday)
+                                {
+                                    <span class="badge bg-danger ms-2" style="font-size: 0.6rem">HÔM NAY</span>
+                                }
+                            </button>
+                        </h2>
+                        <div id="@collapseId" class="accordion-collapse collapse @(isToday ? "show" : "")" data-bs-parent="#accLop_@lop.Key?.LqvLopHocId">
+                            <div class="accordion-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-s4 mb-0">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th class="ps-4" style="font-size: 0.65rem">KHUNG GIỜ</th>
+                                                <th style="font-size: 0.65rem">TỌA ĐỘ GPS</th>
+                                                <th class="text-center" style="font-size: 0.65rem">BÁN KÍNH</th>
+                                                <th class="text-center" style="font-size: 0.65rem">TRẠNG THÁI</th>
+                                                <th class="text-end pe-4" style="font-size: 0.65rem">THAO TÁC</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in dateGroup.OrderBy(t => t.LqvGioBatDau))
+                                            {
+                                                <tr>
+                                                    <td class="ps-4">
+                                                        <span class="fw-bold">@item.LqvGioBatDau?.ToString(@"hh\:mm") - @item.LqvGioKetThuc?.ToString(@"hh\:mm")</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="gps-tag">@item.LqvViDo, @item.LqvKinhDo</span>
+                                                    </td>
+                                                    <td class="text-center">@item.LqvBanKinh m</td>
+                                                    <td class="text-center">
+                                                        <span class="s4-status @(item.LqvDangMo ? "status-active" : "status-locked")">
+                                                            @if (item.LqvDangMo)
+                                                            {
+                                                                <span class="spinner-grow spinner-grow-sm me-1"></span>
+                                                            }
+                                                            @(item.LqvDangMo ? "ĐANG MỞ" : "ĐÃ ĐÓNG")
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-end pe-4">
+                                                        <div class="d-flex justify-content-end gap-2 align-items-center">
+                                                            <a asp-action="DiemDanh" asp-route-id="@item.LqvBuoiHocId" class="btn-action-s4" title="Điểm danh"><i class="fas fa-user-check"></i></a>
+                                                            <a asp-action="Edit" asp-route-id="@item.LqvBuoiHocId" class="btn-action-s4"><i class="fas fa-edit"></i></a>
+
+                                                            <div class="ms-2">
+                                                                <form asp-action="@(item.LqvDangMo ? "DongDiemDanh" : "MoDiemDanh")" method="post">
+                                                                    @Html.AntiForgeryToken()
+                                                                    <input type="hidden" name="id" value="@item.LqvBuoiHocId" />
+                                                                    <button class="btn @(item.LqvDangMo ? "btn-danger" : "btn-outline-primary") btn-sm fw-bold px-3">
+                                                                        @(item.LqvDangMo ? "KẾT THÚC" : "BẮT ĐẦU")
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>

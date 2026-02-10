@@ -1,0 +1,159 @@
+﻿@model X.PagedList.IPagedList<LQV_BlockchainCertificate.Models.DBModel.LqvNhatKyHoatDong>
+@using X.PagedList.Mvc.Core
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Nhật ký hệ thống";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    :root {
+        --s4-primary: #007bff;
+        --s4-bg: #f4f7f9;
+    }
+
+    .log-wrapper {
+        padding: 2rem 1.5rem;
+        background: var(--s4-bg);
+        min-height: 100vh;
+    }
+
+    .log-card {
+        background: #fff;
+        border-radius: 16px;
+        border: none;
+        box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+        overflow: hidden;
+    }
+
+    .search-bar {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 25px;
+        border: 1px solid #eef2f7;
+    }
+
+    .table-log thead th {
+        background: #f8f9fa;
+        border: none;
+        color: #6c757d;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 1.25rem 1rem;
+    }
+
+    .table-log td {
+        padding: 1.25rem 1rem;
+        border-bottom: 1px solid #f1f4f8;
+        vertical-align: middle;
+    }
+
+    .user-badge {
+        background: #eef2f7;
+        color: #334155;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.85rem;
+    }
+
+    .action-badge {
+        padding: 5px 12px;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .action-create {
+        background: #e6f4ea;
+        color: #1e7e34;
+    }
+
+    .action-update {
+        background: #e8f0fe;
+        color: #1967d2;
+    }
+
+    .action-delete {
+        background: #fce8e6;
+        color: #c5221f;
+    }
+</style>
+
+<div class="log-wrapper">
+    <div class="mb-4">
+        <h4 class="fw-bold text-dark mb-1"><i class="fas fa-history text-primary me-2"></i>Nhật ký hoạt động</h4>
+        <p class="text-muted small">Theo dõi lịch sử thay đổi và tác động của người dùng lên hệ thống</p>
+    </div>
+
+    <div class="search-bar">
+        <form method="get" asp-action="Index" class="row g-2">
+            <div class="col-md-10">
+                <div class="input-group">
+                    <span class="input-group-text bg-light border-0"><i class="fas fa-search text-muted"></i></span>
+                    <input type="text" name="searchString" value="@Context.Request.Query["searchString"]"
+                           class="form-control border-0 bg-light"
+                           placeholder="Tìm kiếm tài khoản, hành động hoặc chi tiết nội dung..." />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-dark w-100 fw-bold">Lọc kết quả</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="log-card">
+        <div class="table-responsive">
+            <table class="table table-log mb-0">
+                <thead>
+                    <tr>
+                        <th class="ps-4">Thời gian</th>
+                        <th>Người thực hiện</th>
+                        <th>Hành động</th>
+                        <th style="width: 40%">Nội dung chi tiết</th>
+                        <th class="text-center">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        var actionClass = item.LqvHanhDong.ToLower().Contains("thêm") || item.LqvHanhDong.ToLower().Contains("create") ? "action-create" :
+                        item.LqvHanhDong.ToLower().Contains("xóa") || item.LqvHanhDong.ToLower().Contains("delete") ? "action-delete" : "action-update";
+                        <tr>
+                            <td class="ps-4">
+                                <span class="text-dark d-block fw-medium">@item.LqvThoiGian?.ToString("HH:mm:ss")</span>
+                                <small class="text-muted">@item.LqvThoiGian?.ToString("dd/MM/yyyy")</small>
+                            </td>
+                            <td><span class="user-badge">@item.LqvTaiKhoan</span></td>
+                            <td><span class="action-badge @actionClass">@item.LqvHanhDong</span></td>
+                            <td>
+                                <div class="text-muted small text-truncate" style="max-width: 350px;" title="@item.LqvChiTiet">
+                                    @item.LqvChiTiet
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    <a asp-action="Details" asp-route-id="@item.LqvId" class="btn btn-sm btn-outline-light border text-muted px-3"><i class="fas fa-info-circle"></i></a>
+                                    <a asp-action="Delete" asp-route-id="@item.LqvId" class="btn btn-sm btn-outline-danger px-3"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchString = Context.Request.Query["searchString"] }),
+                 new PagedListRenderOptions
+        {
+            LiElementClasses = new[] { "page-item" },
+            PageClasses = new[] { "page-link", "rounded-circle", "mx-1", "border-0", "bg-white", "text-dark", "shadow-sm" },
+            UlElementClasses = new[] { "pagination justify-content-center" }
+        })
+    </div>
+</div>

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvXacThucChungNhan>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Lịch sử xác thực";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="fw-bold mb-1">📜 Lịch sử xác thực</h3>
+            <p class="text-muted small mb-0">Theo dõi các lần tra cứu chứng chỉ trên hệ thống</p>
+        </div>
+        <a asp-action="VerifyForm" class="btn btn-primary rounded-pill px-4 shadow-sm">
+            <i class="fas fa-search me-2"></i> Xác thực mã mới
+        </a>
+    </div>
+
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+        <div class="table-responsive">
+            <table class="table align-middle mb-0">
+                <thead class="bg-light">
+                    <tr>
+                        <th class="ps-4 py-3 text-uppercase text-xs font-weight-bold">Mã chứng nhận</th>
+                        <th class="py-3 text-uppercase text-xs font-weight-bold">Thời gian</th>
+                        <th class="py-3 text-uppercase text-xs font-weight-bold">Địa chỉ IP</th>
+                        <th class="py-3 text-center text-uppercase text-xs font-weight-bold">Kết quả</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (!Model.Any())
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center py-5 text-muted">Chưa có lịch sử xác thực nào.</td>
+                        </tr>
+                    }
+                    @foreach (var item in Model)
+                    {
+                        bool isSuccess = item.LqvKetQua == "HOP_LE";
+
+                        <tr>
+                            <td class="ps-4">
+                                <span class="fw-bold text-dark">@item.LqvMaChungNhanCode</span>
+                            </td>
+                            <td>
+                                <div class="text-dark">@item.LqvThoiGianXacThuc.ToString("dd/MM/yyyy")</div>
+                                <div class="text-muted text-xs">@item.LqvThoiGianXacThuc.ToString("HH:mm:ss")</div>
+                            </td>
+                            <td><code class="text-xs">@item.LqvDiaChiNguoiXacThuc</code></td>
+                            <td class="text-center">
+                                <span class="badge @(isSuccess ? "bg-success-soft text-success" : "bg-danger-soft text-danger") rounded-pill px-3 py-2">
+                                    <i class="fas @(isSuccess ? "fa-check" : "fa-times") me-1"></i> @item.LqvKetQua
+                                </span>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-success-soft {
+        background-color: #e6fffa;
+        color: #047857;
+    }
+
+    .bg-danger-soft {
+        background-color: #fff5f5;
+        color: #c53030;
+    }
+
+    .text-xs {
+        font-size: 0.75rem;
+    }
+</style>

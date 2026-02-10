@@ -1,0 +1,29 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvGiaoDichBlockchain
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chi tiết giao dịch";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Chi tiết giao dịch Blockchain</h2>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-3">Tx Hash</dt>
+    <dd class="col-sm-9">@Model.LqvTxHash</dd>
+
+    <dt class="col-sm-3">Block Number</dt>
+    <dd class="col-sm-9">@Model.LqvBlockNumber</dd>
+
+    <dt class="col-sm-3">Thời gian tạo</dt>
+    <dd class="col-sm-9">@Model.LqvGioTao.ToString("dd/MM/yyyy HH:mm")</dd>
+
+    <dt class="col-sm-3">Trạng thái</dt>
+    <dd class="col-sm-9">@Model.LqvStatus</dd>
+
+    <dt class="col-sm-3">Chứng nhận liên kết</dt>
+    <dd class="col-sm-9">@Model.LqvChungNhan?.LqvMaChungNhan</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.LqvMaGiaoDich" class="btn btn-warning">Sửa</a>
+<a asp-action="Index" class="btn btn-secondary ms-2">Quay lại</a>

@@ -1,0 +1,60 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvTienDoHocTap
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    bool isDelete = ViewContext.RouteData.Values["action"].ToString() == "Delete";
+    ViewData["Title"] = isDelete ? "Xác nhận xóa" : "Chi tiết tiến độ";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="s4-wrapper">
+    <div class="container" style="max-width: 700px;">
+        <div class="s4-card @(isDelete ? "border-top border-danger border-4" : "")">
+            @if (isDelete)
+            {
+                <div class="alert alert-danger rounded-4 border-0 mb-4">
+                    <h5 class="fw-bold mb-1"><i class="fas fa-exclamation-triangle me-2"></i>Cảnh báo xóa</h5>
+                    <p class="small mb-0">Bạn có chắc chắn muốn xóa bản ghi tiến độ này? Hành động này không thể hoàn tác.</p>
+                </div>
+            }
+
+            <h4 class="fw-bold mb-4">Thông tin Tiến độ Học tập</h4>
+
+            <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                    <label class="text-muted small fw-bold d-block mb-1">SINH VIÊN</label>
+                    <div class="fw-bold text-dark">@Model.LqvSinhVien?.LqvHoTen</div>
+                    <div class="text-muted small">ID: @Model.LqvSinhVienId</div>
+                </div>
+                <div class="col-md-6">
+                    <label class="text-muted small fw-bold d-block mb-1">KHÓA HỌC</label>
+                    <div class="fw-bold text-dark">@Model.LqvKhoaHoc?.LqvTenKhoaHoc</div>
+                    <div class="text-muted small">Mã: @Model.LqvKhoaHoc?.LqvMaKhoaHoc</div>
+                </div>
+                <div class="col-md-6">
+                    <label class="text-muted small fw-bold d-block mb-1">MỨC ĐỘ HOÀN THÀNH</label>
+                    <div class="h4 fw-bold text-primary">@Model.LqvTiLeHoanThanh%</div>
+                </div>
+                <div class="col-md-6">
+                    <label class="text-muted small fw-bold d-block mb-1">CẬP NHẬT CUỐI</label>
+                    <div class="fw-medium text-dark">@Model.LqvNgayCapNhat?.ToString("dd/MM/yyyy HH:mm")</div>
+                </div>
+            </div>
+
+            <div class="d-flex gap-2">
+                @if (isDelete)
+                {
+                    <form asp-action="Delete" class="w-100 d-flex gap-2">
+                        <input type="hidden" asp-for="LqvId" />
+                        <button type="submit" class="btn btn-danger btn-s4 px-4">Xác nhận Xóa</button>
+                        <a asp-action="Index" class="btn btn-light btn-s4 px-4">Quay lại</a>
+                    </form>
+                }
+                else
+                {
+                    <a asp-action="Edit" asp-route-id="@Model.LqvId" class="btn btn-primary btn-s4 px-4">Chỉnh sửa</a>
+                    <a asp-action="Index" class="btn btn-light btn-s4 px-4">Quay lại danh sách</a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvGiaoDichBlockchain
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = (Model?.LqvMaGiaoDich > 0) ? "Cập nhật Giao dịch" : "Thêm Giao dịch";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="s4-wrapper">
+    <div class="container" style="max-width: 700px;">
+        <div class="mb-4">
+            <a asp-action="Index" class="text-decoration-none text-muted small fw-bold">
+                <i class="fas fa-arrow-left me-2"></i>TRỞ LẠI EXPLORER
+            </a>
+        </div>
+
+        <div class="s4-card">
+            <div class="text-center mb-5">
+                <div class="display-6 text-primary mb-2"><i class="fas fa-link"></i></div>
+                <h4 class="fw-bold">@ViewData["Title"]</h4>
+                <p class="text-muted small">Cập nhật thông tin định danh cho block dữ liệu</p>
+            </div>
+
+            <form asp-action="@(Model?.LqvMaGiaoDich > 0 ? "Edit" : "Create")">
+                <input type="hidden" asp-for="LqvMaGiaoDich" />
+                <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+                <div class="mb-4">
+                    <label class="form-label small fw-bold text-muted">CHỨNG NHẬN LIÊN KẾT</label>
+                    <select asp-for="LqvChungNhanId" class="form-select border-0 bg-light p-3 rounded-3" asp-items="ViewBag.LqvChungNhanId">
+                        <option value="">-- Chọn chứng nhận --</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label small fw-bold text-muted">TRANSACTION HASH (TXHASH)</label>
+                    <input asp-for="LqvTxHash" class="form-control border-0 bg-light p-3 rounded-3 font-monospace" placeholder="0x..." />
+                    <span asp-validation-for="LqvTxHash" class="text-danger small"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <label class="form-label small fw-bold text-muted">BLOCK NUMBER</label>
+                        <input asp-for="LqvBlockNumber" type="number" class="form-control border-0 bg-light p-3 rounded-3" />
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <label class="form-label small fw-bold text-muted">TRẠNG THÁI</label>
+                        <select asp-for="LqvStatus" class="form-select border-0 bg-light p-3 rounded-3">
+                            <option value="Hoàn tất">Hoàn tất</option>
+                            <option value="Đang xử lý">Đang xử lý</option>
+                            <option value="Thất bại">Thất bại</option>
+                        </select>
+                    </div>
+                </div>
+
+                @if (Model?.LqvMaGiaoDich > 0)
+                {
+                    <div class="mb-4">
+                        <label class="form-label small fw-bold text-muted">THỜI GIAN TẠO</label>
+                        <input asp-for="LqvGioTao" type="datetime-local" class="form-control border-0 bg-light p-3 rounded-3" />
+                    </div>
+                }
+
+                <div class="d-grid gap-2 mt-5">
+                    <button type="submit" class="btn btn-primary py-3 rounded-pill fw-bold">Lưu thông tin giao dịch</button>
+                    <a asp-action="Index" class="btn btn-light py-3 rounded-pill text-muted fw-bold">Hủy</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

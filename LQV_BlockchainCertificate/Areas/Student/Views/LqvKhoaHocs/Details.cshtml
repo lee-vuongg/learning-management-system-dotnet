@@ -1,0 +1,107 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvKhoaHoc
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chi tiết Khóa học";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+
+    double progressValue = ViewBag.Progress ?? 0;
+    bool daCapChungNhan = ViewBag.DaCapChungNhan ?? false;
+    string progressColor = progressValue >= 100
+        ? "bg-gradient-success"
+        : progressValue > 50 ? "bg-gradient-info" : "bg-gradient-warning";
+}
+
+<div class="container-fluid py-4">
+    <div class="card shadow-lg">
+        <div class="card-header">
+            <h4 class="text-primary">🎓 @Model.LqvTenKhoaHoc</h4>
+            <small class="text-muted">Mã khóa học: @Model.LqvMaKhoaHoc</small>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+
+                <!-- Thông tin -->
+                <div class="col-md-7">
+                    <dl class="row">
+                        <dt class="col-sm-4">Giảng viên:</dt>
+                        <dd class="col-sm-8">@Model.LqvGiangVien?.LqvHoTen</dd>
+
+                        <dt class="col-sm-4">Thời gian:</dt>
+                        <dd class="col-sm-8">
+                            @Model.LqvNgayBatDau?.ToString("dd/MM/yyyy")
+                            →
+                            @Model.LqvNgayKetThuc?.ToString("dd/MM/yyyy")
+                        </dd>
+
+                        <dt class="col-sm-12 mt-3">Mô tả:</dt>
+                        <dd class="col-sm-12">@Model.LqvMoTa</dd>
+                    </dl>
+                </div>
+
+                <!-- Tiến độ -->
+                <div class="col-md-5 border-start">
+                    <h6 class="text-uppercase text-secondary">Tiến độ học tập</h6>
+
+                    <p class="mb-1"><strong>@progressValue%</strong></p>
+                    <div class="progress mb-3">
+                        <div class="progress-bar @progressColor"
+                             style="width:@progressValue%">
+                        </div>
+                    </div>
+
+                    @if (progressValue >= 100 && daCapChungNhan)
+                    {
+                        <div class="alert alert-success">
+                            🎉 Đã cấp chứng nhận Blockchain
+                        </div>
+                    }
+                    else if (progressValue >= 100)
+                    {
+                        <div class="alert alert-warning">
+                            ⏳ Chờ cấp chứng nhận
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-info">
+                            📘 Đang học
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <hr />
+
+            <!-- 🔗 LỚP HỌC -->
+            <h6 class="text-uppercase text-secondary">Danh sách lớp học</h6>
+
+            @if (Model.LqvLopHocs.Any())
+            {
+                <ul class="list-group">
+                    @foreach (var lop in Model.LqvLopHocs)
+                    {
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>@lop.LqvTenLop</span>
+                            <a asp-area="Student"
+                               asp-controller="LqvLopHocs"
+                               asp-action="Details"
+                               asp-route-id="@lop.LqvLopHocId"
+                               class="btn btn-sm btn-outline-primary">
+                                Vào lớp
+                            </a>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p class="text-muted">Chưa có lớp học.</p>
+            }
+        </div>
+
+        <div class="card-footer text-end">
+            <a asp-action="Index" class="btn btn-secondary btn-sm">Quay lại</a>
+        </div>
+    </div>
+</div>

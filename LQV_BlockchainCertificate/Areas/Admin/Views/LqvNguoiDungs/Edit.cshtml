@@ -1,0 +1,147 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvNguoiDung
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Cập nhật tài khoản";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .s4-edit-card {
+        border-radius: 16px;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        background: #fff;
+    }
+
+    .img-upload-box {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 20px;
+    }
+
+    .img-preview-circle {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #f0f7ff;
+    }
+
+    .btn-camera-abs {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: var(--s4-primary);
+        color: #fff;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 3px solid #fff;
+    }
+
+    .s4-label {
+        font-weight: 600;
+        color: #444;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    .s4-form-control {
+        border: 2px solid #edf2f7;
+        border-radius: 10px;
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+        .s4-form-control:focus {
+            border-color: var(--s4-primary);
+            box-shadow: 0 0 0 4px rgba(25, 118, 210, 0.05);
+        }
+
+        .s4-form-control.readonly {
+            background-color: #f8f9fa;
+            cursor: not-allowed;
+            border-style: dashed;
+        }
+</style>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="s4-edit-card p-4 p-md-5">
+                <div class="text-center mb-5">
+                    <h3 class="fw-bold text-dark">Hồ Sơ Thành Viên</h3>
+                    <p class="text-muted">Cập nhật thông tin cá nhân và phân quyền hệ thống</p>
+                </div>
+
+                <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="LqvId" />
+                    <input type="hidden" asp-for="LqvAvt" />
+
+                    <div class="img-upload-box">
+                        <img id="avatarPreview" src="@(string.IsNullOrEmpty(Model.LqvAvt) ? "/images/default-avatar.png" : Model.LqvAvt)" class="img-preview-circle" />
+                        <label for="LqvAvtFile" class="btn-camera-abs"><i class="fas fa-camera"></i></label>
+                        <input type="file" id="LqvAvtFile" name="LqvAvtFile" accept="image/*" class="d-none" />
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <label class="s4-label">Tên đăng nhập</label>
+                            <input asp-for="LqvTenDangNhap" class="form-control s4-form-control readonly" readonly />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="s4-label">Họ và tên</label>
+                            <input asp-for="LqvHoTen" class="form-control s4-form-control" />
+                            <span asp-validation-for="LqvHoTen" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="s4-label">Địa chỉ Email</label>
+                            <input asp-for="LqvEmail" class="form-control s4-form-control" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="s4-label">Ngày sinh</label>
+                            <input asp-for="LqvNgaySinh" type="date" class="form-control s4-form-control" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="s4-label">Vai trò</label>
+                            @Html.DropDownListFor(m => m.LqvRoleId, ViewBag.LqvRoleId as SelectList, new { @class = "form-select s4-form-control" })
+                        </div>
+                        <div class="col-md-12">
+                            <label class="s4-label">Đổi mật khẩu (Bỏ trống nếu giữ nguyên)</label>
+                            <input name="LqvMatKhauMoi" type="password" class="form-control s4-form-control" placeholder="••••••••" />
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-check form-switch mt-2">
+                                <input class="form-check-input shadow-none" type="checkbox" asp-for="LqvDaXacThuc" id="chkActive">
+                                <label class="form-check-label fw-bold" for="chkActive" style="color: var(--s4-primary)">Kích hoạt tài khoản người dùng</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-5 pt-4 border-top">
+                        <a asp-action="Index" class="btn btn-link text-decoration-none text-muted fw-bold"><i class="fas fa-arrow-left me-2"></i> Quay lại</a>
+                        <button type="submit" class="btn s4-btn-add px-5 py-2">Lưu thay đổi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.getElementById('LqvAvtFile').onchange = function (evt) {
+            const [file] = this.files;
+            if (file) {
+                document.getElementById('avatarPreview').src = URL.createObjectURL(file);
+            }
+        }
+    </script>
+}

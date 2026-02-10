@@ -1,0 +1,156 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvLopHoc
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = Model.LqvTenLop;
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<style>
+    .class-header {
+        background: #fff;
+        border-radius: 20px;
+        padding: 30px;
+        margin-bottom: 2rem;
+        border-bottom: 4px solid #002d72;
+    }
+
+    .feature-card {
+        background: #fff;
+        border: none;
+        border-radius: 20px;
+        padding: 25px;
+        transition: all 0.3s ease;
+        text-align: center;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .feature-card:hover {
+            background: #f8f9ff;
+            transform: translateY(-5px);
+        }
+
+    .icon-circle {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .bg-soft-primary {
+        background: #e7f0ff;
+        color: #007bff;
+    }
+
+    .bg-soft-success {
+        background: #e6f9f0;
+        color: #00c46f;
+    }
+
+    .bg-soft-warning {
+        background: #fff4e5;
+        color: #ffa117;
+    }
+
+    .bg-soft-danger {
+        background: #feebe9;
+        color: #f04438;
+    }
+</style>
+
+<div class="class-header shadow-sm">
+    <div class="row align-items-center">
+        <div class="col-md-8">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-2">
+                    <li class="breadcrumb-item"><a asp-action="Index">Lớp học</a></li>
+                    <li class="breadcrumb-item active">@Model.LqvKhoaHoc?.LqvTenKhoaHoc</li>
+                </ol>
+            </nav>
+            <h2 class="fw-bold text-dark mb-3">@Model.LqvTenLop</h2>
+            <p class="text-muted fs-5">@Model.LqvMoTa</p>
+
+            <div class="d-flex gap-4 mt-4">
+                <div>
+                    <div class="small text-muted text-uppercase fw-bold">Giảng viên</div>
+                    <div class="fw-bold">@Model.LqvGiangVien?.LqvHoTen</div>
+                </div>
+                <div>
+                    <div class="small text-muted text-uppercase fw-bold">Tổng số buổi</div>
+                    <div class="fw-bold text-primary">@ViewBag.SoBuoiHoc buổi</div>
+                </div>
+                <div>
+                    <div class="small text-muted text-uppercase fw-bold">Ngày khai giảng</div>
+                    <div class="fw-bold">@Model.LqvNgayTao?.ToString("dd/MM/yyyy")</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-end d-none d-md-block">
+            <img src="https://cdn-icons-png.flaticon.com/512/3436/3436660.png" style="width: 150px;" alt="Study">
+        </div>
+    </div>
+</div>
+
+<h5 class="fw-bold mb-4">Hoạt động học tập</h5>
+<div class="row g-4">
+    <div class="col-6 col-md-3">
+        <a asp-controller="LqvBuoiHocs" asp-action="Index" asp-route-lopHocId="@Model.LqvLopHocId" class="text-decoration-none">
+            <div class="feature-card shadow-sm">
+                <div class="icon-circle bg-soft-primary">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <h6 class="fw-bold text-dark mb-1">Buổi học</h6>
+                <p class="small text-muted mb-0">Lịch học & Tài liệu</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <a asp-controller="LqvBaiTaps" asp-action="Index" asp-route-lopHocId="@Model.LqvLopHocId" class="text-decoration-none">
+            <div class="feature-card shadow-sm">
+                <div class="icon-circle bg-soft-success">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h6 class="fw-bold text-dark mb-1">Bài tập</h6>
+                <p class="small text-muted mb-0">Nộp bài & Chấm điểm</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <a asp-controller="LqvLichThis" asp-action="Index" asp-route-lopHocId="@Model.LqvLopHocId" class="text-decoration-none">
+            <div class="feature-card shadow-sm">
+                <div class="icon-circle bg-soft-warning">
+                    <i class="fas fa-vial"></i>
+                </div>
+                <h6 class="fw-bold text-dark mb-1">Thi Online</h6>
+                <p class="small text-muted mb-0">Kiểm tra năng lực</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <a asp-controller="LqvDiemDanhGps" asp-action="Index" asp-route-lopHocId="@Model.LqvLopHocId" class="text-decoration-none">
+            <div class="feature-card shadow-sm">
+                <div class="icon-circle bg-soft-danger">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h6 class="fw-bold text-dark mb-1">Điểm danh</h6>
+                <p class="small text-muted mb-0">Check-in GPS</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="mt-5 mb-4">
+    <a asp-action="Index" class="btn btn-link text-muted p-0 text-decoration-none">
+        <i class="fas fa-arrow-left me-2"></i> Quay lại danh sách lớp học
+    </a>
+</div>

@@ -1,0 +1,42 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvChungNhan
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Cấp chứng nhận mới";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <h2 class="text-primary fw-bold mb-3">Cấp chứng nhận mới</h2>
+    <div class="card shadow-sm p-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="mb-3">
+                <label asp-for="LqvMaChungNhanCode" class="form-label fw-semibold">Mã chứng nhận</label>
+                <input asp-for="LqvMaChungNhanCode" class="form-control" />
+                <span asp-validation-for="LqvMaChungNhanCode" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="LqvSinhVienId" class="form-label fw-semibold">Sinh viên</label>
+                <select asp-for="LqvSinhVienId" class="form-select" asp-items="ViewBag.LqvSinhVienId"></select>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="LqvKhoaHocId" class="form-label fw-semibold">Khóa học</label>
+                <select asp-for="LqvKhoaHocId" class="form-select" asp-items="ViewBag.LqvKhoaHocId"></select>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="LqvHashValue" class="form-label fw-semibold">Hash Blockchain</label>
+                <input asp-for="LqvHashValue" class="form-control" />
+                <span asp-validation-for="LqvHashValue" class="text-danger"></span>
+            </div>
+
+            <div class="text-end">
+                <button type="submit" class="btn btn-success"><i class="bi bi-check2-circle"></i> Cấp chứng nhận</button>
+                <a asp-action="Index" class="btn btn-secondary ms-2">Quay lại</a>
+            </div>
+        </form>
+    </div>
+</div>

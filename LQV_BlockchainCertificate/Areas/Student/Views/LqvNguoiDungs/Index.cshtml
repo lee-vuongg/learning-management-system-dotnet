@@ -1,0 +1,84 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvNguoiDung>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LqvTenDangNhap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LqvMatKhauHash)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LqvHoTen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LqvEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LqvAvt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LqvWalletAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LqvNgayTao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LqvDaXacThuc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LqvRole)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LqvTenDangNhap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LqvMatKhauHash)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LqvHoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LqvEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LqvAvt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LqvWalletAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LqvNgayTao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LqvDaXacThuc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LqvRole.LqvRoleId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.LqvId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.LqvId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.LqvId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

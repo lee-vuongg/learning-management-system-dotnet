@@ -1,0 +1,37 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvXacThucChungNhan
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Xác nhận xóa";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="s4-wrapper d-flex align-items-center justify-content-center">
+    <div class="s4-card text-center" style="max-width: 500px; width: 100%;">
+        <div class="mb-4">
+            <div class="bg-light text-danger rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                <i class="fas fa-exclamation-triangle fa-2x"></i>
+            </div>
+            <h4 class="fw-bold">Bạn chắc chắn muốn xóa?</h4>
+            <p class="text-muted">Hành động này sẽ xóa vĩnh viễn lịch sử tra cứu của mã <strong>@Model.LqvMaChungNhanCode</strong> và không thể hoàn tác.</p>
+        </div>
+
+        <div class="bg-light p-3 rounded-4 mb-4 text-start">
+            <div class="d-flex justify-content-between mb-2">
+                <span class="text-muted small">Thời gian:</span>
+                <span class="small fw-bold">@Model.LqvThoiGianXacThuc.ToString("dd/MM/yyyy")</span>
+            </div>
+            <div class="d-flex justify-content-between">
+                <span class="text-muted small">Kết quả:</span>
+                <span class="small fw-bold">@Model.LqvKetQua</span>
+            </div>
+        </div>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="LqvId" />
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-danger py-2 fw-bold rounded-3">XÓA NGAY</button>
+                <a asp-action="Index" class="btn btn-light py-2 fw-bold rounded-3 text-muted">HỦY BỎ</a>
+            </div>
+        </form>
+    </div>
+</div>

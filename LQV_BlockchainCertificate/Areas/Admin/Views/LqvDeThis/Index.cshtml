@@ -1,0 +1,99 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvDeThi>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Quản lý đề thi";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="fw-bold">📘 Quản lý đề thi</h3>
+            <p class="text-muted small mb-0">Danh sách và kiểm duyệt đề thi</p>
+        </div>
+        <a asp-action="Create" class="btn btn-primary fw-bold">
+            <i class="fas fa-plus me-1"></i> Thêm đề thi
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Tên đề</th>
+                        <th>Bộ câu hỏi</th>
+                        <th>Giảng viên</th>
+                        <th>Thời gian</th>
+                        <th>Điểm</th>
+                        <th>Trạng thái</th>
+                        <th class="text-center">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="fw-bold">@item.LqvTenDeThi</td>
+
+                            <td>
+                                @(item.LqvBoCauHoi != null
+                                    ? $"#{item.LqvBoCauHoi.LqvBoCauHoiId}"
+                                    : "—")
+                            </td>
+
+                            <td>
+                                @(item.LqvGiangVien != null
+                                    ? item.LqvGiangVien.LqvHoTen
+                                    : "Chưa có")
+                            </td>
+
+                            <td>@item.LqvThoiGianThi phút</td>
+                            <td>@item.LqvTongDiem</td>
+
+                            <td>
+                                @if (item.LqvDaDuyet == true)
+                                {
+                                    <span class="badge bg-success">Đã duyệt</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-warning text-dark">Chưa duyệt</span>
+                                }
+                            </td>
+
+                            <td class="text-center">
+                                <a asp-action="Details"
+                                   asp-route-id="@item.LqvDeThiId"
+                                   class="btn btn-sm btn-outline-info">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+
+                                @if (item.LqvDaDuyet != true)
+                                {
+                                    <a asp-action="Edit"
+                                       asp-route-id="@item.LqvDeThiId"
+                                       class="btn btn-sm btn-outline-warning">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+
+                                    <form asp-action="Duyet"
+                                          asp-route-id="@item.LqvDeThiId"
+                                          method="post"
+                                          class="d-inline">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit"
+                                                class="btn btn-sm btn-outline-success"
+                                                onclick="return confirm('Duyệt đề thi này?')">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                    </form>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,385 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\LQV_BlockchainCertificate.bundle.scp.css",
+      "PackagePath": "staticwebassets\\LQV_BlockchainCertificate.0b2v8qmqko.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\checkin-faces\\checkin_11_27_20260128202809.jpg",
+      "PackagePath": "staticwebassets\\checkin-faces\\checkin_11_27_20260128202809.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\checkin-faces\\checkin_11_29_20260128205802.jpg",
+      "PackagePath": "staticwebassets\\checkin-faces\\checkin_11_29_20260128205802.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\checkin-faces\\checkin_11_48_20260206212208.jpg",
+      "PackagePath": "staticwebassets\\checkin-faces\\checkin_11_48_20260206212208.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\checkin-faces\\checkin_7_26_20260128200640.jpg",
+      "PackagePath": "staticwebassets\\checkin-faces\\checkin_7_26_20260128200640.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\checkin-faces\\checkin_7_28_20260128203900.jpg",
+      "PackagePath": "staticwebassets\\checkin-faces\\checkin_7_28_20260128203900.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\css\\InChunhNhan.css",
+      "PackagePath": "staticwebassets\\css\\InChunhNhan.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\css\\KVL.css",
+      "PackagePath": "staticwebassets\\css\\KVL.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\css\\Login.css",
+      "PackagePath": "staticwebassets\\css\\Login.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\css\\OTP.css",
+      "PackagePath": "staticwebassets\\css\\OTP.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\css\\Register.css",
+      "PackagePath": "staticwebassets\\css\\Register.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\css\\theme.css",
+      "PackagePath": "staticwebassets\\css\\theme.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\img\\Teet-removebg-preview.png",
+      "PackagePath": "staticwebassets\\img\\Teet-removebg-preview.png"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\uploads\\avatars\\10.jpg",
+      "PackagePath": "staticwebassets\\uploads\\avatars\\10.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\uploads\\avatars\\11.jpg",
+      "PackagePath": "staticwebassets\\uploads\\avatars\\11.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\uploads\\avatars\\15.jpg",
+      "PackagePath": "staticwebassets\\uploads\\avatars\\15.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\uploads\\avatars\\2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\avatars\\2.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\uploads\\avatars\\6.jpg",
+      "PackagePath": "staticwebassets\\uploads\\avatars\\6.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\uploads\\avatars\\7.jpg",
+      "PackagePath": "staticwebassets\\uploads\\avatars\\7.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\uploads\\avatars\\8.jpg",
+      "PackagePath": "staticwebassets\\uploads\\avatars\\8.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\uploads\\avatars\\9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\avatars\\9.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\uploads\\baitap\\11\\15\\20260206102230_Hướng đẫn triển khai Và Tài KHoản đăng nhập hệ thống.docx",
+      "PackagePath": "staticwebassets\\uploads\\baitap\\11\\15\\20260206102230_Hướng đẫn triển khai Và Tài KHoản đăng nhập hệ thống.docx"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\uploads\\baitap\\3\\7\\20260122210250_2210900083_Lequocvuong_De04.docx",
+      "PackagePath": "staticwebassets\\uploads\\baitap\\3\\7\\20260122210250_2210900083_Lequocvuong_De04.docx"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\uploads\\baitap\\4\\7\\20260122222539_hinh-nen-desktop-tuyet-dep.jpg",
+      "PackagePath": "staticwebassets\\uploads\\baitap\\4\\7\\20260122222539_hinh-nen-desktop-tuyet-dep.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\uploads\\baitap\\6\\11\\20260122231053_hinh-nen-desktop-tuyet-dep.jpg",
+      "PackagePath": "staticwebassets\\uploads\\baitap\\6\\11\\20260122231053_hinh-nen-desktop-tuyet-dep.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\uploads\\baitap\\7\\11\\20260122232518_images.jpg",
+      "PackagePath": "staticwebassets\\uploads\\baitap\\7\\11\\20260122232518_images.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\uploads\\baitap\\8\\11\\20260123103950_hinh-nen-desktop-tuyet-dep.jpg",
+      "PackagePath": "staticwebassets\\uploads\\baitap\\8\\11\\20260123103950_hinh-nen-desktop-tuyet-dep.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\uploads\\baitap\\8\\11\\20260123104017_images.jpg",
+      "PackagePath": "staticwebassets\\uploads\\baitap\\8\\11\\20260123104017_images.jpg"
+    },
+    {
+      "Id": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\uploads\\baitap\\8\\11\\20260123104030_hinh-nen-desktop-tuyet-dep.jpg",
+      "PackagePath": "staticwebassets\\uploads\\baitap\\8\\11\\20260123104030_hinh-nen-desktop-tuyet-dep.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.LQV_BlockchainCertificate.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.LQV_BlockchainCertificate.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.LQV_BlockchainCertificate.props",
+      "PackagePath": "build\\LQV_BlockchainCertificate.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.LQV_BlockchainCertificate.props",
+      "PackagePath": "buildMultiTargeting\\LQV_BlockchainCertificate.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.LQV_BlockchainCertificate.props",
+      "PackagePath": "buildTransitive\\LQV_BlockchainCertificate.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

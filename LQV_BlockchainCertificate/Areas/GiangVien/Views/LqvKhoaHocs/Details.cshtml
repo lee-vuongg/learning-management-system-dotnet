@@ -1,0 +1,117 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvKhoaHoc
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Chi tiết khóa học";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<style>
+    .info-card {
+        border: none;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        background: white;
+    }
+
+    .info-header {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .label-custom {
+        color: #94a3b8;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+    }
+
+    .value-custom {
+        color: #1e293b;
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .description-box {
+        background: #f8fafc;
+        padding: 20px;
+        border-radius: 12px;
+        border-left: 4px solid #3498db;
+        color: #475569;
+        line-height: 1.6;
+    }
+
+    .btn-footer {
+        padding: 12px 25px;
+        border-radius: 10px;
+        font-weight: 700;
+        transition: 0.3s;
+    }
+</style>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+            <div class="card info-card">
+                <div class="info-header">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-white bg-opacity-20 p-3 rounded-circle me-3">
+                            <i class="fas fa-book-open fa-2x text-white"></i>
+                        </div>
+                        <div>
+                            <h2 class="mb-0 fw-bold">@Model.LqvTenKhoaHoc</h2>
+                            <span class="text-white-50 small">Quản lý thông tin chi tiết và phê duyệt chứng chỉ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body p-4 p-md-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="label-custom">Mã khóa học</label>
+                            <span class="value-custom">#@Model.LqvMaKhoaHoc</span>
+
+                            <label class="label-custom">Thời gian bắt đầu</label>
+                            <span class="value-custom"><i class="far fa-calendar-check text-success me-2"></i>@Model.LqvNgayBatDau?.ToString("dd/MM/yyyy")</span>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="label-custom">Giảng viên phụ trách</label>
+                            <span class="value-custom"><i class="fas fa-chalkboard-teacher text-primary me-2"></i>@Model.LqvGiangVien?.LqvHoTen</span>
+
+                            <label class="label-custom">Thời gian kết thúc</label>
+                            <span class="value-custom"><i class="far fa-calendar-times text-danger me-2"></i>@Model.LqvNgayKetThuc?.ToString("dd/MM/yyyy")</span>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <label class="label-custom">Mô tả khóa học</label>
+                            <div class="description-box">
+                                @Model.LqvMoTa
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4 opacity-50">
+
+                    <div class="d-flex flex-wrap gap-2">
+                        <a asp-area="GiangVien"
+                           asp-controller="LqvYeuCauCapChungChis"
+                           asp-action="SinhVienDuDieuKien"
+                           asp-route-khoaHocId="@Model.LqvMaKhoaHoc"
+                           class="btn btn-success btn-footer shadow-sm">
+                            <i class="fas fa-user-graduate me-2"></i> XEM SINH VIÊN ĐỦ ĐIỀU KIỆN
+                        </a>
+
+                        <a asp-action="Index" class="btn btn-outline-secondary btn-footer">
+                            <i class="fas fa-arrow-left me-2"></i> QUAY LẠI
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

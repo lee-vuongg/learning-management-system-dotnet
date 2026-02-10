@@ -1,0 +1,164 @@
+﻿@model IEnumerable<LQV_BlockchainCertificate.Models.DBModel.LqvKhoaHoc>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Khóa học của tôi";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<style>
+    .course-table-container {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        overflow: hidden;
+        border: 1px solid #f0f0f0;
+    }
+
+    .table thead th {
+        background-color: #f8fafc;
+        color: #4a5568;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+        padding: 18px;
+        border: none;
+    }
+
+    .table tbody td {
+        padding: 18px;
+        vertical-align: middle;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .course-name {
+        color: #2d3748;
+        font-weight: 700;
+        font-size: 1.05rem;
+    }
+
+    .time-badge {
+        background: #eef2ff;
+        color: #4f46e5;
+        padding: 5px 12px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        display: inline-block;
+    }
+
+    .btn-action {
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.2s;
+        padding: 8px 16px;
+    }
+
+    .btn-details {
+        background-color: #f1f5f9;
+        color: #475569;
+        border: none;
+    }
+
+        .btn-details:hover {
+            background-color: #e2e8f0;
+            color: #1e293b;
+        }
+
+    .btn-graduate {
+        background-color: #10b981;
+        color: white;
+        border: none;
+    }
+
+        .btn-graduate:hover {
+            background-color: #059669;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+        }
+</style>
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="fw-bold text-dark m-0">📚 Khóa học tôi phụ trách</h3>
+            <p class="text-muted small mb-0">
+                Quản lý danh sách các khóa học đang tham gia giảng dạy
+            </p>
+        </div>
+    </div>
+
+    <div class="course-table-container">
+        <table class="table mb-0">
+            <thead>
+                <tr>
+                    <th>Thông tin khóa học</th>
+                    <th>Thời gian đào tạo</th>
+                    <th>Mô tả tóm tắt</th>
+                    <th class="text-end">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="4" class="text-center py-5">
+                            <img src="https://cdn-icons-png.flaticon.com/512/7486/7486744.png"
+                                 width="80"
+                                 class="opacity-25 mb-3" />
+                            <p class="text-muted">
+                                Bạn chưa phụ trách khóa học nào trong học kỳ này.
+                            </p>
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <div class="course-name">@item.LqvTenKhoaHoc</div>
+                                <span class="text-muted small">
+                                    Mã KH: #@item.LqvMaKhoaHoc
+                                </span>
+                            </td>
+                            <td>
+                                <div class="time-badge">
+                                    <i class="far fa-calendar-alt me-1"></i>
+                                    @item.LqvNgayBatDau?.ToString("dd/MM/yyyy")
+                                    —
+                                    @item.LqvNgayKetThuc?.ToString("dd/MM/yyyy")
+                                </div>
+                            </td>
+                            <td>
+                                <div class="text-truncate text-muted" style="max-width: 250px;">
+                                    @item.LqvMoTa
+                                </div>
+                            </td>
+                            <td class="text-end">
+                                <a asp-action="Details"
+                                   asp-route-id="@item.LqvMaKhoaHoc"
+                                   class="btn btn-action btn-details me-2">
+                                    <i class="fas fa-info-circle me-1"></i>
+                                    Chi tiết
+                                </a>
+
+                                <!-- ✅ NÚT SV ĐỦ ĐIỀU KIỆN (CHUẨN LOGIC) -->
+                                <a asp-area="GiangVien"
+                                   asp-controller="LqvYeuCauCapChungChis"
+                                   asp-action="SinhVienDuDieuKien"
+                                   asp-route-khoaHocId="@item.LqvMaKhoaHoc"
+                                   class="btn btn-action btn-graduate">
+                                    <i class="fas fa-user-graduate me-1"></i>
+                                    SV đủ điều kiện
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

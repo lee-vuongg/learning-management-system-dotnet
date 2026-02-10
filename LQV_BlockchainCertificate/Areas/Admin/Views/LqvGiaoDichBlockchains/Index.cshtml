@@ -1,0 +1,156 @@
+﻿@model X.PagedList.IPagedList<LQV_BlockchainCertificate.Models.DBModel.LqvGiaoDichBlockchain>
+@using X.PagedList.Mvc.Core
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Blockchain Explorer";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    :root {
+        --s4-primary: #007bff;
+        --s4-bg: #f8f9fa;
+    }
+
+    .s4-wrapper {
+        padding: 2rem 1.5rem;
+        background: var(--s4-bg);
+        min-height: 100vh;
+    }
+
+    .s4-card {
+        background: #fff;
+        border-radius: 20px;
+        border: none;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        padding: 1.5rem;
+    }
+
+    .search-box {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 15px;
+        margin-bottom: 25px;
+    }
+
+    .s4-table thead th {
+        background: #f1f3f4;
+        border: none;
+        color: #5f6368;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 1rem;
+    }
+
+    .s4-table td {
+        padding: 1rem;
+        vertical-align: middle;
+        border-bottom: 1px solid #f1f3f4;
+    }
+
+    .tx-link {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 0.85rem;
+        color: var(--s4-primary);
+        text-decoration: none;
+    }
+
+    .badge-status {
+        padding: 6px 12px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.75rem;
+    }
+
+    .status-success {
+        background: #e6f4ea;
+        color: #1e7e34;
+    }
+
+    .status-pending {
+        background: #fef7e0;
+        color: #b05a00;
+    }
+</style>
+
+<div class="s4-wrapper">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h4 class="fw-bold mb-1"><i class="fas fa-cubes text-primary me-2"></i>Blockchain Explorer</h4>
+            <p class="text-muted small">Tra cứu các giao dịch đã được ghi nhận trên sổ cái</p>
+        </div>
+        <a asp-action="Create" class="btn btn-primary rounded-pill px-4 fw-bold">
+            <i class="fas fa-plus me-2"></i>Tạo giao dịch mới
+        </a>
+    </div>
+
+    <div class="search-box">
+        <form method="get" asp-action="Index" class="row g-2">
+            <div class="col-md-9">
+                <input type="text" name="searchString" value="@ViewBag.SearchString"
+                       class="form-control border-0 bg-light rounded-3"
+                       placeholder="Tìm kiếm theo mã Hash hoặc ID chứng nhận..." />
+            </div>
+            <div class="col-md-3 d-flex gap-2">
+                <button type="submit" class="btn btn-dark w-100 rounded-3">Tìm kiếm</button>
+                <a asp-action="Index" class="btn btn-outline-secondary rounded-3 px-3"><i class="fas fa-sync-alt"></i></a>
+            </div>
+        </form>
+    </div>
+
+    <div class="s4-card">
+        <div class="table-responsive">
+            <table class="table s4-table">
+                <thead>
+                    <tr>
+                        <th>Transaction Hash</th>
+                        <th>Block</th>
+                        <th>Thời gian</th>
+                        <th>Chứng nhận</th>
+                        <th>Trạng thái</th>
+                        <th class="text-center">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a href="#" class="tx-link text-truncate d-block" style="max-width: 150px;">@item.LqvTxHash</a>
+                                <span class="text-muted" style="font-size: 0.7rem;">ID: @item.LqvMaGiaoDich</span>
+                            </td>
+                            <td><span class="fw-bold text-dark">#@item.LqvBlockNumber</span></td>
+                            <td class="small">@item.LqvGioTao.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td>
+                                <span class="badge bg-light text-dark border fw-medium">
+                                    <i class="fas fa-certificate text-warning me-1"></i> @item.LqvChungNhanId
+                                </span>
+                            </td>
+                            <td>
+                                <span class="badge-status @(item.LqvStatus == "Hoàn tất" || item.LqvStatus == "Success" ? "status-success" : "status-pending")">
+                                    @(item.LqvStatus == "Hoàn tất" || item.LqvStatus == "Success" ? "Confirmed" : "Pending")
+                                </span>
+                            </td>
+                            <td class="text-center">
+                                <a asp-action="Details" asp-route-id="@item.LqvMaGiaoDich" class="btn btn-sm btn-light rounded-circle"><i class="fas fa-eye text-muted"></i></a>
+                                <a asp-action="Edit" asp-route-id="@item.LqvMaGiaoDich" class="btn btn-sm btn-light rounded-circle ms-1"><i class="fas fa-edit text-primary"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-4">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchString = ViewBag.SearchString }),
+                     new PagedListRenderOptions
+            {
+                LiElementClasses = new[] { "page-item" },
+                PageClasses = new[] { "page-link", "rounded-3", "mx-1", "border-0", "bg-light", "text-dark" },
+                UlElementClasses = new[] { "pagination justify-content-center" }
+            })
+        </div>
+    </div>
+</div>

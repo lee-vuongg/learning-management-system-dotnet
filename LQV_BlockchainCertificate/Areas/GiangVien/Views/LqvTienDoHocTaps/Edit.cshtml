@@ -1,0 +1,72 @@
+﻿@model LQV_BlockchainCertificate.Models.DBModel.LqvTienDoHocTap
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var isEdit = ViewContext.RouteData.Values["action"]?.ToString() == "Edit";
+    ViewData["Title"] = isEdit ? "Chỉnh sửa tiến độ" : "Cập nhật tiến độ";
+    Layout = "~/Areas/GiangVien/Views/Shared/_GiangVienLayout.cshtml";
+}
+
+<div class="row justify-content-center py-5">
+    <div class="col-lg-5">
+        <div class="card-s4 shadow-lg border-0">
+            <div class="card-header bg-white border-0 pt-4 px-4">
+                <h4 class="fw-800 text-dark mb-1">@(isEdit ? "✏️ Hiệu chỉnh tiến độ" : "➕ Thêm tiến độ mới")</h4>
+                <p class="text-muted small">Thông tin này sẽ hiển thị trực tiếp trên Dashboard của sinh viên</p>
+            </div>
+            <div class="card-body p-4">
+                <form asp-action="@(isEdit ? "Edit" : "Create")" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+                    @if (isEdit)
+                    {
+                        <input type="hidden" asp-for="LqvId" />
+                    }
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold small text-uppercase text-muted">Sinh viên mục tiêu</label>
+                        @if (isEdit)
+                        {
+                            <input type="hidden" asp-for="LqvSinhVienId" />
+                            <div class="form-control bg-light fw-bold">@Model.LqvSinhVien?.LqvHoTen</div>
+                        }
+                        else
+                        {
+                            <select asp-for="LqvSinhVienId" asp-items="ViewBag.LqvSinhVienId" class="form-select rounded-3 shadow-sm border-2">
+                                <option value="">-- Chọn sinh viên --</option>
+                            </select>
+                        }
+                    </div>
+
+                    @if (!isEdit)
+                    {
+                        <div class="mb-4">
+                            <label class="form-label fw-bold small text-uppercase text-muted">Khóa học cập nhật</label>
+                            <select asp-for="LqvKhoaHocId" asp-items="ViewBag.LqvKhoaHocId" class="form-select rounded-3 shadow-sm border-2">
+                                <option value="">-- Chọn khóa học --</option>
+                            </select>
+                        </div>
+                    }
+                    else
+                    {
+                        <input type="hidden" asp-for="LqvKhoaHocId" />
+                    }
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold small text-uppercase text-muted d-flex justify-content-between">
+                            Phần trăm hoàn thành <span id="progressVal" class="text-primary">@Model.LqvTiLeHoanThanh%</span>
+                        </label>
+                        <input asp-for="LqvTiLeHoanThanh" type="range" class="form-range" min="0" max="100" id="rangeInput"
+                               oninput="document.getElementById('progressVal').innerText = this.value + '%'">
+                        <input asp-for="LqvTiLeHoanThanh" type="number" class="form-control mt-2 text-center fw-bold" min="0" max="100" readonly />
+                    </div>
+
+                    <div class="d-grid gap-2 mt-5">
+                        <button type="submit" class="btn btn-primary btn-lg rounded-3 fw-bold shadow">
+                            <i class="fas fa-save me-2"></i>Lưu thay đổi
+                        </button>
+                        <a asp-action="Index" class="btn btn-light rounded-3 text-muted fw-bold">Quay lại</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
