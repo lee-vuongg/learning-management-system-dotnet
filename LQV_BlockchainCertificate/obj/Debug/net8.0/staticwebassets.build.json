@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1D6ce9QBjbqicEFVqdTactBMlP9EF07wqusFQKSb89U=",
+  "Hash": "wevkqev6/YosztFKiZ7MB1GdGbHizSzi/9CwUK0gAYg=",
   "Source": "LQV_BlockchainCertificate",
   "BasePath": "_content/LQV_BlockchainCertificate",
   "Mode": "Default",
@@ -267,6 +267,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\checkin-faces\\checkin_11_48_20260206212208.jpg"
+    },
+    {
+      "Identity": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\checkin-faces\\checkin_15_49_20260207132956.jpg",
+      "SourceId": "LQV_BlockchainCertificate",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\",
+      "BasePath": "_content/LQV_BlockchainCertificate",
+      "RelativePath": "checkin-faces/checkin_15_49_20260207132956#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "p67tjk4zki",
+      "Integrity": "oYzLBylMrlEwm8RxaJNYlwpN6KePkDuDYNdYDuzrrLo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\checkin-faces\\checkin_15_49_20260207132956.jpg"
     },
     {
       "Identity": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\checkin-faces\\checkin_7_26_20260128200640.jpg",
@@ -2746,6 +2767,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-/j2mfUKS2cEfKQGVeRvHfMyJX6kTzKQnJ51Xz1JvkBA="
+        }
+      ]
+    },
+    {
+      "Route": "checkin-faces/checkin_15_49_20260207132956.jpg",
+      "AssetFile": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\checkin-faces\\checkin_15_49_20260207132956.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16168"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oYzLBylMrlEwm8RxaJNYlwpN6KePkDuDYNdYDuzrrLo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 07 Feb 2026 06:29:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oYzLBylMrlEwm8RxaJNYlwpN6KePkDuDYNdYDuzrrLo="
+        }
+      ]
+    },
+    {
+      "Route": "checkin-faces/checkin_15_49_20260207132956.p67tjk4zki.jpg",
+      "AssetFile": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\checkin-faces\\checkin_15_49_20260207132956.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16168"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oYzLBylMrlEwm8RxaJNYlwpN6KePkDuDYNdYDuzrrLo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 07 Feb 2026 06:29:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p67tjk4zki"
+        },
+        {
+          "Name": "label",
+          "Value": "checkin-faces/checkin_15_49_20260207132956.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oYzLBylMrlEwm8RxaJNYlwpN6KePkDuDYNdYDuzrrLo="
         }
       ]
     },
@@ -7938,7 +8041,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 Jan 2026 15:20:26 GMT"
+          "Value": "Mon, 09 Mar 2026 11:43:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7983,7 +8086,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 Jan 2026 15:20:26 GMT"
+          "Value": "Mon, 09 Mar 2026 11:43:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8028,7 +8131,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 Jan 2026 15:20:26 GMT"
+          "Value": "Mon, 09 Mar 2026 11:43:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8065,7 +8168,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 Jan 2026 15:20:26 GMT"
+          "Value": "Mon, 09 Mar 2026 11:43:19 GMT"
         },
         {
           "Name": "Cache-Control",

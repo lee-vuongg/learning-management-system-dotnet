@@ -568,6 +568,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdktob2FIb2NzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvLichThis/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkxpY2hUaGlzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvLichThis/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkxpY2hUaGlzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvLichThis/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkxpY2hUaGlzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvLichThis/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkxpY2hUaGlzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvLichThis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkxpY2hUaGlzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvLopHocs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdkxvcEhvY3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -638,6 +658,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/LqvYeuCauCapChungChis/SinhVienDuDieuKien.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXExxdllldUNhdUNhcENodW5nQ2hpc1xTaW5oVmllbkR1RGlldUtpZW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/Proctor/Monitor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2lhbmdWaWVuXFZpZXdzXFByb2N0b3JcTW9uaXRvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Build APP IOS/LQV_BlockchainCertificate/Areas/GiangVien/Views/Shared/_ValidationScriptsPartial.cshtml]

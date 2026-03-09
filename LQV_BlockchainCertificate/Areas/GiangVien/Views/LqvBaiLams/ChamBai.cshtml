@@ -57,7 +57,9 @@
                                     <div>
                                         <i class="bi bi-check2-circle text-success me-2"></i>
                                         Sinh viên chọn:
-                                        <strong>@ct.LqvDapAn?.LqvNoiDung</strong>
+                                        <strong>
+                                            @(ct.LqvDapAn != null ? ct.LqvDapAn.LqvNoiDung : "Không chọn")
+                                        </strong>
                                     </div>
                                     <div class="text-success fw-bold">
                                         + @(ct.LqvDiem ?? 0) điểm
@@ -116,7 +118,7 @@
                                                    max="@ct.LqvCauHoi.LqvDiem"
                                                    min="0"
                                                    name="diemTuLuan[@ct.LqvId]"
-                                                   value="@ct.LqvDiem"
+                                                   value="@(ct.LqvDiem ?? 0)"
                                                    class="form-control form-control-lg rounded-start-pill border-primary border-2 shadow-sm"
                                                    placeholder="0.0"
                                                    required />

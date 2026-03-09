@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LQV_BlockchainCertificate.Models.DBModel;
-using LQV_BlockchainCertificate.Services;
 
 namespace LQV_BlockchainCertificate.Areas.Student.Controllers
 {
@@ -14,12 +13,10 @@ namespace LQV_BlockchainCertificate.Areas.Student.Controllers
     public class LqvDiemDanhGpsController : Controller
     {
         private readonly LqvDbContext _context;
-        private readonly GeminiService _gemini;
 
-        public LqvDiemDanhGpsController(LqvDbContext context, GeminiService gemini)
+        public LqvDiemDanhGpsController(LqvDbContext context)
         {
             _context = context;
-            _gemini = gemini;
             Console.WriteLine("🔥 [INIT][STUDENT] LqvDiemDanhGpsController khởi tạo");
         }
 
@@ -37,9 +34,12 @@ namespace LQV_BlockchainCertificate.Areas.Student.Controllers
                 return 0;
             }
 
-            Console.WriteLine($"✅ [AUTH] StudentId = {id}");
             return id;
         }
+
+        // ===============================
+        // 📍 LIST
+        // ===============================
         public async Task<IActionResult> Index()
         {
             int studentId = GetCurrentStudentId();
@@ -54,13 +54,12 @@ namespace LQV_BlockchainCertificate.Areas.Student.Controllers
 
             return View(data);
         }
+
         // ===============================
         // 📍 CHECKIN GET
         // ===============================
         public async Task<IActionResult> CheckIn(int buoiHocId)
         {
-            Console.WriteLine($"➡️ [GET][CHECKIN] BuoiHocId = {buoiHocId}");
-
             int studentId = GetCurrentStudentId();
 
             var buoiHoc = await _context.LqvBuoiHocs
@@ -68,18 +67,10 @@ namespace LQV_BlockchainCertificate.Areas.Student.Controllers
                 .FirstOrDefaultAsync(b => b.LqvBuoiHocId == buoiHocId);
 
             if (buoiHoc == null)
-            {
-                Console.WriteLine("❌ [GET][CHECKIN] Không tìm thấy buổi học");
                 return NotFound();
-            }
-
-            Console.WriteLine($"📘 [BUOIHOC] DangMo = {buoiHoc.LqvDangMo}");
-            Console.WriteLine($"📍 [BUOIHOC] Tâm GPS = {buoiHoc.LqvViDo}, {buoiHoc.LqvKinhDo}");
-            Console.WriteLine($"📏 [BUOIHOC] Bán kính = {buoiHoc.LqvBanKinh}");
 
             if (!buoiHoc.LqvDangMo)
             {
-                Console.WriteLine("⛔ [GET][CHECKIN] Buổi học đã đóng");
                 TempData["ErrorMessage"] = "Buổi học chưa mở hoặc đã đóng điểm danh.";
                 return RedirectToAction("Details", "LqvBuoiHocs", new { id = buoiHocId });
             }
@@ -88,8 +79,6 @@ namespace LQV_BlockchainCertificate.Areas.Student.Controllers
                 x.LqvBuoiHocId == buoiHocId &&
                 x.LqvSinhVienId == studentId);
 
-            Console.WriteLine($"🧾 [CHECK] Đã điểm danh chưa = {daDiemDanh}");
-
             if (daDiemDanh)
             {
                 TempData["ErrorMessage"] = "Bạn đã điểm danh buổi học này rồi.";
@@ -97,40 +86,31 @@ namespace LQV_BlockchainCertificate.Areas.Student.Controllers
             }
 
             ViewBag.BuoiHoc = buoiHoc;
+
             return View();
         }
+
+        // ===============================
+        // 📍 CHECKIN POST
+        // ===============================
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CheckIn(
-    int buoiHocId,
-    string viDo,
-    string kinhDo,
-    IFormFile faceImage
-)
+            int buoiHocId,
+            string viDo,
+            string kinhDo,
+            IFormFile faceImage
+        )
         {
             int studentId = GetCurrentStudentId();
 
-            // ===== FACE VERIFY =====
             if (faceImage == null || faceImage.Length == 0)
             {
-                TempData["ErrorMessage"] = "Chưa quét khuôn mặt";
+                TempData["ErrorMessage"] = "Chưa chụp ảnh khuôn mặt.";
                 return RedirectToAction("Details", "LqvBuoiHocs", new { id = buoiHocId });
             }
 
-            using var ms = new MemoryStream();
-            await faceImage.CopyToAsync(ms);
-
-            bool faceOk = await _gemini.VerifyFaceAsync(ms.ToArray());
-
-            if (!faceOk)
-            {
-                TempData["ErrorMessage"] = "AI không xác nhận khuôn mặt";
-                return RedirectToAction("Details", "LqvBuoiHocs", new { id = buoiHocId });
-            }
-
-            // =========================================================
-            // 🔥 THÊM ĐOẠN NÀY: LƯU ẢNH CHECKIN ĐÚNG BUỔI
-            // =========================================================
+            // ===== LƯU ẢNH =====
             try
             {
                 string folder = Path.Combine(
@@ -147,21 +127,20 @@ namespace LQV_BlockchainCertificate.Areas.Student.Controllers
 
                 string path = Path.Combine(folder, fileName);
 
-                System.IO.File.WriteAllBytes(path, ms.ToArray());
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await faceImage.CopyToAsync(stream);
+                }
 
-                Console.WriteLine("------ SAVE CHECKIN IMAGE ------");
-                Console.WriteLine($"BUOI: {buoiHocId}");
-                Console.WriteLine($"FILE: {fileName}");
+                Console.WriteLine($"📷 Image saved: {fileName}");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("❌ SAVE IMAGE ERROR: " + ex.Message);
+                Console.WriteLine("❌ Save image error: " + ex.Message);
             }
-            // =========================================================
 
             // ===== LẤY BUỔI HỌC =====
             var buoiHoc = await _context.LqvBuoiHocs
-                .AsNoTracking()
                 .FirstOrDefaultAsync(b => b.LqvBuoiHocId == buoiHocId);
 
             if (buoiHoc == null)
@@ -181,6 +160,7 @@ namespace LQV_BlockchainCertificate.Areas.Student.Controllers
             );
 
             double banKinh = buoiHoc.LqvBanKinh ?? 50;
+
             bool hopLe = distance <= banKinh;
 
             var diemDanh = new LqvDiemDanhGp
@@ -197,12 +177,10 @@ namespace LQV_BlockchainCertificate.Areas.Student.Controllers
             _context.LqvDiemDanhGps.Add(diemDanh);
             await _context.SaveChangesAsync();
 
-            TempData["success"] = "Điểm danh thành công ✔";
-            TempData["SuccessMessage"] = "✔ FaceID + GPS OK";
+            TempData["SuccessMessage"] = "✔ Điểm danh thành công";
 
             return RedirectToAction("Details", "LqvBuoiHocs", new { id = buoiHocId });
         }
-
 
         // ===============================
         // 📐 HAVERSINE
@@ -210,6 +188,7 @@ namespace LQV_BlockchainCertificate.Areas.Student.Controllers
         private double CalculateDistance(double lat1, double lon1, double lat2, double lon2)
         {
             const double R = 6371000;
+
             double dLat = ToRad(lat2 - lat1);
             double dLon = ToRad(lon2 - lon1);
 
@@ -223,5 +202,4 @@ namespace LQV_BlockchainCertificate.Areas.Student.Controllers
 
         private double ToRad(double value) => value * Math.PI / 180;
     }
-      
 }

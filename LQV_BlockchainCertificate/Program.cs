@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using LQV_BlockchainCertificate.Models.DBModel;
-using LQV_BlockchainCertificate.Models;
 using LQV_BlockchainCertificate.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using DinkToPdf;
 using DinkToPdf.Contracts;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using LQV_BlockchainCertificate.Models.Settings;
+using LQV_BlockchainCertificate.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,19 +37,35 @@ builder.Services.AddSingleton<EthereumService>();
 builder.Services.AddSingleton<HashHelper>();
 builder.Services.AddScoped<ILqvTienDoHocTapService, LqvTienDoHocTapService>();
 
-// ✅ 1.5. HttpClient
+// ✅ 1.5. HttpClient (CHO GEMINI)
 builder.Services.AddHttpClient();
 
 // ====================================================================
 // 🤖 GEMINI AI
 // ====================================================================
+
 builder.Services.Configure<GeminiSettings>(
     builder.Configuration.GetSection("Gemini"));
+
 builder.Services.AddScoped<GeminiService>();
+
+// ====================================================================
+// 🎥 PROCTORING SYSTEM
+// ====================================================================
+
+// SignalR
+builder.Services.AddSignalR();
+
+// Risk scoring (singleton giữ trạng thái)
+builder.Services.AddSingleton<RiskService>();
+
+// Proctor Service
+builder.Services.AddScoped<ProctorService>();
 
 // ====================================================================
 // 🔐 Authentication
 // ====================================================================
+
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -87,15 +103,26 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-// ❌ QUAN TRỌNG: TẮT HTTPS REDIRECT
+// ❌ TẮT HTTPS nếu test LAN
 // app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
 app.UseRouting();
+
 app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
+
+// ====================================================================
+// 🎥 SIGNALR HUB ROUTE
+// ====================================================================
+
+app.MapHub<ProctorHub>("/proctorHub");
+
+// ====================================================================
+// ROUTES
+// ====================================================================
 
 // ✅ Area Route
 app.MapControllerRoute(

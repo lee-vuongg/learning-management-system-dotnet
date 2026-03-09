@@ -8,6 +8,7 @@ wwwroot\css\theme.css
 wwwroot\checkin-faces\checkin_11_27_20260128202809.jpg
 wwwroot\checkin-faces\checkin_11_29_20260128205802.jpg
 wwwroot\checkin-faces\checkin_11_48_20260206212208.jpg
+wwwroot\checkin-faces\checkin_15_49_20260207132956.jpg
 wwwroot\checkin-faces\checkin_7_26_20260128200640.jpg
 wwwroot\checkin-faces\checkin_7_28_20260128203900.jpg
 wwwroot\favicon.ico

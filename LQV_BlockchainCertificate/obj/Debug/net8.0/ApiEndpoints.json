@@ -74,6 +74,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "LQV_BlockchainCertificate.Proctor.Controllers.ProctorController",
+    "Method": "ReceiveFrame",
+    "RelativePath": "api/proctor/frame",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "LQV_BlockchainCertificate.Proctor.Controllers.FrameDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "LQV_BlockchainCertificate.Controllers.Api.BuoiHocApiController",
     "Method": "GetBuoiHoc",
     "RelativePath": "api/student/buoihoc/{studentId}",

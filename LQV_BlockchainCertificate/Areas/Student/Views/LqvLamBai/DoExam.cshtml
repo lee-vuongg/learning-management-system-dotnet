@@ -13,35 +13,51 @@
 
 <style>
     :root {
-        --s4-primary: #35509a; /* Xanh Study4 */
-        --s4-primary-light: #eef2ff;
-        --s4-secondary: #64748b; /* Màu text phụ */
+        --s4-primary: #35509a;
+        --s4-primary-hover: #2a407a;
+        --s4-primary-light: #f0f3ff;
+        --s4-secondary: #64748b;
         --s4-success: #22c55e;
         --s4-danger: #ef4444;
-        --s4-bg: #f8fafc; /* Nền xám cực nhẹ */
-        --s4-border: #e2e8f0;
-        --radius-lg: 16px;
-        --radius-md: 10px;
-        --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        --s4-warning: #f59e0b;
+        --s4-bg: #fdfdfe; /* Nền trắng hơi xanh cực nhẹ của Study4 */
+        --s4-border: #e5e7eb;
+        --radius-lg: 12px;
+        --radius-md: 8px;
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
         --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 
     body {
         background-color: var(--s4-bg);
-        font-family: 'Inter', sans-serif;
-        color: #1e293b;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        color: #334155;
         line-height: 1.6;
     }
 
-    /* Header thanh mảnh chuyên nghiệp */
+    /* Header thanh mảnh, hiện đại */
     .exam-top-bar {
         background: #ffffff;
-        border-bottom: 1px solid var(--s4-border);
+        border-bottom: 2px solid var(--s4-primary-light);
         position: sticky;
         top: 0;
         z-index: 1000;
-        padding: 10px 0;
-        box-shadow: var(--shadow-sm);
+        padding: 12px 0;
+    }
+
+    /* Card giám sát Camera - Tối giản hơn */
+    .proctor-card {
+        background: #fff;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--s4-border);
+        overflow: hidden;
+    }
+
+    .proctor-header {
+        background: #f8fafc;
+        padding: 10px 15px;
+        border-bottom: 1px solid var(--s4-border);
+        font-size: 0.9rem;
     }
 
     /* Card câu hỏi */
@@ -49,32 +65,37 @@
         background: #ffffff;
         border-radius: var(--radius-lg);
         border: 1px solid var(--s4-border);
-        padding: 30px;
+        padding: 25px;
         margin-bottom: 24px;
-        box-shadow: var(--shadow-sm);
-        transition: all 0.2s ease;
+        transition: border-color 0.2s ease;
     }
 
         .question-card:hover {
-            box-shadow: var(--shadow-md);
+            border-color: #cbd5e1;
         }
 
     .question-number {
-        display: inline-block;
-        background: var(--s4-primary-light);
-        color: var(--s4-primary);
-        font-weight: 700;
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-size: 0.85rem;
+        display: inline-flex;
+        align-items: center;
+        background: var(--s4-primary);
+        color: #fff;
+        font-weight: 600;
+        padding: 2px 12px;
+        border-radius: 6px;
+        font-size: 0.8rem;
         margin-bottom: 15px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
     }
 
-    /* Đáp án thiết kế hiện đại */
+    .question-content {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 20px;
+    }
+
+    /* Đáp án - Tinh chỉnh giống Study4 nhất */
     .option-item {
-        margin-bottom: 12px;
+        margin-bottom: 10px;
     }
 
         .option-item input[type="radio"] {
@@ -84,63 +105,65 @@
         .option-item label {
             display: flex;
             align-items: center;
-            padding: 15px 20px;
-            border: 2px solid var(--s4-border);
+            padding: 12px 18px;
+            border: 1px solid var(--s4-border);
             border-radius: var(--radius-md);
             cursor: pointer;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            font-weight: 500;
+            transition: all 0.15s ease-in-out;
+            font-weight: 400;
             color: #475569;
             background: #fff;
             width: 100%;
+            position: relative;
         }
 
             .option-item label:hover {
+                background-color: #f1f5f9;
                 border-color: #cbd5e1;
-                background-color: #f8fafc;
             }
 
         .option-item input[type="radio"]:checked + label {
             background-color: var(--s4-primary-light);
             border-color: var(--s4-primary);
             color: var(--s4-primary);
+            font-weight: 500;
         }
 
-        .option-item label:before {
+        .option-item label::before {
             content: "";
-            width: 22px;
-            height: 22px;
+            width: 18px;
+            height: 18px;
             border: 2px solid #cbd5e1;
             border-radius: 50%;
-            margin-right: 15px;
+            margin-right: 12px;
             flex-shrink: 0;
-            background: #fff;
+            transition: all 0.2s;
         }
 
-        .option-item input[type="radio"]:checked + label:before {
+        .option-item input[type="radio"]:checked + label::before {
             border-color: var(--s4-primary);
-            background: radial-gradient(var(--s4-primary) 50%, #fff 55%);
+            background: radial-gradient(var(--s4-primary) 40%, transparent 45%);
         }
 
-    /* Sidebar - Bảng điều hướng */
+    /* Sidebar Điều hướng câu hỏi */
     .card-navigation {
         border-radius: var(--radius-lg);
-        border: none;
-        box-shadow: var(--shadow-md);
+        border: 1px solid var(--s4-border);
+        background: #fff;
     }
 
     .nav-box {
-        width: 38px;
-        height: 38px;
+        width: 35px;
+        height: 35px;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 8px;
+        border-radius: 6px;
         border: 1px solid var(--s4-border);
         background: #fff;
         text-decoration: none;
-        color: #64748b;
-        font-weight: 600;
+        color: var(--s4-secondary);
+        font-weight: 500;
         font-size: 0.85rem;
         transition: all 0.2s;
     }
@@ -152,46 +175,44 @@
         }
 
         .nav-box:hover:not(.answered) {
-            border-color: var(--s4-primary);
-            color: var(--s4-primary);
             background: var(--s4-primary-light);
+            color: var(--s4-primary);
+            border-color: var(--s4-primary);
         }
 
-    /* Timer & Progress */
+    /* Timer & Nút nộp bài */
     .timer-display {
-        font-size: 1.8rem;
-        font-weight: 800;
+        font-size: 1.5rem;
+        font-weight: 700;
         color: var(--s4-danger);
-        font-family: 'Inter', sans-serif;
-        font-variant-numeric: tabular-nums;
+        letter-spacing: 1px;
     }
 
     .btn-submit-exam {
         background-color: var(--s4-primary);
         color: white;
         border: none;
-        padding: 10px 25px;
-        border-radius: 50px;
-        font-weight: 700;
-        box-shadow: 0 4px 14px 0 rgba(53, 80, 154, 0.3);
-        transition: all 0.2s;
+        padding: 8px 24px;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: background 0.2s;
     }
 
         .btn-submit-exam:hover {
-            background-color: #2a407a;
-            color: white;
-            transform: translateY(-1px);
+            background-color: var(--s4-primary-hover);
+            color: #fff;
         }
 
+    /* Textarea tự luận */
     textarea.form-control {
+        border: 1px solid var(--s4-border);
         border-radius: var(--radius-md);
-        border: 2px solid var(--s4-border);
-        padding: 15px;
+        resize: vertical;
     }
 
         textarea.form-control:focus {
             border-color: var(--s4-primary);
-            box-shadow: 0 0 0 4px var(--s4-primary-light);
+            box-shadow: 0 0 0 3px var(--s4-primary-light);
         }
 </style>
 
@@ -220,7 +241,32 @@
         </div>
     </div>
 </div>
+<div class="container-fluid px-md-5 mt-3">
+    <div class="card p-3 shadow-sm">
+        <h6 class="fw-bold mb-2">📷 Giám sát Camera</h6>
 
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+            <select id="cameraSelect" class="form-select w-auto"></select>
+
+            <button type="button"
+                    id="btnStartCam"
+                    class="btn btn-sm btn-primary">
+                Bật Camera
+            </button>
+        </div>
+
+        <video id="video"
+               width="280"
+               height="200"
+               autoplay
+               muted
+               playsinline
+               style="margin-top:10px;border-radius:8px;border:1px solid #ddd;">
+        </video>
+
+        <canvas id="canvas" style="display:none;"></canvas>
+    </div>
+</div>
 <div class="container-fluid py-4 px-md-5">
     <div class="row">
         <div class="col-lg-9">
@@ -291,61 +337,323 @@
 </div>
 
 @section Scripts {
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@mediapipe/face_detection/face_detection.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@mediapipe/camera_utils/camera_utils.js"></script>
+
     <script>
-        // ✅ PROGRESS
-        function markAnswered(qNum) {
-            document.getElementById(`nav-q-${qNum}`)?.classList.add('answered');
-            updateProgress();
+
+        // ================= CONFIG =================
+        const baiLamId = @Model.LqvBaiLamId;
+        const examRoom = "exam_@Model.LqvLichThiId";
+        const studentId = "@User.Identity.Name";
+
+        let currentStream = null;
+        let faceDetector = null;
+        let aiCamera = null;
+        let faceAIStarted = false;
+
+        let noFaceCount = 0;
+        let multiFaceCount = 0;
+        let lookAwayCount = 0;
+
+        // ===== ANTI FALSE POSITIVE =====
+        let examStartTime = 0;
+        const GRACE_PERIOD = 8000; // 8 giây đầu không phạt
+
+        let hasDetectedFace = false;
+
+        let lastViolationTime = 0;
+        const VIOLATION_COOLDOWN = 5000; // 5 giây giữa các lần phạt
+
+        // ================= SIGNALR =================
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/proctorHub")
+            .withAutomaticReconnect()
+            .build();
+
+        connection.start().then(() => {
+            connection.invoke("JoinExamRoom", examRoom);
+        });
+
+        connection.onreconnected(() => {
+            connection.invoke("JoinExamRoom", examRoom);
+        });
+
+        // ================= GỬI FRAME REALTIME =================
+        setInterval(async () => {
+
+            if (!currentStream) return;
+            if (connection.state !== signalR.HubConnectionState.Connected) return;
+
+            try {
+                await connection.invoke(
+                    "SendLiveFrame",
+                    "@Model.LqvUserId",
+                    captureImage(),
+                    examRoom
+                );
+            } catch (err) {
+                console.error("SendLiveFrame error:", err);
+            }
+
+        }, 3000);
+          // ================= LOAD CAMERA =================
+        async function loadCameras() {
+
+            try {
+                const temp = await navigator.mediaDevices.getUserMedia({ video: true });
+                temp.getTracks().forEach(t => t.stop());
+            } catch {
+                alert("⚠ Không thể truy cập camera!");
+                return;
+            }
+
+            const devices = await navigator.mediaDevices.enumerateDevices();
+            const cameras = devices.filter(d => d.kind === "videoinput");
+
+            const select = document.getElementById("cameraSelect");
+            select.innerHTML = "";
+
+            cameras.forEach((cam, index) => {
+                const option = document.createElement("option");
+                option.value = cam.deviceId;
+                option.text = cam.label || "Camera " + (index + 1);
+                select.appendChild(option);
+            });
         }
 
-        function updateProgress() {
-            const total = @cauHois.Count;
-            const answered = document.querySelectorAll('.nav-box.answered').length;
-            document.getElementById('progress-text').innerText = `${answered}/${total}`;
+        window.addEventListener("load", loadCameras);
+        // ================= START CAMERA =================
+        document.getElementById("btnStartCam")
+        .addEventListener("click", async function () {
+
+            const deviceId = document.getElementById("cameraSelect").value;
+            if (!deviceId) return alert("Chọn camera");
+
+            stopAllCamera();
+
+            const stream = await navigator.mediaDevices.getUserMedia({
+                video: { deviceId: { exact: deviceId } }
+            });
+
+            currentStream = stream;
+            document.getElementById("video").srcObject = stream;
+
+            // bắt đầu đếm thời gian khi bật cam
+            examStartTime = Date.now();
+            hasDetectedFace = false;
+            lastViolationTime = 0;
+
+            startFaceAI(document.getElementById("video"));
+        });
+
+        function stopAllCamera() {
+
+            if (currentStream)
+                currentStream.getTracks().forEach(t => t.stop());
+
+            if (aiCamera) aiCamera.stop();
+            if (faceDetector) faceDetector.close();
+
+            currentStream = null;
+            aiCamera = null;
+            faceDetector = null;
+            faceAIStarted = false;
         }
 
+        // ================= FACE AI =================
+        function startFaceAI(videoElement) {
+
+            if (faceAIStarted) return;
+            faceAIStarted = true;
+
+            faceDetector = new window.FaceDetection({
+                locateFile: file =>
+                    `https://cdn.jsdelivr.net/npm/@@mediapipe/face_detection/${file}`
+            });
+
+            faceDetector.setOptions({
+                model: "short",
+                minDetectionConfidence: 0.6
+            });
+
+            faceDetector.onResults(results => {
+
+                const faceCount = results.detections?.length ?? 0;
+
+                if (faceCount > 0)
+                    hasDetectedFace = true;
+
+                // ===== NO FACE =====
+                if (faceCount === 0) {
+                    if (++noFaceCount >= 15) // ~3 giây
+                        triggerRisk("Không thấy mặt", 20);
+                } else noFaceCount = 0;
+
+                // ===== MULTI FACE =====
+                if (faceCount > 1) {
+                    if (++multiFaceCount >= 10)
+                        triggerRisk("Nhiều người xuất hiện", 30);
+                } else multiFaceCount = 0;
+
+                // ===== LOOK AWAY =====
+                if (faceCount === 1) {
+                    const box = results.detections[0].boundingBox;
+                    const center = box.xCenter;
+
+                    if (center < 0.3 || center > 0.7) {
+                        if (++lookAwayCount >= 20)
+                            triggerRisk("Quay mặt khỏi màn hình lâu", 15);
+                    } else lookAwayCount = 0;
+                }
+            });
+
+            aiCamera = new window.Camera(videoElement, {
+                onFrame: async () => {
+                    if (faceDetector)
+                        await faceDetector.send({ image: videoElement });
+                },
+                width: 320,
+                height: 240
+            });
+
+            aiCamera.start();
+        }
+
+        // ================= CHỤP ẢNH =================
+        function captureImage() {
+
+            const video = document.getElementById("video");
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+
+            canvas.width = 320;
+            canvas.height = 240;
+            ctx.drawImage(video, 0, 0, 320, 240);
+
+            return canvas.toDataURL("image/jpeg", 0.6);
+        }
+
+        // ================= GỬI VI PHẠM =================
+        async function triggerRisk(message, point) {
+
+            const now = Date.now();
+
+            // 🚫 1. Grace period
+            if (now - examStartTime < GRACE_PERIOD)
+                return;
+
+            // 🚫 2. Chưa detect mặt lần nào
+            if (!hasDetectedFace)
+                return;
+
+            // 🚫 3. Cooldown chống spam
+            if (now - lastViolationTime < VIOLATION_COOLDOWN)
+                return;
+
+            lastViolationTime = now;
+
+            try {
+
+                const response = await fetch('/Student/LqvLamBai/ReportViolation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'RequestVerificationToken':
+                            document.querySelector('input[name="__RequestVerificationToken"]').value
+                    },
+                    body: JSON.stringify({
+                        BaiLamId: baiLamId,
+                        LoaiViPham: message,
+                        DiemRisk: point,
+                        DuongDanAnh: captureImage()
+                    })
+                });
+
+                if (!response.ok) return;
+
+                const result = await response.json();
+
+                console.log("Risk:", result.tongRisk);
+
+                if (result.biKhoa) {
+                    alert("🚫 Bạn đã bị khóa bài do vi phạm.");
+                    window.location.href =
+                        '/Student/LqvLamBai/Result/' + baiLamId;
+                }
+
+            } catch (err) {
+                console.error(err);
+            }
+
+            noFaceCount = 0;
+            multiFaceCount = 0;
+            lookAwayCount = 0;
+        }
+                // ================= TIMER =================
+
+        let timeLeft = @ViewBag.ThoiGianConLai;
+        const timerElement = document.getElementById("timer");
+
+        function updateTimer() {
+
+            if (timeLeft <= 0) {
+                window.location.href =
+                    '/Student/LqvLamBai/AutoSubmit?baiLamId=' + baiLamId;
+                return;
+            }
+
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+
+            timerElement.innerText =
+                String(minutes).padStart(2, '0') + ":" +
+                String(seconds).padStart(2, '0');
+
+            timeLeft--;
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+        // ================= TAB SWITCH =================
+        document.addEventListener("visibilitychange", function () {
+            if (document.hidden)
+                triggerRisk("Chuyển tab khi đang thi", 25);
+        });
+                // =========================
+        // ĐÁNH DẤU CÂU ĐÃ TRẢ LỜI
+        // =========================
+                function markAnswered(cauHoiId) {
+            const navItem = document.getElementById("nav-q-" + cauHoiId);
+            if (navItem) navItem.classList.add("answered");
+        }
+        
+
+
+        // =========================
+        // CONFIRM NỘP BÀI
+        // =========================
         function confirmSubmit() {
-            if (confirm("Bạn có chắc chắn muốn nộp bài thi ngay bây giờ?")) {
+
+            if (confirm("Bạn chắc chắn muốn nộp bài?")) {
                 document.getElementById("examForm").submit();
             }
         }
 
-        // ⏱ TIMER
-        let totalSeconds = @((int)(ViewBag.ThoiGianConLai ?? 0));
-        const timer = document.getElementById("timer");
-        const form = document.getElementById("examForm");
+   
+        // ================= CAMERA OFF =================
+        setInterval(() => {
 
-        function renderTimer() {
-            let m = Math.floor(totalSeconds / 60);
-            let s = totalSeconds % 60;
-            timer.innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-        }
+            if (!currentStream) return;
 
-        renderTimer();
-
-        const countdown = setInterval(() => {
-            if (totalSeconds <= 0) {
-                clearInterval(countdown);
-                alert("⏰ Hết giờ làm bài! Hệ thống đang tự động nộp bài.");
-                form.submit();
-                return;
+            const tracks = currentStream.getVideoTracks();
+            if (tracks.length > 0 && tracks[0].readyState === "ended") {
+                triggerRisk("Tắt camera khi đang thi", 60);
             }
-            totalSeconds--;
-            renderTimer();
-            if (totalSeconds < 60) timer.style.color = "#dc3545"; // Đổi đỏ khi dưới 1 phút
-        }, 1000);
 
-        // 🖥 FULLSCREEN
-        window.onload = () => {
-            alert("⚠️ Lưu ý: Bài thi yêu cầu chế độ TOÀN MÀN HÌNH. Nếu bạn thoát ra, hệ thống sẽ tự động nộp bài.");
-            document.documentElement.requestFullscreen?.();
-        };
+        }, 2000);
 
-        document.addEventListener("fullscreenchange", () => {
-            if (!document.fullscreenElement) {
-                alert("Hành động thoát toàn màn hình đã được ghi nhận. Hệ thống tự động nộp bài!");
-                form.submit();
-            }
-        });
     </script>
 }

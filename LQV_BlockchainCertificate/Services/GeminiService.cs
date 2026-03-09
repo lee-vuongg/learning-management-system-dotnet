@@ -20,6 +20,104 @@ namespace LQV_BlockchainCertificate.Services
             Console.WriteLine("==============================");
         }
         // ======================================================
+        // 🔥 PHÂN TÍCH GIAN LẬN THI BẰNG GEMINI
+        // ======================================================
+        public async Task<GeminiProctorResult> AnalyzeImageAsync(string base64Image, string prompt)
+        {
+            try
+            {
+                var model = "gemini-2.5-flash";
+                var url =
+                    $"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={_apiKey}";
+
+                var body = new
+                {
+                    contents = new[]
+                    {
+                new
+                {
+                    role = "user",
+                    parts = new object[]
+                    {
+                        new { text = prompt },
+                        new
+                        {
+                            inlineData = new
+                            {
+                                mimeType = "image/jpeg",
+                                data = base64Image.Replace("data:image/jpeg;base64,", "")
+                            }
+                        }
+                    }
+                }
+            }
+                };
+
+                var json = JsonSerializer.Serialize(body);
+
+                var response = await _http.PostAsync(
+                    url,
+                    new StringContent(json, Encoding.UTF8, "application/json")
+                );
+
+                var raw = await response.Content.ReadAsStringAsync();
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new GeminiProctorResult
+                    {
+                        Cheating = false,
+                        Confidence = 0,
+                        Reason = "Gemini API error"
+                    };
+                }
+
+                using var doc = JsonDocument.Parse(raw);
+
+                var text = doc.RootElement
+                    .GetProperty("candidates")[0]
+                    .GetProperty("content")
+                    .GetProperty("parts")[0]
+                    .GetProperty("text")
+                    .GetString();
+
+                if (string.IsNullOrEmpty(text))
+                {
+                    return new GeminiProctorResult
+                    {
+                        Cheating = false,
+                        Confidence = 0,
+                        Reason = "Empty AI response"
+                    };
+                }
+
+                // Gemini trả JSON text → ta parse lại
+                try
+                {
+                    var aiResult = JsonSerializer.Deserialize<GeminiProctorResult>(text);
+                    return aiResult ?? new GeminiProctorResult();
+                }
+                catch
+                {
+                    return new GeminiProctorResult
+                    {
+                        Cheating = false,
+                        Confidence = 0,
+                        Reason = text
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                return new GeminiProctorResult
+                {
+                    Cheating = false,
+                    Confidence = 0,
+                    Reason = ex.Message
+                };
+            }
+        }
+        // ======================================================
         // 🔥 VERIFY KHUÔN MẶT BẰNG GEMINI VISION
         // ======================================================
         public async Task<bool> VerifyFaceAsync(byte[] imageBytes)
@@ -199,5 +297,12 @@ namespace LQV_BlockchainCertificate.Services
                 return "❌ Lỗi xử lý dữ liệu phản hồi từ AI";
             }
         }
+    }
+
+    public class GeminiProctorResult
+    {
+        public bool Cheating { get; set; }
+        public double Confidence { get; set; }
+        public string Reason { get; set; } = "";
     }
 }
