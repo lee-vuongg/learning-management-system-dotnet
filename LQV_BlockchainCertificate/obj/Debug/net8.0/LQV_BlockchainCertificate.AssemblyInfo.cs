@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LQV_BlockchainCertificate")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d443742b62fa0c0bb8bd075b0fca9f7fc2c060fc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5173a2e1e932a70dab354457df250cf80c9fad8b")]
 [assembly: System.Reflection.AssemblyProductAttribute("LQV_BlockchainCertificate")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LQV_BlockchainCertificate")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

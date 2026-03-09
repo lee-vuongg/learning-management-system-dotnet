@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{042FED30-B351-4DF8-A09B-92A01FF879CC}|LQV_BlockchainCertificate.csproj|d:\\build app ios\\lqv_blockchaincertificate\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{042FED30-B351-4DF8-A09B-92A01FF879CC}|LQV_BlockchainCertificate.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{042FED30-B351-4DF8-A09B-92A01FF879CC}|LQV_BlockchainCertificate.csproj|d:\\build app ios\\lqv_blockchaincertificate\\areas\\student\\views\\lqvdiemdanhgps\\checkin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{042FED30-B351-4DF8-A09B-92A01FF879CC}|LQV_BlockchainCertificate.csproj|solutionrelative:areas\\student\\views\\lqvdiemdanhgps\\checkin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -1265,7 +1269,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -1277,7 +1281,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Dockerfile",
+              "RelativeDocumentMoniker": "Dockerfile",
+              "ToolTip": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Dockerfile",
+              "RelativeToolTip": "Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-09T14:42:03.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "GeminiService.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Services\\GeminiService.cs",
               "RelativeDocumentMoniker": "Services\\GeminiService.cs",
@@ -1285,12 +1302,11 @@
               "RelativeToolTip": "Services\\GeminiService.cs",
               "ViewState": "AgIAABUBAAAAAAAAAAAowCMBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-27T05:04:26.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-27T05:04:26.985Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CheckIn.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvDiemDanhGps\\CheckIn.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvDiemDanhGps\\CheckIn.cshtml",
@@ -1303,7 +1319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "LqvDiemDanhGpsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Controllers\\LqvDiemDanhGpsController.cs",
               "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\LqvDiemDanhGpsController.cs",
@@ -1311,12 +1327,11 @@
               "RelativeToolTip": "Areas\\Student\\Controllers\\LqvDiemDanhGpsController.cs",
               "ViewState": "AgIAALEAAAAAAAAAAAAswMMAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T13:31:43.822Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T13:31:43.822Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Lqv_NhatKyHinhAnhThi.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\Lqv_NhatKyHinhAnhThi.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\Lqv_NhatKyHinhAnhThi.cs",
@@ -1328,7 +1343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -1336,12 +1351,11 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-13T02:56:54.032Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-13T02:56:54.032Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ProctorHub.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Hubs\\ProctorHub.cs",
               "RelativeDocumentMoniker": "Hubs\\ProctorHub.cs",
@@ -1353,7 +1367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Monitor.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\Proctor\\Monitor.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\Proctor\\Monitor.cshtml",
@@ -1365,7 +1379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ProctorMonitorVM.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\ViewModels\\ProctorMonitorVM.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\ProctorMonitorVM.cs",
@@ -1377,7 +1391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "LqvBaiLamsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Controllers\\LqvBaiLamsController.cs",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Controllers\\LqvBaiLamsController.cs",
@@ -1389,7 +1403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "site.js",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
@@ -1397,12 +1411,11 @@
               "RelativeToolTip": "wwwroot\\js\\site.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-03-09T11:14:20.299Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-09T11:14:20.299Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ChamBai.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBaiLams\\ChamBai.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBaiLams\\ChamBai.cshtml",
@@ -1414,7 +1427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "LqvBaiLam.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvBaiLam.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvBaiLam.cs",
@@ -1426,7 +1439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "ProctorController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Controllers\\ProctorController.cs",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Controllers\\ProctorController.cs",
@@ -1438,7 +1451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "DoExam.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvLamBai\\DoExam.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvLamBai\\DoExam.cshtml",
@@ -1450,7 +1463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "LqvLamBaiController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Controllers\\LqvLamBaiController.cs",
               "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\LqvLamBaiController.cs",
@@ -1462,7 +1475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Lqv_NhatKyViPhamThi.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\Lqv_NhatKyViPhamThi.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\Lqv_NhatKyViPhamThi.cs",
@@ -1474,7 +1487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Result.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvLamBai\\Result.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvLamBai\\Result.cshtml",
@@ -1486,7 +1499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "LqvDbContext.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvDbContext.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvDbContext.cs",
@@ -1498,7 +1511,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvLamBai\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvLamBai\\Index.cshtml",
@@ -1510,7 +1523,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "ViolationRequest.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\ViolationRequest.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\ViolationRequest.cs",
@@ -1522,7 +1535,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "LqvBaiTap.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvBaiTap.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvBaiTap.cs",
@@ -1534,7 +1547,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "LqvBaiLamsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Controllers\\LqvBaiLamsController.cs",
               "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\LqvBaiLamsController.cs",
@@ -1546,7 +1559,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "SinhVien.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvLopHocs\\SinhVien.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvLopHocs\\SinhVien.cshtml",
@@ -1558,7 +1571,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "ProctorController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Proctor\\Controllers\\ProctorController.cs",
               "RelativeDocumentMoniker": "Proctor\\Controllers\\ProctorController.cs",
@@ -1570,7 +1583,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "_GiangVienLayout.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\Shared\\_GiangVienLayout.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\Shared\\_GiangVienLayout.cshtml",
@@ -1582,7 +1595,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvLichThis\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvLichThis\\Index.cshtml",
@@ -1594,7 +1607,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "LqvKhoaHocsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Controllers\\LqvKhoaHocsController.cs",
               "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\LqvKhoaHocsController.cs",
@@ -1606,7 +1619,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "ProctorService.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Services\\ProctorService.cs",
               "RelativeDocumentMoniker": "Services\\ProctorService.cs",
@@ -1618,7 +1631,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "LqvLichThisController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Controllers\\LqvLichThisController.cs",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Controllers\\LqvLichThisController.cs",
@@ -1630,7 +1643,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "RenderViewService.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Services\\RenderViewService.cs",
               "RelativeDocumentMoniker": "Services\\RenderViewService.cs",
@@ -1642,7 +1655,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvYeuCauCapChungChis\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvYeuCauCapChungChis\\Index.cshtml",
@@ -1654,7 +1667,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "LqvLichThi.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvLichThi.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvLichThi.cs",
@@ -1666,7 +1679,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "LqvLichThisController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Controllers\\LqvLichThisController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\LqvLichThisController.cs",
@@ -1678,7 +1691,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "RiskService.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Services\\RiskService.cs",
               "RelativeDocumentMoniker": "Services\\RiskService.cs",
@@ -1690,7 +1703,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "LQV_BlockchainCertificate.csproj",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\LQV_BlockchainCertificate.csproj",
               "RelativeDocumentMoniker": "LQV_BlockchainCertificate.csproj",
@@ -1702,7 +1715,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "20260302043152_Update_LqvBaiLam_AIProctoring.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Migrations\\20260302043152_Update_LqvBaiLam_AIProctoring.cs",
               "RelativeDocumentMoniker": "Migrations\\20260302043152_Update_LqvBaiLam_AIProctoring.cs",
@@ -1714,7 +1727,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "LqvBuoiHocsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Controllers\\LqvBuoiHocsController.cs",
               "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\LqvBuoiHocsController.cs",
@@ -1726,7 +1739,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "LqvXacThucChungNhansController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Controllers\\LqvXacThucChungNhansController.cs",
               "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\LqvXacThucChungNhansController.cs",
@@ -1738,7 +1751,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvXacThucChungNhans\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvXacThucChungNhans\\Index.cshtml",
@@ -1750,7 +1763,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -1762,7 +1775,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -1774,7 +1787,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "LqvNguoiDungsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Controllers\\LqvNguoiDungsController.cs",
               "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\LqvNguoiDungsController.cs",
@@ -1786,7 +1799,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "LqvTienDoHocTapService.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Services\\LqvTienDoHocTapService.cs",
               "RelativeDocumentMoniker": "Services\\LqvTienDoHocTapService.cs",
@@ -1798,7 +1811,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "ILqvTienDoHocTapService.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Services\\ILqvTienDoHocTapService.cs",
               "RelativeDocumentMoniker": "Services\\ILqvTienDoHocTapService.cs",
@@ -1810,7 +1823,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvDeThis\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvDeThis\\Edit.cshtml",
@@ -1822,7 +1835,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvDeThis\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvDeThis\\Create.cshtml",
@@ -1834,7 +1847,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "LqvDeThisController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Controllers\\LqvDeThisController.cs",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Controllers\\LqvDeThisController.cs",
@@ -1846,7 +1859,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "LqvDeThisController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Controllers\\LqvDeThisController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\LqvDeThisController.cs",
@@ -1858,7 +1871,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "LqvGiaoDichBlockchainsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Controllers\\LqvGiaoDichBlockchainsController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\LqvGiaoDichBlockchainsController.cs",
@@ -1870,7 +1883,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "VerifyForm.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvXacThucChungNhans\\VerifyForm.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvXacThucChungNhans\\VerifyForm.cshtml",
@@ -1882,7 +1895,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "LqvKhoaHocsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Controllers\\LqvKhoaHocsController.cs",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Controllers\\LqvKhoaHocsController.cs",
@@ -1894,7 +1907,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 54,
               "Title": "LqvChiTietBaiLamsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Controllers\\LqvChiTietBaiLamsController.cs",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Controllers\\LqvChiTietBaiLamsController.cs",
@@ -1906,7 +1919,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "LqvDiemDanhGpsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Controllers\\LqvDiemDanhGpsController.cs",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Controllers\\LqvDiemDanhGpsController.cs",
@@ -1918,7 +1931,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 53,
               "Title": "LqvDapAnsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Controllers\\LqvDapAnsController.cs",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Controllers\\LqvDapAnsController.cs",
@@ -1930,7 +1943,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 55,
               "Title": "LqvLopHoc.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvLopHoc.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvLopHoc.cs",
@@ -1942,7 +1955,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 56,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvYeuCauCapChungChis\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvYeuCauCapChungChis\\Details.cshtml",
@@ -1954,7 +1967,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 57,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvDiemDanhGps\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvDiemDanhGps\\Details.cshtml",
@@ -1966,7 +1979,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 58,
               "Title": "SinhVienDuDieuKien.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvYeuCauCapChungChis\\SinhVienDuDieuKien.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvYeuCauCapChungChis\\SinhVienDuDieuKien.cshtml",
@@ -1978,7 +1991,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 59,
               "Title": "LqvYeuCauCapChungChisController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Controllers\\LqvYeuCauCapChungChisController.cs",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Controllers\\LqvYeuCauCapChungChisController.cs",
@@ -1990,7 +2003,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 60,
               "Title": "LqvBuoiHocsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Controllers\\LqvBuoiHocsController.cs",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Controllers\\LqvBuoiHocsController.cs",
@@ -2002,7 +2015,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 61,
               "Title": "LqvBoCauHoisController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Controllers\\LqvBoCauHoisController.cs",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Controllers\\LqvBoCauHoisController.cs",
@@ -2014,7 +2027,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 62,
               "Title": "BlockchainService.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Services\\BlockchainService.cs",
               "RelativeDocumentMoniker": "Services\\BlockchainService.cs",
@@ -2026,7 +2039,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 63,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBuoiHocs\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBuoiHocs\\Index.cshtml",
@@ -2038,7 +2051,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 64,
               "Title": "Map.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvDiemDanhGps\\Map.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvDiemDanhGps\\Map.cshtml",
@@ -2050,7 +2063,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 65,
               "Title": "LqvGiaoDichBlockchainsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Controllers\\LqvGiaoDichBlockchainsController.cs",
               "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\LqvGiaoDichBlockchainsController.cs",
@@ -2062,7 +2075,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 66,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvDiemDanhGps\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvDiemDanhGps\\Index.cshtml",
@@ -2074,7 +2087,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 67,
               "Title": "checkin_11_29_20260128205802.jpg -  [English (United Kingdom)] - Bitmap [640x480, 24 bit, JPG]",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\checkin-faces\\checkin_11_29_20260128205802.jpg",
               "RelativeDocumentMoniker": "wwwroot\\checkin-faces\\checkin_11_29_20260128205802.jpg",
@@ -2086,7 +2099,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 68,
               "Title": "checkin_7_26_20260128200640.jpg -  [English (United Kingdom)] - Bitmap [640x480, 24 bit, JPG]",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\checkin-faces\\checkin_7_26_20260128200640.jpg",
               "RelativeDocumentMoniker": "wwwroot\\checkin-faces\\checkin_7_26_20260128200640.jpg",
@@ -2098,7 +2111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 69,
               "Title": "checkin_7_28_20260128203900.jpg -  [English (United Kingdom)] - Bitmap [640x480, 24 bit, JPG]",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\checkin-faces\\checkin_7_28_20260128203900.jpg",
               "RelativeDocumentMoniker": "wwwroot\\checkin-faces\\checkin_7_28_20260128203900.jpg",
@@ -2110,7 +2123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 70,
               "Title": "CheckIn.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvBuoiHocs\\CheckIn.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvBuoiHocs\\CheckIn.cshtml",
@@ -2122,7 +2135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 71,
               "Title": "LqvDiemDanhGp.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvDiemDanhGp.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvDiemDanhGp.cs",
@@ -2134,7 +2147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 72,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvBuoiHocs\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvBuoiHocs\\Details.cshtml",
@@ -2146,7 +2159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 73,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -2158,7 +2171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 77,
               "Title": "_AdminLayout.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
@@ -2170,7 +2183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 74,
               "Title": "LqvNguoiDung.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvNguoiDung.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvNguoiDung.cs",
@@ -2182,7 +2195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 75,
               "Title": "LqvDangKyLopHoc.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvDangKyLopHoc.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvDangKyLopHoc.cs",
@@ -2194,7 +2207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 76,
               "Title": "LqvLopHocsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Controllers\\LqvLopHocsController.cs",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Controllers\\LqvLopHocsController.cs",
@@ -2206,7 +2219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 78,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Auth\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Areas\\Auth\\Controllers\\AccountController.cs",
@@ -2218,7 +2231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 79,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Auth\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Areas\\Auth\\Views\\Account\\Login.cshtml",
@@ -2230,7 +2243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 80,
               "Title": "Register.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Auth\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "Areas\\Auth\\Views\\Account\\Register.cshtml",
@@ -2242,7 +2255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 82,
               "Title": "LqvNhatKyHoatDong.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvNhatKyHoatDong.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvNhatKyHoatDong.cs",
@@ -2254,7 +2267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 81,
               "Title": "ForgotPassword.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Auth\\Views\\Account\\ForgotPassword.cshtml",
               "RelativeDocumentMoniker": "Areas\\Auth\\Views\\Account\\ForgotPassword.cshtml",
@@ -2266,7 +2279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 84,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvKhoaHocs\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvKhoaHocs\\Index.cshtml",
@@ -2278,7 +2291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 83,
               "Title": "theme.css",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\css\\theme.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\theme.css",
@@ -2290,7 +2303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 85,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
@@ -2302,7 +2315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 91,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvDiemDanhGps\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvDiemDanhGps\\Index.cshtml",
@@ -2314,7 +2327,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 87,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\Dashboard\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\Dashboard\\Index.cshtml",
@@ -2326,7 +2339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 86,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Controllers\\DashboardController.cs",
@@ -2338,7 +2351,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 89,
               "Title": "LqvNopBaiTap.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvNopBaiTap.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvNopBaiTap.cs",
@@ -2350,7 +2363,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 90,
               "Title": "LqvChiTietBaiLam.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvChiTietBaiLam.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvChiTietBaiLam.cs",
@@ -2362,7 +2375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 93,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBuoiHocs\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBuoiHocs\\Create.cshtml",
@@ -2374,7 +2387,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 88,
               "Title": "GiangVienDashboardViewModel.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\ViewModels\\GiangVienDashboardViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\GiangVienDashboardViewModel.cs",
@@ -2386,7 +2399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 95,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBaiLams\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBaiLams\\Index.cshtml",
@@ -2398,7 +2411,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 92,
               "Title": "LqvBuoiHoc.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvBuoiHoc.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvBuoiHoc.cs",
@@ -2410,7 +2423,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 94,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBaiTaps\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBaiTaps\\Index.cshtml",
@@ -2422,7 +2435,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 99,
               "Title": "LqvChungNhan.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvChungNhan.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvChungNhan.cs",
@@ -2434,7 +2447,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 96,
               "Title": "DiemDanhApiController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Controllers\\Api\\DiemDanhApiController.cs",
               "RelativeDocumentMoniker": "Controllers\\Api\\DiemDanhApiController.cs",
@@ -2446,7 +2459,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 98,
               "Title": "ChungNhanApiController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Controllers\\Api\\ChungNhanApiController.cs",
               "RelativeDocumentMoniker": "Controllers\\Api\\ChungNhanApiController.cs",
@@ -2458,7 +2471,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 97,
               "Title": "BuoiHocApiController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Controllers\\Api\\BuoiHocApiController.cs",
               "RelativeDocumentMoniker": "Controllers\\Api\\BuoiHocApiController.cs",
@@ -2470,7 +2483,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 101,
               "Title": "LqvGiaoDichBlockchain.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvGiaoDichBlockchain.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvGiaoDichBlockchain.cs",
@@ -2482,7 +2495,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 100,
               "Title": "ChungNhanDto.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\Dtos\\ChungNhanDto.cs",
               "RelativeDocumentMoniker": "Models\\Dtos\\ChungNhanDto.cs",
@@ -2494,7 +2507,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 102,
               "Title": "StudentDashboardApiController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Controllers\\Api\\StudentDashboardApiController.cs",
               "RelativeDocumentMoniker": "Controllers\\Api\\StudentDashboardApiController.cs",
@@ -2506,7 +2519,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 104,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\HomeController.cs",
@@ -2518,7 +2531,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 103,
               "Title": "MobileAuthController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Controllers\\Api\\MobileAuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\Api\\MobileAuthController.cs",
@@ -2530,7 +2543,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 106,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -2542,7 +2555,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 105,
               "Title": "MobileController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Controllers\\Api\\MobileController.cs",
               "RelativeDocumentMoniker": "Controllers\\Api\\MobileController.cs",
@@ -2554,7 +2567,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 108,
               "Title": "LqvYeuCauHoTro.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvYeuCauHoTro.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvYeuCauHoTro.cs",
@@ -2566,7 +2579,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 108,
+              "DocumentIndex": 109,
               "Title": "LqvYeuCauCapChungChi.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvYeuCauCapChungChi.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvYeuCauCapChungChi.cs",
@@ -2578,7 +2591,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 109,
+              "DocumentIndex": 110,
               "Title": "LqvXacThucEmail.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvXacThucEmail.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvXacThucEmail.cs",
@@ -2590,7 +2603,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 110,
+              "DocumentIndex": 111,
               "Title": "LqvXacThucChungNhan.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvXacThucChungNhan.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvXacThucChungNhan.cs",
@@ -2602,7 +2615,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 111,
+              "DocumentIndex": 112,
               "Title": "LqvTienDoHocTap.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvTienDoHocTap.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvTienDoHocTap.cs",
@@ -2614,7 +2627,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 112,
+              "DocumentIndex": 113,
               "Title": "LqvRole.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvRole.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvRole.cs",
@@ -2626,7 +2639,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 113,
+              "DocumentIndex": 114,
               "Title": "LqvPhanQuyen.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvPhanQuyen.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvPhanQuyen.cs",
@@ -2638,7 +2651,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 114,
+              "DocumentIndex": 115,
               "Title": "LqvKhoaHoc.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvKhoaHoc.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvKhoaHoc.cs",
@@ -2650,7 +2663,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
+              "DocumentIndex": 116,
               "Title": "LqvDeThi.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvDeThi.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvDeThi.cs",
@@ -2662,7 +2675,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 116,
+              "DocumentIndex": 117,
               "Title": "LqvDapAn.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvDapAn.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvDapAn.cs",
@@ -2674,7 +2687,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 117,
+              "DocumentIndex": 118,
               "Title": "LqvChucNang.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvChucNang.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvChucNang.cs",
@@ -2686,7 +2699,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 118,
+              "DocumentIndex": 119,
               "Title": "LqvCauHoi.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvCauHoi.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvCauHoi.cs",
@@ -2698,7 +2711,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 119,
+              "DocumentIndex": 120,
               "Title": "LqvBoCauHoi.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\DBModel\\LqvBoCauHoi.cs",
               "RelativeDocumentMoniker": "Models\\DBModel\\LqvBoCauHoi.cs",
@@ -2710,7 +2723,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 120,
+              "DocumentIndex": 121,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\DashboardController.cs",
@@ -2722,7 +2735,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 121,
+              "DocumentIndex": 122,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvNguoiDungs\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvNguoiDungs\\Details.cshtml",
@@ -2734,7 +2747,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 122,
+              "DocumentIndex": 123,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvYeuCauHoTroes\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvYeuCauHoTroes\\Edit.cshtml",
@@ -2746,7 +2759,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 123,
+              "DocumentIndex": 124,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvYeuCauHoTroes\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvYeuCauHoTroes\\Delete.cshtml",
@@ -2758,7 +2771,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 124,
+              "DocumentIndex": 125,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvYeuCauCapChungChis\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvYeuCauCapChungChis\\Index.cshtml",
@@ -2770,7 +2783,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 125,
+              "DocumentIndex": 126,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvTienDoHocTaps\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvTienDoHocTaps\\Index.cshtml",
@@ -2782,7 +2795,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 126,
+              "DocumentIndex": 127,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvTienDoHocTaps\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvTienDoHocTaps\\Details.cshtml",
@@ -2794,7 +2807,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 127,
+              "DocumentIndex": 128,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvDapAns\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvDapAns\\Details.cshtml",
@@ -2806,7 +2819,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 128,
+              "DocumentIndex": 129,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvYeuCauHoTroes\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvYeuCauHoTroes\\Details.cshtml",
@@ -2818,7 +2831,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 129,
+              "DocumentIndex": 130,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvDapAns\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvDapAns\\Delete.cshtml",
@@ -2830,7 +2843,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 130,
+              "DocumentIndex": 131,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvBuoiHocs\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvBuoiHocs\\Index.cshtml",
@@ -2842,7 +2855,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 131,
+              "DocumentIndex": 132,
               "Title": "ByLopHoc.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvBuoiHocs\\ByLopHoc.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvBuoiHocs\\ByLopHoc.cshtml",
@@ -2854,7 +2867,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 132,
+              "DocumentIndex": 133,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBuoiHocs\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBuoiHocs\\Edit.cshtml",
@@ -2866,7 +2879,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 133,
+              "DocumentIndex": 134,
               "Title": "DiemDanh.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBuoiHocs\\DiemDanh.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBuoiHocs\\DiemDanh.cshtml",
@@ -2878,7 +2891,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 134,
+              "DocumentIndex": 135,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBuoiHocs\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBuoiHocs\\Details.cshtml",
@@ -2890,7 +2903,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 135,
+              "DocumentIndex": 136,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBuoiHocs\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBuoiHocs\\Delete.cshtml",
@@ -2902,7 +2915,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 136,
+              "DocumentIndex": 137,
               "Title": "LqvChungNhansController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Controllers\\LqvChungNhansController.cs",
               "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\LqvChungNhansController.cs",
@@ -2914,7 +2927,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 107,
               "Title": "20260128111252_Add_Face_To_DiemDanhGPS.cs",
               "DocumentMoniker": "D:\\DATN\\LQV_BlockchainCertificate\\Migrations\\20260128111252_Add_Face_To_DiemDanhGPS.cs",
               "RelativeDocumentMoniker": "..\\..\\DATN\\LQV_BlockchainCertificate\\Migrations\\20260128111252_Add_Face_To_DiemDanhGPS.cs",
@@ -2926,7 +2939,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 137,
+              "DocumentIndex": 138,
               "Title": "DanhSachNop.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvNopBaiTaps\\DanhSachNop.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvNopBaiTaps\\DanhSachNop.cshtml",
@@ -2938,7 +2951,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 138,
+              "DocumentIndex": 139,
               "Title": "LqvNopBaiTapsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Controllers\\LqvNopBaiTapsController.cs",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Controllers\\LqvNopBaiTapsController.cs",
@@ -2950,7 +2963,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 139,
+              "DocumentIndex": 140,
               "Title": "LqvBaiTapsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Controllers\\LqvBaiTapsController.cs",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Controllers\\LqvBaiTapsController.cs",
@@ -2962,7 +2975,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 140,
+              "DocumentIndex": 141,
               "Title": "SinhVienLopHocListViewModel.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\ViewModels\\SinhVienLopHocListViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\SinhVienLopHocListViewModel.cs",
@@ -2974,7 +2987,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 141,
+              "DocumentIndex": 142,
               "Title": "LqvTienDoHocTapsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Controllers\\LqvTienDoHocTapsController.cs",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Controllers\\LqvTienDoHocTapsController.cs",
@@ -2986,7 +2999,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 142,
+              "DocumentIndex": 143,
               "Title": "BaiLamGroupKey.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\ViewModels\\BaiLamGroupKey.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\BaiLamGroupKey.cs",
@@ -2998,7 +3011,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 143,
+              "DocumentIndex": 144,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBaiTaps\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBaiTaps\\Create.cshtml",
@@ -3010,7 +3023,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 144,
+              "DocumentIndex": 145,
               "Title": "ChamDiem.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvNopBaiTaps\\ChamDiem.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvNopBaiTaps\\ChamDiem.cshtml",
@@ -3022,7 +3035,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 145,
+              "DocumentIndex": 146,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvNopBaiTaps\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvNopBaiTaps\\Index.cshtml",
@@ -3034,7 +3047,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 146,
+              "DocumentIndex": 147,
               "Title": "BaiTapDashboardVM.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\ViewModels\\BaiTapDashboardVM.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\BaiTapDashboardVM.cs",
@@ -3046,7 +3059,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 147,
+              "DocumentIndex": 148,
               "Title": "BaiLamGroupViewModel.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\ViewModels\\BaiLamGroupViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\BaiLamGroupViewModel.cs",
@@ -3058,7 +3071,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 148,
+              "DocumentIndex": 149,
               "Title": "LqvDapAnCreateDto.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\ViewModels\\LqvDapAnCreateDto.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\LqvDapAnCreateDto.cs",
@@ -3070,7 +3083,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 149,
+              "DocumentIndex": 150,
               "Title": "SinhVienLopHocViewModel.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\ViewModels\\SinhVienLopHocViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\SinhVienLopHocViewModel.cs",
@@ -3082,7 +3095,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 150,
+              "DocumentIndex": 151,
               "Title": "StudentDashboardViewModel.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\ViewModels\\StudentDashboardViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\StudentDashboardViewModel.cs",
@@ -3094,7 +3107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 151,
+              "DocumentIndex": 152,
               "Title": "XoaSinhVienDto.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\ViewModels\\XoaSinhVienDto.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\XoaSinhVienDto.cs",
@@ -3106,7 +3119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 152,
+              "DocumentIndex": 153,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvLopHocs\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvLopHocs\\Index.cshtml",
@@ -3118,7 +3131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 153,
+              "DocumentIndex": 154,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvLopHocs\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvLopHocs\\Create.cshtml",
@@ -3130,7 +3143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 154,
+              "DocumentIndex": 155,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvLopHocs\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvLopHocs\\Edit.cshtml",
@@ -3142,7 +3155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 155,
+              "DocumentIndex": 156,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvLopHocs\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvLopHocs\\Details.cshtml",
@@ -3154,7 +3167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 156,
+              "DocumentIndex": 157,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvLopHocs\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvLopHocs\\Delete.cshtml",
@@ -3166,7 +3179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 157,
+              "DocumentIndex": 158,
               "Title": "VerifyResult.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Views\\Home\\VerifyResult.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\VerifyResult.cshtml",
@@ -3178,7 +3191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 158,
+              "DocumentIndex": 159,
               "Title": "EthereumService.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Services\\EthereumService.cs",
               "RelativeDocumentMoniker": "Services\\EthereumService.cs",
@@ -3190,7 +3203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 159,
+              "DocumentIndex": 160,
               "Title": "GeminiSettings.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\Settings\\GeminiSettings.cs",
               "RelativeDocumentMoniker": "Models\\Settings\\GeminiSettings.cs",
@@ -3202,7 +3215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 160,
+              "DocumentIndex": 161,
               "Title": "LqvNguoiDungsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Controllers\\LqvNguoiDungsController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\LqvNguoiDungsController.cs",
@@ -3214,7 +3227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 161,
+              "DocumentIndex": 162,
               "Title": "LqvLichThisController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Controllers\\LqvLichThisController.cs",
               "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\LqvLichThisController.cs",
@@ -3226,7 +3239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 162,
+              "DocumentIndex": 163,
               "Title": "LQV_BlockchainCertificate.csproj.Backup.tmp",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\LQV_BlockchainCertificate.csproj.Backup.tmp",
               "RelativeDocumentMoniker": "LQV_BlockchainCertificate.csproj.Backup.tmp",
@@ -3238,7 +3251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 163,
+              "DocumentIndex": 164,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvBaiTaps\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvBaiTaps\\Details.cshtml",
@@ -3250,7 +3263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 164,
+              "DocumentIndex": 165,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvBaiTaps\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvBaiTaps\\Index.cshtml",
@@ -3262,7 +3275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 165,
+              "DocumentIndex": 166,
               "Title": "LqvBaiTapsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Controllers\\LqvBaiTapsController.cs",
               "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\LqvBaiTapsController.cs",
@@ -3274,7 +3287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 166,
+              "DocumentIndex": 167,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\Home\\Index.cshtml",
@@ -3286,7 +3299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 167,
+              "DocumentIndex": 168,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvDangKyLopHocs\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvDangKyLopHocs\\Index.cshtml",
@@ -3298,7 +3311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 168,
+              "DocumentIndex": 169,
               "Title": "NopBai.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvBaiTaps\\NopBai.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvBaiTaps\\NopBai.cshtml",
@@ -3310,7 +3323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 169,
+              "DocumentIndex": 170,
               "Title": "_LayoutStudent.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\Shared\\_LayoutStudent.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\Shared\\_LayoutStudent.cshtml",
@@ -3322,7 +3335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 170,
+              "DocumentIndex": 171,
               "Title": "VerifyCertificate.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Views\\Home\\VerifyCertificate.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\VerifyCertificate.cshtml",
@@ -3334,7 +3347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 171,
+              "DocumentIndex": 172,
               "Title": "VerificationResult.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvXacThucChungNhans\\VerificationResult.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvXacThucChungNhans\\VerificationResult.cshtml",
@@ -3346,7 +3359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 172,
+              "DocumentIndex": 173,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvNguoiDungs\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvNguoiDungs\\Edit.cshtml",
@@ -3358,7 +3371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 173,
+              "DocumentIndex": 174,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvNguoiDungs\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvNguoiDungs\\Index.cshtml",
@@ -3370,7 +3383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 174,
+              "DocumentIndex": 175,
               "Title": "GanSinhVienDto.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Models\\ViewModels\\GanSinhVienDto.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\GanSinhVienDto.cs",
@@ -3382,7 +3395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 175,
+              "DocumentIndex": 176,
               "Title": "EmailService.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Services\\EmailService.cs",
               "RelativeDocumentMoniker": "Services\\EmailService.cs",
@@ -3394,7 +3407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 176,
+              "DocumentIndex": 177,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBoCauHois\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBoCauHois\\Index.cshtml",
@@ -3406,7 +3419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 177,
+              "DocumentIndex": 178,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvBaiLams\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvBaiLams\\Details.cshtml",
@@ -3418,7 +3431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 178,
+              "DocumentIndex": 179,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvLopHocs\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvLopHocs\\Index.cshtml",
@@ -3430,7 +3443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 179,
+              "DocumentIndex": 180,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvDeThis\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvDeThis\\Index.cshtml",
@@ -3442,7 +3455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 180,
+              "DocumentIndex": 181,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvChungNhans\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvChungNhans\\Index.cshtml",
@@ -3454,7 +3467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 181,
+              "DocumentIndex": 182,
               "Title": "LichSuTraCuu.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvXacThucChungNhans\\LichSuTraCuu.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvXacThucChungNhans\\LichSuTraCuu.cshtml",
@@ -3466,7 +3479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 182,
+              "DocumentIndex": 183,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvLichThis\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvLichThis\\Index.cshtml",
@@ -3478,7 +3491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 183,
+              "DocumentIndex": 184,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvDeThis\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvDeThis\\Index.cshtml",
@@ -3490,7 +3503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 184,
+              "DocumentIndex": 185,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
@@ -3502,7 +3515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 185,
+              "DocumentIndex": 186,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvBaiLams\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvBaiLams\\Index.cshtml",
@@ -3514,7 +3527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 186,
+              "DocumentIndex": 187,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvLichThis\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvLichThis\\Index.cshtml",
@@ -3526,7 +3539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 187,
+              "DocumentIndex": 188,
               "Title": "ChamCauHoi.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvChiTietBaiLams\\ChamCauHoi.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvChiTietBaiLams\\ChamCauHoi.cshtml",
@@ -3538,7 +3551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 188,
+              "DocumentIndex": 189,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvLichThis\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvLichThis\\Details.cshtml",
@@ -3550,7 +3563,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 189,
+              "DocumentIndex": 190,
               "Title": "LqvDangKyLopHocsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Controllers\\LqvDangKyLopHocsController.cs",
               "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\LqvDangKyLopHocsController.cs",
@@ -3562,7 +3575,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 190,
+              "DocumentIndex": 191,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvLopHocs\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvLopHocs\\Details.cshtml",
@@ -3574,7 +3587,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 191,
+              "DocumentIndex": 192,
               "Title": "ByBaiLam.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvChiTietBaiLams\\ByBaiLam.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvChiTietBaiLams\\ByBaiLam.cshtml",
@@ -3586,7 +3599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 192,
+              "DocumentIndex": 193,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBaiTaps\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBaiTaps\\Edit.cshtml",
@@ -3598,7 +3611,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 193,
+              "DocumentIndex": 194,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvNopBaiTaps\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvNopBaiTaps\\Details.cshtml",
@@ -3610,7 +3623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 194,
+              "DocumentIndex": 195,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBaiLams\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBaiLams\\Details.cshtml",
@@ -3622,7 +3635,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 195,
+              "DocumentIndex": 196,
               "Title": "LqvDeThisController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Controllers\\LqvDeThisController.cs",
               "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\LqvDeThisController.cs",
@@ -3634,7 +3647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 196,
+              "DocumentIndex": 197,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvKhoaHocs\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvKhoaHocs\\Details.cshtml",
@@ -3646,7 +3659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 197,
+              "DocumentIndex": 198,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvDeThis\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvDeThis\\Index.cshtml",
@@ -3658,7 +3671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 198,
+              "DocumentIndex": 199,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvDeThis\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvDeThis\\Details.cshtml",
@@ -3670,7 +3683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 199,
+              "DocumentIndex": 200,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvCauHois\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvCauHois\\Create.cshtml",
@@ -3682,7 +3695,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 200,
+              "DocumentIndex": 201,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvKhoaHocs\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvKhoaHocs\\Details.cshtml",
@@ -3694,7 +3707,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 201,
+              "DocumentIndex": 202,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvDangKyLopHocs\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvDangKyLopHocs\\Details.cshtml",
@@ -3706,7 +3719,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 202,
+              "DocumentIndex": 203,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvYeuCauCapChungChis\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvYeuCauCapChungChis\\Index.cshtml",
@@ -3718,7 +3731,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 203,
+              "DocumentIndex": 204,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvYeuCauCapChungChis\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvYeuCauCapChungChis\\Create.cshtml",
@@ -3730,7 +3743,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 204,
+              "DocumentIndex": 205,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvYeuCauCapChungChis\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvYeuCauCapChungChis\\Edit.cshtml",
@@ -3742,7 +3755,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 205,
+              "DocumentIndex": 206,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvYeuCauCapChungChis\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvYeuCauCapChungChis\\Details.cshtml",
@@ -3754,7 +3767,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 206,
+              "DocumentIndex": 207,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvChungNhans\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvChungNhans\\Details.cshtml",
@@ -3766,7 +3779,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 207,
+              "DocumentIndex": 208,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvChungNhans\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvChungNhans\\Index.cshtml",
@@ -3778,7 +3791,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 208,
+              "DocumentIndex": 209,
               "Title": "DangKy.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvDangKyLopHocs\\DangKy.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvDangKyLopHocs\\DangKy.cshtml",
@@ -3790,7 +3803,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 209,
+              "DocumentIndex": 210,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvYeuCauCapChungChis\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvYeuCauCapChungChis\\Delete.cshtml",
@@ -3802,7 +3815,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 210,
+              "DocumentIndex": 211,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvNguoiDungs\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvNguoiDungs\\Index.cshtml",
@@ -3814,7 +3827,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 211,
+              "DocumentIndex": 212,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvNguoiDungs\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvNguoiDungs\\Create.cshtml",
@@ -3826,7 +3839,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 212,
+              "DocumentIndex": 213,
               "Title": "LqvYeuCauCapChungChisController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Controllers\\LqvYeuCauCapChungChisController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\LqvYeuCauCapChungChisController.cs",
@@ -3838,7 +3851,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 213,
+              "DocumentIndex": 214,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvYeuCauCapChungChis\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvYeuCauCapChungChis\\Create.cshtml",
@@ -3850,7 +3863,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 214,
+              "DocumentIndex": 215,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvYeuCauCapChungChis\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvYeuCauCapChungChis\\Delete.cshtml",
@@ -3862,7 +3875,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 215,
+              "DocumentIndex": 216,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvYeuCauCapChungChis\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvYeuCauCapChungChis\\Details.cshtml",
@@ -3874,7 +3887,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 216,
+              "DocumentIndex": 217,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvYeuCauCapChungChis\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvYeuCauCapChungChis\\Edit.cshtml",
@@ -3886,7 +3899,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 217,
+              "DocumentIndex": 218,
               "Title": "LqvYeuCauHoTroesController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Controllers\\LqvYeuCauHoTroesController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\LqvYeuCauHoTroesController.cs",
@@ -3898,7 +3911,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 218,
+              "DocumentIndex": 219,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -3910,7 +3923,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 219,
+              "DocumentIndex": 220,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvTienDoHocTaps\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvTienDoHocTaps\\Create.cshtml",
@@ -3922,7 +3935,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 220,
+              "DocumentIndex": 221,
               "Title": "SinhVien.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvLopHocs\\SinhVien.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvLopHocs\\SinhVien.cshtml",
@@ -3934,7 +3947,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 221,
+              "DocumentIndex": 222,
               "Title": "LqvLopHocsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Controllers\\LqvLopHocsController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\LqvLopHocsController.cs",
@@ -3946,7 +3959,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 222,
+              "DocumentIndex": 223,
               "Title": "LqvCauHoisController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Controllers\\LqvCauHoisController.cs",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Controllers\\LqvCauHoisController.cs",
@@ -3958,7 +3971,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 223,
+              "DocumentIndex": 224,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvKhoaHocs\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvKhoaHocs\\Index.cshtml",
@@ -3970,7 +3983,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 224,
+              "DocumentIndex": 225,
               "Title": "ListAll.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvKhoaHocs\\ListAll.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvKhoaHocs\\ListAll.cshtml",
@@ -3982,7 +3995,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 225,
+              "DocumentIndex": 226,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Student\\Views\\LqvGiaoDichBlockchains\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Student\\Views\\LqvGiaoDichBlockchains\\Index.cshtml",
@@ -3994,7 +4007,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 226,
+              "DocumentIndex": 227,
               "Title": "LqvKhoaHocsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Controllers\\LqvKhoaHocsController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\LqvKhoaHocsController.cs",
@@ -4006,7 +4019,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 227,
+              "DocumentIndex": 228,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvTienDoHocTaps\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvTienDoHocTaps\\Edit.cshtml",
@@ -4018,7 +4031,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 228,
+              "DocumentIndex": 229,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvTienDoHocTaps\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvTienDoHocTaps\\Details.cshtml",
@@ -4030,7 +4043,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 229,
+              "DocumentIndex": 230,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvTienDoHocTaps\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvTienDoHocTaps\\Delete.cshtml",
@@ -4042,7 +4055,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 230,
+              "DocumentIndex": 231,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvTienDoHocTaps\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvTienDoHocTaps\\Index.cshtml",
@@ -4054,7 +4067,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 231,
+              "DocumentIndex": 232,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvDeThis\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvDeThis\\Delete.cshtml",
@@ -4066,7 +4079,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 232,
+              "DocumentIndex": 233,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvDeThis\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvDeThis\\Details.cshtml",
@@ -4078,7 +4091,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 233,
+              "DocumentIndex": 234,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBaiTaps\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBaiTaps\\Delete.cshtml",
@@ -4090,7 +4103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 234,
+              "DocumentIndex": 235,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBaiTaps\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBaiTaps\\Details.cshtml",
@@ -4102,7 +4115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 235,
+              "DocumentIndex": 236,
               "Title": "ByCauHoi.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvDapAns\\ByCauHoi.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvDapAns\\ByCauHoi.cshtml",
@@ -4114,7 +4127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 236,
+              "DocumentIndex": 237,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvCauHois\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvCauHois\\Edit.cshtml",
@@ -4126,7 +4139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 237,
+              "DocumentIndex": 238,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvDapAns\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvDapAns\\Create.cshtml",
@@ -4138,7 +4151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 238,
+              "DocumentIndex": 239,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvDapAns\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvDapAns\\Edit.cshtml",
@@ -4150,7 +4163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 239,
+              "DocumentIndex": 240,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvCauHois\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvCauHois\\Index.cshtml",
@@ -4162,7 +4175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 240,
+              "DocumentIndex": 241,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvDapAns\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvDapAns\\Index.cshtml",
@@ -4174,7 +4187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 241,
+              "DocumentIndex": 242,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvDapAns\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvDapAns\\Details.cshtml",
@@ -4186,7 +4199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 242,
+              "DocumentIndex": 243,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvDapAns\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvDapAns\\Delete.cshtml",
@@ -4198,7 +4211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 243,
+              "DocumentIndex": 244,
               "Title": "ByCauHoi.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvDapAns\\ByCauHoi.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvDapAns\\ByCauHoi.cshtml",
@@ -4210,7 +4223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 244,
+              "DocumentIndex": 245,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvDapAns\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvDapAns\\Index.cshtml",
@@ -4222,7 +4235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 245,
+              "DocumentIndex": 246,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvDapAns\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvDapAns\\Edit.cshtml",
@@ -4234,7 +4247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 246,
+              "DocumentIndex": 247,
               "Title": "LqvDapAnsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Controllers\\LqvDapAnsController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\LqvDapAnsController.cs",
@@ -4246,7 +4259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 247,
+              "DocumentIndex": 248,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvDapAns\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvDapAns\\Create.cshtml",
@@ -4258,7 +4271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 248,
+              "DocumentIndex": 249,
               "Title": "LqvCauHoisController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Controllers\\LqvCauHoisController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\LqvCauHoisController.cs",
@@ -4270,7 +4283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 249,
+              "DocumentIndex": 250,
               "Title": "LqvDangKyLopHocsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Controllers\\LqvDangKyLopHocsController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\LqvDangKyLopHocsController.cs",
@@ -4282,7 +4295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 250,
+              "DocumentIndex": 251,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -4294,7 +4307,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 251,
+              "DocumentIndex": 252,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvCauHois\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvCauHois\\Details.cshtml",
@@ -4306,7 +4319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 252,
+              "DocumentIndex": 253,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvCauHois\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvCauHois\\Details.cshtml",
@@ -4318,7 +4331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 253,
+              "DocumentIndex": 254,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvCauHois\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvCauHois\\Edit.cshtml",
@@ -4330,7 +4343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 254,
+              "DocumentIndex": 255,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvCauHois\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvCauHois\\Index.cshtml",
@@ -4342,7 +4355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 255,
+              "DocumentIndex": 256,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvCauHois\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvCauHois\\Create.cshtml",
@@ -4354,7 +4367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 256,
+              "DocumentIndex": 257,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvCauHois\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvCauHois\\Delete.cshtml",
@@ -4366,7 +4379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 257,
+              "DocumentIndex": 258,
               "Title": "Questions.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBoCauHois\\Questions.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBoCauHois\\Questions.cshtml",
@@ -4378,7 +4391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 258,
+              "DocumentIndex": 259,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBoCauHois\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBoCauHois\\Edit.cshtml",
@@ -4390,7 +4403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 259,
+              "DocumentIndex": 260,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBoCauHois\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBoCauHois\\Details.cshtml",
@@ -4402,7 +4415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 260,
+              "DocumentIndex": 261,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBoCauHois\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBoCauHois\\Delete.cshtml",
@@ -4414,7 +4427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 261,
+              "DocumentIndex": 262,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\GiangVien\\Views\\LqvBoCauHois\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\GiangVien\\Views\\LqvBoCauHois\\Create.cshtml",
@@ -4426,7 +4439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 262,
+              "DocumentIndex": 263,
               "Title": "LqvBoCauHoisController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Controllers\\LqvBoCauHoisController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\LqvBoCauHoisController.cs",
@@ -4438,7 +4451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 263,
+              "DocumentIndex": 264,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvDeThis\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvDeThis\\Details.cshtml",
@@ -4450,7 +4463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 264,
+              "DocumentIndex": 265,
               "Title": "Questions.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvBoCauHois\\Questions.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvBoCauHois\\Questions.cshtml",
@@ -4462,7 +4475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 265,
+              "DocumentIndex": 266,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvBoCauHois\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvBoCauHois\\Index.cshtml",
@@ -4474,7 +4487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 266,
+              "DocumentIndex": 267,
               "Title": "LqvTienDoHocTapsController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Controllers\\LqvTienDoHocTapsController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\LqvTienDoHocTapsController.cs",
@@ -4486,7 +4499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 267,
+              "DocumentIndex": 268,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvGiaoDichBlockchains\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvGiaoDichBlockchains\\Details.cshtml",
@@ -4498,7 +4511,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 268,
+              "DocumentIndex": 269,
               "Title": "IViewRenderService.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Services\\IViewRenderService.cs",
               "RelativeDocumentMoniker": "Services\\IViewRenderService.cs",
@@ -4510,7 +4523,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 269,
+              "DocumentIndex": 270,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvKhoaHocs\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvKhoaHocs\\Index.cshtml",
@@ -4522,7 +4535,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 270,
+              "DocumentIndex": 271,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvNhatKyHoatDongs\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvNhatKyHoatDongs\\Index.cshtml",
@@ -4534,7 +4547,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 271,
+              "DocumentIndex": 272,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvGiaoDichBlockchains\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvGiaoDichBlockchains\\Create.cshtml",
@@ -4546,7 +4559,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 272,
+              "DocumentIndex": 273,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvGiaoDichBlockchains\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvGiaoDichBlockchains\\Delete.cshtml",
@@ -4558,7 +4571,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 273,
+              "DocumentIndex": 274,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvGiaoDichBlockchains\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvGiaoDichBlockchains\\Edit.cshtml",
@@ -4570,7 +4583,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 274,
+              "DocumentIndex": 275,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvGiaoDichBlockchains\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvGiaoDichBlockchains\\Index.cshtml",
@@ -4582,7 +4595,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 275,
+              "DocumentIndex": 276,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvNhatKyHoatDongs\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvNhatKyHoatDongs\\Delete.cshtml",
@@ -4594,7 +4607,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 276,
+              "DocumentIndex": 277,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvNhatKyHoatDongs\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvNhatKyHoatDongs\\Details.cshtml",
@@ -4606,7 +4619,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 277,
+              "DocumentIndex": 278,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvTienDoHocTaps\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvTienDoHocTaps\\Delete.cshtml",
@@ -4618,7 +4631,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 278,
+              "DocumentIndex": 279,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvTienDoHocTaps\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvTienDoHocTaps\\Create.cshtml",
@@ -4630,7 +4643,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 279,
+              "DocumentIndex": 280,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvTienDoHocTaps\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvTienDoHocTaps\\Edit.cshtml",
@@ -4642,7 +4655,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 280,
+              "DocumentIndex": 281,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvXacThucChungNhans\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvXacThucChungNhans\\Delete.cshtml",
@@ -4654,7 +4667,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 281,
+              "DocumentIndex": 282,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvChungNhans\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvChungNhans\\Details.cshtml",
@@ -4666,7 +4679,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 282,
+              "DocumentIndex": 283,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvKhoaHocs\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvKhoaHocs\\Details.cshtml",
@@ -4678,7 +4691,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 283,
+              "DocumentIndex": 284,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvKhoaHocs\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvKhoaHocs\\Create.cshtml",
@@ -4690,7 +4703,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 284,
+              "DocumentIndex": 285,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvLichThis\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvLichThis\\Edit.cshtml",
@@ -4702,7 +4715,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 285,
+              "DocumentIndex": 286,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvKhoaHocs\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvKhoaHocs\\Edit.cshtml",
@@ -4714,7 +4727,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 286,
+              "DocumentIndex": 287,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvChungNhans\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvChungNhans\\Edit.cshtml",
@@ -4726,7 +4739,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 287,
+              "DocumentIndex": 288,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvChungNhans\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvChungNhans\\Delete.cshtml",
@@ -4738,7 +4751,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 288,
+              "DocumentIndex": 289,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvKhoaHocs\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvKhoaHocs\\Delete.cshtml",
@@ -4750,7 +4763,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 289,
+              "DocumentIndex": 290,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvXacThucChungNhans\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvXacThucChungNhans\\Details.cshtml",
@@ -4762,7 +4775,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 290,
+              "DocumentIndex": 291,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -4774,7 +4787,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 291,
+              "DocumentIndex": 292,
               "Title": "KVL.css",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\wwwroot\\css\\KVL.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\KVL.css",
@@ -4786,7 +4799,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 292,
+              "DocumentIndex": 293,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvLichThis\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvLichThis\\Create.cshtml",
@@ -4798,7 +4811,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 293,
+              "DocumentIndex": 294,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvLichThis\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvLichThis\\Delete.cshtml",
@@ -4810,7 +4823,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 294,
+              "DocumentIndex": 295,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvLichThis\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvLichThis\\Details.cshtml",
@@ -4822,7 +4835,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 295,
+              "DocumentIndex": 296,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvNguoiDungs\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvNguoiDungs\\Create.cshtml",
@@ -4834,7 +4847,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 296,
+              "DocumentIndex": 297,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvNguoiDungs\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvNguoiDungs\\Delete.cshtml",
@@ -4846,7 +4859,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 297,
+              "DocumentIndex": 298,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvBoCauHois\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvBoCauHois\\Edit.cshtml",
@@ -4858,7 +4871,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 298,
+              "DocumentIndex": 299,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvBoCauHois\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvBoCauHois\\Delete.cshtml",
@@ -4870,7 +4883,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 299,
+              "DocumentIndex": 300,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvBoCauHois\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvBoCauHois\\Details.cshtml",
@@ -4882,7 +4895,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 300,
+              "DocumentIndex": 301,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvBoCauHois\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvBoCauHois\\Create.cshtml",
@@ -4894,7 +4907,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 301,
+              "DocumentIndex": 302,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvChungNhans\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvChungNhans\\Create.cshtml",
@@ -4906,7 +4919,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 302,
+              "DocumentIndex": 303,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvDeThis\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvDeThis\\Create.cshtml",
@@ -4918,7 +4931,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 303,
+              "DocumentIndex": 304,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvDeThis\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvDeThis\\Delete.cshtml",
@@ -4930,7 +4943,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 304,
+              "DocumentIndex": 305,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvDeThis\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvDeThis\\Edit.cshtml",
@@ -4942,7 +4955,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 305,
+              "DocumentIndex": 306,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvYeuCauHoTroes\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvYeuCauHoTroes\\Index.cshtml",
@@ -4954,7 +4967,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 306,
+              "DocumentIndex": 307,
               "Title": "LqvXacThucChungNhansController.cs",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Controllers\\LqvXacThucChungNhansController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\LqvXacThucChungNhansController.cs",
@@ -4966,7 +4979,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 307,
+              "DocumentIndex": 308,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvPhanQuyens\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvPhanQuyens\\Index.cshtml",
@@ -4978,7 +4991,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 308,
+              "DocumentIndex": 309,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvLopHocs\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvLopHocs\\Index.cshtml",
@@ -4990,7 +5003,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 309,
+              "DocumentIndex": 310,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvLopHocs\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvLopHocs\\Create.cshtml",
@@ -5002,7 +5015,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 310,
+              "DocumentIndex": 311,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvLopHocs\\Edit.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvLopHocs\\Edit.cshtml",
@@ -5014,7 +5027,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 311,
+              "DocumentIndex": 312,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvLopHocs\\Details.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvLopHocs\\Details.cshtml",
@@ -5026,7 +5039,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 312,
+              "DocumentIndex": 313,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Admin\\Views\\LqvLopHocs\\Delete.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\LqvLopHocs\\Delete.cshtml",
@@ -5038,7 +5051,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 313,
+              "DocumentIndex": 314,
               "Title": "VerifyOtp.cshtml",
               "DocumentMoniker": "D:\\Build APP IOS\\LQV_BlockchainCertificate\\Areas\\Auth\\Views\\Account\\VerifyOtp.cshtml",
               "RelativeDocumentMoniker": "Areas\\Auth\\Views\\Account\\VerifyOtp.cshtml",
