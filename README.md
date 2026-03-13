@@ -19,11 +19,6 @@ Website quản lý học tập được xây dựng bằng **ASP.NET Core**, h�
 * Entity Framework
 * HTML, CSS, JavaScript
 * Bootstrap
-
-## 📷 Hình ảnh hệ thống
-
-(Sẽ cập nhật ảnh giao diện ở đây)
-
 ## 👨‍💻 Tác giả
 
 **Lê Quốc Vương**
